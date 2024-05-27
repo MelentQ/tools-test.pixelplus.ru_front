@@ -1,11 +1,11 @@
 mixin menu(props)
   - props = props || {}
-  - mods = props.mods ? props.mods.map(mod => `menu--${mod}`).join(' ') : null;
+  - mods = props.mods ? props.mods.map(mod => `menu--${mod}`).join(" ") : null;
   .menu(class=mods)&attributes(attributes)
     +menu-items(props.items, 0)
 
 mixin menu-items(items, level)
-  .menu__items(data-lenis-prevent)
+  .menu__items(data-lenis-prevent="")
     for item in items
       if item.items
         .menu__item

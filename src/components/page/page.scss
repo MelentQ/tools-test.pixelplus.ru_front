@@ -16,6 +16,11 @@
 
   &__content {
     flex-grow: 1;
+    padding-top: 7rem;
+
+    @include breakpoint(m) {
+      padding-top: 5rem;
+    }
   }
 
   &__footer {

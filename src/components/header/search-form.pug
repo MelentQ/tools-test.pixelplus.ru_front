@@ -1,0 +1,6 @@
+mixin search-form(props)
+  - props = props || {}
+  .search-form&attributes(attributes)
+    .page-container
+      form.search-form__form
+        input.search-form__input.js-search-form-input(placeholder="Что хотите найти?" type="text")

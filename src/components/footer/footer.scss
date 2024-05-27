@@ -7,20 +7,38 @@
 
   background-color: var(--color-gray-darker);
 
+  @include breakpoint(m) {
+    padding-top: 2.4rem;
+  }
+
   &__row {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.6rem;
     align-items: center;
     justify-content: space-between;
+
+    @include breakpoint(s) {
+      flex-direction: column;
+    }
 
     &:not(:last-child) {
       margin-bottom: 1.6rem;
     }
   }
 
+  &__bottom #{$block-name}__row {
+    @include breakpoint(m) {
+      flex-direction: column;
+    }
+  }
+
   &__logo {
     flex-shrink: 0;
     margin: 1.2rem 0;
+
+    @include breakpoint(m) {
+      margin: 0;
+    }
 
     img {
       display: block;
@@ -53,6 +71,16 @@
     color: var(--color-gray);
     font-size: var(--fs-t3);
 
+    @include breakpoint(m) {
+      padding-top: 1.6rem;
+
+      border-top: 1px solid var(--color-gray-dark);
+    }
+
+    @include breakpoint(s) {
+      text-align: center;
+    }
+
     a {
       @include transition(color);
 
@@ -74,6 +102,11 @@
     padding: 0;
 
     list-style: none;
+
+    @include breakpoint(s) {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
   }
 
   &__links-item {
