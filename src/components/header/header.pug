@@ -1,0 +1,13 @@
+mixin header(props)
+  - props = props || {}
+  header.header&attributes(attributes)
+    .page-container
+      .header__inner
+        a.header__logo(href="#" aria-label="Главная")
+          img(src="./assets/images/logo.svg" alt="Пиксель Тулс" loading="lazy")
+        +menu({items: menuItems})&attributes({class: "header__menu"})
+        .header__controls
+          button.header__control(type="button" aria-label="Поиск" data-tip="Поиск")
+            +icon("search")
+          a.header__control(href="#" aria-label="Войти" data-tip="Войти")
+            +icon("login")

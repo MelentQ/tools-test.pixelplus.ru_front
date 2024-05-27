@@ -1,0 +1,19 @@
+mixin footer(props)
+  - props = props || {}
+  footer.footer&attributes(attributes)
+    .page-container
+      .footer__row
+        a.footer__logo(href="#" aria-label="Главная")
+          img(src="./assets/images/logo-short.svg" alt="Пиксель Тулс" loading="lazy")
+        +menu({mods: ["position-top"], items: menuItems})&attributes({class: "footer__menu"})
+        +socials({items: socialsItems})&attributes({class: "footer__socials"})
+      .footer__bottom
+        .footer__row
+          .footer__copyright © 2024 «Пиксель Тулс» — Инструменты для профессионалов
+          ul.footer__links
+            li.footer__links-item © Товарный знак <a href="#">№ 991317</a>
+            li.footer__links-item <a href="#">Публичная оферта</a>
+            li.footer__links-item <a href="#">Политика конфиденциальности</a>
+            li.footer__links-item <a href="#">Помощь в работе</a>
+        .footer__row
+          div На сайте используется Yandex SmartCaptcha (<a href="#">Условиях обработки данных</a>)

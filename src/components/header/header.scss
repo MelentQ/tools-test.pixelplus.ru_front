@@ -1,0 +1,75 @@
+.header {
+  $block-name: &;
+  color: var(--color-white);
+
+  background-color: var(--color-gray-darker);
+
+  &__inner {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin: 1.2rem 0;
+
+    img {
+      display: block;
+      width: 17.2rem;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  a#{$block-name}__logo,
+  &__logo a {
+    text-decoration: none;
+
+    @include transition(opacity);
+
+    @include hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__menu {
+    margin-right: auto;
+  }
+
+  &__controls {
+    display: flex;
+    flex-shrink: 0;
+    gap: 2.4rem;
+    align-items: center;
+  }
+
+  &__search {
+    flex-shrink: 0;
+  }
+
+  &__control {
+    display: block;
+    flex-shrink: 0;
+    padding: 0;
+
+    text-decoration: none;
+
+    background: none;
+    border: none;
+
+    @include color(inherit);
+
+    @include transition(color);
+
+    @include hover {
+      @include color(var(--color-primary));
+    }
+
+    svg {
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}

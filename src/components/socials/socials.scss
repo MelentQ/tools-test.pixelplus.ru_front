@@ -1,0 +1,53 @@
+.socials {
+  $block-name: &;
+
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+
+    text-decoration: none;
+
+    border: 1px solid var(--color-gray-dark);
+    border-radius: 50%;
+
+    @include transition(background-color, color, border-color);
+
+    @include hover {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+
+      @include color(var(--color-primary));
+    }
+
+    &--vk {
+      @include hover {
+        @include color(#0077ff);
+      }
+    }
+
+    &--tg {
+      @include hover {
+        @include color(#0088cc);
+      }
+    }
+
+    &--youtube {
+      @include hover {
+        @include color(#ff0000);
+      }
+    }
+
+    svg {
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+}

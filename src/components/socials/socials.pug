@@ -1,0 +1,11 @@
+mixin socials(props)
+  - props = props || {}
+  .socials
+    for item in props.items
+      a.socials__item(
+        class=`socials__item--${item.icon}`
+        href="#"
+        target="_blank"
+        aria-label=item.alt
+      )
+        +icon(item.icon)

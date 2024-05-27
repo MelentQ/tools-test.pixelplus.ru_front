@@ -1,0 +1,136 @@
+@mixin transition($properties...) {
+  transition-duration: 0.3s;
+  transition-property: $properties;
+}
+
+@mixin color($color) {
+  color: $color;
+
+  &:link,
+  &:visited {
+    color: $color;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin highlight-title($leftOffset: 0, $height: calc(100% - 0.6em), $topOffset: 0.3em) {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: $topOffset;
+    left: $leftOffset;
+
+    display: block;
+    width: 0.4rem;
+    height: $height;
+
+    background-color: $error;
+
+    content: '';
+    pointer-events: none;
+  }
+}
+
+@mixin list-donut($line-height: 1.4) {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: calc(0.5em * #{$line-height});
+    left: 0;
+
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+
+    border: 2px solid $primary-800;
+
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    content: '';
+    pointer-events: none;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+@mixin line-clamp($n) {
+  -webkit-line-clamp: $n;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+@mixin breakpoint($code) {
+  @if $code == xl {
+    @media screen and (max-width: $screen-xl) {
+      @content;
+    }
+  } @else if $code == l {
+    @media screen and (max-width: $screen-l) {
+      @content;
+    }
+  } @else if $code == m {
+    @media screen and (max-width: $screen-m) {
+      @content;
+    }
+  } @else if $code == s {
+    @media screen and (max-width: $screen-s) {
+      @content;
+    }
+  } @else if $code == xs {
+    @media screen and (max-width: $screen-xs) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpointMF($code) {
+  @if $code == xxl {
+    @media screen and (min-width: calc($screen-xl + 1px)) {
+      @content;
+    }
+  } @else if $code == xl {
+    @media screen and (min-width: calc($screen-l + 1px)) {
+      @content;
+    }
+  } @else if $code == l {
+    @media screen and (min-width: calc($screen-m + 1px)) {
+      @content;
+    }
+  } @else if $code == m {
+    @media screen and (min-width: calc($screen-s + 1px)) {
+      @content;
+    }
+  } @else if $code == s {
+    @media screen and (min-width: calc($screen-xs + 1px)) {
+      @content;
+    }
+  }
+}

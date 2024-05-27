@@ -1,0 +1,16 @@
+{
+  "socialsItems": [
+    {
+      "icon": "vk",
+      "alt": "VK"
+    },
+    {
+      "icon": "tg",
+      "alt": "Telegram"
+    },
+    {
+      "icon": "youtube",
+      "alt": "YouTube"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+.menu {
+  $block-name: &;
+
+  @include breakpoint(m) {
+    display: none;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  // 2-й уровень +
+  &__items #{$block-name}__items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    flex-direction: column;
+    align-items: stretch;
+    width: max-content;
+    min-width: 100%;
+    max-width: 30rem;
+    padding: 0 0 1rem;
+
+    background-color: #53575a;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    @include transition(opacity, visibility);
+  }
+
+  &--position-top #{$block-name}__items #{$block-name}__items {
+    top: unset;
+    bottom: 100%;
+
+    padding: 1rem 0 0;
+
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  // 3-й уровень +
+  &__items #{$block-name}__items #{$block-name}__items {
+    top: -1rem;
+    left: 100%;
+
+    max-height: 50rem;
+    padding: 1rem 0;
+    overflow-x: hidden;
+
+    border-radius: $border-radius;
+  }
+
+  &--position-top #{$block-name}__items #{$block-name}__items #{$block-name}__items {
+    top: unset;
+    bottom: -1rem;
+  }
+
+  // 4-й уровень +
+  &__items #{$block-name}__items #{$block-name}__items #{$block-name}__items {
+    position: static;
+
+    width: calc(100% + 4rem);
+    max-height: unset;
+    margin: 0.8rem -2rem -0.8rem;
+    padding: 0;
+    overflow-x: visible;
+
+    border-top: 1px solid var(--color-gray-dark);
+
+    border-radius: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 2.8rem 2rem;
+
+    font-size: var(--fs-t2);
+    line-height: 1;
+
+    @include transition(background-color);
+
+    & > svg {
+      display: block;
+      flex-shrink: 0;
+      width: 0.8rem;
+      height: 0.8rem;
+
+      @include transition(transform, fill);
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+
+      & > svg {
+        transform: rotate(180deg);
+
+        fill: var(--color-primary);
+      }
+
+      & > #{$block-name}__items {
+        visibility: visible;
+        opacity: 1;
+
+        pointer-events: all;
+      }
+    }
+  }
+
+  a#{$block-name}__item,
+  &__item a {
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    @include transition(color);
+
+    @include hover {
+      @include color(var(--color-primary));
+    }
+  }
+
+  // 2-й уровень +
+  &__items #{$block-name}__items #{$block-name}__item {
+    padding: 0.8rem 2rem;
+
+    line-height: 1.2;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-gray-dark);
+    }
+
+    & > svg {
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      & > svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  // 3-й уровень +
+  &__items #{$block-name}__items #{$block-name}__items #{$block-name}__item {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+
+    background: none;
+
+    & > svg {
+      display: none;
+    }
+
+    &:hover {
+      & > #{$block-name}__items {
+        pointer-events: all;
+      }
+    }
+  }
+
+  // 4-й уровень +
+  &__items #{$block-name}__items #{$block-name}__items #{$block-name}__items #{$block-name}__item {
+    padding: 0.8rem 3rem;
+  }
+
+  // Заголовки для 4-го уровня меню
+  &__items-head {
+    align-self: flex-start;
+
+    font-weight: 600;
+  }
+}

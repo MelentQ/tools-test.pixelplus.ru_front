@@ -1,0 +1,15 @@
+@import "normalize.css/normalize";
+@import "styles/scss-variables";
+@import "styles/mixins";
+@import "styles/variables";
+@import "styles/fonts";
+@import "styles/global";
+
+@import "../components/animation";
+@import "../components/icon";
+@import "../components/page";
+@import "../components/header";
+@import "../components/footer";
+@import "../components/menu";
+@import "../components/tip";
+@import "../components/socials";

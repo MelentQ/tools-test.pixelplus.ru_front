@@ -1,0 +1,20 @@
+[data-tip] {
+  cursor: pointer;
+}
+
+.tippy-box[data-theme~='pts'] {
+  padding: 0.4rem 0.6rem;
+
+  color: var(--color-gray-darker);
+
+  font-size: var(--fs-t3);
+
+  background-color: var(--color-white);
+  border-radius: $border-radius;
+
+  box-shadow: 0 0.4rem 1.6rem 0 rgb(0 0 0 / 10%);
+
+  .tippy-arrow {
+    display: none;
+  }
+}

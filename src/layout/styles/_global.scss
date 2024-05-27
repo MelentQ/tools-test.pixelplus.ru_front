@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+
+  @media screen and (max-width: 1399px) and (min-width: 992px) {
+    font-size: 0.7143vw;
+  }
+}
+
+body {
+  color: var(--color-gray-darker);
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.2;
+}
+
+svg {
+  overflow: visible;
+
+  transform-origin: center center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
