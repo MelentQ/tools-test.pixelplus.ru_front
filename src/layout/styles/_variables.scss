@@ -9,6 +9,8 @@
   --color-gray-dark: rgb(117 117 117); // #757575
   --color-gray-darker: rgb(51 51 51); // #333333
   --color-black: rgb(0 0 0); // #000000
+  --color-success: #408f1d;
+  --color-success-dark: #1c5901;
 
   /* Базовая типографика */
   --fs-h1: 4rem;
@@ -17,4 +19,15 @@
   --fs-t1: 1.6rem;
   --fs-t2: 1.4rem;
   --fs-t3: 1.2rem;
+
+  @include breakpoint(m) {
+    --fs-h1: 3rem;
+    --fs-h2: 2.4rem;
+  }
+
+  @include breakpoint(s) {
+    --fs-h1: 2.4rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.8rem;
+  }
 }

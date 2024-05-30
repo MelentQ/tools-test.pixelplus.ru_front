@@ -1,0 +1,10 @@
+mixin input(props)
+  - props = props || {}
+  - props.type = props.type || 'text'
+  label.input.js-validation-wrapper&attributes(attributes)
+    input.input__element(
+      type=props.type
+      required=props.required
+      placeholder=props.placeholder
+      name=props.name
+    )

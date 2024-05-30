@@ -1,0 +1,15 @@
+.form {
+  $block-name: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  @include transition(opacity);
+
+  &.--loading {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+}

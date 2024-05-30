@@ -1,0 +1,29 @@
+mixin onboarding-form(props)
+  - props = props || {}
+  +form&attributes({
+    class: ["onboarding-form", attributes.class]
+  })
+    +input({
+      placeholder: "Введите домен сайта",
+      required: true
+    })
+    +select({
+      required: true,
+      options: [
+        {
+          text: "Регион",
+          value: ""
+        },
+        ...cities
+      ],
+      value: "213",
+    })
+    .onboarding-form__controls
+      +button({
+        mods: ["light"],
+        tag: "a"
+      }) Демо-проект
+      +button({
+        type: "submit"
+      }) Начать
+  link(href="./css/onboarding-form.css" rel="stylesheet")

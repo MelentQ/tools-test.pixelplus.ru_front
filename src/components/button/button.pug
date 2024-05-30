@@ -1,0 +1,10 @@
+mixin button(props)
+  - props = props || {}
+  - props.tag = props.tag || "button"
+  - mods = props.mods ? props.mods.map(mod => `button--${mod}`).join(" ") : null;
+  #{props.tag}.button(
+    class=mods
+    type=(props.tag === "button" ? props.type || "button" : null)
+    href=(props.tag === "a" ? props.link || "#" : null)
+  )&attributes(attributes)
+    block

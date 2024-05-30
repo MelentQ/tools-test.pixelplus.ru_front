@@ -1,8 +1,15 @@
-extends ../../layout/main
+extends ../../layout/landing
 
 block head
   title Главная
   meta(name="description" content="Главная")
 
 block content
-  | content
+  +intro({
+    bg: "./assets/images/intro/main-bg.jpg",
+    items: [
+      "Рост SEO‑трафика в&nbsp;3+&nbsp;раза",
+      "10+ сводок для&nbsp;контроля",
+      "Глубокая аналитика"
+    ]
+  })

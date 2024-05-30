@@ -1,0 +1,15 @@
+mixin select(props)
+  - props = props || {}
+  .select.js-validation-wrapper
+    select.js-select(
+      required=props.required
+      name=props.name
+      disabled=props.disabled
+      multiple=props.multiple
+    )
+      each option in props.options
+        option(
+          value=option.value
+          selected=(props.value === option.value ? "" : null)
+          disabled=option.disabled
+        )=option.text

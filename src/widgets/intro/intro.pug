@@ -1,0 +1,13 @@
+mixin intro(props)
+  - props = props || {}
+  section.page-section.intro(
+    style=(props.bg ? `background-image: url('${props.bg}');` : null)
+  )
+    .page-container
+      .intro__content
+        if props.items
+          .intro__list.animation.animation--fade-in-left
+            for item in props.items
+              .intro__item !{item}
+        +onboarding-form&attributes({class: "intro__form animation animation--fade-in"})
+  link(href="./css/intro.css" rel="stylesheet")
