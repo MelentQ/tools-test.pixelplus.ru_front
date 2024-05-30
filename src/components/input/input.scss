@@ -20,7 +20,7 @@
 
     background-color: var(--color-white);
 
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-gray-light);
     border-radius: $border-radius;
 
     @include transition(border-color, box-shadow);
@@ -30,7 +30,7 @@
     }
 
     &::placeholder {
-      color: #99a3b2;
+      color: var(--color-gray);
       font: inherit;
     }
   }

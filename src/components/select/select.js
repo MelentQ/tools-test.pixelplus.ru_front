@@ -18,17 +18,13 @@ export default function select() {
       allowHTML: false,
       callbackOnInit() {
         this.dropdown.element.setAttribute('data-lenis-prevent', '');
+        this.containerOuter.element.append(Object.assign(document.createElement('div'), {
+          innerHTML: '<svg><use xlink:href="#triangle"></use></svg>',
+          className: 'select__arrow',
+        }));
+
         container.classList.add('--initialized');
       },
-      callbackOnCreateTemplates: () => ({
-        input: (...args) => {
-          const wrapper = Object.assign(document.createElement('div'), {
-            className: 'choices__input-wrapper',
-          });
-          wrapper.append(Choices.defaults.templates.input.call(this, ...args));
-          return wrapper;
-        },
-      }),
     });
 
     // Сброс Choices при сбросе формы
