@@ -3,10 +3,12 @@
 
   transition-delay: 0.3s;
 
-  &--fade-in-left {
-    transform: translateX(-1rem);
-    opacity: 0;
-    @include transition(opacity, transform);
+  @media not (scripting: none) {
+    &--fade-in-left {
+      transform: translateX(-1rem);
+      opacity: 0;
+      @include transition(opacity, transform);
+    }
   }
 
   &--active#{$block-name}--fade-in-left {
@@ -14,9 +16,11 @@
     opacity: 1;
   }
 
-  &--fade-in {
-    opacity: 0;
-    @include transition(opacity);
+  @media not (scripting: none) {
+    &--fade-in {
+      opacity: 0;
+      @include transition(opacity);
+    }
   }
 
   &--active#{$block-name}--fade-in {

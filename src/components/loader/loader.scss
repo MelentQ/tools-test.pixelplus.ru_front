@@ -1,0 +1,47 @@
+@keyframes loading {
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: -100%;
+  }
+}
+
+.loader {
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    content: '';
+  }
+
+  &::before {
+    z-index: 4;
+
+    background-color: var(--color-white);
+  }
+
+  &::after {
+    z-index: 5;
+
+    background: linear-gradient(270deg, rgba(242, 246, 251, .1) 0, rgba(242, 246, 251, .9) 50%, rgba(242, 246, 251, .1) 100%);
+    background-size: 200%;
+    border-radius: $border-radius;
+
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+  }
+}

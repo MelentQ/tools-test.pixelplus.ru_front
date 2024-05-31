@@ -1,4 +1,5 @@
 import './bootstrap';
+import '@/components/slider';
 import animation from '@/components/animation/animation';
 import accordion from '@/components/accordion/accordion';
 import smoothScrolling from '@/components/page/smoothScrolling';
@@ -7,6 +8,7 @@ import searchForm from '@/components/header/searchForm';
 import burgerMenu from '@/components/header/burgerMenu';
 import $validation from '@/components/form/validation';
 import select from '@/components/select/select';
+import modal from '@/components/modal/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   smoothScrolling();
@@ -17,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerMenu();
   $validation();
   select();
+  modal();
 });

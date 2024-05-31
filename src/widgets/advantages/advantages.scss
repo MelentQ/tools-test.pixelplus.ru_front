@@ -1,0 +1,124 @@
+.advantages {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 6rem;
+
+    text-align: center;
+
+    @include breakpoint(m) {
+      margin-bottom: 4.4rem;
+    }
+
+    @include breakpoint(s) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-h2);
+  }
+
+  &__subtitle {
+    font-size: var(--fs-h3);
+    line-height: 1.4;
+  }
+
+  &__list {
+    @include breakpoint(s) {
+      width: calc(100% + 3.2rem);
+      margin: 0 -1.6rem;
+      padding: 0 1.6rem;
+      overflow: hidden;
+    }
+
+    @include breakpointMF(m) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem 2rem;
+
+      counter-reset: ordered-list;
+    }
+
+    @include breakpointMF(l) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6rem 4rem;
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+  }
+
+  &__slider,
+  &__slider-wrapper,
+  &__slider-slide {
+    @include breakpointMF(m) {
+      display: contents;
+    }
+  }
+
+  &__item {
+    @include breakpointMF(m) {
+      position: relative;
+
+      padding-left: 6.8rem;
+
+      counter-increment: ordered-list;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4.8rem;
+        height: 4.8rem;
+
+        color: var(--color-white);
+        font-weight: 700;
+        font-size: var(--fs-h3);
+        line-height: 1;
+
+        background-color: var(--color-primary);
+        border-radius: 50%;
+
+        content: counter(ordered-list);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    @include breakpoint(s) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__button {
+    align-self: center;
+
+    @include breakpoint(s) {
+      align-self: stretch;
+    }
+  }
+
+  &__pagination {
+    margin-top: 1.6rem;
+
+    @include breakpointMF(m) {
+      display: none;
+    }
+  }
+}

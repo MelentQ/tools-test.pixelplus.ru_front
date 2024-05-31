@@ -1,0 +1,14 @@
+.advantages-card {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 1.6rem;
+
+    font-weight: 700;
+    font-size: var(--fs-h3);
+  }
+
+  &__text {
+    font-size: var(--fs-t1);
+    line-height: 1.4;
+  }
+}

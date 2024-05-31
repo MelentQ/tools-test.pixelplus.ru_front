@@ -1,0 +1,7 @@
+mixin slider-navigation(props)
+  - props = props || {}
+  .slider-navigation&attributes(attributes)
+    button.slider-navigation__item.slider-navigation__item--prev(type='button' aria-label='Назад')
+      +icon('chevron')
+    button.slider-navigation__item.slider-navigation__item--next(type='button' aria-label='Вперед')
+      +icon('chevron')

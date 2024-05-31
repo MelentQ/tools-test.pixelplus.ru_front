@@ -1,11 +1,15 @@
 .page-section {
-  padding: 9rem 0;
+  padding: 6rem 0;
 
   @include breakpoint(m) {
     padding: 5rem 0;
   }
 
   @include breakpoint(s) {
-    padding: 3rem 0;
+    padding: 4.4rem 0;
+  }
+
+  &:nth-of-type(odd) {
+    background-color: var(--color-gray-lighter);
   }
 }

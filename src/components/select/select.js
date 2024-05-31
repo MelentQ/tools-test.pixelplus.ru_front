@@ -1,5 +1,4 @@
 import Choices from 'choices.js';
-import 'choices.js/public/assets/styles/choices.css';
 
 export default function select() {
   const containers = Array.from(document.querySelectorAll('.js-select:not(.--initialized)'));
@@ -16,13 +15,24 @@ export default function select() {
       maxItemText: (maxItemCount) => `Можно добавить только ${maxItemCount} элементов`,
       shouldSort: false,
       allowHTML: false,
+      callbackOnCreateTemplates: () => ({
+        containerOuter: (...args) => {
+          const div = Choices.defaults.templates.containerOuter.call(this, ...args);
+          div.append(Object.assign(document.createElement('div'), {
+            innerHTML: '<svg><use xlink:href="#triangle"></use></svg>',
+            className: 'select__arrow',
+          }));
+          return div;
+        },
+        dropdown: (...args) => {
+          const div = Choices.defaults.templates.dropdown.call(this, ...args);
+          Object.assign(div.dataset, {
+            lenisPrevent: '',
+          });
+          return div;
+        },
+      }),
       callbackOnInit() {
-        this.dropdown.element.setAttribute('data-lenis-prevent', '');
-        this.containerOuter.element.append(Object.assign(document.createElement('div'), {
-          innerHTML: '<svg><use xlink:href="#triangle"></use></svg>',
-          className: 'select__arrow',
-        }));
-
         container.classList.add('--initialized');
       },
     });

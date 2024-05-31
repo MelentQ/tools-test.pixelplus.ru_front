@@ -1,0 +1,64 @@
+.features {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4rem;
+
+    font-weight: 700;
+    font-size: var(--fs-h2);
+    text-align: center;
+
+    @include breakpoint(m) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    padding: 0 6rem;
+
+    @include breakpoint(m) {
+      width: calc(100% + 4rem);
+      margin: 0 -2rem;
+      padding: 0 2rem;
+      overflow: hidden;
+    }
+
+    @include breakpoint(s) {
+      width: calc(100% + 3.2rem);
+      margin: 0 -1.6rem;
+      padding: 0 1.6rem;
+    }
+  }
+
+  &__slider {
+    @include breakpoint(m) {
+      overflow: visible;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    top: calc(50% - 1.7rem);
+    left: 0;
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    @include breakpoint(m) {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    margin-top: 2.4rem;
+
+    @include breakpoint(m) {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint(s) {
+      margin-top: 1.6rem;
+    }
+  }
+}

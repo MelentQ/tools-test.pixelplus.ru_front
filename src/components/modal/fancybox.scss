@@ -1,0 +1,11 @@
+.fancybox__container {
+  --fancybox-bg: rgba(33, 33, 33, 0.7);
+}
+
+.fancybox__slide {
+  padding: 2.4rem;
+
+  @include breakpoint(s) {
+    padding: 1.6rem;
+  }
+}

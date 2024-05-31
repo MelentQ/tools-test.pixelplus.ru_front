@@ -1,0 +1,15 @@
+mixin features-card(props)
+  - props = props || {}
+  .features-card
+    if props.image
+      .features-card__image
+        img(src=props.image alt="" loading="lazy")
+    if props.title || props.text
+      .features-card__content
+        if props.title
+          .features-card__title=props.title
+        if props.text
+          .features-card__text !{props.text}
+        a.features-card__link(href="#")
+          | Попробовать демо-версию
+          +icon("chevron")

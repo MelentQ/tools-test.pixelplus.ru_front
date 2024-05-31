@@ -1,0 +1,62 @@
+.slider-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  pointer-events: none;
+
+  & > * {
+    pointer-events: all;
+  }
+
+  &__item {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    @include transition(background-color, opacity);
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+
+      fill: var(--color-white);
+    }
+
+    @include hover {
+      background-color: var(--color-primary-dark);
+    }
+
+    &--prev {
+      svg {
+        transform: rotate(90deg) translateY(1px);
+      }
+    }
+
+    &--next {
+      svg {
+        transform: rotate(-90deg) translateY(1px);
+      }
+    }
+
+    &--disabled {
+      opacity: 0.5;
+
+      pointer-events: none;
+    }
+
+    &--lock {
+      display: none;
+    }
+  }
+}

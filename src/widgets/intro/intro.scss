@@ -19,7 +19,17 @@
 .intro {
   position: relative;
 
+  padding: 9rem 0;
+
   background-color: var(--color-gray-dark);
+
+  @include breakpoint(m) {
+    padding: 5rem 0;
+  }
+
+  @include breakpoint(s) {
+    padding: 3rem 0;
+  }
 
   &__bg {
     position: absolute;
@@ -86,6 +96,7 @@
     margin-top: 6rem;
 
     @include breakpoint(s) {
+      max-width: unset;
       margin-top: 3rem;
     }
   }

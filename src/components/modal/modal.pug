@@ -1,0 +1,19 @@
+mixin modal(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `modal--${mod}`).join(' ') : null;
+  .modal(
+    id=props.id
+    class=mods
+  )
+    .modal__inner
+      button.modal__close(type='button' data-fancybox-close='' aria-label='Закрыть')
+        +icon('cross')
+      if props.title || props.description
+        .modal__text
+          if props.title
+            .modal__title=props.title
+          if props.description
+            .modal__description=props.description
+      if block
+        .modal__content
+          block

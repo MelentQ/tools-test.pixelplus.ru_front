@@ -1,0 +1,7 @@
+mixin advantages-card(props)
+  - props = props || {}
+  .advantages-card&attributes(attributes)
+    if props.title
+      .advantages-card__title=props.title
+    if props.text
+      .advantages-card__text !{props.text}
