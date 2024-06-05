@@ -1,0 +1,16 @@
+mixin reviews-card(props)
+  - props = props || {}
+  .reviews-card
+    if props.image
+      .reviews-card__image
+        img(src=props.image alt=props.title loading='lazy')
+    if props.title || props.position || props.additional
+    .reviews-card__head
+      if props.title
+        .reviews-card__title=props.title
+      if props.position
+        .reviews-card__position !{props.position}
+      if props.additional
+        .reviews-card__additional !{props.additional}
+    if props.text
+      .reviews-card__text !{props.text}
