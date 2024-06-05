@@ -1,6 +1,6 @@
 mixin features(props)
   - props = props || {}
-  section.features.page-section
+  section.page-section.features
     .page-container
       if props.title
         h2.features__title.animation.animation--fade-in-left=props.title
@@ -13,5 +13,5 @@ mixin features(props)
                   +features-card(item)
           +slider-navigation&attributes({class: "features__navigation"})
           +slider-pagination&attributes({class: "features__pagination"})
-  link(href="./css/features.css" rel="stylesheet")
-  script(src='./js/features.js')
+    link(href="./css/features.css" rel="stylesheet")
+    script(src='./js/features.js')

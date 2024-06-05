@@ -1,6 +1,6 @@
 mixin video(props)
   - props = props || {}
-  section.video.page-section
+  section.page-section.video
     .page-container
       .video__content
         if props.title || props.subtitle
@@ -25,4 +25,4 @@ mixin video(props)
               .video__text !{props.text}
             if props.button
               +button(props.button)&attributes({class: "video__button"})=props.button.text
-  link(href="./css/video.css" rel="stylesheet")
+    link(href="./css/video.css" rel="stylesheet")

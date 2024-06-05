@@ -31,10 +31,24 @@
     border-color: var(--color-white);
 
     @include hover {
-      color: var(--color-gray-darker);
-
       background-color: var(--color-white);
       border-color: var(--color-white);
+
+      @include color(var(--color-gray-darker));
+    }
+  }
+
+  &--dark {
+    background-color: transparent;
+    border-color: var(--color-gray-darker);
+
+    @include color(var(--color-gray-darker));
+
+    @include hover {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+
+      @include color(var(--color-gray-darker));
     }
   }
 }

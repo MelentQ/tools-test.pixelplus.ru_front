@@ -1,9 +1,20 @@
 {
   "name": "tools.pixelplus.ru_front",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "homepage": "https://github.com/MelentQ/tools-test.pixelplus.ru_front#readme",
+  "bugs": {
+    "url": "https://github.com/MelentQ/tools-test.pixelplus.ru_front/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelentQ/tools-test.pixelplus.ru_front.git"
+  },
+  "license": "ISC",
+  "author": "",
   "scripts": {
     "build": "cross-env MODE=production gulp build",
+    "deploy": "gh-pages -d build",
     "dev": "gulp"
   },
   "dependencies": {
@@ -34,6 +45,7 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-editorconfig": "^4.0.3",
     "eslint-plugin-import": "^2.29.1",
+    "gh-pages": "^6.1.1",
     "gulp": "^4.0.0",
     "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",

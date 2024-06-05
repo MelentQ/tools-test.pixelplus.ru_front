@@ -1,0 +1,12 @@
+mixin achievements-card(props)
+  - props = props || {}
+  .achievements-card&attributes(attributes)
+    if props.place
+      .achievements-card__place
+        .achievements-card__place-value=props.place
+        .achievements-card__place-label Место
+    if props.title
+      .achievements-card__title !{props.title}
+    if props.logo
+      .achievements-card__logo
+        img(src=props.logo alt="Лого" loading="lazy")

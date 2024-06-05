@@ -1,0 +1,24 @@
+mixin achievements(props)
+  - props = props || {}
+  section.page-section.page-section--bg.achievements
+    .page-container
+      if props.title || props.subtitle
+        .achievements__head
+          if props.title
+            h2.achievements__title.animation.animation--fade-in-left=props.title
+          if props.subtitle
+            .achievements__subtitle.animation.animation--fade-in=props.subtitle
+      if props.items
+        .achievements__content.js-achievements.animation.animation--fade-in
+          .achievements__slider.swiper.loader
+            .achievements__slider-wrapper.swiper-wrapper
+              for item in props.items
+                .achievements__slide.swiper-slide
+                  +achievements-card(item)&attributes({class: 'achievements__card'})
+          +slider-pagination&attributes({class: "achievements__pagination"})
+      if props.button
+        .achievements__footer.animation.animation--fade-in
+          if props.button
+            +button(props.button)&attributes({class: "achievements__button"})=props.button.text
+    link(href="./css/achievements.css" rel="stylesheet")
+    script(src='./js/achievements.js')

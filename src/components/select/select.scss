@@ -82,6 +82,8 @@ $choices-icon-cross-inverse: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEi
     cursor: pointer;
 
     .choices__inner {
+      display: flex;
+      align-items: center;
       padding-bottom: 1rem;
     }
 
@@ -298,6 +300,8 @@ $choices-icon-cross-inverse: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEi
 
     .choices__item {
       width: 100%;
+
+      @include line-clamp(1);
     }
   }
 
