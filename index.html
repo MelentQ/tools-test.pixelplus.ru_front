@@ -1807,9 +1807,9 @@
                                 <div class="intro__item">10+ сводок для&nbsp;контроля</div>
                                 <div class="intro__item">Глубокая аналитика</div>
                             </div>
-                            <form class="form js-validation onboarding-form intro__form animation animation--fade-in" action="#" method="post">
+                            <form class="form js-form js-validation onboarding-form intro__form animation animation--fade-in" action="#" method="post">
                                 <label class="input js-validation-wrapper">
-                                    <input class="input__element" type="text" required="required" placeholder="Введите домен сайта" />
+                                    <input class="input__element" type="text" required="required" placeholder="Введите домен сайта" pattern="^[^\s@]+\.([a-zA-Zа-яА-Я]{2,})$" data-parsley-pattern-message="Введите адрес вида: domain.ru" />
                                 </label>
                                 <div class="select js-validation-wrapper">
                                     <select class="js-select" required="required">
@@ -2569,15 +2569,17 @@
                                 </div>
                                 <div class="onboarding-form__controls">
                                     <a class="button button--light" href="#">Демо-проект</a>
-                                    <button class="button" type="submit">Начать</button>
+                                    <button class="button" type="submit">
+                                        <span class="spinner"></span>Начать
+                                    </button>
                                 </div>
                             </form>
                             <link href="./css/onboarding-form.css" rel="stylesheet" />
                         </div>
                     </div>
+                    <link href="./css/intro.css" rel="stylesheet" />
                 </section>
-                <link href="./css/intro.css" rel="stylesheet" />
-                <section class="video page-section">
+                <section class="page-section video">
                     <div class="page-container">
                         <div class="video__content">
                             <div class="video__head">
@@ -2601,9 +2603,9 @@
                             </div>
                         </div>
                     </div>
+                    <link href="./css/video.css" rel="stylesheet" />
                 </section>
-                <link href="./css/video.css" rel="stylesheet" />
-                <section class="advantages page-section">
+                <section class="page-section page-section--bg advantages">
                     <div class="page-container">
                         <div class="advantages__head">
                             <h2 class="advantages__title animation animation--fade-in-left">Основные возможности Пиксель Тулс</h2>
@@ -2668,10 +2670,10 @@
                             <a class="button advantages__button" href="#">Заведите свой проект за 1 минуту</a>
                         </div>
                     </div>
+                    <link href="./css/advantages.css" rel="stylesheet" />
+                    <script src="./js/advantages.js"></script>
                 </section>
-                <link href="./css/advantages.css" rel="stylesheet" />
-                <script src="./js/advantages.js"></script>
-                <section class="features page-section">
+                <section class="page-section features">
                     <div class="page-container">
                         <h2 class="features__title animation animation--fade-in-left">Что входит в Пиксель Тулс?</h2>
                         <div class="features__content js-features animation animation--fade-in">
@@ -2796,9 +2798,377 @@
                             <div class="slider-pagination features__pagination"></div>
                         </div>
                     </div>
+                    <link href="./css/features.css" rel="stylesheet" />
+                    <script src="./js/features.js"></script>
                 </section>
-                <link href="./css/features.css" rel="stylesheet" />
-                <script src="./js/features.js"></script>
+                <section class="page-section page-section--bg achievements">
+                    <div class="page-container">
+                        <div class="achievements__head">
+                            <h2 class="achievements__title animation animation--fade-in-left">Наши достижения</h2>
+                            <div class="achievements__subtitle animation animation--fade-in">По результатам самых авторитетных российских рейтингов, компания «Пиксель Тулс» стабильно входит в ТОП по качеству оказываемых услуг и доле рынка SEO.</div>
+                        </div>
+                        <div class="achievements__content js-achievements animation animation--fade-in">
+                            <div class="achievements__slider swiper loader">
+                                <div class="achievements__slider-wrapper swiper-wrapper">
+                                    <div class="achievements__slide swiper-slide">
+                                        <div class="achievements-card achievements-card--dark achievements__card">
+                                            <div class="achievements-card__place">
+                                                <div class="achievements-card__place-value">1</div>
+                                                <div class="achievements-card__place-label">Место</div>
+                                            </div>
+                                            <div class="achievements-card__title">По версии <a href="#">RUWARD AWARD 2024</a>
+                                            </div>
+                                            <div class="achievements-card__logo">
+                                                <img src="./assets/images/achievements/ruward.svg" alt="Лого" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="achievements__slide swiper-slide">
+                                        <div class="achievements-card achievements-card--dark achievements__card">
+                                            <div class="achievements-card__place">
+                                                <div class="achievements-card__place-value">1</div>
+                                                <div class="achievements-card__place-label">Место</div>
+                                            </div>
+                                            <div class="achievements-card__title">В списке любимых сервисов SEO‑специалистов</div>
+                                            <div class="achievements-card__logo">
+                                                <img src="./assets/images/achievements/referr.svg" alt="Лого" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="achievements__slide swiper-slide">
+                                        <div class="achievements-card achievements-card--dark achievements__card">
+                                            <div class="achievements-card__place">
+                                                <div class="achievements-card__place-value">4</div>
+                                                <div class="achievements-card__place-label">Место</div>
+                                            </div>
+                                            <div class="achievements-card__title">В рейтинге известности SEO‑сервисов 2022 от <a href="#">SeoNews</a>
+                                            </div>
+                                            <div class="achievements-card__logo">
+                                                <img src="./assets/images/achievements/seo-news.svg" alt="Лого" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-pagination achievements__pagination"></div>
+                        </div>
+                        <div class="achievements__footer animation animation--fade-in">
+                            <a class="button button--dark achievements__button" href="#">Наши достижения</a>
+                        </div>
+                    </div>
+                    <link href="./css/achievements.css" rel="stylesheet" />
+                    <script src="./js/achievements.js"></script>
+                </section>
+                <section class="page-section reviews">
+                    <div class="page-container">
+                        <h2 class="reviews__title animation animation--fade-in-left">Мнения экспертов</h2>
+                        <div class="reviews__content js-reviews animation animation--fade-in">
+                            <div class="reviews__slider swiper loader">
+                                <div class="swiper-wrapper">
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-1.webp" alt="Роман Вердыш" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Роман Вердыш</div>
+                                                <div class="reviews-card__position">Частный SEO оптимизатор</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://www.romanus.ru' target='_blank'>romanus.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>У сеошников часто множество разрозненных сервисов. В первом ты снимаешь позиции, во втором мониторишь техническое состояние сайта, в третьем фиксируешь тайминги и правки, в четвёртом отслеживаешь влияние этих правок и т.д. И все хотят денег, подписок.</p>
+                                                <p>Модуль ведения проектов «Пиксель Тулс» мне помог избавиться от нескольких сервисов и сэкономить время и деньги, отдельное спасибо за To Do и сводки.</p>
+                                                <p>Мне импонирует стремление сделать единую экосистему для работы SEO-оптимизатора. Будет реальный All-in-One SEO Pack.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-2.webp" alt="Роман Клевцов" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Роман Клевцов</div>
+                                                <div class="reviews-card__position">Директор Оптимизм.ру</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://www.optimism.ru' target='_blank'>optimism.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>«Пиксель тулс» — достойный сервис, который входит в наш производственный реестр технологий.</p>
+                                                <p>Пользуемся уже более 2 лет, чтобы справиться с постоянным нон-стопом: много проектов, много специалистов, мало времени.</p>
+                                                <p>В сервисе есть всё необходимое: SEO-аудит, анализ позиций и конкурентов, TO DO и другие функции — отличные помощники для специалиста, который занимается продвижением проектов ежедневно.</p>
+                                                <p>Успехов команде в развитии!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-3.webp" alt="Оксана Зорий" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Оксана Зорий</div>
+                                                <div class="reviews-card__position">Руководитель SEO-производства</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://semantica.in/' target='_blank'>semantica.in</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>Отличный сервис который предоставляет большой спектр инструментов для работы и анализа.</p>
+                                                <p>Радует, что много полезных инструментов собрано в одном месте и многие их них абсолютно бесплатны! Мы регулярно пользуемся инструментами для технического аудита сайта, проверкой на наличие фильтра переоптимизация и проверкой на геозависимость, локализацию и коммерциализацию запросов. Все они интуитивно понятны и не требуют много времени на изучение их работы.</p>
+                                                <p>Очень рекомендуем данный сервис коллегам, а команде «Пиксель Тулс» выражаем благодарность за такой сервис и желаем дальнейшего развития!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-4.webp" alt="Артур Латыпов" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Артур Латыпов</div>
+                                                <div class="reviews-card__position">Руководитель SEO-Интеллект</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://vk.com/latypov_artur' target='_blank'>vk.com/latypov_artur</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>Нравится, что модуль ведения проектов – комплексный сервис. Здесь можно проанализировать все аспекты: и структуру, и технические проблемы, и внутреннюю оптимизацию, и ссылки.</p>
+                                                <p>Есть отличная опция фиксации событий во вкладке «Группы URL», часто ей пользуемся. Когда вносим какие-то изменения, отмечаем их в модуле, а потом смотрим, как меняются позиции, растет трафик. Можно экспериментировать и делать выводы, сразу видно, какие предпринимались действия и какой был результат.</p>
+                                                <p>Сервис формирует идеальные отчеты для клиентов: красивые, наглядные, с графиками. Очень профессионально выглядят.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-5.webp" alt="Александр Ожгибесов" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Александр Ожгибесов</div>
+                                                <div class="reviews-card__position">Руководитель Ozhgibesov.net</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://www.ozhgibesov.net' target='_blank'>ozhgibesov.net</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>Сегодня SEO — это методичный и регламентированный процесс.</p>
+                                                <p>Такие сервисы как Пиксель Тулс помогают в решении это непростой задачи. Чувствуется, что сервис создавали профессионалы в SEO. Все очень удобно, продумано до мелочей.</p>
+                                                <p>Мы активно используем в компании как бесплатные инструменты, например, Генератор эмоджи для сниппетов, так и платные модули. В каждом инструменте есть что-то уникальное, упрощающее работу, чего нет в аналогичных сервисах.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-6.webp" alt="Александр Григорьев" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Александр Григорьев</div>
+                                                <div class="reviews-card__position">Директор по развитию Ingate</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://www.ingate.ru/' target='_blank'>ingate.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>Все, кто хочет продвинуть сайт самостоятельно, сталкиваются с вопросами: как анализировать информацию, как самостоятельно понять SEO-цели и выстроить стратегию продвижения?</p>
+                                                <p>Чтобы ответить на эти вопросы можно воспользоваться «Пиксель Тулс». В нем есть удобная система отчетности, что даже новичок сможет разобраться в особенностях своего ресурса. А опытные SEO-специалисты — проанализировать оптимизацию, внутренние проблемы и ссылки на сайте.</p>
+                                                <p>Рекомендую этот инструмент всем, кто хочет самостоятельно проанализировать сайт и подготовить его к изменениям. Для фрилансеров же, «Пиксель Тулс» станет помощником и упростит работу с клиентами.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-7.webp" alt="Рамазан Миндубаев" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Рамазан Миндубаев</div>
+                                                <div class="reviews-card__position">Head of SEO в TRINET.Group</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://www.trinet.ru/' target='_blank'>trinet.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>Сервис представляет из себя SEO-комбайн для решения множества прикладных задач. Поражает насколько быстро ребята внедряют различные инструменты и фичи, которых нет в других сервисах, при этом 70% всех инструментов даются бесплатно.</p>
+                                                <p>Помимо локальных инструментов в сервисе реализован модуль для комплексного ведения проекта. Он позволяет быстро принимать решение о наиболее важных страницах, выявлять их потенциал и текущий охват. Отдельного восхищения заслуживает TO DO модуль, который поможет, как новичкам, так и профи структурировать работу и не упустить важные нюансы в SEO-продвижении и все это за вполне доступные деньги для любого бизнеса.</p>
+                                                <p>Спасибо Дмитрию Севальневу и всей команде Pixel Tools за крутую реализацию инструментов.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__slide swiper-slide">
+                                        <div class="reviews-card">
+                                            <div class="reviews-card__image">
+                                                <img src="./assets/images/reviews/review-8.webp" alt="Павел Горбунов" loading="lazy" />
+                                            </div>
+                                            <div class="reviews-card__head">
+                                                <div class="reviews-card__title">Павел Горбунов</div>
+                                                <div class="reviews-card__position">Ведущий SEO-специалист в Ingate</div>
+                                                <div class="reviews-card__additional">
+                                                    <a href='https://pavel-gorbunov.ru' target='_blank'>pavel-gorbunov.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-card__text">
+                                                <p>Сервис <a href="https://tools.pixelplus.ru">https://tools.pixelplus.ru</a> активно использую с 2017 года, очень полезные аналитические инструменты для точечных проверок (санкции, поддомены, анализ ТОПов). Мониторинг позиций, инструменты для сбора семантики тоже достаточно удобные, рекомендую.</p>
+                                                <p>Спасибо коллегам за полезный сервис и оперативную поддержку.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-navigation reviews__navigation">
+                                <button class="slider-navigation__item slider-navigation__item--prev" type="button" aria-label="Назад">
+                                    <svg class="icon">
+                                        <use xlink:href="#chevron"></use>
+                                    </svg>
+                                </button>
+                                <button class="slider-navigation__item slider-navigation__item--next" type="button" aria-label="Вперед">
+                                    <svg class="icon">
+                                        <use xlink:href="#chevron"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="slider-pagination reviews__pagination"></div>
+                        </div>
+                    </div>
+                    <link href="./css/reviews.css" rel="stylesheet" />
+                    <script src="./js/reviews.js"></script>
+                </section>
+                <section class="page-section page-section--bg about">
+                    <div class="page-container">
+                        <h2 class="about__title animation animation--fade-in-left">О сервисе Пиксель Тулс</h2>
+                        <div class="about__content js-about animation animation--fade-in">
+                            <div class="about__slider swiper loader">
+                                <div class="about__slider-wrapper swiper-wrapper">
+                                    <div class="about__slide swiper-slide">
+                                        <div class="about-card about-card--dark about__card">
+                                            <div class="about-card__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                                                    <path d="M66.07 7.18a1.28 1.28 0 0 0-.88-.4H53.07V1.2a1.23 1.23 0 0 0-1.2-1.2H17.83a1.23 1.23 0 0 0-1.2 1.2v5.58H4.2c-.34.01-.65.15-.88.4a1.2 1.2 0 0 0-.32.87c.24 3.82.94 7.6 2.07 11.24 2.56 7.9 6.86 13.48 12.6 16.03 1.91 6.38 6.3 11.4 11.8 13.4v.23c0 6.62-5.02 11.88-11.48 11.88a1.23 1.23 0 0 0-1.2 1.2v6.77A1.23 1.23 0 0 0 18 70h33.88a1.23 1.23 0 0 0 1.2-1.2v-6.77a1.23 1.23 0 0 0-1.2-1.2A11.9 11.9 0 0 1 40 48.95v-.16c5.74-1.99 10.21-7.1 12.12-13.63 5.5-2.63 9.73-8.13 12.2-15.87a44.02 44.02 0 0 0 2.07-11.24.95.95 0 0 0-.31-.87ZM5.47 9.17h11.16V28.3c-.01 1.31.1 2.62.32 3.91C7.86 26.79 5.87 13.31 5.47 9.17Zm45.2 53.97v4.39H19.2v-4.39c7.01-.55 12.43-6.37 12.6-13.79a15.8 15.8 0 0 0 5.82.08 14.35 14.35 0 0 0 13.07 13.71ZM38 46.96a12.85 12.85 0 0 1-7.41-.32c-6.62-2.23-11.56-9.57-11.56-18.26V2.48h31.65v25.9c0 8.7-4.95 16.03-11.64 18.26m13.8-14.59c.18-1.24.29-2.5.31-3.75V9.17h10.84c-.4 4.14-2.31 17.22-11.16 22.88Z" />
+                                                    <path d="m46.37 16.74-6.53-.95-2.95-5.98a2.06 2.06 0 0 0-1.76-1.12 1.91 1.91 0 0 0-1.75 1.12l-2.95 5.98-6.54.95a1.98 1.98 0 0 0-1.6 1.36 1.84 1.84 0 0 0 .49 2l4.78 4.62-1.12 6.53a1.88 1.88 0 0 0 .8 1.92c.34.26.76.4 1.2.4.3 0 .61-.08.87-.24l6.06-3.03 5.74 3.03a1.96 1.96 0 0 0 2.74-1.01c.14-.34.18-.7.13-1.07l-1.11-6.53 4.78-4.63a1.88 1.88 0 0 0 .48-2 2.33 2.33 0 0 0-1.76-1.35Zm-5.74 6.7a1 1 0 0 0-.31 1.04l1.11 6.3-5.5-2.87a1.36 1.36 0 0 0-1.12 0l-5.9 2.95 1.12-6.38a1.18 1.18 0 0 0-.32-1.04l-4.54-4.46 6.3-.96a1.24 1.24 0 0 0 .87-.64l2.8-5.74 2.78 5.74a1.06 1.06 0 0 0 .88.64l6.3.96-4.47 4.46Z" />
+                                                </svg>
+                                            </div>
+                                            <div class="about-card__title">Лидер рынка</div>
+                                            <div class="about-card__text">Сервисов инструментов и автоматизации и поискового продвижения</div>
+                                        </div>
+                                    </div>
+                                    <div class="about__slide swiper-slide">
+                                        <div class="about-card about-card--dark about__card">
+                                            <div class="about-card__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                                                    <path d="M46.87 13.71a1.12 1.12 0 1 0 1.88-1.22 16.18 16.18 0 0 0-13.66-7.25 1.12 1.12 0 0 0 0 2.25 13.94 13.94 0 0 1 11.78 6.22Z" />
+                                                    <path d="M57.17 21.2C57.17 9.5 47.27 0 35.1 0 22.89 0 13 9.5 13 21.2a21.25 21.25 0 0 0 11.98 18.88v9.33H23.1a1.12 1.12 0 0 0-1.13 1.12v10.49a1.12 1.12 0 0 0 1.13 1.12h3.04c.4 4.4 4.43 7.86 9.31 7.86 4.88 0 8.9-3.47 9.31-7.86h3.04a1.12 1.12 0 0 0 1.13-1.12V50.53a1.12 1.12 0 0 0-1.13-1.12H45.2v-9.33A21.25 21.25 0 0 0 57.17 21.2ZM35.46 67.75c-3.64 0-6.64-2.45-7.05-5.61h14.11c-.42 3.16-3.42 5.61-7.06 5.61Zm11.23-7.86H24.23v-8.23h22.46v8.23ZM33.41 49.3l-2.67-26.32a7.8 7.8 0 0 0 8.67 0l-2.77 26.31v.12H33.4v-.11Zm5.47.11 3.2-30.31c.08-.37.12-.75.12-1.13a1.12 1.12 0 0 0-1.07-1.13 1.1 1.1 0 0 0-1.18 1l-.09.88c-.43 1.88-2.4 3.3-4.77 3.3-2.37 0-4.37-1.4-4.79-3.3l-.08-.86a1.12 1.12 0 0 0-2.25.1c0 .37.04.74.1 1.1l3.1 30.35h-3.95V39.36a1.12 1.12 0 0 0-.65-1.02A19.03 19.03 0 0 1 15.25 21.2c0-10.46 8.89-18.95 19.84-18.95 10.94 0 19.84 8.5 19.84 18.95A19.03 19.03 0 0 1 43.6 38.35a1.12 1.12 0 0 0-.66 1.01v10.05h-4.07Z" />
+                                                </svg>
+                                            </div>
+                                            <div class="about-card__title">Многолетний опыт в SEO</div>
+                                            <div class="about-card__text">С 2016 года на рынке интернет-рекламы и продолжаем активно развиваться</div>
+                                        </div>
+                                    </div>
+                                    <div class="about__slide swiper-slide">
+                                        <div class="about-card about-card--dark about__card">
+                                            <div class="about-card__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                                                    <path d="M54.6 11.45a19.1 19.1 0 1 0 1.5 26.98 19 19 0 0 0-1.5-26.98Zm-.3 25.36a16.69 16.69 0 1 1-24.88-22.25A16.69 16.69 0 0 1 54.29 36.8Z" />
+                                                    <path d="M31.57 16.44a1.2 1.2 0 1 0 1.8 1.61 11.46 11.46 0 0 1 16.16-.9 1.2 1.2 0 1 0 1.61-1.8 13.88 13.88 0 0 0-19.57 1.1Z" />
+                                                    <path d="M67.56 24.13a25.66 25.66 0 1 0-43.54 19.9l-4.17 4.76-1.33-1.19a1.2 1.2 0 0 0-1.7.1L2.3 63.9a1.2 1.2 0 0 0 .1 1.71l4.55 4.08a1.2 1.2 0 0 0 1.7-.1L23.2 53.38a1.2 1.2 0 0 0-.1-1.71l-1.43-1.27 4.17-4.75a25.45 25.45 0 0 0 17.65 5.64 25.66 25.66 0 0 0 24.08-27.15ZM7.67 67.08l-2.75-2.46 12.9-14.41 2.76 2.45-12.9 14.42Zm51.66-26a23.25 23.25 0 1 1-34.78-30.84 23.25 23.25 0 0 1 34.78 30.85Z" />
+                                                </svg>
+                                            </div>
+                                            <div class="about-card__title">Исследование трендов выдачи</div>
+                                            <div class="about-card__text">Только самые актуальные возможности в аналитике и поисковом продвижении</div>
+                                        </div>
+                                    </div>
+                                    <div class="about__slide swiper-slide">
+                                        <div class="about-card about-card--dark about__card">
+                                            <div class="about-card__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                                                    <path d="M34.96 37.2a16.7 16.7 0 0 0-16.68 16.67v1.04h33.35v-1.04A16.7 16.7 0 0 0 34.96 37.2ZM20.4 52.83a14.6 14.6 0 0 1 29.11 0H20.4ZM34.68 35.5a9.75 9.75 0 1 0 0-19.5 9.75 9.75 0 0 0 0 19.5Zm0-17.42a7.67 7.67 0 1 1 0 15.33 7.67 7.67 0 0 1 0-15.33ZM12.66 43.3c1.89 0 3.74.5 5.37 1.45l1.05-1.8A12.67 12.67 0 0 0 0 53.88v1.04h15.5v-2.08H2.12a10.6 10.6 0 0 1 10.53-9.54ZM12.46 39.2a7.51 7.51 0 1 0 0-15.04 7.51 7.51 0 0 0 0 15.03Zm0-12.95a5.43 5.43 0 1 1 0 10.86 5.43 5.43 0 0 1 0-10.86ZM57.34 41.21c-2.26 0-4.47.6-6.42 1.75l1.05 1.79a10.59 10.59 0 0 1 15.9 8.08H54.5v2.08H70v-1.04a12.67 12.67 0 0 0-12.66-12.66ZM57.54 39.2a7.51 7.51 0 1 0 0-15.04 7.51 7.51 0 0 0 0 15.03Zm0-12.95a5.43 5.43 0 1 1 0 10.86 5.43 5.43 0 0 1 0-10.86Z" />
+                                                </svg>
+                                            </div>
+                                            <div class="about-card__title">107 791 пользователей системы</div>
+                                            <div class="about-card__text">Тысячи пользователей, десятки тысяч проектов и сотни тысяч запросов</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-pagination about__pagination"></div>
+                        </div>
+                        <div class="about__footer animation animation--fade-in">
+                            <button class="button about__button" type="button" data-fancybox="modal" data-src="#demo-modal">Заказать демонстрацию</button>
+                        </div>
+                    </div>
+                    <link href="./css/about.css" rel="stylesheet" />
+                    <script src="./js/about.js"></script>
+                </section>
+                <div class="modal" id="demo-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Обсудим детали?</div>
+                        </div>
+                        <div class="modal__content">
+                            <form class="form js-form js-validation demo-form" action="#" method="post">
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="text" required="required" placeholder="Имя" minlength="2" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element js-phone-input" data-parsley-iti="" type="tel" required="required" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="email" required="required" placeholder="E-mail" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="text" placeholder="Название компании" />
+                                </label>
+                                <div class="demo-form__controls">
+                                    <button class="button" type="submit">
+                                        <span class="spinner"></span>Отправить
+                                    </button>
+                                </div>
+                            </form>
+                            <link href="./css/demo-form.css" rel="stylesheet" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="success-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Спасибо за обращение!</div>
+                            <div class="modal__description">
+                                <p>Менеджер свяжется с вами в ближайшее время для согласования удобного времени для проведения демонстрации.</p>
+                            </div>
+                            <div class="modal__caption">
+                                <p>Обращаем внимание, что заявки, оставленные в выходные дни будут обработаны в ближайший рабочий день.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal modal--error" id="error-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Произошла ошибка</div>
+                            <div class="modal__description">
+                                <p>Попробуйте повторить запрос позднее.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
 
             <footer class="footer page__footer">
@@ -2806,425 +3176,7 @@
                     <div class="footer__row">
                         <a class="footer__logo" href="#" aria-label="Главная">
                             <img src="./assets/images/logo-short.svg" alt="Пиксель Тулс" loading="lazy" />
-                        </a>
-                        <div class="menu menu--position-top footer__menu">
-                            <div class="menu__items" data-lenis-prevent="">
-                                <div class="menu__item">
-                                    <a href="#">Проекты</a>
-                                    <svg class="icon">
-                                        <use xlink:href="#triangle"></use>
-                                    </svg>
-                                    <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Добавить проект</a>
-                                    </div>
-                                </div>
-                                <div class="menu__item">
-                                    <a href="#">Инструменты</a>
-                                    <svg class="icon">
-                                        <use xlink:href="#triangle"></use>
-                                    </svg>
-                                    <div class="menu__items" data-lenis-prevent="">
-                                        <div class="menu__item">
-                                            <a href="#">AI-инструменты</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">AI-генератор контента</a>
-                                                <a class="menu__item" href="#">AI-генератор изображений</a>
-                                                <a class="menu__item" href="#">AI-генератор аудио</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">Внутренняя оптимизация</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Оценка качества оптимизации</a>
-                                                <a class="menu__item" href="#">Проверка текста на уникальность</a>
-                                                <a class="menu__item" href="#">ТЗ на SEO-копирайтинг с анализом ТОПа</a>
-                                                <a class="menu__item" href="#">Текстовый анализатор</a>
-                                                <a class="menu__item" href="#">Анализ структуры проекта</a>
-                                                <a class="menu__item" href="#">Анализ SEO-тегов для списка URL</a>
-                                                <a class="menu__item" href="#">Визуальный HTML-редактор</a>
-                                                <a class="menu__item" href="#">Генератор сниппетов и хлебных крошек</a>
-                                                <a class="menu__item" href="#">Комплексная оценка текста</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">Аудит и аналитика</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Проверка позиций сайта в Яндексе и Google</a>
-                                                <a class="menu__item" href="#">Анализ ТОП выдачи Яндекса и Google</a>
-                                                <a class="menu__item" href="#">Анализ ТОП выдачи Яндекса и Google по группе запросов</a>
-                                                <a class="menu__item" href="#">Быстрый аудит сайта</a>
-                                                <a class="menu__item" href="#">Анализ видимости и конкурентов</a>
-                                                <a class="menu__item" href="#">Список URL в ТОП</a>
-                                                <a class="menu__item" href="#">Проверка индексации страниц в Яндексе и Google</a>
-                                                <a class="menu__item" href="#">Быстрый анализ списка сайтов</a>
-                                                <a class="menu__item" href="#">Релевантность зон документа</a>
-                                                <a class="menu__item" href="#">Yandex Search API (Яндекс.XML)</a>
-                                                <a class="menu__item" href="#">Анализ поведенческих факторов в Яндексе</a>
-                                                <a class="menu__item" href="#">Аудит поведенческих факторов с помощью Яндекс.Метрики</a>
-                                                <a class="menu__item" href="#">Калькулятор KPI для бизнеса</a>
-                                                <a class="menu__item" href="#">Парсинг сниппетов из Яндекса и Google</a>
-                                                <a class="menu__item" href="#">Проверка привязки сайта к региону</a>
-                                                <a class="menu__item" href="#">Анализ конкурентов: SEO, контекст</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">Семантическое ядро</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Комплексный анализ запросов</a>
-                                                <a class="menu__item" href="#">Группировка запросов по ТОПу</a>
-                                                <a class="menu__item" href="#">Лемматизация и удаление дублей</a>
-                                                <a class="menu__item" href="#">Список запросов из Яндекс.Вебмастера</a>
-                                                <a class="menu__item" href="#">Получение данных из Яндекс.Вордстат</a>
-                                                <a class="menu__item" href="#">Детальный анализ запроса</a>
-                                                <a class="menu__item" href="#">Поисковые подсказки Яндекса</a>
-                                                <a class="menu__item" href="#">Поисковые подсказки Google</a>
-                                                <a class="menu__item" href="#">Парсинг подсказок YouTube</a>
-                                                <a class="menu__item" href="#">Подбор семантики для сайта или страницы</a>
-                                                <a class="menu__item" href="#">Поиск дополняющих запросов</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">Санкции / Фильтры</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Расширенная проверка на переоптимизацию</a>
-                                                <a class="menu__item" href="#">Комплексная проверка на фильтры Яндекса</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">Внешняя оптимизация</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Анализ ссылочной массы</a>
-                                                <a class="menu__item" href="#">Генератор UTM-меток</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">Техническая оптимизация</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Поиск поддоменов сайта</a>
-                                                <a class="menu__item" href="#">Поиск зеркал для домена</a>
-                                                <a class="menu__item" href="#">Проверка кода ответа, скорости загрузки и размера страниц</a>
-                                                <a class="menu__item" href="#">Анализ XML-карты сайта</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu__item">
-                                    <a href="#">О сервисе</a>
-                                    <svg class="icon">
-                                        <use xlink:href="#triangle"></use>
-                                    </svg>
-                                    <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
-                                        <a class="menu__item" href="#">Тарифы</a>
-                                        <a class="menu__item" href="#">Промо-тариф</a>
-                                        <a class="menu__item" href="#">Калькулятор лимитов</a>
-                                        <a class="menu__item" href="#">Новости</a>
-                                        <a class="menu__item" href="#">Решение задач</a>
-                                        <a class="menu__item" href="#">Вебинары</a>
-                                        <div class="menu__item">
-                                            <a href="#">Для кого?</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">B2B</a>
-                                                <a class="menu__item" href="#">Инхаус-команда</a>
-                                                <a class="menu__item" href="#">Интернет-агентствам</a>
-                                                <a class="menu__item" href="#">Фриланс</a>
-                                                <a class="menu__item" href="#">Тематики</a>
-                                                <a class="menu__item" href="#">Сервисы и программы</a>
-                                            </div>
-                                        </div>
-                                        <a class="menu__item" href="#">Программа лояльности</a>
-                                        <a class="menu__item" href="#">Отзывы</a>
-                                        <a class="menu__item" href="#">Партнерская программа</a>
-                                        <a class="menu__item" href="#">Предложить идею</a>
-                                        <a class="menu__item" href="#">Миссия</a>
-                                        <a class="menu__item" href="#">Для СМИ</a>
-                                        <a class="menu__item" href="#">Соцпомощь</a>
-                                        <a class="menu__item" href="#">Контакты</a>
-                                        <a class="menu__item" href="#">Заказать демонстрацию</a>
-                                    </div>
-                                </div>
-                                <div class="menu__item">
-                                    <a href="#">Дополнительно</a>
-                                    <svg class="icon">
-                                        <use xlink:href="#triangle"></use>
-                                    </svg>
-                                    <div class="menu__items" data-lenis-prevent="">
-                                        <div class="menu__item">
-                                            <a href="#">Апдейты</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Яндекс</a>
-                                                <a class="menu__item" href="#">Google</a>
-                                            </div>
-                                        </div>
-                                        <a class="menu__item" href="#">SEO-отчеты</a>
-                                        <a class="menu__item" href="#">API</a>
-                                        <div class="menu__item">
-                                            <a href="#">AI-генерация изображений</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Логотип</a>
-                                                <a class="menu__item" href="#">Иконки</a>
-                                                <a class="menu__item" href="#">Баннеры</a>
-                                                <a class="menu__item" href="#">Инфографики</a>
-                                                <a class="menu__item" href="#">Тату</a>
-                                                <a class="menu__item" href="#">Аниме</a>
-                                                <a class="menu__item" href="#">Персонаж</a>
-                                                <a class="menu__item" href="#">Креативы</a>
-                                                <a class="menu__item" href="#">Дизайн сайта</a>
-                                                <a class="menu__item" href="#">Аватарки</a>
-                                                <a class="menu__item" href="#">Рисунок</a>
-                                                <a class="menu__item" href="#">Дизайн интерьера</a>
-                                                <a class="menu__item" href="#">Граффити</a>
-                                                <a class="menu__item" href="#">Иллюстрации</a>
-                                                <a class="menu__item" href="#">Дизайн квартиры</a>
-                                                <a class="menu__item" href="#">Обложка</a>
-                                                <a class="menu__item" href="#">Арт</a>
-                                                <a class="menu__item" href="#">Ландшафтный дизайн</a>
-                                                <a class="menu__item" href="#">Коллаж</a>
-                                                <a class="menu__item" href="#">Портрет</a>
-                                                <a class="menu__item" href="#">Люди</a>
-                                                <a class="menu__item" href="#">Коты</a>
-                                                <a class="menu__item" href="#">Картины</a>
-                                                <a class="menu__item" href="#">Собаки</a>
-                                                <a class="menu__item" href="#">Животные</a>
-                                                <a class="menu__item" href="#">Лошадь</a>
-                                                <a class="menu__item" href="#">На белом фоне</a>
-                                                <a class="menu__item" href="#">В полный рост</a>
-                                                <a class="menu__item" href="#">Замена фона</a>
-                                                <a class="menu__item" href="#">Реалистичный стиль</a>
-                                                <a class="menu__item" href="#">Мультяшный стиль</a>
-                                                <a class="menu__item" href="#">Популярное</a>
-                                            </div>
-                                        </div>
-                                        <div class="menu__item">
-                                            <a href="#">AI-генерация контента</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Общие</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Идеи</a>
-                                                        <a class="menu__item" href="#">Перевод текста на английский</a>
-                                                        <a class="menu__item" href="#">Никнейм</a>
-                                                        <a class="menu__item" href="#">Ответить на вопрос онлайн</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Учеба</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Сочинение</a>
-                                                        <a class="menu__item" href="#">Эссе</a>
-                                                        <a class="menu__item" href="#">Реферат</a>
-                                                        <a class="menu__item" href="#">Курсовая</a>
-                                                        <a class="menu__item" href="#">Дипломная работа</a>
-                                                        <a class="menu__item" href="#">Список литературы</a>
-                                                        <a class="menu__item" href="#">Конспект</a>
-                                                        <a class="menu__item" href="#">Доклад</a>
-                                                        <a class="menu__item" href="#">Вывод по тексту</a>
-                                                        <a class="menu__item" href="#">Вопросы по тексту</a>
-                                                        <a class="menu__item" href="#">Решение тестов</a>
-                                                        <a class="menu__item" href="#">Cинтаксический разбор</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Решение задач</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Математика</a>
-                                                        <a class="menu__item" href="#">Физика</a>
-                                                        <a class="menu__item" href="#">Информатика</a>
-                                                        <a class="menu__item" href="#">Химия</a>
-                                                        <a class="menu__item" href="#">Алгебра</a>
-                                                        <a class="menu__item" href="#">Программирование</a>
-                                                        <a class="menu__item" href="#">Решение задач</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Копирайтер</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Контент-план</a>
-                                                        <a class="menu__item" href="#">Переписать текст</a>
-                                                        <a class="menu__item" href="#">Дополнить текст</a>
-                                                        <a class="menu__item" href="#">Уникальность текста</a>
-                                                        <a class="menu__item" href="#">Сократить текст</a>
-                                                        <a class="menu__item" href="#">Синонимайзер</a>
-                                                        <a class="menu__item" href="#">Рерайт текста онлайн</a>
-                                                        <a class="menu__item" href="#">Редактирование текста</a>
-                                                        <a class="menu__item" href="#">Проверка орфографии и пунктуации</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Маркетинг</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Объявление</a>
-                                                        <a class="menu__item" href="#">Текст для рекламы</a>
-                                                        <a class="menu__item" href="#">Объявление для авито</a>
-                                                        <a class="menu__item" href="#">Слоган</a>
-                                                        <a class="menu__item" href="#">Название бренда</a>
-                                                        <a class="menu__item" href="#">Название магазина</a>
-                                                        <a class="menu__item" href="#">Генератор названий</a>
-                                                        <a class="menu__item" href="#">Написать пост нейросетью</a>
-                                                        <a class="menu__item" href="#">Описание товара</a>
-                                                        <a class="menu__item" href="#">Генератор УТП</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Здоровье</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">План тренировок</a>
-                                                        <a class="menu__item" href="#">План питания</a>
-                                                        <a class="menu__item" href="#">Рецепт</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Творчество</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Текст для песни</a>
-                                                        <a class="menu__item" href="#">Сценарий</a>
-                                                        <a class="menu__item" href="#">История</a>
-                                                        <a class="menu__item" href="#">Стихотворение</a>
-                                                        <a class="menu__item" href="#">Рассказ</a>
-                                                        <a class="menu__item" href="#">Сюжет</a>
-                                                        <a class="menu__item" href="#">Книга</a>
-                                                        <a class="menu__item" href="#">Фанфики</a>
-                                                        <a class="menu__item" href="#">Викторины</a>
-                                                        <a class="menu__item" href="#">Текст для рэпа</a>
-                                                        <a class="menu__item" href="#">Письмо</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Программирование</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Код</a>
-                                                        <a class="menu__item" href="#">Код на Python</a>
-                                                        <a class="menu__item" href="#">Код на С++</a>
-                                                        <a class="menu__item" href="#">SQL-запросы</a>
-                                                        <a class="menu__item" href="#">Скрипты</a>
-                                                        <a class="menu__item" href="#">Генератор html-кода</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Обучение</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Изучение английского языка</a>
-                                                        <a class="menu__item" href="#">Изучение программирования</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Праздник</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Поздравления</a>
-                                                        <a class="menu__item" href="#">Шутки</a>
-                                                    </div>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a class="menu__items-head" href="#">Бизнес и работа</a>
-                                                    <svg class="icon">
-                                                        <use xlink:href="#triangle"></use>
-                                                    </svg>
-                                                    <div class="menu__items" data-lenis-prevent="">
-                                                        <a class="menu__item" href="#">Бизнес-план</a>
-                                                        <a class="menu__item" href="#">Резюме</a>
-                                                        <a class="menu__item" href="#">Должностная инструкция</a>
-                                                        <a class="menu__item" href="#">Регламенты</a>
-                                                        <a class="menu__item" href="#">Политика конфиденциальности</a>
-                                                        <a class="menu__item" href="#">Сопроводительное письмо</a>
-                                                        <a class="menu__item" href="#">Вакансия</a>
-                                                        <a class="menu__item" href="#">Бизнес-процессы</a>
-                                                        <a class="menu__item" href="#">Инструкция</a>
-                                                        <a class="menu__item" href="#">Страница «Гарантии»</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a class="menu__item" href="#">Нейронные сети</a>
-                                        <div class="menu__item">
-                                            <a href="#">Промпты</a>
-                                            <svg class="icon">
-                                                <use xlink:href="#triangle"></use>
-                                            </svg>
-                                            <div class="menu__items" data-lenis-prevent="">
-                                                <a class="menu__item" href="#">Midjourney</a>
-                                                <a class="menu__item" href="#">ChatGPT</a>
-                                                <a class="menu__item" href="#">YandexGPT</a>
-                                                <a class="menu__item" href="#">Stable Diffusion</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu__item">
-                                    <a href="#">Помощь</a>
-                                    <svg class="icon">
-                                        <use xlink:href="#triangle"></use>
-                                    </svg>
-                                    <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">FAQ по инструментам</a>
-                                        <a class="menu__item" href="#">FAQ по модулю проектов</a>
-                                        <a class="menu__item" href="#">Написать в техподдержку</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </a><!--+menu({mods: ["position-top"], items: menuItems})&attributes({class: "footer__menu"})-->
                         <div class="socials">
                             <a class="socials__item socials__item--vk" href="#" target="_blank" aria-label="VK">
                                 <svg class="icon">
@@ -3268,7 +3220,22 @@
             </footer>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script>
+            // https://github.com/jackocnr/intl-tel-input
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.pts) {
+                    window.pts.iti = {
+                        utilsScript: './assets/iti/utils.js',
+                        initialCountry: 'ru',
+                        // onlyCountries: ['ru', 'by', 'ua', 'kz'],
+                        countryOrder: ['ru', 'by', 'ua', 'kz'],
+                        excludeCountries: [],
+                    };
+                }
+            });
+        </script>
         <script src="./js/core.min.js"></script>
+        <script src="./js/forms.js"></script>
 
     </body>
 </html>

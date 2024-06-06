@@ -1,0 +1,123 @@
+.about__title {
+  margin-top: 0;
+  margin-bottom: 4rem;
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .about__title {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about__content {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% + 2rem);
+    margin: -1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .about__content {
+    width: calc(100% + 3rem);
+    margin: -1.5rem;
+  }
+}
+.about__slider {
+  overflow: visible;
+}
+@media screen and (min-width: 768px) {
+  .about__slider, .about__slider-wrapper, .about__slide {
+    display: contents;
+  }
+}
+.about__card {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .about__card {
+    width: calc(50% - 2rem);
+    margin: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .about__card {
+    width: calc(20% - 3rem);
+    margin: 1.5rem;
+  }
+}
+.about__pagination {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .about__pagination {
+    display: none;
+  }
+}
+.about__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .about__footer {
+    margin-top: 3rem;
+  }
+}
+.about__button {
+  align-self: center;
+}
+@media screen and (max-width: 767px) {
+  .about__button {
+    align-self: stretch;
+  }
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  background-color: var(--color-gray-lighter);
+  border-radius: 0.6rem;
+}
+.about-card--dark {
+  background-color: var(--color-white);
+}
+.about-card__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  height: 7rem;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+.about-card__icon svg {
+  display: block;
+  width: 4rem;
+  height: 5rem;
+  fill: var(--color-white);
+}
+.about-card__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: var(--fs-t1);
+}
+.about-card__text {
+  font-size: var(--fs-t2);
+}
