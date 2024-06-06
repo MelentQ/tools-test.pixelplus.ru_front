@@ -6,6 +6,9 @@ mixin onboarding-form(props)
     +input({
       placeholder: "Введите домен сайта",
       required: true
+    })&attributes({
+      pattern: "^[^\\s@]+\\.([a-zA-Zа-яА-Я]{2,})$",
+      "data-parsley-pattern-message": "Введите адрес вида: domain.ru"
     })
     +select({
       required: true,
@@ -25,5 +28,7 @@ mixin onboarding-form(props)
       }) Демо-проект
       +button({
         type: "submit"
-      }) Начать
+      })
+        +spinner
+        | Начать
   link(href="./css/onboarding-form.css" rel="stylesheet")

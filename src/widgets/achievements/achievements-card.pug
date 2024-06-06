@@ -1,6 +1,7 @@
 mixin achievements-card(props)
   - props = props || {}
-  .achievements-card&attributes(attributes)
+  - mods = props.mods ? props.mods.map(mod => `achievements-card--${mod}`).join(" ") : null;
+  .achievements-card(class=mods)&attributes(attributes)
     if props.place
       .achievements-card__place
         .achievements-card__place-value=props.place

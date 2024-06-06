@@ -1,0 +1,23 @@
+mixin about(props)
+  - props = props || {}
+  section.page-section.page-section--bg.about
+    .page-container
+      if props.title
+        h2.about__title.animation.animation--fade-in-left=props.title
+      if props.items
+        .about__content.js-about.animation.animation--fade-in
+          .about__slider.swiper.loader
+            .about__slider-wrapper.swiper-wrapper
+              for item in props.items
+                .about__slide.swiper-slide
+                  +about-card(item)&attributes({class: 'about__card'})
+          +slider-pagination&attributes({class: "about__pagination"})
+      if props.button
+        .about__footer.animation.animation--fade-in
+          if props.button
+            +button(props.button)&attributes({
+              ...props.button.attributes,
+              class: "about__button"
+            })=props.button.text
+    link(href="./css/about.css" rel="stylesheet")
+    script(src='./js/about.js')

@@ -1,0 +1,8 @@
+mixin error-modal(props)
+  - props = props || {}
+  +modal({
+    mods: ["error"],
+    id: "error-modal",
+    title: "Произошла ошибка",
+    description: "<p>Попробуйте повторить запрос позднее.</p>"
+  })

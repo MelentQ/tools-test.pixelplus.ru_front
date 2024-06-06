@@ -20,5 +20,9 @@
 
   &--bg {
     background-color: var(--color-gray-lighter);
+
+    & + .page-section--bg {
+      padding-top: 0;
+    }
   }
 }

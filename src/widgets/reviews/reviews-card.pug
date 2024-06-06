@@ -1,6 +1,7 @@
 mixin reviews-card(props)
   - props = props || {}
-  .reviews-card
+  - mods = props.mods ? props.mods.map(mod => `reviews-card--${mod}`).join(" ") : null;
+  .reviews-card(class=mods)
     if props.image
       .reviews-card__image
         img(src=props.image alt=props.title loading='lazy')

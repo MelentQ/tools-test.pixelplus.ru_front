@@ -7,13 +7,15 @@ mixin modal(props)
   )
     .modal__inner
       button.modal__close(type='button' data-fancybox-close='' aria-label='Закрыть')
-        +icon('cross')
-      if props.title || props.description
+        +icon('close')
+      if props.title || props.description || props.caption
         .modal__text
           if props.title
             .modal__title=props.title
           if props.description
-            .modal__description=props.description
+            .modal__description !{props.description}
+          if props.caption
+            .modal__caption !{props.caption}
       if block
         .modal__content
           block

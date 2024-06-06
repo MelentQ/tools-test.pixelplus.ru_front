@@ -1,0 +1,33 @@
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+
+  border: 0.2rem solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+
+  animation: 0.75s linear infinite spinner;
+
+  &--primary {
+    border-color: var(--color-primary);
+    border-right-color: transparent;
+  }
+
+  &--medium {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &--large {
+    width: 3rem;
+    height: 3rem;
+  }
+}

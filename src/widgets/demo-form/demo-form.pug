@@ -1,0 +1,28 @@
+mixin demo-form(props)
+  - props = props || {}
+  +form&attributes({class: "demo-form"})
+    +input({
+      placeholder: "Имя",
+      required: true
+    })&attributes({
+      minlength: 2
+    })
+    +input({
+      required: true,
+      type: "tel"
+    })
+    +input({
+      placeholder: "E-mail",
+      required: true,
+      type: "email"
+    })
+    +input({
+      placeholder: "Название компании"
+    })
+    .demo-form__controls
+      +button({
+        type: "submit"
+      })
+        +spinner
+        | Отправить
+  link(href="./css/demo-form.css" rel="stylesheet")

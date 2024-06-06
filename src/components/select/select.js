@@ -16,14 +16,6 @@ export default function select() {
       shouldSort: false,
       allowHTML: false,
       callbackOnCreateTemplates: () => ({
-        containerOuter: (...args) => {
-          const div = Choices.defaults.templates.containerOuter.call(this, ...args);
-          div.append(Object.assign(document.createElement('div'), {
-            innerHTML: '<svg><use xlink:href="#triangle"></use></svg>',
-            className: 'select__arrow',
-          }));
-          return div;
-        },
         dropdown: (...args) => {
           const div = Choices.defaults.templates.dropdown.call(this, ...args);
           Object.assign(div.dataset, {

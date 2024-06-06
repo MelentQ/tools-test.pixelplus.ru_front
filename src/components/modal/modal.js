@@ -18,6 +18,24 @@ export default function modal() {
           window.pts.closeBurgerMenu();
         }
       },
+      done: (instance) => {
+        instance.container.setAttribute('data-lenis-prevent', '');
+
+        // Инициализируем валидацию формы, если она пришла через Ajax
+        if (window.pts && window.pts.initValidation) {
+          window.pts.initValidation();
+        }
+
+        // Инициализируем обработчик формы, если она пришла через Ajax
+        if (window.pts && window.pts.handleForms) {
+          window.pts.handleForms();
+        }
+
+        // Инициализируем телефонный инпут, если он пришел через Ajax
+        if (window.pts && window.pts.initPhoneInputs) {
+          window.pts.initPhoneInputs();
+        }
+      },
     },
   });
 }

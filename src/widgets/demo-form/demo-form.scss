@@ -1,0 +1,10 @@
+.demo-form {
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}

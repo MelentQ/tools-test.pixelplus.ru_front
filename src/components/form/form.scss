@@ -8,8 +8,16 @@
   @include transition(opacity);
 
   &.--loading {
-    opacity: 0.5;
+    opacity: 0.75;
 
     pointer-events: none;
+  }
+
+  .spinner {
+    display: none;
+  }
+
+  &.--loading .spinner {
+    display: inline-block;
   }
 }

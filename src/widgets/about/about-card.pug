@@ -1,0 +1,10 @@
+mixin about-card(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `about-card--${mod}`).join(" ") : null;
+  .about-card(class=mods)&attributes(attributes)
+    if props.icon
+      .about-card__icon !{props.icon}
+    if props.title
+      .about-card__title=props.title
+    if props.text
+      .about-card__text=props.text

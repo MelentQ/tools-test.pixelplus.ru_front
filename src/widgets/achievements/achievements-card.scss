@@ -6,11 +6,15 @@
   gap: 2rem;
   padding: 4rem 2.4rem;
 
-  background-color: var(--color-white);
+  background-color: var(--color-gray-lighter);
   border-radius: $border-radius;
 
   @include breakpoint(s) {
     padding: 2.4rem 2rem;
+  }
+
+  &--dark {
+    background-color: var(--color-white);
   }
 
   &__place {

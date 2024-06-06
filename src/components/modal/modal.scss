@@ -1,3 +1,88 @@
 .modal {
+  $block-name: &;
 
+  display: none;
+  width: 100%;
+  max-width: 52rem;
+  padding: 0;
+
+  background: none;
+
+  &__inner {
+    position: relative;
+
+    padding: 4rem 2.4rem;
+
+    background-color: var(--color-white);
+    border-radius: $border-radius;
+
+    @include breakpoint(m) {
+      padding: 3rem 2rem;
+    }
+
+    @include breakpoint(s) {
+      padding: 2.4rem 1.6rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    display: block;
+    padding: 0;
+
+    background: none;
+    border: none;
+
+    svg {
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+
+      fill: var(--color-primary);
+
+      @include transition(fill);
+    }
+
+    @include hover {
+      svg {
+        fill: var(--color-primary-dark);
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-h3);
+  }
+
+  &--error #{$block-name}__title {
+    color: var(--color-primary);
+  }
+
+  &__description {
+    font-size: var(--fs-t2);
+  }
+
+  &__caption {
+    font-size: var(--fs-t2);
+    font-style: italic;
+  }
+
+  &__content {
+    margin-top: 2rem;
+  }
 }
