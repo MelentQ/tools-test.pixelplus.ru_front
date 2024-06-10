@@ -1,0 +1,193 @@
+.tariffs {
+  &__list {
+    @include breakpoint(s) {
+      width: calc(100% + 3.2rem);
+      margin: 0 -1.6rem;
+      padding: 0 1.6rem;
+      overflow: hidden;
+    }
+
+    @include breakpointMF(m) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: calc(100% + 2rem);
+      margin: -1rem;
+    }
+
+    @include breakpointMF(l) {
+      width: calc(100% + 3rem);
+      margin: -1.5rem;
+    }
+  }
+
+  &__slider {
+    @include breakpoint(s) {
+      overflow: visible;
+    }
+  }
+
+  &__slider,
+  &__slider-wrapper {
+    @include breakpointMF(m) {
+      display: contents;
+    }
+  }
+
+  &__card {
+    width: 100%;
+
+    @include breakpointMF(m) {
+      width: calc(33.333% - 2rem);
+      margin: 1rem;
+
+      &:not(&--accent) {
+        padding: 2rem 0;
+      }
+    }
+
+    @include breakpointMF(l) {
+      width: calc(25% - 3rem);
+      margin: 1.5rem;
+
+      &:not(&--accent) {
+        padding: 3rem 0;
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 2rem;
+
+    @include breakpointMF(m) {
+      display: none;
+    }
+  }
+
+  &__guarantee {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+
+    @include breakpoint(s) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__guarantee-card {
+    position: relative;
+
+    margin: 0 auto;
+    padding: 2rem 5.2rem 2rem 18rem;
+
+    font-weight: 700;
+    line-height: 1;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    background-color: var(--color-white);
+
+    border-radius: $border-radius;
+
+    @include breakpoint(m) {
+      padding: 2rem 4.2rem 2rem 14rem;
+    }
+
+    @include breakpoint(s) {
+      padding: 1.6rem 2rem 1.6rem 9rem;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -1rem;
+      z-index: 1;
+
+      display: block;
+      width: 16rem;
+      height: 16rem;
+
+      background-image: url("../assets/images/decoration/megaphone.webp");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      transform: translateY(-50%);
+
+      content: '';
+      pointer-events: none;
+
+      @include breakpoint(m) {
+        width: 12rem;
+        height: 12rem;
+      }
+
+      @include breakpoint(s) {
+        width: 9rem;
+        height: 9rem;
+      }
+    }
+  }
+
+  &__guarantee-accent {
+    position: relative;
+    z-index: 2;
+
+    color: var(--color-primary);
+    font-size: 3rem;
+
+    @include breakpoint(m) {
+      font-size: 2.4rem;
+    }
+
+    @include breakpoint(s) {
+      font-size: 1.8rem;
+    }
+
+    &::after {
+      position: absolute;
+      top: -0.6rem;
+      right: -1.2rem;
+
+      color: currentColor;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 1;
+
+      content: '*';
+      pointer-events: none;
+
+      @include breakpoint(m) {
+        font-size: 2rem;
+      }
+
+      @include breakpoint(s) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__guarantee-label {
+    position: relative;
+    z-index: 2;
+
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+
+    @include breakpoint(m) {
+      font-size: 2rem;
+    }
+
+    @include breakpoint(s) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__guarantee-caption {
+    color: var(--color-gray-dark);
+    font-size: var(--fs-t2);
+    font-style: italic;
+  }
+}

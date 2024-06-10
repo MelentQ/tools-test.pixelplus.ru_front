@@ -1,0 +1,31 @@
+mixin tariffs-card(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `tariffs-card--${mod}`).join(" ") : null;
+  .tariffs-card(class=mods)
+    if props.icon
+      .tariffs-card__icon !{props.icon}
+    if props.imageLabel || props.image
+      .tariffs-card__image
+        if props.imageLabel
+          .tariffs-card__image-label=props.imageLabel
+        if props.image
+          img(src=props.image alt=(props.imageLabel || props.title) loading="lazy")
+    if props.title
+      .tariffs-card__title=props.title
+    if props.text
+      .tariffs-card__text !{props.text}
+    if props.items
+      ul.tariffs-card__list
+        for item in props.items
+          li.tariffs-card__item=item
+    if props.oldPrice || props.price
+      .tariffs-card__footer
+        .tariffs-card__price-block
+          if props.oldPrice
+            .tariffs-card__old-price=props.oldPrice
+          if props.price
+            .tariffs-card__price !{props.price}
+        +button({
+          tag: "a",
+          mods: props.isAccent ? null : ["gray"]
+        })&attributes({class: "tariffs-card__button"}) Выбрать

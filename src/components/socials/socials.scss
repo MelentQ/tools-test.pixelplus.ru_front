@@ -14,7 +14,7 @@
 
     text-decoration: none;
 
-    border: 1px solid var(--color-gray-dark);
+    border: 2px solid var(--color-gray-dark);
     border-radius: 50%;
 
     @include transition(background-color, color, border-color);

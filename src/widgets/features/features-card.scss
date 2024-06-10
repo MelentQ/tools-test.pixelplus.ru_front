@@ -21,7 +21,7 @@
     min-height: 44rem;
     overflow: hidden;
 
-    border: 1px solid var(--color-gray-light);
+    border: 2px solid var(--color-gray-light);
     border-radius: $border-radius;
 
     @include breakpoint(m) {

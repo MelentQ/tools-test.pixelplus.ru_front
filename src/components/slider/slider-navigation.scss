@@ -58,3 +58,8 @@
     }
   }
 }
+
+.loader .slider-navigation,
+.loader ~ .slider-navigation {
+  display: none;
+}

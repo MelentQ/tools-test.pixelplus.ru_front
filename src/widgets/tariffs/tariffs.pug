@@ -1,0 +1,20 @@
+mixin tariffs(props, section)
+  - props = props || {}
+  +section(section)
+    .tariffs.js-tariffs(data-initial-slide=props.initialSlide)
+      .tariffs__list
+        .tariffs__slider.swiper.loader
+          .tariffs__slider-wrapper.swiper-wrapper
+            for item in props.items
+              .tariffs__card.swiper-slide(
+                class=(item.isAccent ? "tariffs__card--accent" : null)
+              )
+                +tariffs-card(item)
+        +slider-pagination&attributes({class: "tariffs__pagination"})
+      .tariffs__guarantee
+        .tariffs__guarantee-card
+          .tariffs__guarantee-accent 100% гарантия
+          .tariffs__guarantee-label возврата средств
+        .tariffs__guarantee-caption * — в течение 7 дней после покупки тарифа
+    link(href="./css/tariffs.css" rel="stylesheet")
+    script(src='./js/tariffs.js')

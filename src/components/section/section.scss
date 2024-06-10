@@ -12,7 +12,7 @@
   }
 
   // Секция без фона после секции без модификаторов
-  &:not([class*="page-section--"]) + .page-section:not([class*="page-section--dark"]) {
+  &:not([class*="section--"]) + .section:not([class*="section--dark"]) {
     padding-top: 0;
   }
 
@@ -23,7 +23,7 @@
   &--dark {
     background-color: var(--color-gray-lighter);
 
-    & + .page-section--dark {
+    & + .section--dark {
       padding-top: 0;
     }
   }
@@ -58,6 +58,10 @@
     font-size: 2rem;
     line-height: 1.4;
 
+    @include breakpoint(m) {
+      font-size: 1.8rem;
+    }
+
     @include breakpoint(s) {
       font-size: 1.4rem;
     }
@@ -90,6 +94,10 @@
   &__footer-text {
     font-size: 2rem;
     line-height: 1.4;
+
+    @include breakpoint(m) {
+      font-size: 1.8rem;
+    }
 
     @include breakpoint(s) {
       font-size: 1.4rem;
