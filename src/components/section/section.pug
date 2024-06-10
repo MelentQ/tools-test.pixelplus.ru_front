@@ -1,0 +1,23 @@
+mixin section(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `section--${mod}`).join(' ') : null;
+  section.section(class=mods)
+    .page-container
+      if props.title || props.subtitle
+        .section__head
+          if props.title
+            h2.section__title.animation.animation--fade-in-left !{props.title}
+          if props.subtitle
+            .section__subtitle.animation.animation--fade-in !{props.subtitle}
+      if block
+        .section__content.animation.animation--fade-in
+          block
+      if props.footerText || props.button
+        .section__footer.animation.animation--fade-in
+          if props.footerText
+            .section__footer-text !{props.footerText}
+          if props.button
+            +button(props.button)&attributes({
+              ...props.button.attributes,
+              class: "section__button"
+            })=props.button.text

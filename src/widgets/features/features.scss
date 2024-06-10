@@ -1,34 +1,19 @@
 .features {
-  &__title {
-    margin-top: 0;
-    margin-bottom: 4rem;
+  position: relative;
 
-    font-weight: 700;
-    font-size: var(--fs-h2);
-    text-align: center;
+  padding: 0 6rem;
 
-    @include breakpoint(m) {
-      margin-bottom: 3rem;
-    }
+  @include breakpoint(m) {
+    width: calc(100% + 4rem);
+    margin: 0 -2rem;
+    padding: 0 2rem;
+    overflow: hidden;
   }
 
-  &__content {
-    position: relative;
-
-    padding: 0 6rem;
-
-    @include breakpoint(m) {
-      width: calc(100% + 4rem);
-      margin: 0 -2rem;
-      padding: 0 2rem;
-      overflow: hidden;
-    }
-
-    @include breakpoint(s) {
-      width: calc(100% + 3.2rem);
-      margin: 0 -1.6rem;
-      padding: 0 1.6rem;
-    }
+  @include breakpoint(s) {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
   }
 
   &__slider {

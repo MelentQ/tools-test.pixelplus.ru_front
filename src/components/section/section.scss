@@ -1,0 +1,106 @@
+.section {
+  $block-name: &;
+
+  padding: 6rem 0;
+
+  @include breakpoint(m) {
+    padding: 5rem 0;
+  }
+
+  @include breakpoint(s) {
+    padding: 4rem 0;
+  }
+
+  // Секция без фона после секции без модификаторов
+  &:not([class*="page-section--"]) + .page-section:not([class*="page-section--dark"]) {
+    padding-top: 0;
+  }
+
+  &--border {
+    border-bottom: 1px solid var(--color-gray-lighter);
+  }
+
+  &--dark {
+    background-color: var(--color-gray-lighter);
+
+    & + .page-section--dark {
+      padding-top: 0;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 92rem;
+    margin: 0 auto 4rem;
+
+    text-align: center;
+
+    @include breakpoint(m) {
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint(s) {
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-h2);
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    line-height: 1.4;
+
+    @include breakpoint(s) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &--small #{$block-name}__content {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 92rem;
+    margin: 4rem auto 0;
+
+    text-align: center;
+
+    @include breakpoint(m) {
+      margin-top: 3rem;
+    }
+
+    @include breakpoint(s) {
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__footer-text {
+    font-size: 2rem;
+    line-height: 1.4;
+
+    @include breakpoint(s) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__button {
+    align-self: center;
+
+    @include breakpoint(s) {
+      align-self: stretch;
+    }
+  }
+}

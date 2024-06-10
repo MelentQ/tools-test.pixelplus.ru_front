@@ -1,0 +1,7 @@
+mixin warning-modal(props)
+  - props = props || {}
+  +modal({
+    mods: ["warning"],
+    id: "warning-modal",
+    title: "Ошибка - внимание"
+  })

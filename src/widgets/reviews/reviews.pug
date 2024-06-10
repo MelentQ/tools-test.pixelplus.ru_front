@@ -1,17 +1,13 @@
-mixin reviews(props)
+mixin reviews(props, section)
   - props = props || {}
-  section.page-section.reviews
-    .page-container
-      if props.title
-        h2.reviews__title.animation.animation--fade-in-left=props.title
-      if props.items
-        .reviews__content.js-reviews.animation.animation--fade-in
-          .reviews__slider.swiper.loader
-            .swiper-wrapper
-              for item in props.items
-                .reviews__slide.swiper-slide
-                  +reviews-card(item)
-          +slider-navigation&attributes({class: "reviews__navigation"})
-          +slider-pagination&attributes({class: "reviews__pagination"})
+  +section(section)
+    .reviews.js-reviews
+      .reviews__slider.swiper.loader
+        .swiper-wrapper
+          for item in props.items
+            .reviews__slide.swiper-slide
+              +reviews-card(item)
+      +slider-navigation&attributes({class: "reviews__navigation"})
+      +slider-pagination&attributes({class: "reviews__pagination"})
     link(href="./css/reviews.css" rel="stylesheet")
     script(src='./js/reviews.js')

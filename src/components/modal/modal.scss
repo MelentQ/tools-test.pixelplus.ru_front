@@ -41,7 +41,7 @@
       width: 1.6rem;
       height: 1.6rem;
 
-      fill: var(--color-primary);
+      fill: var(--color-gray-light);
 
       @include transition(fill);
     }
@@ -62,6 +62,40 @@
     text-align: center;
   }
 
+  &--success #{$block-name}__text::before,
+  &--error #{$block-name}__text::before,
+  &--warning #{$block-name}__text::before {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 5.6rem;
+    height: 5.6rem;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3.2rem 3.2rem;
+    border-radius: 50%;
+
+    content: '';
+    pointer-events: none;
+  }
+
+  &--success #{$block-name}__text::before {
+    background-color: var(--color-success);
+    background-image: url("../assets/images/decoration/check.svg");
+  }
+
+  &--error #{$block-name}__text::before {
+    background-color: var(--color-primary);
+    background-image: url("../assets/images/decoration/cross.svg");
+  }
+
+  &--warning #{$block-name}__text::before {
+    background-color: var(--color-gray);
+    background-image: url("../assets/images/decoration/warning.svg");
+  }
+
   &__title {
     margin: 0;
 
@@ -69,8 +103,16 @@
     font-size: var(--fs-h3);
   }
 
+  &--success #{$block-name}__title {
+    color: var(--color-success);
+  }
+
   &--error #{$block-name}__title {
     color: var(--color-primary);
+  }
+
+  &--warning #{$block-name}__title {
+    color: var(--color-gray);
   }
 
   &__description {

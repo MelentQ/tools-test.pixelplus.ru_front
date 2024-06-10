@@ -1,54 +1,22 @@
 .achievements {
-  &__head {
+  @include breakpoint(s) {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+    overflow: hidden;
+  }
+
+  @include breakpointMF(m) {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 94rem;
-    margin: 0 auto 6rem;
-
-    text-align: center;
-
-    @include breakpoint(m) {
-      margin-bottom: 4.4rem;
-    }
-
-    @include breakpoint(s) {
-      margin-bottom: 3rem;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% + 2rem);
+    margin: -1rem;
   }
 
-  &__title {
-    margin: 0;
-
-    font-weight: 700;
-    font-size: var(--fs-h2);
-  }
-
-  &__subtitle {
-    font-size: var(--fs-h3);
-    line-height: 1.4;
-  }
-
-  &__content {
-    @include breakpoint(s) {
-      width: calc(100% + 3.2rem);
-      margin: 0 -1.6rem;
-      padding: 0 1.6rem;
-      overflow: hidden;
-    }
-
-    @include breakpointMF(m) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: calc(100% + 2rem);
-      margin: -1rem;
-    }
-
-    @include breakpointMF(l) {
-      width: calc(100% + 3rem);
-      margin: -1.5rem;
-    }
+  @include breakpointMF(l) {
+    width: calc(100% + 3rem);
+    margin: -1.5rem;
   }
 
   &__slider {
@@ -82,25 +50,6 @@
 
     @include breakpointMF(m) {
       display: none;
-    }
-  }
-
-  &__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 4rem;
-
-    @include breakpoint(s) {
-      margin-top: 3rem;
-    }
-  }
-
-  &__button {
-    align-self: center;
-
-    @include breakpoint(s) {
-      align-self: stretch;
     }
   }
 }

@@ -1,24 +1,12 @@
-mixin advantages(props)
+mixin advantages(props, section)
   - props = props || {}
-  section.page-section.page-section--bg.advantages
-    .page-container
-      if props.title || props.subtitle
-        .advantages__head
-          if props.title
-            h2.advantages__title.animation.animation--fade-in-left=props.title
-          if props.subtitle
-            .advantages__subtitle.animation.animation--fade-in=props.subtitle
-        if props.items
-          .advantages__list.js-advantages.animation.animation--fade-in
-            .advantages__slider.swiper.loader
-              .advantages__slider-wrapper.swiper-wrapper
-                for item in props.items
-                  .advantages__slide.swiper-slide
-                    +advantages-card(item)&attributes({class: "advantages__item"})
-            +slider-pagination&attributes({class: "advantages__pagination"})
-        if props.button
-          .advantages__footer.animation.animation--fade-in
-            if props.button
-              +button(props.button)&attributes({class: "advantages__button"})=props.button.text
+  +section(section)
+    .advantages.js-advantages
+      .advantages__slider.swiper.loader
+        .advantages__slider-wrapper.swiper-wrapper
+          for item in props.items
+            .advantages__slide.swiper-slide
+              +advantages-card(item)&attributes({class: "advantages__item"})
+      +slider-pagination&attributes({class: "advantages__pagination"})
     link(href="./css/advantages.css" rel="stylesheet")
     script(src='./js/advantages.js')

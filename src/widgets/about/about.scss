@@ -1,37 +1,22 @@
 .about {
-  &__title {
-    margin-top: 0;
-    margin-bottom: 4rem;
-
-    font-weight: 700;
-    font-size: var(--fs-h2);
-    text-align: center;
-
-    @include breakpoint(m) {
-      margin-bottom: 3rem;
-    }
+  @include breakpoint(s) {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+    overflow: hidden;
   }
 
-  &__content {
-    @include breakpoint(s) {
-      width: calc(100% + 3.2rem);
-      margin: 0 -1.6rem;
-      padding: 0 1.6rem;
-      overflow: hidden;
-    }
+  @include breakpointMF(m) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% + 2rem);
+    margin: -1rem;
+  }
 
-    @include breakpointMF(m) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: calc(100% + 2rem);
-      margin: -1rem;
-    }
-
-    @include breakpointMF(l) {
-      width: calc(100% + 3rem);
-      margin: -1.5rem;
-    }
+  @include breakpointMF(l) {
+    width: calc(100% + 3rem);
+    margin: -1.5rem;
   }
 
   &__slider {
@@ -65,25 +50,6 @@
 
     @include breakpointMF(m) {
       display: none;
-    }
-  }
-
-  &__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 4rem;
-
-    @include breakpoint(s) {
-      margin-top: 3rem;
-    }
-  }
-
-  &__button {
-    align-self: center;
-
-    @include breakpoint(s) {
-      align-self: stretch;
     }
   }
 }

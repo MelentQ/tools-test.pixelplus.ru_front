@@ -1,17 +1,13 @@
-mixin features(props)
+mixin features(props, section)
   - props = props || {}
-  section.page-section.features
-    .page-container
-      if props.title
-        h2.features__title.animation.animation--fade-in-left=props.title
-      if props.items
-        .features__content.js-features.animation.animation--fade-in
-          .features__slider.swiper.loader
-            .swiper-wrapper
-              for item in props.items
-                .swiper-slide
-                  +features-card(item)
-          +slider-navigation&attributes({class: "features__navigation"})
-          +slider-pagination&attributes({class: "features__pagination"})
+  +section(section)
+    .features.js-features
+      .features__slider.swiper.loader
+        .swiper-wrapper
+          for item in props.items
+            .swiper-slide
+              +features-card(item)
+      +slider-navigation&attributes({class: "features__navigation"})
+      +slider-pagination&attributes({class: "features__pagination"})
     link(href="./css/features.css" rel="stylesheet")
     script(src='./js/features.js')

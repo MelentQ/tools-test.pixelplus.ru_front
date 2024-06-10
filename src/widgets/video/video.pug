@@ -1,28 +1,12 @@
-mixin video(props)
+mixin video(props, section)
   - props = props || {}
-  section.page-section.video
-    .page-container
-      .video__content
-        if props.title || props.subtitle
-          .video__head
-            if props.title
-              h2.video__title.animation.animation--fade-in-left=props.title
-            if props.subtitle
-              .video__subtitle.animation.animation--fade-in=props.subtitle
-        if props.video
-          .video__wrapper.animation.animation--fade-in
-            .video__panel(
-              role="button"
-              aria-label="Смотреть видео"
-              data-fancybox=""
-              data-src=`https://www.youtube.com/embed/${props.video}`
-              style=`background-image: url("https://i3.ytimg.com/vi/${props.video}/maxresdefault.jpg")`
-            )
-              +icon("youtube-play")
-        if props.text || props.button
-          .video__footer.animation.animation--fade-in
-            if props.text
-              .video__text !{props.text}
-            if props.button
-              +button(props.button)&attributes({class: "video__button"})=props.button.text
+  +section(section)
+    .video(
+      role="button"
+      aria-label="Смотреть видео"
+      data-fancybox=""
+      data-src=`https://www.youtube.com/embed/${props.code}`
+      style=`background-image: url("https://i3.ytimg.com/vi/${props.code}/maxresdefault.jpg")`
+    )
+      +icon("youtube-play")
     link(href="./css/video.css" rel="stylesheet")
