@@ -1,21 +1,9 @@
-.features__title {
-  margin-top: 0;
-  margin-bottom: 4rem;
-  font-weight: 700;
-  font-size: var(--fs-h2);
-  text-align: center;
-}
-@media screen and (max-width: 991px) {
-  .features__title {
-    margin-bottom: 3rem;
-  }
-}
-.features__content {
+.features {
   position: relative;
   padding: 0 6rem;
 }
 @media screen and (max-width: 991px) {
-  .features__content {
+  .features {
     width: calc(100% + 4rem);
     margin: 0 -2rem;
     padding: 0 2rem;
@@ -23,7 +11,7 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .features__content {
+  .features {
     width: calc(100% + 3.2rem);
     margin: 0 -1.6rem;
     padding: 0 1.6rem;
@@ -81,7 +69,7 @@
   grid-column: span 7;
   min-height: 44rem;
   overflow: hidden;
-  border: 1px solid var(--color-gray-light);
+  border: 2px solid var(--color-gray-light);
   border-radius: 0.6rem;
 }
 @media screen and (max-width: 991px) {

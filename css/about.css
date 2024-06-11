@@ -1,17 +1,5 @@
-.about__title {
-  margin-top: 0;
-  margin-bottom: 4rem;
-  font-weight: 700;
-  font-size: var(--fs-h2);
-  text-align: center;
-}
-@media screen and (max-width: 991px) {
-  .about__title {
-    margin-bottom: 3rem;
-  }
-}
 @media screen and (max-width: 767px) {
-  .about__content {
+  .about {
     width: calc(100% + 3.2rem);
     margin: 0 -1.6rem;
     padding: 0 1.6rem;
@@ -19,7 +7,7 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .about__content {
+  .about {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -28,7 +16,7 @@
   }
 }
 @media screen and (min-width: 992px) {
-  .about__content {
+  .about {
     width: calc(100% + 3rem);
     margin: -1.5rem;
   }
@@ -64,25 +52,6 @@
     display: none;
   }
 }
-.about__footer {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 4rem;
-}
-@media screen and (max-width: 767px) {
-  .about__footer {
-    margin-top: 3rem;
-  }
-}
-.about__button {
-  align-self: center;
-}
-@media screen and (max-width: 767px) {
-  .about__button {
-    align-self: stretch;
-  }
-}
 
 .about-card {
   display: flex;
@@ -93,7 +62,7 @@
   background-color: var(--color-gray-lighter);
   border-radius: 0.6rem;
 }
-.about-card--dark {
+.about-card--light {
   background-color: var(--color-white);
 }
 .about-card__icon {
