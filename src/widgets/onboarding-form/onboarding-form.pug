@@ -1,7 +1,14 @@
 mixin onboarding-form(props)
   - props = props || {}
-  +form&attributes({
-    class: ["onboarding-form", attributes.class]
+  +form({
+    mods: [
+      props.isRow ? "row" : null
+    ]
+  })&attributes({
+    class: [
+      "onboarding-form",
+      attributes.class
+    ]
   })
     +input({
       placeholder: "Введите домен сайта",
@@ -19,15 +26,22 @@ mixin onboarding-form(props)
         },
         ...cities
       ],
-      value: "213",
+      value: "213"
     })
-    .onboarding-form__controls
-      +button({
-        mods: ["light"],
-        tag: "a"
-      }) Демо-проект
+    .onboarding-form__controls(
+      class=(props.hasDemoButton ? "onboarding-form__controls--grid" : null)
+    )
+      if props.hasDemoButton
+        +button({
+          mods: ["light"],
+          tag: "a"
+        })&attributes({
+          class: "onboarding-form__control"
+        }) Демо-проект
       +button({
         type: "submit"
+      })&attributes({
+        class: "onboarding-form__control"
       })
         +spinner
         | Начать

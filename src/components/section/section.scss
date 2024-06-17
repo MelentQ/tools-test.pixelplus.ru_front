@@ -77,17 +77,17 @@
     flex-direction: column;
     gap: 2rem;
     max-width: 92rem;
-    margin: 4rem auto 0;
+    margin: 5rem auto 0;
 
     text-align: center;
 
     @include breakpoint(m) {
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
 
     @include breakpoint(s) {
       gap: 1.2rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   }
 

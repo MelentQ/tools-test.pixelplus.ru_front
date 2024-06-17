@@ -1,6 +1,11 @@
 import { Fancybox } from '@fancyapps/ui';
 
 Fancybox.defaults.closeButton = false;
+Fancybox.defaults.on = {
+  done: (instance) => {
+    instance.container.setAttribute('data-lenis-prevent', '');
+  },
+};
 window.pts.Fancybox = Fancybox;
 
 export default function modal() {
@@ -19,7 +24,7 @@ export default function modal() {
         }
       },
       done: (instance) => {
-        instance.container.setAttribute('data-lenis-prevent', '');
+        Fancybox.defaults.on.done(instance);
 
         // Инициализируем валидацию формы, если она пришла через Ajax
         if (window.pts && window.pts.initValidation) {

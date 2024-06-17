@@ -12,7 +12,7 @@ mixin section(props)
       if block
         .section__content.animation.animation--fade-in
           block
-      if props.footerText || props.button
+      if props.footerText || props.button || props.onboardingForm
         .section__footer.animation.animation--fade-in
           if props.footerText
             .section__footer-text !{props.footerText}
@@ -21,3 +21,5 @@ mixin section(props)
               ...props.button.attributes,
               class: "section__button"
             })=props.button.text
+          else if props.onboardingForm
+            +onboarding-form(props.onboardingForm)

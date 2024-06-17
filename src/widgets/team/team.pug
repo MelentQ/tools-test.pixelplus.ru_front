@@ -1,0 +1,14 @@
+mixin team(props, section)
+  - props = props || {}
+  +section(section)
+    .team.js-team
+      .team__slider.swiper.loader
+        .team__slider-wrapper.swiper-wrapper
+          for item in props.items
+            .team__slide.swiper-slide(
+              class=(item.isSingle ? "team__slide--single" : null)
+            )
+              +team-card(item)
+      +slider-pagination&attributes({class: "team__pagination"})
+    link(href="./css/team.css" rel="stylesheet")
+    script(src="./js/team.js")

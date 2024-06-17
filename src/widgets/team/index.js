@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = [...document.querySelectorAll('.js-about:not(.--initialized)')];
+  const containers = [...document.querySelectorAll('.js-team:not(.--initialized)')];
   containers.map((container) => {
     let instance;
 

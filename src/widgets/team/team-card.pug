@@ -1,0 +1,12 @@
+mixin team-card(props)
+  - props = props || {}
+  .team-card(
+    class=(props.isSingle ? "team-card--single" : null)
+  )
+    if props.image
+      .team-card__image
+        img(src=props.image alt=props.title loading="lazy")
+    if props.title
+      .team-card__title=props.title
+    if props.label
+      .team-card__label=props.label

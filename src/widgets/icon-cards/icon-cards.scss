@@ -1,10 +1,10 @@
-.achievements {
+.icon-cards {
   @include breakpoint(s) {
-    width: calc(100% + 3.2rem);
-    margin: 0 -1.6rem;
-    padding: 0 1.6rem;
-    overflow: hidden;
-  }
+     width: calc(100% + 3.2rem);
+     margin: 0 -1.6rem;
+     padding: 0 1.6rem;
+     overflow: hidden;
+   }
 
   @include breakpointMF(m) {
     display: flex;
@@ -35,7 +35,7 @@
     width: 100%;
 
     @include breakpointMF(m) {
-      width: calc(100% / 3 - 2rem);
+      width: calc(50% - 2rem);
       margin: 1rem;
     }
 

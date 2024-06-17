@@ -1,0 +1,14 @@
+mixin partners(props, section)
+  - props = props || {}
+  +section(section)
+    .partners.js-partners
+      .partners__slider.swiper.loader
+        .swiper-wrapper
+          for item in props.items
+            .swiper-slide
+              .partners__item
+                img(src=item.logo alt="Partner" loading="lazy")
+      +slider-navigation&attributes({class: "partners__navigation"})
+      +slider-pagination&attributes({class: "partners__pagination"})
+    link(href="./css/partners.css" rel="stylesheet")
+    script(src="./js/partners.js")

@@ -5,20 +5,5 @@
 @import "styles/fonts";
 @import "styles/global";
 
-@import "../components/animation";
-@import "../components/button";
-@import "../components/icon";
-@import "../components/input";
-@import "../components/page";
-@import "../components/section";
-@import "../components/select";
-@import "../components/header";
-@import "../components/footer";
-@import "../components/menu";
-@import "../components/modal";
-@import "../components/tip";
-@import "../components/socials";
-@import "../components/spinner";
-@import "../components/form";
-@import "../components/slider";
-@import "../components/loader";
+// stylelint-disable-next-line
+@import "../components/**/index.scss";

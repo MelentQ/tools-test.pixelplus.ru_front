@@ -1,4 +1,4 @@
-.about {
+.team {
   @include breakpoint(s) {
     width: calc(100% + 3.2rem);
     margin: 0 -1.6rem;
@@ -20,28 +20,45 @@
   }
 
   &__slider {
-    overflow: visible;
+    @include breakpointMF(m) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include breakpoint(s) {
+      overflow: visible;
+    }
   }
 
-  &__slider,
-  &__slider-wrapper,
-  &__slide {
+  &__slider-wrapper {
     @include breakpointMF(m) {
       display: contents;
     }
   }
 
-  &__card {
+  &__slide {
     width: 100%;
 
     @include breakpointMF(m) {
-      width: calc(50% - 2rem);
+      width: calc(100% / 3 - 2rem);
       margin: 1rem;
     }
 
     @include breakpointMF(l) {
       width: calc(20% - 3rem);
       margin: 1.5rem;
+    }
+
+    &--single {
+      @include breakpointMF(m) {
+        justify-content: center;
+        width: calc(100% - 2rem);
+      }
+
+      @include breakpointMF(l) {
+        width: calc(100% - 3rem);
+      }
     }
   }
 

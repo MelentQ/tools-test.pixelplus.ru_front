@@ -1,0 +1,10 @@
+mixin ic-card(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `ic-card--${mod}`).join(" ") : null;
+  .ic-card(class=mods)&attributes(attributes)
+    if props.icon
+      .ic-card__icon !{props.icon}
+    if props.title
+      .ic-card__title=props.title
+    if props.text
+      .ic-card__text=props.text

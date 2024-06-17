@@ -8,6 +8,7 @@ const rename = require('gulp-rename');
 const del = require('del');
 const header = require('gulp-header');
 const scss = require('gulp-sass')(require('sass'));
+const sassGlob = require('gulp-sass-glob');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const browserSync = require('browser-sync').create();
@@ -19,6 +20,7 @@ const webpackConfig = require('./webpack.config');
 
 function coreStyles() {
   return src(['src/layout/core.scss'])
+    .pipe(sassGlob())
     .pipe(scss({
       outputStyle: process.env.MODE === 'production' ? 'compressed' : 'expanded',
       includePaths: ['node_modules/'],
