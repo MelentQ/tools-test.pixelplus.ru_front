@@ -1,5 +1,5 @@
 @media screen and (max-width: 767px) {
-  .about {
+  .icon-cards {
     width: calc(100% + 3.2rem);
     margin: 0 -1.6rem;
     padding: 0 1.6rem;
@@ -7,7 +7,7 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .about {
+  .icon-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -16,44 +16,44 @@
   }
 }
 @media screen and (min-width: 992px) {
-  .about {
+  .icon-cards {
     width: calc(100% + 3rem);
     margin: -1.5rem;
   }
 }
-.about__slider {
+.icon-cards__slider {
   overflow: visible;
 }
 @media screen and (min-width: 768px) {
-  .about__slider, .about__slider-wrapper, .about__slide {
+  .icon-cards__slider, .icon-cards__slider-wrapper, .icon-cards__slide {
     display: contents;
   }
 }
-.about__card {
+.icon-cards__card {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .about__card {
+  .icon-cards__card {
     width: calc(50% - 2rem);
     margin: 1rem;
   }
 }
 @media screen and (min-width: 992px) {
-  .about__card {
+  .icon-cards__card {
     width: calc(20% - 3rem);
     margin: 1.5rem;
   }
 }
-.about__pagination {
+.icon-cards__pagination {
   margin-top: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .about__pagination {
+  .icon-cards__pagination {
     display: none;
   }
 }
 
-.about-card {
+.ic-card {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -62,10 +62,10 @@
   background-color: var(--color-gray-lighter);
   border-radius: 0.6rem;
 }
-.about-card--light {
+.ic-card--light {
   background-color: var(--color-white);
 }
-.about-card__icon {
+.ic-card__icon {
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -76,17 +76,17 @@
   background-color: var(--color-primary);
   border-radius: 50%;
 }
-.about-card__icon svg {
+.ic-card__icon svg {
   display: block;
   width: 4rem;
   height: 5rem;
   fill: var(--color-white);
 }
-.about-card__title {
+.ic-card__title {
   margin: 0;
   font-weight: 700;
   font-size: var(--fs-t1);
 }
-.about-card__text {
+.ic-card__text {
   font-size: var(--fs-t2);
 }

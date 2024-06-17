@@ -34,7 +34,7 @@
 }
 @media screen and (min-width: 768px) {
   .achievements__card {
-    width: calc(33.333% - 2rem);
+    width: calc(33.3333333333% - 2rem);
     margin: 1rem;
   }
 }
