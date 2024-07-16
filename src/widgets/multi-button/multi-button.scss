@@ -1,0 +1,229 @@
+.multi-button {
+  $block-name: &;
+
+  &__button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+
+    background-color: var(--color-primary);
+
+    border-radius: 50%;
+
+    @include transition(background-color);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      display: block;
+      width: 5rem;
+      height: 5rem;
+
+      background-color: rgba(#e32d35, 0.15);
+      border-radius: 50%;
+
+      transform: translate(-50%, -50%);
+
+      content: '';
+      pointer-events: none;
+
+      @include transition(background-color);
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+
+      fill: var(--color-white);
+
+      &:nth-child(2) {
+        display: none;
+
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &.--active #{$block-name}__button {
+    @include breakpoint(m) {
+      background-color: var(--color-gray-light);
+
+      &::before {
+        background-color: rgba(#d4d4d4, 0.15);
+      }
+
+      svg {
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include hover {
+    #{$block-name}__button {
+      background-color: var(--color-gray-light);
+
+      &::before {
+        background-color: rgba(#d4d4d4, 0.15);
+      }
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    padding-bottom: 6.4rem;
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    @include transition(opacity, visibility);
+  }
+
+  @include hover {
+    #{$block-name}__controls {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: all;
+    }
+  }
+
+  &.--active #{$block-name}__controls {
+    @include breakpoint(m) {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: all;
+    }
+  }
+
+  &__control {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+
+    font-size: 1.4rem;
+    line-height: 1;
+
+    text-decoration: none;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+
+      @include breakpoint(m) {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    @include transition(color);
+
+    @include hover {
+      @include color(var(--color-primary));
+    }
+
+    @include breakpoint(m) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__control-name {
+    flex-shrink: 0;
+    padding: 0.8rem 2.4rem;
+
+    background: white;
+    border-radius: 10rem;
+
+    box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 10%);
+
+    @include breakpoint(m) {
+      padding: 0.8rem 1.6rem;
+    }
+  }
+
+  &__control-icon {
+    position: relative;
+
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+
+    background-color: var(--color-primary);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    @include breakpoint(m) {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+
+    svg {
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+
+      display: block;
+      width: 3.8rem;
+      height: 3.8rem;
+
+      background-color: rgba(#e32d35, 0.15);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+
+      content: '';
+
+      @include transition(transform);
+    }
+  }
+
+  &__control {
+    @include hover {
+      #{$block-name}__control-icon::before {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+  }
+}

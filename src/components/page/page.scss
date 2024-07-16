@@ -1,4 +1,6 @@
 .page {
+  position: relative;
+
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
   -webkit-text-size-adjust: 100%;
 
@@ -11,7 +13,13 @@
   }
 
   &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 
+    width: 100%;
+    padding-right: var(--fancybox-scrollbar-compensate, 0rem);
   }
 
   &__content {
@@ -25,5 +33,41 @@
 
   &__footer {
 
+  }
+
+  // Кнопка "Наверх" слева снизу
+  &__scroll-to-top {
+    position: fixed;
+    bottom: 2.4rem;
+    left: 2.4rem;
+    z-index: 1;
+
+    @include breakpoint(m) {
+      bottom: 2rem;
+      left: 2rem;
+    }
+
+    @include breakpoint(s) {
+      bottom: 1.6rem;
+      left: 1.6rem;
+    }
+  }
+
+  // Мультикнопка справа снизу
+  &__multi-button {
+    position: fixed;
+    right: calc(2.4rem + var(--fancybox-scrollbar-compensate, 0rem));
+    bottom: 2.4rem;
+    z-index: 1;
+
+    @include breakpoint(m) {
+      right: calc(2rem + var(--fancybox-scrollbar-compensate, 0rem));
+      bottom: 2rem;
+    }
+
+    @include breakpoint(s) {
+      right: calc(1.6rem + var(--fancybox-scrollbar-compensate, 0rem));
+      bottom: 1.6rem;
+    }
   }
 }

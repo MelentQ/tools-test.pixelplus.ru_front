@@ -19,6 +19,10 @@ html(lang="ru")
       main.page__content
         block content
       +footer&attributes({class: "page__footer"})
+      +scroll-to-top&attributes({class: "page__scroll-to-top"})
+      +multi-button({
+        items: multiButtons
+      })&attributes({class: "page__multi-button"})
     script(src="https://code.jquery.com/jquery-3.7.1.min.js")
     script
       include /public/js/iti.js

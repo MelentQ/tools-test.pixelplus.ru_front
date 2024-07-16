@@ -1,0 +1,6 @@
+mixin scroll-to-top(props)
+  - props = props || {}
+  button.scroll-to-top.js-scroll-to-top(type="button" aria-label="Наверх")&attributes(attributes)
+    +icon("arrow")
+  link(href="./css/scroll-to-top.css" rel="stylesheet")
+  script(src="./js/scroll-to-top.js")

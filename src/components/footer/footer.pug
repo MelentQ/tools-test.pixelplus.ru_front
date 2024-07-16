@@ -5,7 +5,7 @@ mixin footer(props)
       .footer__row
         a.footer__logo(href="#" aria-label="Главная")
           img(src="./assets/images/logo-short.svg" alt="Пиксель Тулс" loading="lazy")
-        //+menu({mods: ["position-top"], items: menuItems})&attributes({class: "footer__menu"})
+        +menu({mods: ["position-top"], items: menuItems})&attributes({class: "footer__menu"})
         +socials({items: socialsItems})&attributes({class: "footer__socials"})
       .footer__bottom
         .footer__row
