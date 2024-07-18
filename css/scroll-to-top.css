@@ -1,0 +1,28 @@
+.scroll-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  color: var(--color-gray-light);
+  background: transparent;
+  border: 2px solid var(--color-gray-light);
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 0.3s;
+  transition-property: opacity, visibility;
+}
+.scroll-to-top.--active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+.scroll-to-top svg {
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor;
+}

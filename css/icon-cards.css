@@ -56,7 +56,6 @@
 .ic-card {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   padding: 2.4rem 2rem;
   text-align: center;
   background-color: var(--color-gray-lighter);
@@ -72,7 +71,7 @@
   justify-content: center;
   width: 7rem;
   height: 7rem;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   background-color: var(--color-primary);
   border-radius: 50%;
 }
@@ -88,5 +87,6 @@
   font-size: var(--fs-t1);
 }
 .ic-card__text {
+  margin-top: 1.2rem;
   font-size: var(--fs-t2);
 }
