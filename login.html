@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="./css/core.min.css" rel="stylesheet">
-        <title>«Пиксель Тулс»</title>
-        <meta name="description" content="«Пиксель Тулс»">
+        <title>Вход в сервис «Пиксель Тулс»</title>
+        <meta name="description" content="Вход в сервис «Пиксель Тулс»">
     </head>
     <body class="page js-smooth-scrolling">
         <div class="visually-hidden" id="svg-sprite">
@@ -1813,32 +1813,108 @@
                 <section class="section">
                     <div class="page-container">
                         <div class="section__head">
-                            <h1 class="section__title animation animation--fade-in-left">Все страницы</h1>
+                            <h1 class="section__title animation animation--fade-in-left">Вход в «Пиксель Тулс»</h1>
                         </div>
                         <div class="section__content animation animation--fade-in">
-                            <ul>
-                                <li>
-                                    <a href="./home.html">Главная</a>
-                                </li>
-                                <li>
-                                    <a href="./login.html">Вход</a>
-                                </li>
-                                <li>
-                                    <a href="./reset-password.html">Восстановление пароля</a>
-                                </li>
-                                <li>
-                                    <a href="./register.html">Регистрация</a>
-                                </li>
-                                <li>
-                                    <a href="./offer.html">Публичная оферта</a>
-                                </li>
-                                <li>
-                                    <a href="./policy.html">Политика конфиденциальности</a>
-                                </li>
-                            </ul>
+                            <div class="form-section">
+                                <div class="form-section__content">
+                                    <div class="login-form">
+                                        <div class="login-form__register">У вас ещё нет аккаунта?<a class="login-form__register-button" href="./register.html">Зарегистрируйтесь</a>
+                                        </div>
+                                        <form class="form js-form js-validation login-form__form" action="#" method="post">
+                                            <label class="input js-validation-wrapper">
+                                                <input class="input__element" type="email" required="required" placeholder="E-mail" name="email" />
+                                            </label>
+                                            <label class="input js-validation-wrapper">
+                                                <input class="input__element" type="password" required="required" placeholder="Пароль" name="password" />
+                                            </label>
+                                            <a class="login-form__reset" href="./reset-password.html">Забыли пароль?</a>
+                                            <div class="login-form__remember">
+                                                <label class="checkbox js-validation-wrapper">
+                                                    <input class="checkbox__element" type="checkbox" name="remember" checked="checked" />
+                                                    <span class="checkbox__fake"></span>
+                                                    <span class="checkbox__label">Запомнить меня</span>
+                                                </label>
+                                            </div>
+                                            <div class="login-form__controls">
+                                                <button class="button login-form__control" type="submit">Войти</button>
+                                            </div>
+                                        </form>
+                                        <div class="socials-auth login-form__socials">
+                                            <div class="socials-auth__title">Войти с помощью</div>
+                                            <div class="socials-auth__list">
+                                                <a class="socials-auth__item socials-auth__item--vk" href="#" aria-label="Войти с помощью VK" data-tip="Войти с помощью VK">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#vk"></use>
+                                                    </svg>
+                                                </a>
+                                                <a class="socials-auth__item socials-auth__item--google" href="#" aria-label="Войти с помощью Google" data-tip="Войти с помощью Google">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#google"></use>
+                                                    </svg>
+                                                </a>
+                                                <a class="socials-auth__item socials-auth__item--yandex" href="#" aria-label="Войти с помощью Yandex" data-tip="Войти с помощью Yandex">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#yandex"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <link href="./css/login-form.css" rel="stylesheet" />
+                                </div>
+                            </div>
+                            <link href="./css/form-section.css" rel="stylesheet" />
                         </div>
                     </div>
                 </section>
+                <section class="section section--dark">
+                    <div class="page-container">
+                        <div class="section__head">
+                            <h2 class="section__title animation animation--fade-in-left">У вас остались вопросы?</h2>
+                            <div class="section__subtitle animation animation--fade-in">
+                                <b>Оставьте заявку в течение 2 часов</b>, и наш специалист бесплатно покажет вам 15 возможностей модуля проектов!
+                            </div>
+                        </div>
+                        <div class="section__footer animation animation--fade-in">
+                            <button class="button section__button" type="button" data-fancybox="modal" data-src="#demo-modal">Заказать демонстрацию</button>
+                        </div>
+                    </div>
+                </section>
+                <div class="modal" id="demo-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Обсудим детали?</div>
+                        </div>
+                        <div class="modal__content">
+                            <form class="form js-form js-validation demo-form" action="#" method="post">
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="text" required="required" placeholder="Имя" minlength="2" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element js-phone-input" data-parsley-iti="" type="tel" required="required" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="email" required="required" placeholder="E-mail" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="text" placeholder="Название компании" />
+                                </label>
+                                <div class="demo-form__controls">
+                                    <button class="button" type="submit">
+                                        <span class="spinner"></span>Отправить
+                                    </button>
+                                </div>
+                            </form>
+                            <link href="./css/demo-form.css" rel="stylesheet" />
+                        </div>
+                    </div>
+                </div>
             </main>
 
             <footer class="footer page__footer">

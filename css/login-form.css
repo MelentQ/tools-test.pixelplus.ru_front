@@ -7,7 +7,7 @@
   font-size: var(--fs-t1);
   text-align: center;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .login-form__register {
     flex-direction: column;
   }
