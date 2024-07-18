@@ -3,8 +3,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
 
 module.exports = {
+  entry: {
+    core: './src/layout/core.js',
+  },
   output: {
-    filename: 'core.min.js',
+    path: path.resolve(__dirname, './build/js'),
+    filename: '[name].min.js',
   },
   module: {
     rules: [

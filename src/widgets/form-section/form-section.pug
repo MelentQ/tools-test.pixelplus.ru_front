@@ -1,0 +1,12 @@
+mixin form-section(props, section)
+  - props = props || {}
+  +section(section)
+    .form-section
+      if props.text
+        .form-section__text=props.text
+      .form-section__content
+        block
+      if props.caption
+        .form-section__footer
+          .form-section__footer-caption !{props.caption}
+    link(href="./css/form-section.css" rel="stylesheet")

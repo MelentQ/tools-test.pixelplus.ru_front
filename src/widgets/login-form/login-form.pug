@@ -3,11 +3,15 @@ mixin login-form(props)
   .login-form
     .login-form__register
       | У вас ещё нет аккаунта?
-      button.login-form__register-button(
-        type="button"
-        data-fancybox="modal"
-        data-src="#register-modal"
-      ) Зарегистрируйтесь
+      - props.registerLinkType = props.registerLinkType || "modal"
+      if props.registerLinkType === "link"
+        a.login-form__register-button(href="./register.html") Зарегистрируйтесь
+      else if props.registerLinkType === "modal"
+        button.login-form__register-button(
+          type="button"
+          data-fancybox="modal"
+          data-src="#register-modal"
+        ) Зарегистрируйтесь
     +form&attributes({class: "login-form__form"})
       +input({
         placeholder: "E-mail",
@@ -21,11 +25,15 @@ mixin login-form(props)
         name: "password",
         type: "password"
       })
-      button.login-form__reset(
-        type="button"
-        data-fancybox="modal"
-        data-src="#reset-password-modal"
-      ) Забыли пароль?
+      - props.resetPasswordLinkType = props.resetPasswordLinkType || "modal"
+      if props.resetPasswordLinkType === "link"
+        a.login-form__reset(href="./reset-password.html") Забыли пароль?
+      else if props.resetPasswordLinkType === "modal"
+        button.login-form__reset(
+          type="button"
+          data-fancybox="modal"
+          data-src="#reset-password-modal"
+        ) Забыли пароль?
       .login-form__remember
         +checkbox({
           name: "remember",

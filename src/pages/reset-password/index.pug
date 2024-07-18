@@ -1,0 +1,17 @@
+extends ../../layout/landing
+
+block head
+  title Забыли свой пароль?
+  meta(name="description" content="Забыли свой пароль?")
+
+block content
+  +form-section({
+    text: "Введите ваш email адрес в поле ниже, вам будут высланы инструкции для востановления пароля.",
+    caption: "Если вы не получили письмо на почту в течение нескольких минут, возможно письмо попало в спам или папку с нежелательной почтой. Письмо придет с адреса: <b>support@pixeltools.ru</b>."
+  }, {
+    title: "Забыли пароль?",
+    tag: "h1"
+  })
+    +reset-password-form({
+      backLinkType: "link"
+    })

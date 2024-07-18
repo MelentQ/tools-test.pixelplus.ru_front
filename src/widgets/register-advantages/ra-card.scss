@@ -1,0 +1,41 @@
+.ra-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+
+  @include breakpoint(s) {
+    gap: 1.4rem;
+  }
+
+  &__icon {
+    svg {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+
+      fill: var(--color-primary);
+
+      @include breakpoint(s) {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+    }
+  }
+
+  &__content {
+
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-t1);
+  }
+
+  &__text {
+    margin-top: 1rem;
+
+    font-size: var(--fs-t2);
+  }
+}

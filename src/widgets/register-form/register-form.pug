@@ -1,13 +1,17 @@
 mixin register-form(props)
   - props = props || {}
-  .register-form
+  .register-form&attributes(attributes)
     .register-form__login
       | Уже зарегистрированы?
-      button.register-form__login-button(
-        type="button"
-        data-fancybox="modal"
-        data-src="#login-modal"
-      ) Войдите
+      - props.loginLinkType = props.loginLinkType || "modal"
+      if props.loginLinkType === "link"
+        a.register-form__login-button(href="./login.html") Войдите
+      else if props.loginLinkType === "modal"
+        button.register-form__login-button(
+          type="button"
+          data-fancybox="modal"
+          data-src="#login-modal"
+        ) Войдите
     +form&attributes({class: "register-form__form"})
       +input({
         placeholder: "E-mail",

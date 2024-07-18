@@ -17,6 +17,7 @@ const prettyHtml = require('gulp-pretty-html');
 const svgSprite = require('gulp-svg-sprite');
 const merge = require('gulp-merge-json');
 const webpackConfig = require('./webpack.config');
+const devConfig = require('./dev-config');
 
 function coreStyles() {
   return src(['src/layout/core.scss'])
@@ -42,9 +43,9 @@ function additionalStyles() {
       includePaths: ['src/'],
     }))
     .pipe(rename((file) => ({
-      dirname: path.dirname(file.dirname),
+      dirname: '.',
       basename: file.dirname,
-      extname: '.css',
+      extname: file.extname,
     })))
     .pipe(dest('build/css'));
 }
@@ -58,9 +59,9 @@ function coreScripts() {
 function additionalScripts() {
   return src(['src/widgets/**/index.js'])
     .pipe(rename((file) => ({
-      dirname: path.dirname(file.dirname),
+      dirname: '.',
       basename: file.dirname,
-      extname: '.js',
+      extname: file.extname,
     })))
     .pipe(dest('build/js'));
 }
@@ -102,7 +103,8 @@ function json() {
 }
 
 function html() {
-  return src(['src/pages/*/index.pug'])
+  const pages = process.env.MODE === 'production' ? ['src/pages/*/index.pug'] : devConfig.pages;
+  return src(pages, { base: process.cwd() })
     .pipe(pug({
       basedir: './',
       locals: JSON.parse(readFileSync('src/layout/data/data.json')),
@@ -118,9 +120,9 @@ function html() {
       extra_liners: ['header', 'main', 'footer', '/body'],
     })))
     .pipe(rename((file) => ({
-      dirname: path.dirname(file.dirname),
-      basename: file.dirname,
-      extname: '.html',
+      dirname: '.',
+      basename: file.dirname.split('\\').slice(-1)[0],
+      extname: file.extname,
     })))
     .pipe(dest('build'));
 }

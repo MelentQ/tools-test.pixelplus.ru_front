@@ -9,7 +9,7 @@
     font-size: var(--fs-t1 );
     text-align: center;
 
-    @include breakpoint(m) {
+    @include breakpoint(s) {
       flex-direction: column;
     }
   }

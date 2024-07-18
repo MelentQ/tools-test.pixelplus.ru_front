@@ -1,0 +1,7 @@
+mixin ra-card(props)
+  - props = props || {}
+  .ra-card&attributes(attributes)
+    .ra-card__icon !{props.icon}
+    .ra-card__content
+      .ra-card__title=props.title
+      .ra-card__text=props.text

@@ -10,6 +10,7 @@ import $validation from '@/components/form/validation';
 import select from '@/components/select/select';
 import modal from '@/components/modal/modal';
 import phoneInput from '@/components/input/phoneInput';
+import scrollToAnchor from '@/layout/scripts/scrollToAnchor';
 
 document.addEventListener('DOMContentLoaded', () => {
   smoothScrolling();
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
   select();
   modal();
   phoneInput();
+  scrollToAnchor();
 });

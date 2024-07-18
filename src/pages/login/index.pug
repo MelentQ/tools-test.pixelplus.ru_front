@@ -1,0 +1,28 @@
+extends ../../layout/landing
+
+block head
+  title Вход в сервис «Пиксель Тулс»
+  meta(name="description" content="Вход в сервис «Пиксель Тулс»")
+
+block content
+  +form-section({}, {
+    title: "Вход в «Пиксель Тулс»",
+    tag: "h1"
+  })
+    +login-form({
+      registerLinkType: "link",
+      resetPasswordLinkType: "link"
+    })
+  +section({
+    mods: ["dark"],
+    title: "У вас остались вопросы?",
+    subtitle: "<b>Оставьте заявку в течение 2 часов</b>, и наш специалист бесплатно покажет вам 15 возможностей модуля проектов!",
+    button: {
+      attributes: {
+        "data-fancybox": "modal",
+        "data-src": "#demo-modal"
+      },
+      text: "Заказать демонстрацию"
+    }
+  })
+  +demo-modal
