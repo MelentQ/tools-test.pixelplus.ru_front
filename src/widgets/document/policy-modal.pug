@@ -1,0 +1,9 @@
+mixin policy-modal(props)
+  - props = props || {}
+  +modal({
+    mods: ["wide"],
+    id: "policy-modal",
+    title: "Политика в отношении обработки персональных данных в сервисе «Пиксель Тулс»"
+  })
+    +document
+      include policy

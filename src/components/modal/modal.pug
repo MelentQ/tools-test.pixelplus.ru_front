@@ -11,7 +11,14 @@ mixin modal(props)
       if props.title || props.description || props.caption
         .modal__text
           if props.title
-            .modal__title=props.title
+            if props.tip
+              .modal__title-wrapper
+                .modal__title
+                  =props.title
+                +tip({text: props.tip})
+            else
+              .modal__title=props.title
+
           if props.description
             .modal__description !{props.description}
           if props.caption

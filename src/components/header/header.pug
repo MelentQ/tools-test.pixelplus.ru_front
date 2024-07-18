@@ -13,7 +13,12 @@ mixin header(props)
           button.header__control.js-search-form-button(type="button" aria-label="Поиск" data-tip="Поиск")
             +icon("search")
             +icon("close")
-          a.header__control(href="#" aria-label="Войти" data-tip="Войти")
+          button.header__control(
+            data-fancybox="modal"
+            data-src="#login-modal"
+            aria-label="Войти"
+            data-tip="Войти"
+          )
             +icon("login")
     +search-form&attributes({class: "header__search js-search-form"})
     +burger-menu({items: menuItems})&attributes({class: "header__burger-menu js-burger-menu"})

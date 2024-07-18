@@ -1,0 +1,7 @@
+mixin register-modal(props)
+  - props = props || {}
+  +modal({
+    id: "register-modal",
+    title: "Регистрация в «Пиксель Тулс»"
+  })
+    +register-form

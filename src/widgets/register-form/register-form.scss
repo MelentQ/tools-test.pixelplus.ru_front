@@ -1,0 +1,79 @@
+.register-form {
+  &__login {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    font-size: var(--fs-t1 );
+    text-align: center;
+
+    @include breakpoint(m) {
+      flex-direction: column;
+    }
+  }
+
+  &__login-button {
+    padding: 0;
+
+    color: var(--color-primary);
+    text-decoration: underline;
+
+    background: none;
+    border: none;
+
+    @include transition(color);
+
+    @include hover {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &__form {
+
+  }
+
+  &__checkbox {
+
+  }
+
+  &__checkbox-button {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0;
+
+    color: var(--color-primary);
+
+    background: none;
+    border: none;
+
+    @include transition(color);
+
+    @include hover {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    @include breakpoint(s) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__control {
+
+  }
+
+  &__socials {
+    margin-top: 3rem;
+  }
+}

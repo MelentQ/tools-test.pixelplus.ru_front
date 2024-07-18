@@ -41,7 +41,19 @@
     }
   }
 
+  &--tip #{$block-name}__element {
+    padding-right: 3.4rem;
+  }
+
   &.--error #{$block-name}__element {
     border-color: var(--color-primary);
+  }
+
+  &__tip {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+
+    transform: translateY(-50%);
   }
 }

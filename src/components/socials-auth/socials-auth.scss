@@ -1,0 +1,60 @@
+.socials-auth {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-weight: 600;
+    font-size: var(--fs-t2);
+
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+
+    background-color: var(--color-primary);
+    border-radius: 50%;
+
+    @include color(var(--color-white));
+
+    @include transition(opacity);
+
+    @include hover {
+      opacity: 0.75;
+    }
+
+    svg {
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    &--vk {
+      background-color: #0077ff;
+    }
+
+    &--google {
+      background: none;
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    &--yandex {
+      background-color: #ff0000;
+    }
+  }
+}

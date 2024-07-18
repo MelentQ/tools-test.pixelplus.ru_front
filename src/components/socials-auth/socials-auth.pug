@@ -1,0 +1,13 @@
+mixin socials-auth(props)
+  - props = props || {}
+  .socials-auth&attributes(attributes)
+    .socials-auth__title=props.title
+    .socials-auth__list
+      for item in props.items
+        a.socials-auth__item(
+          class=`socials-auth__item--${item.icon}`
+          href="#"
+          aria-label=item.alt
+          data-tip=item.alt
+        )
+          +icon(item.icon)

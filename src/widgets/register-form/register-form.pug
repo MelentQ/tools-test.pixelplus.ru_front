@@ -1,0 +1,67 @@
+mixin register-form(props)
+  - props = props || {}
+  .register-form
+    .register-form__login
+      | Уже зарегистрированы?
+      button.register-form__login-button(
+        type="button"
+        data-fancybox="modal"
+        data-src="#login-modal"
+      ) Войдите
+    +form&attributes({class: "register-form__form"})
+      +input({
+        placeholder: "E-mail",
+        type: "email",
+        name: "email",
+        required: true,
+        tip: "Укажите ваш почтовый ящик вида support@pixeltools.ru. Почта (e-mail) будет использоваться для входа в сервис и для восстановления пароля. Убедитесь, что вы ввели адрес правильно, чтобы была возможность подтвердить его."
+      })
+      +input({
+        placeholder: "Пароль",
+        required: true,
+        name: "password",
+        type: "password",
+        tip: "Укажите пароль. Далее этот пароль будет использоваться при авторизации в сервисе. Мы рекомендуем использовать надежный пароль, который будет сложно угадать."
+      })
+      +input({
+        name: "phone",
+        type: "tel",
+        tip: "Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках."
+      })
+      +input({
+        placeholder: "Никнейм",
+        name: "username"
+      })
+      .register-form__checkbox
+        +checkbox({
+          name: "offer",
+          checked: true,
+          required: true
+        })
+          | Прочитал и принимаю условия&nbsp;
+          button.register-form__checkbox-button(
+            type="button"
+            data-fancybox="modal-info"
+            data-src="#offer-modal"
+          ) Оферты сервиса
+      .register-form__checkbox
+        +checkbox({
+          name: "policy",
+          checked: true,
+          required: true
+        })
+          | Согласен с обработкой моих персональных данных в соответствии с&nbsp;
+          button.register-form__checkbox-button(
+            type="button"
+            data-fancybox="modal-info"
+            data-src="#policy-modal"
+          ) Политикой конфиденциальности
+      .register-form__controls
+        +button({
+          type: "submit"
+        })&attributes({class: "register-form__control"}) Зарегистрироваться за 30 секунд
+    +socials-auth({
+      title: "Зарегистрироваться через",
+      items: socialsLogin
+    })&attributes({class: "register-form__socials"})
+  link(href="./css/register-form.css" rel="stylesheet")

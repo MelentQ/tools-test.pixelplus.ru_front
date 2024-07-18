@@ -1,0 +1,10 @@
+mixin offer-modal(props)
+  - props = props || {}
+  +modal({
+    mods: ["wide"],
+    id: "offer-modal",
+    title: "Оферта на оказание информационных услуг в сервисе «Пиксель Тулс»",
+    description: "Российская Федерация, Москва."
+  })
+    +document
+      include offer

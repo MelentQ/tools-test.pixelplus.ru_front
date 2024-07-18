@@ -1,0 +1,42 @@
+mixin login-form(props)
+  - props = props || {}
+  .login-form
+    .login-form__register
+      | У вас ещё нет аккаунта?
+      button.login-form__register-button(
+        type="button"
+        data-fancybox="modal"
+        data-src="#register-modal"
+      ) Зарегистрируйтесь
+    +form&attributes({class: "login-form__form"})
+      +input({
+        placeholder: "E-mail",
+        type: "email",
+        name: "email",
+        required: true
+      })
+      +input({
+        placeholder: "Пароль",
+        required: true,
+        name: "password",
+        type: "password"
+      })
+      button.login-form__reset(
+        type="button"
+        data-fancybox="modal"
+        data-src="#reset-password-modal"
+      ) Забыли пароль?
+      .login-form__remember
+        +checkbox({
+          name: "remember",
+          checked: true
+        }) Запомнить меня
+      .login-form__controls
+        +button({
+          type: "submit"
+        })&attributes({class: "login-form__control"}) Войти
+    +socials-auth({
+      title: "Войти с помощью",
+      items: socialsLogin
+    })&attributes({class: "login-form__socials"})
+  link(href="./css/login-form.css" rel="stylesheet")

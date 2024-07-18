@@ -1,7 +1,9 @@
 mixin input(props)
   - props = props || {}
   - props.type = props.type || 'text'
-  label.input.js-validation-wrapper
+  label.input.js-validation-wrapper(
+    class=(props.tip ? "input--tip" : null)
+  )
     input.input__element(
       class=(props.type === 'tel' ? 'js-phone-input' : null)
       data-parsley-iti=(props.type === 'tel' ? '' : null)
@@ -10,3 +12,7 @@ mixin input(props)
       placeholder=props.placeholder
       name=props.name
     )&attributes(attributes)
+    if props.tip
+      +tip({
+        text: props.tip
+      })&attributes({class: "input__tip"})

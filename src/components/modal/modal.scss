@@ -8,6 +8,10 @@
 
   background: none;
 
+  &--wide {
+    max-width: 80rem;
+  }
+
   &__inner {
     position: relative;
 
@@ -94,6 +98,12 @@
   &--warning #{$block-name}__text::before {
     background-color: var(--color-gray);
     background-image: url("../assets/images/decoration/warning.svg");
+  }
+
+  &__title-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
   }
 
   &__title {

@@ -1,0 +1,58 @@
+.document {
+  font-size: var(--fs-t2);
+  line-height: 1.4;
+
+  ol {
+    margin: 1em 0;
+    padding: 0;
+
+    list-style: none;
+
+    counter-reset: item;
+
+    & > li {
+      position: relative;
+
+      padding-left: 3rem;
+
+      counter-increment: item;
+
+      &::before {
+        position: absolute;
+        top: calc(var(--fs-t2) * 1.4 / 2);
+        right: calc(100% - 2.6rem);
+
+        font-weight: 700;
+
+        transform: translateY(-50%);
+
+        content: counters(item, ".") ". ";
+      }
+    }
+  }
+
+  ol > li:not(:last-child) {
+    margin-bottom: 2em;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  li li:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  a {
+    @include color(var(--color-primary));
+    text-decoration: underline;
+
+    @include hover {
+      @include color(var(--color-primary-dark));
+    }
+  }
+}

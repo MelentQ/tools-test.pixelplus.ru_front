@@ -9,12 +9,13 @@ Fancybox.defaults.on = {
 window.pts.Fancybox = Fancybox;
 
 export default function modal() {
-  Fancybox.bind('[data-fancybox]:not([data-fancybox="modal"])');
+  Fancybox.bind('[data-fancybox]:not([data-fancybox="modal"]):not([data-fancybox="modal-info"])');
 
   Fancybox.bind('[data-fancybox="modal"]', {
     groupAttr: false,
     Hash: false,
     defaultDisplay: 'block',
+    closeExisting: true,
     dragToClose: false,
     on: {
       reveal: () => {
@@ -42,5 +43,12 @@ export default function modal() {
         }
       },
     },
+  });
+
+  Fancybox.bind('[data-fancybox="modal-info"]', {
+    groupAttr: false,
+    Hash: false,
+    defaultDisplay: 'block',
+    dragToClose: false,
   });
 }

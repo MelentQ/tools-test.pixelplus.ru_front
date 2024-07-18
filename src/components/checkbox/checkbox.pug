@@ -1,0 +1,13 @@
+mixin checkbox(props)
+  - props = props || {}
+  label.checkbox.js-validation-wrapper
+    input.checkbox__element(
+      type="checkbox"
+      name=props.name
+      checked=props.checked
+      required=props.required
+    )&attributes(attributes)
+    span.checkbox__fake
+    if block
+      span.checkbox__label
+        block
