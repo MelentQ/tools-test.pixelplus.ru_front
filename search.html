@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="./css/core.min.css" rel="stylesheet">
-        <title>«Пиксель Тулс»</title>
-        <meta name="description" content="«Пиксель Тулс»">
+        <title>Поиск по сайту</title>
+        <meta name="description" content="Поиск по сайту">
     </head>
     <body class="page js-smooth-scrolling">
         <div class="visually-hidden" id="svg-sprite">
@@ -1813,129 +1813,94 @@
             </header>
 
             <main class="page__content">
-                <section class="section section--border">
+                <section class="section">
                     <div class="page-container">
                         <div class="section__head">
-                            <h2 class="section__title animation animation--fade-in-left">Лендинги (2)</h2>
+                            <h1 class="section__title animation animation--fade-in-left">Поиск по сайту</h1>
                         </div>
                         <div class="section__content animation animation--fade-in">
-                            <div class="cards-slider js-cards-slider">
-                                <div class="cards-slider__slider swiper loader">
-                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/home.jpg" alt="Главная" loading="lazy" data-fancybox="cards-slider-0" data-caption="Главная" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./home.html">Главная</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/onboarding.jpg" alt="Онбординг" loading="lazy" data-fancybox="cards-slider-0" data-caption="Онбординг" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./onboarding.html">Онбординг</a>
-                                            </div>
+                            <div class="search">
+                                <form class="search__form" action="#" method="post">
+                                    <label class="input js-validation-wrapper">
+                                        <input class="input__element" type="text" placeholder="Что хотите найти?" value="Анализ запросов" />
+                                    </label>
+                                    <button class="search__form-button" type="submit" aria-label="Найти">
+                                        <svg class="icon">
+                                            <use xlink:href="#search"></use>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <div class="search__result">
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Комплексная оценка поисковых запросов онлайн — анализ...</a>
+                                        <div class="search-card__text">Инструмент представляет собой комплексный быстрый <b>анализ</b> ключевых фраз. Он нужен, чтобы определить релевантность <b>запросов</b>, степень преобладания интента в поисковой...</div>
+                                    </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Анализ поисковых запросов онлайн — детальная проверка...</a>
+                                        <div class="search-card__text">Аналитика ключевых фраз помогает построить стратегию продвижения по <b>запросу</b> в определенном регионе. Видео: всё о поисковых <b>запросах</b> и <b>анализе</b> фраз.</div>
+                                    </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Анализа ТОП по ключевым показателям для группы запросов</a>
+                                        <div class="search-card__text">
+                                            <b>Анализ</b> ТОП выдачи Яндекса и Google по группе <b>запросов</b>.
                                         </div>
                                     </div>
-                                </div>
-                                <div class="slider-pagination cards-slider__pagination"></div>
-                            </div>
-                            <link href="./css/cards-slider.css" rel="stylesheet" />
-                            <script src="./js/cards-slider.min.js"></script>
-                        </div>
-                    </div>
-                </section>
-                <section class="section section--border">
-                    <div class="page-container">
-                        <div class="section__head">
-                            <h2 class="section__title animation animation--fade-in-left">Личный кабинет (3)</h2>
-                        </div>
-                        <div class="section__content animation animation--fade-in">
-                            <div class="cards-slider js-cards-slider">
-                                <div class="cards-slider__slider swiper loader">
-                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/login.jpg" alt="Вход" loading="lazy" data-fancybox="cards-slider-1" data-caption="Вход" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./login.html">Вход</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/register.jpg" alt="Регистрация" loading="lazy" data-fancybox="cards-slider-1" data-caption="Регистрация" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./register.html">Регистрация</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/reset-password.jpg" alt="Восстановление пароля" loading="lazy" data-fancybox="cards-slider-1" data-caption="Восстановление пароля" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./reset-password.html">Восстановление пароля</a>
-                                            </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Комплексная оценка поисковых запросов онлайн: геозависимость...</a>
+                                        <div class="search-card__text">
+                                            <b>Анализ запроса</b> на геозависимость, коммерциализацию. Конечно, при работе с большим списком <b>запросов</b>, удобнее получать информацию в CSV.
                                         </div>
                                     </div>
-                                </div>
-                                <div class="slider-pagination cards-slider__pagination"></div>
-                            </div>
-                            <link href="./css/cards-slider.css" rel="stylesheet" />
-                            <script src="./js/cards-slider.min.js"></script>
-                        </div>
-                    </div>
-                </section>
-                <section class="section section--border">
-                    <div class="page-container">
-                        <div class="section__head">
-                            <h2 class="section__title animation animation--fade-in-left">Технические (4)</h2>
-                        </div>
-                        <div class="section__content animation animation--fade-in">
-                            <div class="cards-slider js-cards-slider">
-                                <div class="cards-slider__slider swiper loader">
-                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/offer.jpg" alt="Публичная оферта" loading="lazy" data-fancybox="cards-slider-2" data-caption="Публичная оферта" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./offer.html">Публичная оферта</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/policy.jpg" alt="Политика конфиденциальности" loading="lazy" data-fancybox="cards-slider-2" data-caption="Политика конфиденциальности" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./policy.html">Политика конфиденциальности</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/404.jpg" alt="404" loading="lazy" data-fancybox="cards-slider-2" data-caption="404" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./404.html">404</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/search.jpg" alt="Поиск по сайту" loading="lazy" data-fancybox="cards-slider-2" data-caption="Поиск по сайту" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./search.html">Поиск по сайту</a>
-                                            </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Анализ ТОП-10 выдачи по запросам, инструмент анализа ТОП...</a>
+                                        <div class="search-card__text">Воспользуйтесь инструментом «Инструмент <b>анализа</b> ТОП по ключевым показателям для группы <b>запросов</b>» от Пиксель Тулс.</div>
+                                    </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Статистика запросов в Google — анализ и проверка частотности...</a>
+                                        <div class="search-card__text">
+                                            <b>Анализ</b> ТОП выдачи Яндекса и Google по группе <b>запросов</b>. Раньше проверить статистику поисковых <b>запросов</b> можно было в сервисе для рекламодателей Google Adwords.
                                         </div>
                                     </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Анализ ТОП выдачи по запросам для Яндекса и Google</a>
+                                        <div class="search-card__text">Мы постарались учесть все пожелания, поэтому добавили проверку по списку <b>запросов</b>, <b>анализ</b> по зонам документа, учёт разных типов вхождений и другие возможности.</div>
+                                    </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Быстрый анализ поискового запроса и выдачи Яндекса...</a>
+                                        <div class="search-card__text">Команда проекта рада анонсировать запуск нового инструмента — «Детальный <b>анализ</b> поискового <b>запроса</b>», а также метода «analizzaprosa» в API к нему.</div>
+                                    </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Проверить частотность запросов онлайн — бесплатная проверка...</a>
+                                        <div class="search-card__text">Онлайн-сервис поможет массово проверить частотность поисковых <b>запросов</b> в выбранном регионе.</div>
+                                    </div>
+                                    <div class="search-card search__card">
+                                        <a class="search-card__title" href="#">Статистика запросов в Яндекс — сервис аналитики поисковых...</a>
+                                        <div class="search-card__text">Как уже сказано выше, наш инструмент не просто сервис для <b>анализа</b> частотности <b>запросов</b>.</div>
+                                    </div>
                                 </div>
-                                <div class="slider-pagination cards-slider__pagination"></div>
+                                <div class="pagination search__pagination">
+                                    <a class="pagination__link pagination__link--prev" aria-label="Назад" href="#">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </a>
+                                    <a class="pagination__link" href="#">1</a>
+                                    <span class="pagination__link">...</span>
+                                    <a class="pagination__link" href="#">4</a>
+                                    <a class="pagination__link" href="#">5</a>
+                                    <div class="pagination__link pagination__link--active">6</div>
+                                    <a class="pagination__link" href="#">7</a>
+                                    <a class="pagination__link" href="#">8</a>
+                                    <span class="pagination__link">...</span>
+                                    <a class="pagination__link" href="#">20</a>
+                                    <a class="pagination__link pagination__link--next" aria-label="Вперед" href="#">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
-                            <link href="./css/cards-slider.css" rel="stylesheet" />
-                            <script src="./js/cards-slider.min.js"></script>
+                            <link href="./css/search.css" rel="stylesheet" />
                         </div>
                     </div>
                 </section>
