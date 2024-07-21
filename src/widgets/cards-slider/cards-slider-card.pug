@@ -1,0 +1,13 @@
+mixin cards-slider-card(props, index)
+  - props = props || {}
+  .cards-slider-card
+    .cards-slider-card__image
+      if props.image
+        img(
+          src=props.image
+          alt=props.title
+          loading="lazy"
+          data-fancybox=`cards-slider-${index}`
+          data-caption=props.title
+        )
+    a(href=props.link).cards-slider-card__title=props.title

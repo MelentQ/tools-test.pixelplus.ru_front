@@ -1,0 +1,24 @@
+.cards-slider {
+  @include breakpoint(m) {
+    width: calc(100% + 4rem);
+    margin: 0 -2rem;
+    padding: 0 2rem;
+    overflow: hidden;
+  }
+
+  @include breakpoint(s) {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+  }
+
+  &__slider {
+    @include breakpoint(m) {
+      overflow: visible;
+    }
+  }
+
+  &__pagination {
+    margin-top: 2rem;
+  }
+}

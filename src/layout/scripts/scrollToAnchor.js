@@ -1,4 +1,5 @@
 import scrollTo from '@/layout/scripts/scrollTo';
+import isSelectorValid from '@/layout/scripts/isSelectorValid';
 
 export default function scrollToAnchor() {
   const selector = 'a[href]:not([href=""])';
@@ -6,18 +7,21 @@ export default function scrollToAnchor() {
   document.addEventListener('click', (e) => {
     if (e.target.matches(selector) || e.target.closest(selector)) {
       const link = e.target.matches(selector) ? e.target : e.target.closest(selector);
-      const anchor = document.querySelector(link.getAttribute('href'));
-      if (anchor) {
-        e.preventDefault();
+      const anchorSelector = link.getAttribute('href');
+      if (isSelectorValid(anchorSelector)) {
+        const anchor = document.querySelector(anchorSelector);
+        if (anchor) {
+          e.preventDefault();
 
-        scrollTo({
-          duration: 0.3,
-          ease: 'ease',
-          scrollTo: {
-            y: anchor,
-            offsetY: 80,
-          },
-        });
+          scrollTo({
+            duration: 0.3,
+            ease: 'ease',
+            scrollTo: {
+              y: anchor,
+              offsetY: 80,
+            },
+          });
+        }
       }
     }
   });

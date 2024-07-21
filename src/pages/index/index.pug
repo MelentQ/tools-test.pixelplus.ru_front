@@ -5,20 +5,11 @@ block head
   meta(name="description" content="«Пиксель Тулс»")
 
 block content
-  +section({
-    title: "Все страницы",
-    tag: "h1"
-  })
-    ul
-      li
-        a(href="./home.html") Главная
-      li
-        a(href="./login.html") Вход
-      li
-        a(href="./reset-password.html") Восстановление пароля
-      li
-        a(href="./register.html") Регистрация
-      li
-        a(href="./offer.html") Публичная оферта
-      li
-        a(href="./policy.html") Политика конфиденциальности
+  for group, i in dev.pagesGroups
+    +cards-slider({
+      items: group.items,
+      index: i
+    }, {
+      title: `${group.section.title} (${group.items.length})`,
+      mods: ["border"]
+    })

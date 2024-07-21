@@ -1,0 +1,12 @@
+mixin cards-slider(props, section)
+  - props = props || {}
+  +section(section)
+    .cards-slider.js-cards-slider
+      .cards-slider__slider.swiper.loader
+        .cards-slider__slider-wrapper.swiper-wrapper
+          for item in props.items
+            .cards-slider__slide.swiper-slide
+              +cards-slider-card(item, props.index)
+      +slider-pagination&attributes({class: "cards-slider__pagination"})
+    link(href="./css/cards-slider.css" rel="stylesheet")
+    script(src="./js/cards-slider.js")

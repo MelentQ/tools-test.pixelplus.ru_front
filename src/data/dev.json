@@ -1,0 +1,65 @@
+{
+  "dev": {
+    "pagesGroups": [
+      {
+        "items": [
+          {
+            "image": "./assets/images/dev/pages/home.jpg",
+            "title": "Главная",
+            "link": "./home.html"
+          },
+          {
+            "image": "./assets/images/dev/pages/onboarding.jpg",
+            "title": "Онбординг",
+            "link": "./onboarding.html"
+          }
+        ],
+        "section": {
+          "title": "Лендинги"
+        }
+      },
+      {
+        "items": [
+          {
+            "image": "./assets/images/dev/pages/login.jpg",
+            "title": "Вход",
+            "link": "./login.html"
+          },
+          {
+            "image": "./assets/images/dev/pages/register.jpg",
+            "title": "Регистрация",
+            "link": "./register.html"
+          },
+          {
+            "image": "./assets/images/dev/pages/reset-password.jpg",
+            "title": "Восстановление пароля",
+            "link": "./reset-password.html"
+          },
+          {
+            "image": "./assets/images/dev/pages/offer.jpg",
+            "title": "Публичная оферта",
+            "link": "./offer.html"
+          },
+          {
+            "image": "./assets/images/dev/pages/policy.jpg",
+            "title": "Политика конфиденциальности",
+            "link": "./policy.html"
+          },
+          {
+            "image": "",
+            "title": "404",
+            "link": "#"
+          },
+          {
+            "image": "",
+            "title": "Поиск по сайту",
+            "link": "#"
+          }
+        ],
+        "section": {
+          "title": "Технические"
+        }
+      }
+    ]
+  }
+}

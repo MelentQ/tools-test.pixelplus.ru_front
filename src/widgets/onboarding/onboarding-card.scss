@@ -1,0 +1,82 @@
+.onboarding-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  &__icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+
+    background-color: var(--color-primary);
+    border-radius: 50%;
+
+    counter-increment: ordered-list;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 50%;
+      height: 100%;
+
+      background-color: var(--color-primary-dark);
+      border-radius: 5rem 0 0 5rem;
+
+      content: '';
+      pointer-events: none;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.8rem;
+      height: 2.8rem;
+
+      font-size: var(--fs-t2);
+
+      background-color: var(--color-primary-dark);
+      border-radius: 50%;
+
+      content: counter(ordered-list);
+      pointer-events: none;
+    }
+
+    svg {
+      position: relative;
+      z-index: 2;
+
+      display: block;
+      width: 4rem;
+      height: 4rem;
+
+      fill: currentColor;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-t1);
+    text-align: center;
+  }
+
+  &__text {
+    font-size: var(--fs-t2);
+    text-align: center;
+  }
+}

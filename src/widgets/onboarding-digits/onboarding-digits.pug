@@ -1,0 +1,12 @@
+mixin onboarding-digits(props, section)
+  - props = props || {}
+  +section(section)
+    .onboarding-digits.js-onboarding-digits
+      .onboarding-digits__slider.swiper.loader
+        .onboarding-digits__slider-wrapper.swiper-wrapper
+          for item in props.items
+            .onboarding-digits__slide.swiper-slide
+              +od-card(item)
+      +slider-pagination&attributes({class: "onboarding-digits__pagination"})
+    link(href="./css/onboarding-digits.css" rel="stylesheet")
+    script(src="./js/onboarding-digits.js")

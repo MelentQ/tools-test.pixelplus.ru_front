@@ -1,0 +1,14 @@
+mixin onboarding(props)
+  - props = props || {}
+  section.onboarding
+    .page-container
+      .onboarding__content
+        .onboarding__title.animation.animation--fade-in-left !{props.title}
+        .onboarding__subtitle.animation.animation--fade-in-left !{props.subtitle}
+        .onboarding__list.animation.animation--fade-in
+          for item in props.items
+            +onboarding-card(item)&attributes({class: "onboarding__card"})
+        +onboarding-form({
+          isRow: true
+        })&attributes({class: "onboarding__form animation animation--fade-in"})
+    link(href="./css/onboarding.css" rel="stylesheet")

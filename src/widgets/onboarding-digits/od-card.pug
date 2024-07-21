@@ -1,0 +1,25 @@
+mixin od-card(props)
+  - props = props || {}
+  .od-card
+    .od-card__head
+      if props.image
+        .od-card__image
+          img(src=props.image alt=props.title loading="lazy")
+      if props.stars
+        .od-card__stars
+          for _ in Array(5)
+            +icon('star')
+      if props.digit
+        .od-card__digit-block
+          if props.prefix
+            .od-card__prefix=props.prefix
+          .od-card__digit=props.digit
+      if props.title
+        .od-card__title=props.title
+      if props.icon
+        .od-card__icon
+          | !{props.icon}
+          .od-card__icon-decoration
+    if props.text
+      .od-card__text-block
+        .od-card__text=props.text
