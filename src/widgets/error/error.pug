@@ -1,0 +1,8 @@
+mixin error(props, section)
+  - props = props || {}
+  +section(section)
+    .error
+      h1.error__code=props.code
+      .error__description=props.description
+      a.error__link(href="./home.html") Перейти на главную
+    link(href="./css/error.css" rel="stylesheet")

@@ -9,8 +9,8 @@ const del = require('del');
 const header = require('gulp-header');
 const scss = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
-const webpackStream = require('webpack-stream');
-const webpack = require('webpack');
+const webpack = require('webpack-stream');
+const named = require('vinyl-named');
 const browserSync = require('browser-sync').create();
 const pug = require('gulp-pug');
 const prettyHtml = require('gulp-pretty-html');
@@ -52,17 +52,15 @@ function additionalStyles() {
 
 function coreScripts() {
   return src(['src/layout/core.js'])
-    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(named((file) => path.basename('core', path.extname(file.path))))
+    .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'));
 }
 
 function additionalScripts() {
-  return src(['src/widgets/**/index.js'])
-    .pipe(rename((file) => ({
-      dirname: '.',
-      basename: file.dirname,
-      extname: file.extname,
-    })))
+  return src(['src/widgets/**/index.js'], { base: process.cwd() })
+    .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
+    .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'));
 }
 

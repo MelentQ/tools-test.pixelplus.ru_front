@@ -1,0 +1,73 @@
+.pagination {
+  $block-name: &;
+
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+
+  @include breakpoint(s) {
+    gap: 0.2rem;
+  }
+
+  &__link {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 3rem;
+    padding: 0.8rem;
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1;
+
+    border-radius: 1.5rem;
+
+    @include breakpoint(s) {
+      min-width: 2.4rem;
+      padding: 0.6rem;
+
+      font-size: 1.2rem;
+
+      border-radius: 1.2rem;
+    }
+
+    svg {
+      display: block;
+      width: 1.4rem;
+      height: 1.4rem;
+
+      fill: currentColor;
+
+      @include breakpoint(s) {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+
+    &--prev svg {
+      transform: rotate(90deg) translateY(0.1rem);
+    }
+
+    &--active {
+      background-color: var(--color-primary);
+      @include color(var(--color-white));
+    }
+
+    &--next svg {
+      transform: rotate(-90deg) translateY(0.1rem);
+    }
+  }
+
+  a#{$block-name}__link {
+    text-decoration: none;
+
+    @include transition(color, background-color);
+
+    @include hover {
+      background-color: var(--color-gray-darker);
+
+      @include color(var(--color-white));
+    }
+  }
+}

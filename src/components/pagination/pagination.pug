@@ -1,0 +1,16 @@
+mixin pagination(props)
+  - props = props || {}
+  .pagination&attributes(attributes)
+    a.pagination__link.pagination__link--prev(aria-label="Назад" href="#")
+      +icon("chevron")
+    a.pagination__link(href="#") 1
+    span.pagination__link ...
+    a.pagination__link(href="#") 4
+    a.pagination__link(href="#") 5
+    .pagination__link.pagination__link--active 6
+    a.pagination__link(href="#") 7
+    a.pagination__link(href="#") 8
+    span.pagination__link ...
+    a.pagination__link(href="#") 20
+    a.pagination__link.pagination__link--next(aria-label="Вперед" href="#")
+      +icon("chevron")

@@ -1,0 +1,5 @@
+mixin search-card(props)
+  - props = props || {}
+  .search-card&attributes(attributes)
+    a.search-card__title(href="#")=props.title
+    .search-card__text !{props.text}

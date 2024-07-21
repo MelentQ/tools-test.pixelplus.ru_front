@@ -1,5 +1,5 @@
-import scrollTo from '@/layout/scripts/scrollTo';
 import isSelectorValid from '@/layout/scripts/isSelectorValid';
+import { gsap } from 'gsap';
 
 export default function scrollToAnchor() {
   const selector = 'a[href]:not([href=""])';
@@ -13,7 +13,7 @@ export default function scrollToAnchor() {
         if (anchor) {
           e.preventDefault();
 
-          scrollTo({
+          gsap.to(window, {
             duration: 0.3,
             ease: 'ease',
             scrollTo: {

@@ -1,5 +1,4 @@
 import './bootstrap';
-import '@/components/slider';
 import animation from '@/components/animation/animation';
 import accordion from '@/components/accordion/accordion';
 import smoothScrolling from '@/components/page/smoothScrolling';

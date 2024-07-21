@@ -1,11 +1,18 @@
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import paginationOptions from '@/components/slider/paginationOptions';
+import hideLoader from '@/components/slider/hideLoader';
+
+Swiper.use([Pagination]);
+
 document.addEventListener('DOMContentLoaded', () => {
   const containers = [...document.querySelectorAll('.js-cards-slider:not(.--initialized)')];
-  containers.map((container) => new window.pts.slider.Swiper(container.querySelector('.swiper'), {
+  containers.map((container) => new Swiper(container.querySelector('.swiper'), {
     slidesPerView: 1,
     spaceBetween: 16,
     pagination: {
       el: container.querySelector('.slider-pagination'),
-      ...window.pts.slider.paginationOptions,
+      ...paginationOptions,
     },
     breakpoints: {
       768: {
@@ -19,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     on: {
       init(swiper) {
-        window.pts.slider.hideLoader(swiper);
+        hideLoader(swiper);
 
         container.classList.add('--initialized');
       },

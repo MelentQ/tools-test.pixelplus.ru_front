@@ -1,6 +1,14 @@
+import Swiper from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import paginationOptions from '@/components/slider/paginationOptions';
+import navigationOptions from '@/components/slider/navigationOptions';
+import hideLoader from '@/components/slider/hideLoader';
+
+Swiper.use([Autoplay, Navigation, Pagination]);
+
 document.addEventListener('DOMContentLoaded', () => {
   const containers = [...document.querySelectorAll('.js-partners:not(.--initialized)')];
-  containers.map((container) => new window.pts.slider.Swiper(container.querySelector('.swiper'), {
+  containers.map((container) => new Swiper(container.querySelector('.swiper'), {
     slidesPerView: 1,
     spaceBetween: 16,
     loop: true,
@@ -10,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navigation: {
       prevEl: container.querySelector('.slider-navigation__item--prev'),
       nextEl: container.querySelector('.slider-navigation__item--next'),
-      ...window.pts.slider.navigationOptions,
+      ...navigationOptions,
     },
     pagination: {
       el: container.querySelector('.slider-pagination'),
-      ...window.pts.slider.paginationOptions,
+      ...paginationOptions,
     },
     breakpoints: {
       768: {
@@ -28,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     on: {
       init(swiper) {
-        window.pts.slider.hideLoader(swiper);
+        hideLoader(swiper);
 
         container.classList.add('--initialized');
       },

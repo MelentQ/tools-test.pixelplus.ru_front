@@ -1,0 +1,47 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50rem;
+
+  @include breakpoint(m) {
+    min-height: unset;
+  }
+
+  &__code {
+    margin: 0;
+
+    font-size: 15rem;
+    line-height: 1;
+
+    @include breakpoint(m) {
+      font-size: 10rem;
+    }
+
+    @include breakpoint(s) {
+      font-size: 8rem;
+    }
+  }
+
+  &__description {
+    margin-top: 1rem;
+
+    font-size: var(--fs-t1);
+    text-align: center;
+  }
+
+  &__link {
+    margin-top: 2rem;
+
+    font-size: var(--fs-t1);
+
+    @include color(var(--color-primary));
+
+    @include transition(opacity);
+
+    @include hover {
+      @include color(var(--color-primary-dark));
+    }
+  }
+}

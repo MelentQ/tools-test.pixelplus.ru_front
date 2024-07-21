@@ -34,7 +34,14 @@
             "image": "./assets/images/dev/pages/reset-password.jpg",
             "title": "Восстановление пароля",
             "link": "./reset-password.html"
-          },
+          }
+        ],
+        "section": {
+          "title": "Личный кабинет"
+        }
+      },
+      {
+        "items": [
           {
             "image": "./assets/images/dev/pages/offer.jpg",
             "title": "Публичная оферта",
@@ -46,14 +53,14 @@
             "link": "./policy.html"
           },
           {
-            "image": "",
+            "image": "./assets/images/dev/pages/404.jpg",
             "title": "404",
-            "link": "#"
+            "link": "./404.html"
           },
           {
-            "image": "",
+            "image": "./assets/images/dev/pages/search.jpg",
             "title": "Поиск по сайту",
-            "link": "#"
+            "link": "./search.html"
           }
         ],
         "section": {

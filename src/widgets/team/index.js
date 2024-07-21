@@ -1,3 +1,10 @@
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import paginationOptions from '@/components/slider/paginationOptions';
+import hideLoader from '@/components/slider/hideLoader';
+
+Swiper.use([Pagination]);
+
 document.addEventListener('DOMContentLoaded', () => {
   const containers = [...document.querySelectorAll('.js-team:not(.--initialized)')];
   containers.map((container) => {
@@ -6,17 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function init() {
       if (window.matchMedia('(max-width: 767px)').matches) {
         if (!instance) {
-          instance = new window.pts.slider.Swiper(container.querySelector('.swiper'), {
+          instance = new Swiper(container.querySelector('.swiper'), {
             slidesPerView: 1,
             spaceBetween: 16,
             autoHeight: true,
             loop: true,
             pagination: {
               el: container.querySelector('.slider-pagination'),
-              ...window.pts.slider.paginationOptions,
+              ...paginationOptions,
             },
             on: {
-              init: window.pts.slider.hideLoader,
+              init: hideLoader,
             },
           });
         }

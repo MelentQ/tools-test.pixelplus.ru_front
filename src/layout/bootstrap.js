@@ -1,6 +1,8 @@
 import axios from 'axios';
-import scrollTo from './scripts/scrollTo';
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 window.pts = {};
 window.pts.axios = axios;
-window.pts.scrollTo = scrollTo;

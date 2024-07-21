@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+
 document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.js-scroll-to-top:not(.--initialized)');
   if (!containers.length) return;
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('click', (e) => {
       e.preventDefault();
 
-      window.pts.scrollTo({
+      gsap.to(window, {
         duration: 1,
         ease: 'ease',
         scrollTo: {
