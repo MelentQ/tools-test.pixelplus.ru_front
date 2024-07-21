@@ -1,0 +1,165 @@
+.onboarding {
+  padding: 6rem 0;
+  color: var(--color-white);
+  background-color: var(--color-gray-dark);
+  background-image: url("../assets/images/onboarding.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@media screen and (max-width: 991px) {
+  .onboarding {
+    padding: 5rem 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .onboarding {
+    padding: 4rem 0;
+  }
+}
+.onboarding__content {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .onboarding__content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.onboarding__title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .onboarding__title {
+    order: 1;
+  }
+}
+.onboarding__title b {
+  color: var(--color-primary);
+}
+.onboarding__subtitle {
+  font-size: var(--fs-t1);
+  line-height: 1.4;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .onboarding__subtitle {
+    order: 2;
+  }
+}
+.onboarding__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+  margin-top: 6rem;
+  counter-reset: ordered-list;
+}
+@media screen and (max-width: 767px) {
+  .onboarding__list {
+    display: flex;
+    flex-direction: column;
+    order: 4;
+    margin-top: 4rem;
+  }
+}
+.onboarding__card:not(:last-child) {
+  position: relative;
+}
+.onboarding__card:not(:last-child)::after {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 1.5rem);
+  width: 14.6rem;
+  height: 1.9rem;
+  background-image: url("../assets/images/decoration/step-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: translateX(-50%);
+  content: "";
+  pointer-events: none;
+}
+@media screen and (max-width: 767px) {
+  .onboarding__card:not(:last-child)::after {
+    content: none;
+  }
+}
+.onboarding__form {
+  max-width: 80rem;
+  margin: 6rem auto 0;
+}
+@media screen and (max-width: 767px) {
+  .onboarding__form {
+    order: 3;
+    margin: 3rem 0 0;
+  }
+}
+
+.onboarding-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.onboarding-card__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  counter-increment: ordered-list;
+}
+.onboarding-card__icon::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-primary-dark);
+  border-radius: 5rem 0 0 5rem;
+  content: "";
+  pointer-events: none;
+}
+.onboarding-card__icon::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: var(--fs-t2);
+  background-color: var(--color-primary-dark);
+  border-radius: 50%;
+  content: counter(ordered-list);
+  pointer-events: none;
+}
+.onboarding-card__icon svg {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  fill: currentColor;
+}
+.onboarding-card__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: var(--fs-t1);
+  text-align: center;
+}
+.onboarding-card__text {
+  font-size: var(--fs-t2);
+  text-align: center;
+}

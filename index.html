@@ -38,6 +38,9 @@
                 <symbol viewBox="0 0 24 24" id="search" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.154 24a1.81 1.81 0 0 1-1.298-.549l-4.947-4.934a10.13 10.13 0 0 1-5.756 1.79C4.543 20.307 0 15.767 0 10.155A10.15 10.15 0 0 1 10.153 0a10.151 10.151 0 0 1 8.366 15.906l4.947 4.949c.331.334.534.806.534 1.299A1.858 1.858 0 0 1 22.154 24Zm-12-20.309c-3.563 0-6.461 2.9-6.461 6.464a6.469 6.469 0 0 0 6.46 6.46 6.47 6.47 0 0 0 6.463-6.46 6.47 6.47 0 0 0-6.463-6.464Z" />
                 </symbol>
+                <symbol viewBox="0 0 24 24" id="star" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m12 0 3.96 6.56 7.45 1.73-5.01 5.79.66 7.63L12 18.72l-7.06 2.99.66-7.63-5-5.79 7.46-1.73L12 0Z" />
+                </symbol>
                 <symbol viewBox="0 0 24 24" id="tg" xmlns="http://www.w3.org/2000/svg">
                     <path d="m.65 11.35 5.42 2.02 2.1 6.76c.13.43.66.59 1.01.3l3.03-2.46a.9.9 0 0 1 1.1-.03l5.45 3.96c.38.27.9.06 1-.4l4-19.2c.1-.5-.39-.92-.86-.73L.64 10.15a.64.64 0 0 0 0 1.2Zm7.18.95 10.6-6.53c.2-.12.39.14.22.29l-8.74 8.13c-.31.29-.51.67-.57 1.09l-.3 2.2c-.03.3-.45.33-.53.05L7.36 13.5a1.07 1.07 0 0 1 .47-1.2Z" />
                 </symbol>
@@ -1810,32 +1813,107 @@
             </header>
 
             <main class="page__content">
-                <section class="section">
+                <section class="section section--border">
                     <div class="page-container">
                         <div class="section__head">
-                            <h1 class="section__title animation animation--fade-in-left">Все страницы</h1>
+                            <h2 class="section__title animation animation--fade-in-left">Лендинги (2)</h2>
                         </div>
                         <div class="section__content animation animation--fade-in">
-                            <ul>
-                                <li>
-                                    <a href="./home.html">Главная</a>
-                                </li>
-                                <li>
-                                    <a href="./login.html">Вход</a>
-                                </li>
-                                <li>
-                                    <a href="./reset-password.html">Восстановление пароля</a>
-                                </li>
-                                <li>
-                                    <a href="./register.html">Регистрация</a>
-                                </li>
-                                <li>
-                                    <a href="./offer.html">Публичная оферта</a>
-                                </li>
-                                <li>
-                                    <a href="./policy.html">Политика конфиденциальности</a>
-                                </li>
-                            </ul>
+                            <div class="cards-slider js-cards-slider">
+                                <div class="cards-slider__slider swiper loader">
+                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/home.jpg" alt="Главная" loading="lazy" data-fancybox="cards-slider-0" data-caption="Главная" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./home.html">Главная</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/onboarding.jpg" alt="Онбординг" loading="lazy" data-fancybox="cards-slider-0" data-caption="Онбординг" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./onboarding.html">Онбординг</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-pagination cards-slider__pagination"></div>
+                            </div>
+                            <link href="./css/cards-slider.css" rel="stylesheet" />
+                            <script src="./js/cards-slider.js"></script>
+                        </div>
+                    </div>
+                </section>
+                <section class="section section--border">
+                    <div class="page-container">
+                        <div class="section__head">
+                            <h2 class="section__title animation animation--fade-in-left">Технические (7)</h2>
+                        </div>
+                        <div class="section__content animation animation--fade-in">
+                            <div class="cards-slider js-cards-slider">
+                                <div class="cards-slider__slider swiper loader">
+                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/login.jpg" alt="Вход" loading="lazy" data-fancybox="cards-slider-1" data-caption="Вход" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./login.html">Вход</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/register.jpg" alt="Регистрация" loading="lazy" data-fancybox="cards-slider-1" data-caption="Регистрация" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./register.html">Регистрация</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/reset-password.jpg" alt="Восстановление пароля" loading="lazy" data-fancybox="cards-slider-1" data-caption="Восстановление пароля" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./reset-password.html">Восстановление пароля</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/offer.jpg" alt="Публичная оферта" loading="lazy" data-fancybox="cards-slider-1" data-caption="Публичная оферта" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./offer.html">Публичная оферта</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image">
+                                                    <img src="./assets/images/dev/pages/policy.jpg" alt="Политика конфиденциальности" loading="lazy" data-fancybox="cards-slider-1" data-caption="Политика конфиденциальности" />
+                                                </div>
+                                                <a class="cards-slider-card__title" href="./policy.html">Политика конфиденциальности</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image"></div>
+                                                <a class="cards-slider-card__title" href="#">404</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cards-slider-card">
+                                                <div class="cards-slider-card__image"></div>
+                                                <a class="cards-slider-card__title" href="#">Поиск по сайту</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-pagination cards-slider__pagination"></div>
+                            </div>
+                            <link href="./css/cards-slider.css" rel="stylesheet" />
+                            <script src="./js/cards-slider.js"></script>
                         </div>
                     </div>
                 </section>
