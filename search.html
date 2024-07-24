@@ -73,7 +73,7 @@
                         <div class="menu header__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -198,7 +198,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -505,18 +505,18 @@
                                     <use xlink:href="#close"></use>
                                 </svg>
                             </button>
-                            <button class="header__control" data-fancybox="modal" data-src="#login-modal" aria-label="Войти" data-tip="Войти">
+                            <a class="header__control" href="./login.html" aria-label="Войти" data-tip="Войти">
                                 <svg class="icon">
                                     <use xlink:href="#login"></use>
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="search-form header__search js-search-form">
                     <div class="page-container">
-                        <form class="search-form__form">
-                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" />
+                        <form class="search-form__form" action="./search.html" method="get">
+                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" name="q" />
                         </form>
                     </div>
                 </div>
@@ -1900,7 +1900,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <link href="./css/search.css" rel="stylesheet" />
+                            <link href="./css/search.min.css" rel="stylesheet" />
                         </div>
                     </div>
                 </section>
@@ -1915,7 +1915,7 @@
                         <div class="menu menu--position-top footer__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -1924,7 +1924,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -2040,7 +2040,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -2376,7 +2376,7 @@
                     <use xlink:href="#arrow"></use>
                 </svg>
             </button>
-            <link href="./css/scroll-to-top.css" rel="stylesheet" />
+            <link href="./css/scroll-to-top.min.css" rel="stylesheet" />
             <script src="./js/scroll-to-top.min.js"></script>
             <div class="multi-button js-multi-button page__multi-button">
                 <div class="multi-button__button js-multi-button-trigger" role="button" aria-label="Открыть">
@@ -2424,7 +2424,7 @@
                     </button>
                 </div>
             </div>
-            <link href="./css/multi-button.css" rel="stylesheet" />
+            <link href="./css/multi-button.min.css" rel="stylesheet" />
             <script src="./js/multi-button.min.js"></script>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -2443,7 +2443,6 @@
             });
         </script>
         <script src="./js/core.min.js"></script>
-        <script src="./js/forms.js"></script>
 
     </body>
 </html>

@@ -73,7 +73,7 @@
                         <div class="menu header__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -198,7 +198,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -505,18 +505,18 @@
                                     <use xlink:href="#close"></use>
                                 </svg>
                             </button>
-                            <button class="header__control" data-fancybox="modal" data-src="#login-modal" aria-label="Войти" data-tip="Войти">
+                            <a class="header__control" href="./login.html" aria-label="Войти" data-tip="Войти">
                                 <svg class="icon">
                                     <use xlink:href="#login"></use>
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="search-form header__search js-search-form">
                     <div class="page-container">
-                        <form class="search-form__form">
-                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" />
+                        <form class="search-form__form" action="./search.html" method="get">
+                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" name="q" />
                         </form>
                     </div>
                 </div>
@@ -1816,33 +1816,91 @@
                 <section class="section section--border">
                     <div class="page-container">
                         <div class="section__head">
-                            <h2 class="section__title animation animation--fade-in-left">Лендинги (2)</h2>
+                            <h2 class="section__title animation animation--fade-in-left">Для разработки (1)</h2>
                         </div>
                         <div class="section__content animation animation--fade-in">
                             <div class="cards-slider js-cards-slider">
                                 <div class="cards-slider__slider swiper loader">
                                     <div class="cards-slider__slider-wrapper swiper-wrapper">
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/home.jpg" alt="Главная" loading="lazy" data-fancybox="cards-slider-0" data-caption="Главная" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./home.html">Главная</a>
-                                            </div>
-                                        </div>
-                                        <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/onboarding.jpg" alt="Онбординг" loading="lazy" data-fancybox="cards-slider-0" data-caption="Онбординг" />
-                                                </div>
-                                                <a class="cards-slider-card__title" href="./onboarding.html">Онбординг</a>
+                                            <div class="cs-card">
+                                                <div class="cs-card__image"></div>
+                                                <div class="cs-card__title">UI-kit</div>
+                                                <a class="button cs-card__button" href="./ui-kit.html">Открыть</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="slider-navigation cards-slider__navigation">
+                                    <button class="slider-navigation__item slider-navigation__item--prev" type="button" aria-label="Назад">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="slider-navigation__item slider-navigation__item--next" type="button" aria-label="Вперед">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <div class="slider-pagination cards-slider__pagination"></div>
                             </div>
-                            <link href="./css/cards-slider.css" rel="stylesheet" />
+                            <link href="./css/cards-slider.min.css" rel="stylesheet" />
+                            <script src="./js/cards-slider.min.js"></script>
+                        </div>
+                    </div>
+                </section>
+                <section class="section section--border">
+                    <div class="page-container">
+                        <div class="section__head">
+                            <h2 class="section__title animation animation--fade-in-left">Лендинги (3)</h2>
+                        </div>
+                        <div class="section__content animation animation--fade-in">
+                            <div class="cards-slider js-cards-slider">
+                                <div class="cards-slider__slider swiper loader">
+                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/home.jpg" alt="Главная" loading="lazy" data-fancybox="cards-slider-1" data-caption="Главная" />
+                                                </div>
+                                                <div class="cs-card__title">Главная</div>
+                                                <a class="button cs-card__button" href="./home.html">Открыть</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/onboarding.jpg" alt="Онбординг" loading="lazy" data-fancybox="cards-slider-1" data-caption="Онбординг" />
+                                                </div>
+                                                <div class="cs-card__title">Онбординг</div>
+                                                <a class="button cs-card__button" href="./onboarding.html">Открыть</a>
+                                            </div>
+                                        </div>
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image"></div>
+                                                <div class="cs-card__title">Инструменты</div>
+                                                <a class="button cs-card__button" href="./tools.html">Открыть</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-navigation cards-slider__navigation">
+                                    <button class="slider-navigation__item slider-navigation__item--prev" type="button" aria-label="Назад">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="slider-navigation__item slider-navigation__item--next" type="button" aria-label="Вперед">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="slider-pagination cards-slider__pagination"></div>
+                            </div>
+                            <link href="./css/cards-slider.min.css" rel="stylesheet" />
                             <script src="./js/cards-slider.min.js"></script>
                         </div>
                     </div>
@@ -1857,34 +1915,49 @@
                                 <div class="cards-slider__slider swiper loader">
                                     <div class="cards-slider__slider-wrapper swiper-wrapper">
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/login.jpg" alt="Вход" loading="lazy" data-fancybox="cards-slider-1" data-caption="Вход" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/login.jpg" alt="Вход" loading="lazy" data-fancybox="cards-slider-2" data-caption="Вход" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./login.html">Вход</a>
+                                                <div class="cs-card__title">Вход</div>
+                                                <a class="button cs-card__button" href="./login.html">Открыть</a>
                                             </div>
                                         </div>
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/register.jpg" alt="Регистрация" loading="lazy" data-fancybox="cards-slider-1" data-caption="Регистрация" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/register.jpg" alt="Регистрация" loading="lazy" data-fancybox="cards-slider-2" data-caption="Регистрация" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./register.html">Регистрация</a>
+                                                <div class="cs-card__title">Регистрация</div>
+                                                <a class="button cs-card__button" href="./register.html">Открыть</a>
                                             </div>
                                         </div>
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/reset-password.jpg" alt="Восстановление пароля" loading="lazy" data-fancybox="cards-slider-1" data-caption="Восстановление пароля" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/reset-password.jpg" alt="Восстановление пароля" loading="lazy" data-fancybox="cards-slider-2" data-caption="Восстановление пароля" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./reset-password.html">Восстановление пароля</a>
+                                                <div class="cs-card__title">Восстановление пароля</div>
+                                                <a class="button cs-card__button" href="./reset-password.html">Открыть</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="slider-navigation cards-slider__navigation">
+                                    <button class="slider-navigation__item slider-navigation__item--prev" type="button" aria-label="Назад">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="slider-navigation__item slider-navigation__item--next" type="button" aria-label="Вперед">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <div class="slider-pagination cards-slider__pagination"></div>
                             </div>
-                            <link href="./css/cards-slider.css" rel="stylesheet" />
+                            <link href="./css/cards-slider.min.css" rel="stylesheet" />
                             <script src="./js/cards-slider.min.js"></script>
                         </div>
                     </div>
@@ -1899,42 +1972,58 @@
                                 <div class="cards-slider__slider swiper loader">
                                     <div class="cards-slider__slider-wrapper swiper-wrapper">
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/offer.jpg" alt="Публичная оферта" loading="lazy" data-fancybox="cards-slider-2" data-caption="Публичная оферта" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/offer.jpg" alt="Публичная оферта" loading="lazy" data-fancybox="cards-slider-3" data-caption="Публичная оферта" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./offer.html">Публичная оферта</a>
+                                                <div class="cs-card__title">Публичная оферта</div>
+                                                <a class="button cs-card__button" href="./offer.html">Открыть</a>
                                             </div>
                                         </div>
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/policy.jpg" alt="Политика конфиденциальности" loading="lazy" data-fancybox="cards-slider-2" data-caption="Политика конфиденциальности" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/policy.jpg" alt="Политика конфиденциальности" loading="lazy" data-fancybox="cards-slider-3" data-caption="Политика конфиденциальности" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./policy.html">Политика конфиденциальности</a>
+                                                <div class="cs-card__title">Политика конфиденциальности</div>
+                                                <a class="button cs-card__button" href="./policy.html">Открыть</a>
                                             </div>
                                         </div>
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/404.jpg" alt="404" loading="lazy" data-fancybox="cards-slider-2" data-caption="404" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/404.jpg" alt="404" loading="lazy" data-fancybox="cards-slider-3" data-caption="404" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./404.html">404</a>
+                                                <div class="cs-card__title">404</div>
+                                                <a class="button cs-card__button" href="./404.html">Открыть</a>
                                             </div>
                                         </div>
                                         <div class="cards-slider__slide swiper-slide">
-                                            <div class="cards-slider-card">
-                                                <div class="cards-slider-card__image">
-                                                    <img src="./assets/images/dev/pages/search.jpg" alt="Поиск по сайту" loading="lazy" data-fancybox="cards-slider-2" data-caption="Поиск по сайту" />
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/dev/pages/search.jpg" alt="Поиск по сайту" loading="lazy" data-fancybox="cards-slider-3" data-caption="Поиск по сайту" />
                                                 </div>
-                                                <a class="cards-slider-card__title" href="./search.html">Поиск по сайту</a>
+                                                <div class="cs-card__title">Поиск по сайту</div>
+                                                <a class="button cs-card__button" href="./search.html">Открыть</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="slider-navigation cards-slider__navigation">
+                                    <button class="slider-navigation__item slider-navigation__item--prev" type="button" aria-label="Назад">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="slider-navigation__item slider-navigation__item--next" type="button" aria-label="Вперед">
+                                        <svg class="icon">
+                                            <use xlink:href="#chevron"></use>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <div class="slider-pagination cards-slider__pagination"></div>
                             </div>
-                            <link href="./css/cards-slider.css" rel="stylesheet" />
+                            <link href="./css/cards-slider.min.css" rel="stylesheet" />
                             <script src="./js/cards-slider.min.js"></script>
                         </div>
                     </div>
@@ -1950,7 +2039,7 @@
                         <div class="menu menu--position-top footer__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -1959,7 +2048,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -2075,7 +2164,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -2411,7 +2500,7 @@
                     <use xlink:href="#arrow"></use>
                 </svg>
             </button>
-            <link href="./css/scroll-to-top.css" rel="stylesheet" />
+            <link href="./css/scroll-to-top.min.css" rel="stylesheet" />
             <script src="./js/scroll-to-top.min.js"></script>
             <div class="multi-button js-multi-button page__multi-button">
                 <div class="multi-button__button js-multi-button-trigger" role="button" aria-label="Открыть">
@@ -2459,7 +2548,7 @@
                     </button>
                 </div>
             </div>
-            <link href="./css/multi-button.css" rel="stylesheet" />
+            <link href="./css/multi-button.min.css" rel="stylesheet" />
             <script src="./js/multi-button.min.js"></script>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -2478,7 +2567,6 @@
             });
         </script>
         <script src="./js/core.min.js"></script>
-        <script src="./js/forms.js"></script>
 
     </body>
 </html>

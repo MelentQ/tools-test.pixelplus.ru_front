@@ -74,7 +74,7 @@
                         <div class="menu header__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -199,7 +199,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -506,18 +506,18 @@
                                     <use xlink:href="#close"></use>
                                 </svg>
                             </button>
-                            <button class="header__control" data-fancybox="modal" data-src="#login-modal" aria-label="Войти" data-tip="Войти">
+                            <a class="header__control" href="./login.html" aria-label="Войти" data-tip="Войти">
                                 <svg class="icon">
                                     <use xlink:href="#login"></use>
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="search-form header__search js-search-form">
                     <div class="page-container">
-                        <form class="search-form__form">
-                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" />
+                        <form class="search-form__form" action="./search.html" method="get">
+                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" name="q" />
                         </form>
                     </div>
                 </div>
@@ -1826,7 +1826,7 @@
                                 <div class="intro__item">10+ сводок для&nbsp;контроля</div>
                                 <div class="intro__item">Глубокая аналитика</div>
                             </div>
-                            <form class="form js-form js-validation form--null onboarding-form intro__form animation animation--fade-in" action="#" method="post">
+                            <form class="form js-validation onboarding-form js-onboarding-form intro__form animation animation--fade-in" action="#" method="post">
                                 <label class="input js-validation-wrapper">
                                     <input class="input__element" type="text" required="required" placeholder="Введите домен сайта" pattern="^[^\s@]+\.([a-zA-Zа-яА-Я]{2,})$" data-parsley-pattern-message="Введите адрес вида: domain.ru" />
                                 </label>
@@ -2587,16 +2587,17 @@
                                     </select>
                                 </div>
                                 <div class="onboarding-form__controls onboarding-form__controls--grid">
-                                    <a class="button button--light onboarding-form__control" href="#">Демо-проект</a>
+                                    <a class="button button--light onboarding-form__control" href="#">Демо-проекты</a>
                                     <button class="button onboarding-form__control" type="submit">
                                         <span class="spinner"></span>Начать
                                     </button>
                                 </div>
                             </form>
-                            <link href="./css/onboarding-form.css" rel="stylesheet" />
+                            <link href="./css/onboarding-form.min.css" rel="stylesheet" />
+                            <script src="./js/onboarding-form.min.js"></script>
                         </div>
                     </div>
-                    <link href="./css/intro.css" rel="stylesheet" />
+                    <link href="./css/intro.min.css" rel="stylesheet" />
                 </section>
                 <section class="section section--small">
                     <div class="page-container">
@@ -2610,7 +2611,7 @@
                                     <use xlink:href="#youtube-play"></use>
                                 </svg>
                             </div>
-                            <link href="./css/video.css" rel="stylesheet" />
+                            <link href="./css/video.min.css" rel="stylesheet" />
                         </div>
                         <div class="section__footer animation animation--fade-in">
                             <div class="section__footer-text">
@@ -2618,7 +2619,7 @@
                                     <br>Узнать больше в курсе по SEO с нуля «Бери и делай!» от Пиксель Тулс:
                                 </p>
                             </div>
-                            <a class="button section__button" href="#">Перейти к курсу</a>
+                            <a class="button section__button" href="https://pixelplus.skillspace.ru/course/10701/about" target="_blank">Перейти к курсу</a>
                         </div>
                     </div>
                 </section>
@@ -2680,15 +2681,39 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="advantages__slide swiper-slide">
+                                            <div class="advantages-card advantages__item">
+                                                <div class="advantages-card__title">Мощное API</div>
+                                                <div class="advantages-card__text">
+                                                    <p>Постройте свое приложение на основе данных Пиксель Тулс и получайте данные через API.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="advantages__slide swiper-slide">
+                                            <div class="advantages-card advantages__item">
+                                                <div class="advantages-card__title">Интеграция</div>
+                                                <div class="advantages-card__text">
+                                                    <p>Подключите сервисы Яндекс.Метрика и Яндекс.Вебмастер и отслеживайте динамику трафика и позиций на одном графике.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="advantages__slide swiper-slide">
+                                            <div class="advantages-card advantages__item">
+                                                <div class="advantages-card__title">Высокая скорость</div>
+                                                <div class="advantages-card__text">
+                                                    <p>Вы можете загрузить десятки тысяч запросов в один проект и позиции снимутся меньше чем через час.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="slider-pagination advantages__pagination"></div>
                             </div>
-                            <link href="./css/advantages.css" rel="stylesheet" />
+                            <link href="./css/advantages.min.css" rel="stylesheet" />
                             <script src="./js/advantages.min.js"></script>
                         </div>
                         <div class="section__footer animation animation--fade-in">
-                            <a class="button section__button" href="#">Заведите свой проект за 1 минуту</a>
+                            <a class="button section__button" href="./onboarding.html">Заведите свой проект за 1 минуту</a>
                         </div>
                     </div>
                 </section>
@@ -2698,114 +2723,84 @@
                             <h2 class="section__title animation animation--fade-in-left">Что входит в Пиксель Тулс?</h2>
                         </div>
                         <div class="section__content animation animation--fade-in">
-                            <div class="features js-features">
-                                <div class="features__slider swiper loader">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="features-card">
-                                                <div class="features-card__image">
-                                                    <img src="./assets/images/features/feature-1.webp" alt="" loading="lazy" />
+                            <div class="cards-slider js-cards-slider">
+                                <div class="cards-slider__slider swiper loader">
+                                    <div class="cards-slider__slider-wrapper swiper-wrapper">
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/features/feature-1.webp" alt="Модуль ведения проектов" loading="lazy" data-fancybox="cards-slider-undefined" data-caption="Модуль ведения проектов" />
                                                 </div>
-                                                <div class="features-card__content">
-                                                    <div class="features-card__title">Модуль ведения проектов</div>
-                                                    <div class="features-card__text">
-                                                        <p>Модуль ведения проектов объединяет в себе все возможности современной поисковой аналитики. Аналогия: это Google Analytics для SEO-специалистов.</p>
-                                                    </div>
-                                                    <a class="features-card__link" href="#">Попробовать демо-версию<svg class="icon">
-                                                            <use xlink:href="#chevron"></use>
-                                                        </svg>
-                                                    </a>
+                                                <div class="cs-card__title">Модуль ведения проектов</div>
+                                                <div class="cs-card__text">
+                                                    <p>Модуль ведения проектов объединяет в себе все возможности современной поисковой аналитики. Аналогия: это Google Analytics для SEO-специалистов.</p>
                                                 </div>
+                                                <a class="button cs-card__button" href="#">Смотреть демо-проекты</a>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="features-card">
-                                                <div class="features-card__image">
-                                                    <img src="./assets/images/features/feature-2.webp" alt="" loading="lazy" />
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/features/feature-2.webp" alt="Глубокая SEO-аналитика" loading="lazy" data-fancybox="cards-slider-undefined" data-caption="Глубокая SEO-аналитика" />
                                                 </div>
-                                                <div class="features-card__content">
-                                                    <div class="features-card__title">Глубокая SEO-аналитика</div>
-                                                    <div class="features-card__text">
-                                                        <p>Отдельная часть системы — 15+ готовых отчетов для получения информации о текущем состоянии продвижения и того, что изменилось в последний апдейт?</p>
-                                                    </div>
-                                                    <a class="features-card__link" href="#">Попробовать демо-версию<svg class="icon">
-                                                            <use xlink:href="#chevron"></use>
-                                                        </svg>
-                                                    </a>
+                                                <div class="cs-card__title">Глубокая SEO-аналитика</div>
+                                                <div class="cs-card__text">
+                                                    <p>Отдельная часть системы — 15+ готовых отчетов для получения информации о текущем состоянии продвижения и того, что изменилось в последний апдейт?</p>
                                                 </div>
+                                                <a class="button cs-card__button" href="#">Смотреть демо-проекты</a>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="features-card">
-                                                <div class="features-card__image">
-                                                    <img src="./assets/images/features/feature-3.webp" alt="" loading="lazy" />
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/features/feature-3.webp" alt="Модуль генерации отчетности по проектам" loading="lazy" data-fancybox="cards-slider-undefined" data-caption="Модуль генерации отчетности по проектам" />
                                                 </div>
-                                                <div class="features-card__content">
-                                                    <div class="features-card__title">Модуль генерации отчетности по проектам</div>
-                                                    <div class="features-card__text">
-                                                        <p>Вы можете брендировать или предоставлять гостевой доступ к отчету, который объединяет в себе данные о позициях, трафике, KPI (видимость, СРС, СРА) и проведенных работах.</p>
-                                                    </div>
-                                                    <a class="features-card__link" href="#">Попробовать демо-версию<svg class="icon">
-                                                            <use xlink:href="#chevron"></use>
-                                                        </svg>
-                                                    </a>
+                                                <div class="cs-card__title">Модуль генерации отчетности по проектам</div>
+                                                <div class="cs-card__text">
+                                                    <p>Вы можете брендировать или предоставлять гостевой доступ к отчету, который объединяет в себе данные о позициях, трафике, KPI (видимость, СРС, СРА) и проведенных работах.</p>
                                                 </div>
+                                                <a class="button cs-card__button" href="#">Узнать больше</a>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="features-card">
-                                                <div class="features-card__image">
-                                                    <img src="./assets/images/features/feature-4.webp" alt="" loading="lazy" />
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/features/feature-4.webp" alt="Модуль генерации задач по проектам на основе аналитики" loading="lazy" data-fancybox="cards-slider-undefined" data-caption="Модуль генерации задач по проектам на основе аналитики" />
                                                 </div>
-                                                <div class="features-card__content">
-                                                    <div class="features-card__title">Модуль генерации задач по проектам на основе аналитики</div>
-                                                    <div class="features-card__text">
-                                                        <p>Гордость системы — TO DO. Это список готовых задач, которые нужно просто взять и сделать для роста позиций и трафика. Задачи формируются по итогам анализа страниц сайта.</p>
-                                                    </div>
-                                                    <a class="features-card__link" href="#">Попробовать демо-версию<svg class="icon">
-                                                            <use xlink:href="#chevron"></use>
-                                                        </svg>
-                                                    </a>
+                                                <div class="cs-card__title">Модуль генерации задач по проектам на основе аналитики</div>
+                                                <div class="cs-card__text">
+                                                    <p>Гордость системы — TO DO. Это список готовых задач, которые нужно просто взять и сделать для роста позиций и трафика. Задачи формируются по итогам анализа страниц сайта.</p>
                                                 </div>
+                                                <a class="button cs-card__button" href="#">Смотреть демо-проекты</a>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="features-card">
-                                                <div class="features-card__image">
-                                                    <img src="./assets/images/features/feature-5.webp" alt="" loading="lazy" />
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/features/feature-5.webp" alt="50+ инструментов автоматизации" loading="lazy" data-fancybox="cards-slider-undefined" data-caption="50+ инструментов автоматизации" />
                                                 </div>
-                                                <div class="features-card__content">
-                                                    <div class="features-card__title">50+ инструментов автоматизации</div>
-                                                    <div class="features-card__text">
-                                                        <p>Специалисты знают, что в SEO очень много рутинных задач, которые отнимают много сил и времени. Мы автоматизируем их. Быстрая группировка запросов, диагностика качества оптимизации и многое другое.</p>
-                                                    </div>
-                                                    <a class="features-card__link" href="#">Попробовать демо-версию<svg class="icon">
-                                                            <use xlink:href="#chevron"></use>
-                                                        </svg>
-                                                    </a>
+                                                <div class="cs-card__title">50+ инструментов автоматизации</div>
+                                                <div class="cs-card__text">
+                                                    <p>Специалисты знают, что в SEO очень много рутинных задач, которые отнимают много сил и времени. Мы автоматизируем их. Быстрая группировка запросов, диагностика качества оптимизации и многое другое.</p>
                                                 </div>
+                                                <a class="button cs-card__button" href="#">Узнать больше</a>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="features-card">
-                                                <div class="features-card__image">
-                                                    <img src="./assets/images/features/feature-6.webp" alt="" loading="lazy" />
+                                        <div class="cards-slider__slide swiper-slide">
+                                            <div class="cs-card">
+                                                <div class="cs-card__image">
+                                                    <img src="./assets/images/features/feature-6.webp" alt="Узнайте, как увеличить SEO‑трафик сайта в 3+ раза?" loading="lazy" data-fancybox="cards-slider-undefined" data-caption="Узнайте, как увеличить SEO‑трафик сайта в 3+ раза?" />
                                                 </div>
-                                                <div class="features-card__content">
-                                                    <div class="features-card__title">Узнайте, как увеличить SEO‑трафик сайта в 3+ раза?</div>
-                                                    <div class="features-card__text">
-                                                        <p>Введите адрес вашего сайта и получите не менее 25+ точек взрывного роста трафика и заявок для него.</p>
-                                                    </div>
-                                                    <a class="features-card__link" href="#">Попробовать демо-версию<svg class="icon">
-                                                            <use xlink:href="#chevron"></use>
-                                                        </svg>
-                                                    </a>
+                                                <div class="cs-card__title">Узнайте, как увеличить SEO‑трафик сайта в 3+ раза?</div>
+                                                <div class="cs-card__text">
+                                                    <p>Введите адрес вашего сайта и получите не менее 25+ точек взрывного роста трафика и заявок для него.</p>
                                                 </div>
+                                                <a class="button cs-card__button" href="#">Смотреть демо-проекты</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slider-navigation features__navigation">
+                                <div class="slider-navigation cards-slider__navigation">
                                     <button class="slider-navigation__item slider-navigation__item--prev" type="button" aria-label="Назад">
                                         <svg class="icon">
                                             <use xlink:href="#chevron"></use>
@@ -2817,10 +2812,10 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="slider-pagination features__pagination"></div>
+                                <div class="slider-pagination cards-slider__pagination"></div>
                             </div>
-                            <link href="./css/features.css" rel="stylesheet" />
-                            <script src="./js/features.min.js"></script>
+                            <link href="./css/cards-slider.min.css" rel="stylesheet" />
+                            <script src="./js/cards-slider.min.js"></script>
                         </div>
                     </div>
                 </section>
@@ -2876,7 +2871,7 @@
                                 </div>
                                 <div class="slider-pagination achievements__pagination"></div>
                             </div>
-                            <link href="./css/achievements.css" rel="stylesheet" />
+                            <link href="./css/achievements.min.css" rel="stylesheet" />
                             <script src="./js/achievements.min.js"></script>
                         </div>
                         <div class="section__footer animation animation--fade-in">
@@ -3061,7 +3056,7 @@
                                 </div>
                                 <div class="slider-pagination reviews__pagination"></div>
                             </div>
-                            <link href="./css/reviews.css" rel="stylesheet" />
+                            <link href="./css/reviews.min.css" rel="stylesheet" />
                             <script src="./js/reviews.min.js"></script>
                         </div>
                     </div>
@@ -3119,7 +3114,7 @@
                                                         <path d="M34.96 37.2a16.7 16.7 0 0 0-16.68 16.67v1.04h33.35v-1.04A16.7 16.7 0 0 0 34.96 37.2ZM20.4 52.83a14.6 14.6 0 0 1 29.11 0H20.4ZM34.68 35.5a9.75 9.75 0 1 0 0-19.5 9.75 9.75 0 0 0 0 19.5Zm0-17.42a7.67 7.67 0 1 1 0 15.33 7.67 7.67 0 0 1 0-15.33ZM12.66 43.3c1.89 0 3.74.5 5.37 1.45l1.05-1.8A12.67 12.67 0 0 0 0 53.88v1.04h15.5v-2.08H2.12a10.6 10.6 0 0 1 10.53-9.54ZM12.46 39.2a7.51 7.51 0 1 0 0-15.04 7.51 7.51 0 0 0 0 15.03Zm0-12.95a5.43 5.43 0 1 1 0 10.86 5.43 5.43 0 0 1 0-10.86ZM57.34 41.21c-2.26 0-4.47.6-6.42 1.75l1.05 1.79a10.59 10.59 0 0 1 15.9 8.08H54.5v2.08H70v-1.04a12.67 12.67 0 0 0-12.66-12.66ZM57.54 39.2a7.51 7.51 0 1 0 0-15.04 7.51 7.51 0 0 0 0 15.03Zm0-12.95a5.43 5.43 0 1 1 0 10.86 5.43 5.43 0 0 1 0-10.86Z" />
                                                     </svg>
                                                 </div>
-                                                <div class="ic-card__title">107 791 пользователей системы</div>
+                                                <div class="ic-card__title">228 782 пользователя системы</div>
                                                 <div class="ic-card__text">Тысячи пользователей, десятки тысяч проектов и сотни тысяч запросов</div>
                                             </div>
                                         </div>
@@ -3127,7 +3122,7 @@
                                 </div>
                                 <div class="slider-pagination icon-cards__pagination"></div>
                             </div>
-                            <link href="./css/icon-cards.css" rel="stylesheet" />
+                            <link href="./css/icon-cards.min.css" rel="stylesheet" />
                             <script src="./js/icon-cards.min.js"></script>
                         </div>
                         <div class="section__footer animation animation--fade-in">
@@ -3151,7 +3146,7 @@
                                 <li class="check-list__item">Автоматизация построения отчетов</li>
                                 <li class="check-list__item">Автоматизация аналитики по проектам</li>
                             </ul>
-                            <link href="./css/check-list.css" rel="stylesheet" />
+                            <link href="./css/check-list.min.css" rel="stylesheet" />
                         </div>
                         <div class="section__footer animation animation--fade-in">
                             <a class="button section__button" href="#">Заведите свой проект за 1 минуту</a>
@@ -3199,7 +3194,7 @@
                                                 </div>
                                             </div>
                                             <div class="tariffs__card swiper-slide tariffs__card--accent">
-                                                <div class="tariffs-card tariffs-card--light tariffs-card--accent">
+                                                <div class="tariffs-card tariffs-card--accent tariffs-card--light">
                                                     <div class="tariffs-card__icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 70 70">
                                                             <path fill="#fff" d="M67.24 23.87c.01.25 0 .5-.05.75l-4.32 22.01a2.12 2.12 0 0 1-1.9 1.9l-25.9.16H9.18a2.12 2.12 0 0 1-1.9-1.9L2.93 24.7c-.04-.24-.06-.5-.05-.75a5.28 5.28 0 0 1-2.88-5.02c0-2.9 1.85-5.25 4.12-5.25s4.12 2.36 4.12 5.25a5.9 5.9 0 0 1-1.5 4.06l5.4 6.94a6.69 6.69 0 0 0 5.2 2.76 6.97 6.97 0 0 0 5.86-3.71l8.88-15a6.03 6.03 0 0 1-1.21-3.72C30.88 7.35 32.73 5 35 5s4.12 2.36 4.12 5.25a6.06 6.06 0 0 1-1.14 3.63l8.82 15.05a6.98 6.98 0 0 0 5.87 3.75 6.6 6.6 0 0 0 5.18-2.73L63.3 23a5.88 5.88 0 0 1-1.54-4.09c0-2.9 1.85-5.25 4.12-5.25S70 16.03 70 18.92a5.33 5.33 0 0 1-2.75 4.95Zm-4.8 32.66a2.28 2.28 0 0 0-1.95-2.5H9.73a2.28 2.28 0 0 0-1.96 2.5v6a2.28 2.28 0 0 0 1.96 2.5H60.5a2.28 2.28 0 0 0 1.96-2.5v-6Z" />
@@ -3264,7 +3259,7 @@
                                     <div class="tariffs__guarantee-caption">* — в течение 7 дней после покупки тарифа</div>
                                 </div>
                             </div>
-                            <link href="./css/tariffs.css" rel="stylesheet" />
+                            <link href="./css/tariffs.min.css" rel="stylesheet" />
                             <script src="./js/tariffs.min.js"></script>
                         </div>
                     </div>
@@ -3319,7 +3314,7 @@
                                 </div>
                                 <div class="slider-pagination icon-cards__pagination"></div>
                             </div>
-                            <link href="./css/icon-cards.css" rel="stylesheet" />
+                            <link href="./css/icon-cards.min.css" rel="stylesheet" />
                             <script src="./js/icon-cards.min.js"></script>
                         </div>
                         <div class="section__footer animation animation--fade-in">
@@ -3393,7 +3388,7 @@
                                 </div>
                                 <div class="slider-pagination partners__pagination"></div>
                             </div>
-                            <link href="./css/partners.css" rel="stylesheet" />
+                            <link href="./css/partners.min.css" rel="stylesheet" />
                             <script src="./js/partners.min.js"></script>
                         </div>
                     </div>
@@ -3501,7 +3496,7 @@
                                 </div>
                                 <div class="slider-pagination team__pagination"></div>
                             </div>
-                            <link href="./css/team.css" rel="stylesheet" />
+                            <link href="./css/team.min.css" rel="stylesheet" />
                             <script src="./js/team.min.js"></script>
                         </div>
                     </div>
@@ -3564,11 +3559,11 @@
                                 </div>
                                 <div class="slider-pagination icon-cards__pagination"></div>
                             </div>
-                            <link href="./css/icon-cards.css" rel="stylesheet" />
+                            <link href="./css/icon-cards.min.css" rel="stylesheet" />
                             <script src="./js/icon-cards.min.js"></script>
                         </div>
                         <div class="section__footer animation animation--fade-in">
-                            <form class="form js-form js-validation form--row onboarding-form" action="#" method="post">
+                            <form class="form js-validation onboarding-form js-onboarding-form onboarding-form--row" action="#" method="post">
                                 <label class="input js-validation-wrapper">
                                     <input class="input__element" type="text" required="required" placeholder="Введите домен сайта" pattern="^[^\s@]+\.([a-zA-Zа-яА-Я]{2,})$" data-parsley-pattern-message="Введите адрес вида: domain.ru" />
                                 </label>
@@ -4334,7 +4329,8 @@
                                     </button>
                                 </div>
                             </form>
-                            <link href="./css/onboarding-form.css" rel="stylesheet" />
+                            <link href="./css/onboarding-form.min.css" rel="stylesheet" />
+                            <script src="./js/onboarding-form.min.js"></script>
                         </div>
                     </div>
                 </section>
@@ -4362,7 +4358,7 @@
                             <div class="modal__title">Обсудим детали?</div>
                         </div>
                         <div class="modal__content">
-                            <form class="form js-form js-validation demo-form" action="#" method="post">
+                            <form class="form js-validation demo-form js-demo-form" action="#" method="post">
                                 <label class="input js-validation-wrapper">
                                     <input class="input__element" type="text" required="required" placeholder="Имя" minlength="2" />
                                 </label>
@@ -4381,7 +4377,8 @@
                                     </button>
                                 </div>
                             </form>
-                            <link href="./css/demo-form.css" rel="stylesheet" />
+                            <link href="./css/demo-form.min.css" rel="stylesheet" />
+                            <script src="./js/demo-form.min.js"></script>
                         </div>
                     </div>
                 </div>
@@ -4418,802 +4415,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal modal--warning" id="warning-modal">
-                    <div class="modal__inner">
-                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
-                            <svg class="icon">
-                                <use xlink:href="#close"></use>
-                            </svg>
-                        </button>
-                        <div class="modal__text">
-                            <div class="modal__title">Ошибка - внимание</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="login-modal">
-                    <div class="modal__inner">
-                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
-                            <svg class="icon">
-                                <use xlink:href="#close"></use>
-                            </svg>
-                        </button>
-                        <div class="modal__text">
-                            <div class="modal__title-wrapper">
-                                <div class="modal__title">Вход в «Пиксель Тулс»</div>
-                                <span class="tip" data-tip="Укажите логин и пароль для входа в существующий аккаунт. Если у вас пока нет аккаунта — нажмите на «Зарегистрироваться», это бесплатно и займёт 30 секунд.">
-                                    <svg class="icon">
-                                        <use xlink:href="#question"></use>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="modal__content">
-                            <div class="login-form">
-                                <div class="login-form__register">У вас ещё нет аккаунта?<button class="login-form__register-button" type="button" data-fancybox="modal" data-src="#register-modal">Зарегистрируйтесь</button>
-                                </div>
-                                <form class="form js-form js-validation login-form__form" action="#" method="post">
-                                    <label class="input js-validation-wrapper">
-                                        <input class="input__element" type="email" required="required" placeholder="E-mail" name="email" />
-                                    </label>
-                                    <label class="input js-validation-wrapper">
-                                        <input class="input__element" type="password" required="required" placeholder="Пароль" name="password" />
-                                    </label>
-                                    <button class="login-form__reset" type="button" data-fancybox="modal" data-src="#reset-password-modal">Забыли пароль?</button>
-                                    <div class="login-form__remember">
-                                        <label class="checkbox js-validation-wrapper">
-                                            <input class="checkbox__element" type="checkbox" name="remember" checked="checked" />
-                                            <span class="checkbox__fake"></span>
-                                            <span class="checkbox__label">Запомнить меня</span>
-                                        </label>
-                                    </div>
-                                    <div class="login-form__controls">
-                                        <button class="button login-form__control" type="submit">Войти</button>
-                                    </div>
-                                </form>
-                                <div class="socials-auth login-form__socials">
-                                    <div class="socials-auth__title">Войти с помощью</div>
-                                    <div class="socials-auth__list">
-                                        <a class="socials-auth__item socials-auth__item--vk" href="#" aria-label="Войти с помощью VK" data-tip="Войти с помощью VK">
-                                            <svg class="icon">
-                                                <use xlink:href="#vk"></use>
-                                            </svg>
-                                        </a>
-                                        <a class="socials-auth__item socials-auth__item--google" href="#" aria-label="Войти с помощью Google" data-tip="Войти с помощью Google">
-                                            <svg class="icon">
-                                                <use xlink:href="#google"></use>
-                                            </svg>
-                                        </a>
-                                        <a class="socials-auth__item socials-auth__item--yandex" href="#" aria-label="Войти с помощью Yandex" data-tip="Войти с помощью Yandex">
-                                            <svg class="icon">
-                                                <use xlink:href="#yandex"></use>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <link href="./css/login-form.css" rel="stylesheet" />
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="register-modal">
-                    <div class="modal__inner">
-                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
-                            <svg class="icon">
-                                <use xlink:href="#close"></use>
-                            </svg>
-                        </button>
-                        <div class="modal__text">
-                            <div class="modal__title">Регистрация в «Пиксель Тулс»</div>
-                        </div>
-                        <div class="modal__content">
-                            <div class="register-form">
-                                <div class="register-form__login">Уже зарегистрированы?<button class="register-form__login-button" type="button" data-fancybox="modal" data-src="#login-modal">Войдите</button>
-                                </div>
-                                <form class="form js-form js-validation register-form__form" action="#" method="post">
-                                    <label class="input js-validation-wrapper input--tip">
-                                        <input class="input__element" type="email" required="required" placeholder="E-mail" name="email" />
-                                        <span class="tip input__tip" data-tip="Укажите ваш почтовый ящик вида support@pixeltools.ru. Почта (e-mail) будет использоваться для входа в сервис и для восстановления пароля. Убедитесь, что вы ввели адрес правильно, чтобы была возможность подтвердить его.">
-                                            <svg class="icon">
-                                                <use xlink:href="#question"></use>
-                                            </svg>
-                                        </span>
-                                    </label>
-                                    <label class="input js-validation-wrapper input--tip">
-                                        <input class="input__element" type="password" required="required" placeholder="Пароль" name="password" />
-                                        <span class="tip input__tip" data-tip="Укажите пароль. Далее этот пароль будет использоваться при авторизации в сервисе. Мы рекомендуем использовать надежный пароль, который будет сложно угадать.">
-                                            <svg class="icon">
-                                                <use xlink:href="#question"></use>
-                                            </svg>
-                                        </span>
-                                    </label>
-                                    <label class="input js-validation-wrapper input--tip">
-                                        <input class="input__element js-phone-input" data-parsley-iti="" type="tel" name="phone" />
-                                        <span class="tip input__tip" data-tip="Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках.">
-                                            <svg class="icon">
-                                                <use xlink:href="#question"></use>
-                                            </svg>
-                                        </span>
-                                    </label>
-                                    <label class="input js-validation-wrapper">
-                                        <input class="input__element" type="text" placeholder="Никнейм" name="username" />
-                                    </label>
-                                    <div class="register-form__checkbox">
-                                        <label class="checkbox js-validation-wrapper">
-                                            <input class="checkbox__element" type="checkbox" name="offer" checked="checked" required="required" />
-                                            <span class="checkbox__fake"></span>
-                                            <span class="checkbox__label">Прочитал и принимаю условия&nbsp;<button class="register-form__checkbox-button" type="button" data-fancybox="modal-info" data-src="#offer-modal">Оферты сервиса</button>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="register-form__checkbox">
-                                        <label class="checkbox js-validation-wrapper">
-                                            <input class="checkbox__element" type="checkbox" name="policy" checked="checked" required="required" />
-                                            <span class="checkbox__fake"></span>
-                                            <span class="checkbox__label">Согласен с обработкой моих персональных данных в соответствии с&nbsp;<button class="register-form__checkbox-button" type="button" data-fancybox="modal-info" data-src="#policy-modal">Политикой конфиденциальности</button>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="register-form__controls">
-                                        <button class="button register-form__control" type="submit">Зарегистрироваться за 30 секунд</button>
-                                    </div>
-                                </form>
-                                <div class="socials-auth register-form__socials">
-                                    <div class="socials-auth__title">Зарегистрироваться через</div>
-                                    <div class="socials-auth__list">
-                                        <a class="socials-auth__item socials-auth__item--vk" href="#" aria-label="Войти с помощью VK" data-tip="Войти с помощью VK">
-                                            <svg class="icon">
-                                                <use xlink:href="#vk"></use>
-                                            </svg>
-                                        </a>
-                                        <a class="socials-auth__item socials-auth__item--google" href="#" aria-label="Войти с помощью Google" data-tip="Войти с помощью Google">
-                                            <svg class="icon">
-                                                <use xlink:href="#google"></use>
-                                            </svg>
-                                        </a>
-                                        <a class="socials-auth__item socials-auth__item--yandex" href="#" aria-label="Войти с помощью Yandex" data-tip="Войти с помощью Yandex">
-                                            <svg class="icon">
-                                                <use xlink:href="#yandex"></use>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <link href="./css/register-form.css" rel="stylesheet" />
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="reset-password-modal">
-                    <div class="modal__inner">
-                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
-                            <svg class="icon">
-                                <use xlink:href="#close"></use>
-                            </svg>
-                        </button>
-                        <div class="modal__text">
-                            <div class="modal__title">Забыли пароль?</div>
-                            <div class="modal__description">Введите ваш email адрес в поле ниже, вам будут высланы инструкции для востановления пароля.</div>
-                        </div>
-                        <div class="modal__content">
-                            <div class="reset-password-form">
-                                <form class="form js-form js-validation reset-password-form__form" action="#" method="post">
-                                    <label class="input js-validation-wrapper">
-                                        <input class="input__element" type="email" required="required" placeholder="E-mail" name="email" />
-                                    </label>
-                                    <button class="reset-password-form__back" type="button" data-fancybox="modal" data-src="#login-modal">Назад ко входу</button>
-                                    <div class="reset-password-form__controls">
-                                        <button class="button reset-password-form__control" type="submit">
-                                            <span class="spinner"></span>Выслать инструкции
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                            <link href="./css/reset-password-form.css" rel="stylesheet" />
-                        </div>
-                    </div>
-                </div>
-                <div class="modal modal--wide" id="offer-modal">
-                    <div class="modal__inner">
-                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
-                            <svg class="icon">
-                                <use xlink:href="#close"></use>
-                            </svg>
-                        </button>
-                        <div class="modal__text">
-                            <div class="modal__title">Оферта на оказание информационных услуг в сервисе «Пиксель Тулс»</div>
-                            <div class="modal__description">Российская Федерация, Москва.</div>
-                        </div>
-                        <div class="modal__content">
-                            <div class="document">
-                                <p>Настоящий документ представляет собой предложение Общества с ограниченной ответственностью «Пиксель Тулс» (далее — Общество) заключить Договор на оказание информационных и консультационных Услуг в сервисе «Пиксель Тулс» размещенному в сети интернет по адресу <a href="https://tools.pixelplus.ru/">https://tools.pixelplus.ru/</a> (далее — Пиксель Тулс) на изложенных ниже условиях.</p>
-                                <ol>
-                                    <li>
-                                        <p>
-                                            <b>Определение и термины</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>В целях настоящего документа нижеприведенные термины используются в следующем значении:</p>
-                                                <p>Пиксель Тулс — сервис (набор инструментов), оказывающий информационные и консультационные услуги в рамках данного Договора и размещенный на домене третьего уровня tools.pixelplus.ru.</p>
-                                                <p>Информационные услуги, Консультационные услуги, Услуги Пиксель Тулс, Услуги — услуги сервиса Пиксель Тулс по предоставлению аналитической информации в соответствии с условиями Оферты.</p>
-                                                <p>Оферта — настоящий документ «Оферта на оказание информационных и консультационных услуг «Пиксель Тулс», размещенный в сети интернет по адресу <a href="https://tools.pixelplus.ru/oferta/">https://tools.pixelplus.ru/oferta/</a>.</p>
-                                                <p>Акцепт Оферты — полное и безоговорочное принятие Оферты путем осуществления действий, указанных в разделе 7. Оферты. Акцептом оферты заключается Договор.</p>
-                                                <p>Пользователь — посетитель информационного ресурса по адресу tools.pixelplus.ru, прошедший процедуру регистрации в сервисе и верификации электронного адреса (e-mail).</p>
-                                                <p>Общество — юридическое лицо, созданное в соответствии с законодательством Российской Федерации.</p>
-                                                <p>Договор — договор между Пользователем и Обществом на оказание информационных и консультационных Услуг в Пиксель Тулс, который заключается посредством Акцепта Оферты.</p>
-                                                <p>Клиентский интерфейс — программный интерфейс взаимодействия Пользователя с сервисом Пиксель Тулс, который содержит информацию о предоставляемых в рамках Договора информационных услугах, а также предоставляет аналитическую информацию.</p>
-                                                <p>Лимит — расчетная величина, используемая для целей оказания Услуг (учета стоимости оказанных Услуг), принятая в Пиксель Тулс.</p>
-                                                <p>Число доступных лимитов аккаунта — численное значение доступных Пользователю лимитов по запросу и предоставлению информации в сервисе Пиксель Тулс.</p>
-                                                <p>ЮKassa — платежный сервис предоставляющий возможность пополнения аккаунта Пользователя в системе, расположенный по адресу yookassa.ru.</p>
-                                                <p>Яндекс.XML — сервис для получения ответов поисковой базы Яндекса в формате XML, расположенный по адресу xml.yandex.ru.</p>
-                                                <p>IP-адрес — уникальный сетевой адрес узла в компьютерной сети, с которого идет подключение Пользователя к сервису Пиксель Тулс.</p>
-                                                <p>Проект — данные о сайте, включая URL сайта, группы ключевых слов и набор поисковых систем, которые необходимо отслеживать, контролировать и анализировать.</p>
-                                                <p>API-ключ — уникальный идентификатор, получаемый Пользователем, позволяющий получать услуги Пиксель Тулс в пределах Числа доступных лимитов аккаунта.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Предмет Договора</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Предметом Договора является оказание сервисом Пиксель Тулс информационных и консультационных Услуг на условиях Оферты.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Условия оказания информационных и консультационных Услуг</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Обязательным условием оказания информационных и консультационных Услуг Пиксель Тулс является принятие и соблюдение Пользователем условий Оферты.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пиксель Тулс несет ответственность только перед теми Пользователями, которые осуществили Акцепт Оферты.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь не вправе передавать свои права по Договору какой-либо третьей стороне.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь самостоятельно несет ответственность за сохранность и конфиденциальность регистрационных данных (логин и пароль). Все действия, осуществленные в сервисе с использованием логина и пароля Пользователя, считаются осуществленными Пользователем. Пользователь самостоятельно несет ответственность перед третьими лицами за все действия, совершенные с использованием логина и пароля Пользователя. Пиксель Тулс не несет ответственности за несанкционированное использование регистрационных данных Пользователя третьими лицами.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь признает, что в целях Договора, в частности, для определения количества используемых лимитов, потраченных средств, используются исключительно данные автоматизированной системы учета Пиксель Тулс.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пиксель Тулс не предоставляет никаких гарантий в отношении использования и результатов (эффективности) использования Пользователем полученной аналитической информации в рамках использования сервиса.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пиксель Тулс не несет ответственности за технические неполадки и сбои, которые могут наблюдаться в работе сторонних сервисов, в том числе, но не ограничиваясь, сервисами Яндекс.Поиск, Ю.Касса, Яндекс.XML, Яндекс.Директ, Яндекс.Метрика, Яндекс.ВордCтат, поиск Google, WebMoney, YouTube и которые могут приводить к искажению предоставляемой сервисом Пиксель Тулс аналитической информации.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Права и обязанности Пиксель Тулс и Общества</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Автоматизированный сервис Пиксель Тулс обязуется:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>Оказать Пользователю информационные Услуги в соответствии с Договором, заключенным на условиях Оферты.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>При оказании Услуг по Договору обеспечить возможность доступа Пользователя к данным статистики Пиксель Тулс по использованию сервиса через Клиентский интерфейс с использованием логина и пароля Пользователя.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Обеспечить конфиденциальность информации, предоставляемой сервисом Пользователю и конфиденциальность данным, полученных от Пользователя.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Стороны согласились, что условие сохранения конфиденциальности регистрационных данных (включая персональные данные), указанных Пользователем при регистрации в Пиксель Тулс и/или при заключении Договора, не распространяется на случаи использования Пиксель Тулс и Обществом таких данных в целях формирования Пользователю счетов на оказание информационных Услуг и актов сдачи-приемки Услуг.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                            <li>
-                                                <p>Пиксель Тулс имеет право:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>Временно приостановить оказание Пользователю информационных и консультационных Услуг по Договору по техническим, технологическим или иным причинам, препятствующим оказанию Услуг, на время устранения таких причин.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Приостановить доступ Пользователя к системе за нарушения правил сервиса Пиксель Тулс без объяснения причины.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Приостановить доступ Пользователя к системе и расторгнуть Договор в одностороннем порядке в случае причинение ущерба деловой репутации сервиса Пиксель Тулс и/или распространения заведомо ложной и/или порочащей репутацию информации о сервисе Пиксель Тулс, в том числе, но не ограничиваясь, использованием социальных сетей, массовых почтовых e-mail сообщений и прочих ресурсов в интернете.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Приостановить доступ Пользователя к системе в случае нанесения финансового ущерба Сервису, например за создание 2 (Двух) и более аккаунтов, используемых в личных целях, на которых был взят тариф на 30 (Тридцать) дней за 1 (Один) рубль.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Использовать обезличенные данные от пользователей для улучшения качества работы онлайн-инструментов и проведения исследовательской деятельности с дальнейшей презентацией итогов исследований в открытом доступе (в обезличенном, агрегированном виде).</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Осуществлять предоставление информации о возможностях системы, проводимых акциях, передвижению средств на аккаунте, новостях и прочих сведениях Пользователю посредством электронных e-mail-сообщений, на указанный при регистрации адрес электронной почты Пользователя, если Пользователь не отказался от приема соответствующих рассылок в Клиентском интерфейсе.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Удалять проекты пользователей, которые не проверялись 90 (девяносто) и более календарных дней или на аккаунтах владельцев которых не было активности 90 (девяносто) и более календарных дней.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Удалять данные проверок в проектах пользователей, которые: для позиций — старше 730 (семисот тридцати) календарных дней, для распределения — старше 90 (девяноста) календарных дней, для аудитов — старше 30 (тридцати) календарных дней.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Временно или навсегда отозвать API-ключ в случае фиксации подозрительной активности со стороны Пользователя.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                            <li>
-                                                <p>Общество обязуется:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>Ежемесячно в первый день следующий за отчетным месяцем Общество формирует односторонний акт об оказанных услугах (далее — «Акт») в соответствии с объемом фактически оказанных в Отчетном периоде Услуг.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Копия текста Акта доступна Пользователю для скачивания в разделе личного кабинета (Баланс/Оплатить безналичным платежом/ Список плательщиков, счетов и актов).</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Стороны признают, что копия текста Акта, доступная для скачивания Пользователю в разделе личного кабинета (Баланс/Оплатить безналичным платежом/ Список плательщиков, счетов и актов), будет применяться Заказчиком в процессе приемки Услуг, до момента получения оригинала Акта.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Направление оригинала Акта Заказчику необходимо запросить по электронной почте <a href="mailto:fin@pixeltools.ru">fin@pixeltools.ru</a>.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Права и обязанности Пользователя</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Пользователь сервиса Пиксель Тулс обязан:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>Самостоятельно подготавливать данные, необходимые для использования инструментов сервиса.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>При подготовке и введении необходимых для использования сервиса данных соблюдать все требования Пиксель Тулс к предоставляемым данным.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Не злоупотреблять предоставленными Пользователю возможностями по использованию инструментов по Договору, в частности, не использовать инструменты с целью принести ущерб третьим лицам или сервису Пиксель Тулс.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Не использовать самостоятельно или с привлечением третьих лиц оказание информационных Услуг и/или возможности сервиса Пиксель Тулс в целях, которые могут быть квалифицированы как нарушение прав третьих лиц.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Не осуществлять действий, которые влияют на нормальную работу сервиса и инструментов Пиксель Тулс, а также являются его недобросовестным использованием.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Оплатить Услуги Пиксель Тулс по Договору в установленные в Оферте (Договоре) сроки и порядке.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь сервиса Пиксель Тулс имеет право:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>На доступ к данным статистики в установленном порядке.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Использовать предоставленные сервисом инструменты в соответствии со своими нуждами для получения аналитической информации, которую они предоставляют.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Управлять возможностями своего аккаунта согласно возможностям, предоставляемым сервисом.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Стоимость услуг и условия оплаты</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Стоимость информационных и консультационных Услуг, оказанных Пиксель Тулс по Договору, определяется в соответствии с тарифными планами, принятыми в системе и размещенными по адресу в сети интернет: <a href="https://tools.pixelplus.ru/faq/tarifs">https://tools.pixelplus.ru/faq/tarifs</a>.</p>
-                                            </li>
-                                            <li>
-                                                <p>Число доступных Пользователю лимитов на каждые сутки определяется согласно:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>Текущему (оплаченному) тарифу Пользователя в соответствии с тарифными планами, принятыми в системе и размещенными по адресу в сети интернет: <a href="https://tools.pixelplus.ru/faq/tarifs">https://tools.pixelplus.ru/faq/tarifs</a>. Текущий тариф Пользователя отображается в Клиентском интерфейсе.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Дополнительным купленным лимитам, увеличивающими число доступных запросов к Пиксель Тулс.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                            <li>
-                                                <p>Отчетный период оказания информационных и консультационных Услуг устанавливается в пределах календарного месяца.</p>
-                                            </li>
-                                            <li>
-                                                <p>Стоимость Услуг, списывается с баланса Пользователя в системе при смене тарифного плана или покупке дополнительных лимитов и отображается в Клиентском интерфейсе в соответствии со стоимостью оказания Услуг Пиксель Тулс до конца выбранного периода.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь, использующий функционал «Подписка» соглашается на автоматическое списание стоимости Услуг со своего баланса в Пиксель Тулс согласно выбранным тарифам и купленным дополнительным лимитам.</p>
-                                                <p>Списание стоимости Услуг происходит в сервисе автоматически по завершении текущего оплаченного периода в формате предоплаты в полном объеме за будущий период, длительность будущего периода определяется выбранными ранее настройками в Клиентском интерфейсе.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь, использующий функционал «Автоматическое пополнение баланса с банковской карты» соглашается на автоматическое списание стоимости Услуг со своей банковской карты в пользу Пиксель Тулс согласно самостоятельно установленной суммы автоматического пополнения.</p>
-                                                <p>Списание стоимости Услуг происходит в сервисе автоматически по завершении текущего оплаченного периода в формате предоплаты в полном объеме за будущий период, длительность будущего периода определяется выбранными ранее настройками в Клиентском интерфейсе.</p>
-                                            </li>
-                                            <li>
-                                                <p>В целях учета стоимости оказанных информационных и консультационных Услуг, в том числе в данных статистики сервиса, могут использоваться лимиты Пиксель Тулс.</p>
-                                            </li>
-                                            <li>
-                                                <p>Оплата Услуг производится Пользователем в российских рублях посредством сервисов Ю.Касса или на расчетный счет Общества.</p>
-                                            </li>
-                                            <li>
-                                                <p>Стоимость оказания информационных и консультационных Услуг, оказываемых сервисом, не подлежит обложению НДС в соответствии с пунктом 2 ст. 346.11 Налогового Кодекса Российской Федерации.</p>
-                                            </li>
-                                            <li>
-                                                <p>Услуги оказываются Пользователю на условиях предварительной оплаты. Пользователь производит авансовый платеж в размере 100% (Сто процентов) от общей стоимости заказываемых Услуг посредством сервисов Ю.Касса или на расчетный счет Общества. Внесение оплаты Пользователем является фактом Акцепта Оферты.</p>
-                                            </li>
-                                            <li>
-                                                <p>Информационные и консультационные Услуги считаются оплаченными Пользователем с момента получения сервисом Пиксель Тулс подтверждения из сервисов Ю.Касса или с момента поступления денежных средств на расчетный счет Общества и списания стоимости Услуг с баланса аккаунта Пользователя согласно принятым тарифным планам.</p>
-                                            </li>
-                                            <li>
-                                                <p>Настоящим Стороны договорились, что в случае, если на момент прекращения или расторжения Договора сумма произведенной Пользователем предоплаты информационных и консультационных Услуг превышает стоимость фактически оказанных Пользователю по Договору Услуг, то разница между указанными суммами признается внесенной Пользователем в счет предоплаты услуг Пиксель Тулс и может быть израсходована только на информационные Услуги самого сервиса.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Срок действия, изменение условий и Акцепт Оферты</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Оферта вступает в силу с момента ее размещения Пиксель Тулс в сети интернет по адресу <a href="https://tools.pixelplus.ru/oferta/">https://tools.pixelplus.ru/oferta/</a> и действует до момента отзыва Оферты Обществом.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь производит Акцепт Оферты:</p>
-                                            </li>
-                                            <li>
-                                                <p>Путем внесения денежных средств Пользователем на расчетный счет Общества.</p>
-                                            </li>
-                                            <li>
-                                                <p>Под датой Акцепта Оферты следует понимать дату поступления денежных средств на расчетный счет Общества.</p>
-                                            </li>
-                                            <li>
-                                                <p>Между Сторонами могут быть заключены последовательно несколько Договоров.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пиксель Тулс оставляет за собой право внести изменения в условия Оферты в любой момент по своему усмотрению. В случае внесения Пиксель Тулс изменений в Оферту, такие изменения вступают в силу с момента размещения измененного текста Оферты в интернете, если иной срок вступления изменений в силу не определен дополнительно при самом размещении.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Срок действия и изменений Договора</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Акцепт Оферты Пользователем, произведенный согласно ст. 7. Оферты, создает Договор (статья 438 Гражданского Кодекса РФ) на условиях Оферты.</p>
-                                            </li>
-                                            <li>
-                                                <p>Договор вступает в силу с момента Акцепта Оферты Пользователем и действует: а) до момента исполнения Сторонами обязательств по Договору, а именно оплаты Пользователем стоимости информационных и консультационных Услуг и оказания Пиксель Тулс информационных и консультационных Услуг в объеме, соответствующем их стоимости Услуг, либо б) до момента расторжения Договора.</p>
-                                            </li>
-                                            <li>
-                                                <p>В случае отзыва Оферты Пиксель Тулс в течение срока ее действия, Договор считается прекращенным с момента отзыва, если иное не оговорено Пиксель Тулс при отзыве Оферты.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Расторжение Договора</b>
-                                        </p>
-                                        <p>Договор может быть расторгнут:</p>
-                                        <ol>
-                                            <li>
-                                                <p>По инициативе любой из Сторон в случае нарушения другой Стороной условий Договора с письменным уведомлением другой Стороны.</p>
-                                            </li>
-                                            <li>
-                                                <p>По инициативе Пиксель Тулс, если работа с аккаунтом Пользователя ведется с более чем 4 (Четырех) различных IP-адресов и/или с 2 (Двух) или большего числа IP-адресов одновременно.</p>
-                                            </li>
-                                            <li>
-                                                <p>По иным основаниям, предусмотренным настоящей Офертой.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Гарантии</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>В течение срока действия Договора Пиксель Тулс предпримет все усилия для устранения каких-либо сбоев и ошибок, в случае их возникновения, в максимально короткие сроки. При этом Пиксель Тулс не гарантирует отсутствия ошибок и сбоев при работе в системе и в работе сторонних сервисов, в том числе в отношении работы программного обеспечения.</p>
-                                            </li>
-                                            <li>
-                                                <p>За исключением гарантий, прямо указанных в тексте Оферты, Пиксель Тулс не предоставляет никаких иных гарантий по Договору и прямо отказывается от каких-либо гарантий или условий в отношении не нарушения прав, соответствия информационных Услуг конкретным целям Пользователя.</p>
-                                            </li>
-                                            <li>
-                                                <p>Соглашаясь с условиями и совершая Акцепт Оферты, Пользователь или его представитель заверяет Пиксель Тулс и гарантирует Пиксель Тулс, что:</p>
-                                                <ol>
-                                                    <li>
-                                                        <p>Пользователь (его представитель) указал достоверные данные, в том числе персональные данные при регистрации.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Пользователь заключает Договор добровольно, при этом Пользователь (его представитель): а) полностью ознакомился с условиями Оферты, б) полностью понимает предмет Оферты и Договора, в) полностью понимает значение и последствия своих действий в отношении заключения и исполнения Договора.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Пользователь (его представитель) обладает всеми правами и полномочиями, необходимыми для заключения и исполнения Договора.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Пользователь своими действиями не нарушает интересы третьих лиц.</p>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Ответственность Сторон</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>За нарушение условий Договора Стороны несут ответственность, установленную Договором и/или действующим законодательством РФ.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пиксель Тулс ни при каких обстоятельствах не несет никакой ответственности по Договору за: а) какие-либо действия/бездействие, являющиеся прямым или косвенным результатом действий/бездействия Пользователя и/или третьих лиц; б) какие-либо косвенные убытки и/или упущенную выгоду Пользователя и/или третьих сторон вне зависимости от того, мог Пиксель Тулс предвидеть возможность таких убытков или нет; в) использование (невозможность использования) и какие бы то ни было последствия использования (невозможности использования) Пользователем выбранной им формы оплаты Услуг по Договору, а равно использование/невозможность использования Пользователем и/или третьими лицами любых средств и/или способов передачи/получения информации.</p>
-                                            </li>
-                                            <li>
-                                                <p>Совокупный размер ответственности Пиксель Тулс, включая размер штрафных санкций (пеней, неустоек) и/или возмещаемых убытков, по любому иску или претензии в отношении Договора или его исполнения, ограничивается 10% (Десять процентов) от стоимости информационных Услуг согласно тарифам.</p>
-                                            </li>
-                                            <li>
-                                                <p>Стороны освобождаются от ответственности за частичное или полное неисполнение обязательств по настоящему Договору, если это неисполнение явилось следствием обстоятельств непреодолимой силы, которые возникли после заключения Договора, либо если неисполнение обязательств Сторонами по Договору явилось следствием событий чрезвычайного характера, которые Стороны не могли ни предвидеть, ни предотвратить разумными мерами. К обстоятельствам непреодолимой силы относятся события, на которые Сторона не может оказывать влияния и за возникновение которых она не несет ответственности, в том числе: война, восстание, забастовка, землетрясение, наводнение, иные стихийные бедствия, пожар, сбои энергоснабжения, произошедшие не по вине Сторон, действия и акты органов власти, принятые после заключения Договора и делающие невозможным исполнение обязательств, установленных Договором, и другие непредвиденные обстоятельства и неподконтрольные сторонам события и явления, но не ограничиваясь указанным.</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь несет ответственность в полном объеме за а) соблюдение всех требований законодательства, в отношении содержания и заполнения форм инструментов сервиса, которые предоставлен доступ в системе Пиксель Тулс; б) достоверность сведений, указанных им при регистрации в качестве Пользователя, и достоверность гарантий и заверений Пользователя, содержащихся в п.10 Оферты.</p>
-                                            </li>
-                                            <li>
-                                                <p>В случае нарушения Пользователем условий Договора Пиксель Тулс вправе приостановить оказание информационных Услуг до момента устранения Пользователем допущенных нарушений и возмещения (компенсации) причиненных сервису таким нарушением убытков в полном объеме и/или расторгнуть Договор с направлением соответствующего уведомления Пользователю по адресу электронной почты, указанному при регистрации. При расторжении Договора по указанному основанию Пиксель Тулс вправе путем удержания взыскать с Пользователя предъявленные в соответствии с Договором суммы неустоек и убытков.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Прочие условия</b>
-                                        </p>
-                                        <ol>
-                                            <li>
-                                                <p>Договор, его заключение и исполнение регулируется действующим законодательством Российской Федерации. Если споры между Пользователем и Пиксель Тулс в отношении Договора не разрешены путем переговоров Сторон, они подлежат рассмотрению в порядке, предусмотренном действующим законодательством в Арбитражном суде г. Москвы.</p>
-                                            </li>
-                                            <li>
-                                                <p>Любые уведомления по Договору могут направляться одной Стороной другой Стороне: 1) по электронной почте а) на адрес электронной почты Пользователя, указанный им при регистрации, с адреса электронной почты Пиксель Тулс, указанного в п.13 Оферты в случае, если получателем является Пользователь, и б) на адрес электронной почты Пиксель Тулс, указанный в п.13 Оферты, с адреса электронной почты Пользователя, указанного им при регистрации; 3) почтой с уведомлением о вручении или курьерской службой с подтверждением доставки.</p>
-                                            </li>
-                                            <li>
-                                                <p>В случае если одно или более положений Оферты являются по какой-либо причине недействительными, не имеющими юридической силы, такая недействительность не оказывает влияния на действительность любого другого положения Оферты (Договора), которые остаются в силе.</p>
-                                            </li>
-                                            <li>
-                                                <p>Не вступая в противоречие с условиями Оферты, Пользователь и Пиксель Тулс вправе в любое время оформить Договор на оказание Услуг в форме письменного двухстороннего документа.</p>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Реквизиты Общества</b>
-                                        </p>
-                                        <p>Наименование: ООО «Пиксель Тулс»</p>
-                                        <p>Местонахождение: 124460, г. Москва, вн.тер.г. муниципальный округ Силино, г. Зеленоград, к. 1131, кв. 466</p>
-                                        <p>ИНН 7735162402</p>
-                                        <p>КПП 773501001</p>
-                                        <p>ОГРН 1177746430806</p>
-                                        <p>Р/С 40702810338000109845 ПАО «Сбербанк» г. Москва</p>
-                                        <p>К/С 30101810400000000225</p>
-                                        <p>БИК 044525225</p>
-                                        <p>Форма обратной связи: <a href="https://tools.pixelplus.ru/support/">https://tools.pixelplus.ru/support/</a>.</p>
-                                        <p>Адрес размещения Оферты в сети интернет: <a href="https://tools.pixelplus.ru/oferta/">https://tools.pixelplus.ru/oferta/</a>.</p>
-                                        <p>Электронная почта сервиса: <a href="mailto:support@pixeltools.ru">support@pixeltools.ru</a>.</p>
-                                        <p>Бухгалтерские вопросы и акты: <a href="mailto:fin@pixeltools.ru">fin@pixeltools.ru</a>.</p>
-                                        <p>Дата последних изменений: 29 мая 2023.</p>
-                                    </li>
-                                </ol>
-                                <br />
-                                <p>Предыдущие версии документа:</p>
-                                <ul>
-                                    <li>
-                                        <a href="#">Оферта о заключении Договора на оказание информационных услуг в сервисе «Пиксель Тулс» от 2019-09-19</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Оферта о заключении Договора на оказание информационных услуг в сервисе «Пиксель Тулс» от 2017-10-12</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Оферта о заключении Договора на оказание информационных услуг в сервисе «Пиксель Тулс» от 2017-03-17</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Оферта о заключении Договора на оказание информационных услуг в сервисе «Пиксель Тулс» от 2016-09-21</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <link href="./css/document.css" rel="stylesheet" />
-                        </div>
-                    </div>
-                </div>
-                <div class="modal modal--wide" id="policy-modal">
-                    <div class="modal__inner">
-                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
-                            <svg class="icon">
-                                <use xlink:href="#close"></use>
-                            </svg>
-                        </button>
-                        <div class="modal__text">
-                            <div class="modal__title">Политика в отношении обработки персональных данных в сервисе «Пиксель Тулс»</div>
-                        </div>
-                        <div class="modal__content">
-                            <div class="document">
-                                <ol>
-                                    <li>
-                                        <p>
-                                            <b>Общие положения</b>
-                                        </p>
-                                        <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных OOO «Пиксель Тулс» (далее – Оператор).</p>
-                                        <ul>
-                                            <li>
-                                                <p>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
-                                            </li>
-                                            <li>
-                                                <p>Настоящая политика Оператора в отношении обработки персональных данных (далее – Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта <a href="https://tools.pixelplus.ru/">https://tools.pixelplus.ru/</a>.</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Основные понятия, используемые в Политике</b>
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Автоматизированная обработка персональных данных – обработка персональных данных с помощью средств вычислительной техники;</p>
-                                            </li>
-                                            <li>
-                                                <p>Блокирование персональных данных – временное прекращение обработки персональных данных (за исключением случаев, если обработка необходима для уточнения персональных данных);</p>
-                                            </li>
-                                            <li>
-                                                <p>Веб-сайт – совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу <a href="https://tools.pixelplus.ru/">https://tools.pixelplus.ru/</a>;</p>
-                                            </li>
-                                            <li>
-                                                <p>Информационная система персональных данных — совокупность содержащихся в базах данных персональных данных, и обеспечивающих их обработку информационных технологий и технических средств;</p>
-                                            </li>
-                                            <li>
-                                                <p>Обезличивание персональных данных — действия, в результате которых невозможно определить без использования дополнительной информации принадлежность персональных данных конкретному Пользователю или иному субъекту персональных данных;</p>
-                                            </li>
-                                            <li>
-                                                <p>Обработка персональных данных – любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных;</p>
-                                            </li>
-                                            <li>
-                                                <p>Оператор – государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными;</p>
-                                            </li>
-                                            <li>
-                                                <p>Персональные данные – любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта <a href="https://tools.pixelplus.ru/">https://tools.pixelplus.ru/</a>;</p>
-                                            </li>
-                                            <li>
-                                                <p>Пользователь – любой посетитель веб-сайта <a href="https://tools.pixelplus.ru/">https://tools.pixelplus.ru/</a>;</p>
-                                            </li>
-                                            <li>
-                                                <p>Предоставление персональных данных – действия, направленные на раскрытие персональных данных определенному лицу или определенному кругу лиц;</p>
-                                            </li>
-                                            <li>
-                                                <p>Распространение персональных данных – любые действия, направленные на раскрытие персональных данных неопределенному кругу лиц (передача персональных данных) или на ознакомление с персональными данными неограниченного круга лиц, в том числе обнародование персональных данных в средствах массовой информации, размещение в информационно-телекоммуникационных сетях или предоставление доступа к персональным данным каким-либо иным способом;</p>
-                                            </li>
-                                            <li>
-                                                <p>Трансграничная передача персональных данных – передача персональных данных на территорию иностранного государства органу власти иностранного государства, иностранному физическому или иностранному юридическому лицу;</p>
-                                            </li>
-                                            <li>
-                                                <p>Уничтожение персональных данных – любые действия, в результате которых персональные данные уничтожаются безвозвратно с невозможностью дальнейшего восстановления содержания персональных данных в информационной системе персональных данных и (или) результате которых уничтожаются материальные носители персональных данных.</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Оператор может обрабатывать следующие персональные данные Пользователя</b>
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Фамилия, имя, отчество;</p>
-                                            </li>
-                                            <li>
-                                                <p>Электронный адрес;</p>
-                                            </li>
-                                            <li>
-                                                <p>Номера телефонов;</p>
-                                            </li>
-                                            <li>
-                                                <p>Год, месяц, дата и место рождения;</p>
-                                            </li>
-                                            <li>
-                                                <p>Фотографии;</p>
-                                            </li>
-                                            <li>
-                                                <p>Также на сайте происходит сбор и обработка обезличенных данных о посетителях (в т.ч. файлов «cookie») с помощью сервисов интернет-статистики (Яндекс Метрика и Гугл Аналитика и других).</p>
-                                            </li>
-                                            <li>
-                                                <p>Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Цели обработки персональных данных</b>
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Цель обработки персональных данных Пользователя — информирование Пользователя посредством отправки электронных писем; заключение, исполнение и прекращение гражданско-правовых договоров; предоставление доступа Пользователю к сервисам, информации и/или материалам, содержащимся на веб-сайте.</p>
-                                            </li>
-                                            <li>
-                                                <p>Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты <a href="mailto:support@pixeltools.ru">support@pixeltools.ru</a> с пометкой «Отказ от уведомлениях о новых продуктах и услугах и специальных предложениях».</p>
-                                            </li>
-                                            <li>
-                                                <p>Обезличенные данные Пользователей, собранные с помощью сервисов интернет-статистики, служат для сбора информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания.</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Правовые основания обработки персональных данных</b>
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте <a href="https://tools.pixelplus.ru/">https://tools.pixelplus.ru/</a>. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие с данной Политикой.</p>
-                                                <p>Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript).</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Порядок сбора, хранения, передачи и других видов обработки персональных данных</b>
-                                        </p>
-                                        <p>Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.</p>
-                                        <ul>
-                                            <li>
-                                                <p>Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к персональным данным неуполномоченных лиц.</p>
-                                            </li>
-                                            <li>
-                                                <p>Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.</p>
-                                            </li>
-                                            <li>
-                                                <p>В случае выявления неточностей в персональных данных, Пользователь может актуализировать их самостоятельно, путем направления Оператору уведомление на адрес электронной почты Оператора <a href="mailto:support@pixeltools.ru">support@pixeltools.ru</a> с пометкой «Актуализация персональных данных».</p>
-                                            </li>
-                                            <li>
-                                                <p>Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать свое согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на электронный адрес Оператора <a href="support@pixeltools.ru">support@pixeltools.ru</a> с пометкой «Отзыв согласия на обработку персональных данных».</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Трансграничная передача персональных данных</b>
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.</p>
-                                            </li>
-                                            <li>
-                                                <p>Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <b>Заключительные положения</b>
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты <a href="mailto:support@pixeltools.ru">support@pixeltools.ru</a>.</p>
-                                            </li>
-                                            <li>
-                                                <p>В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.</p>
-                                            </li>
-                                            <li>
-                                                <p>Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <a href="https://tools.pixelplus.ru/privacy/">https://tools.pixelplus.ru/privacy/</a>.</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                            </div>
-                            <link href="./css/document.css" rel="stylesheet" />
-                        </div>
-                    </div>
-                </div>
             </main>
 
             <footer class="footer page__footer">
@@ -5225,7 +4426,7 @@
                         <div class="menu menu--position-top footer__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -5234,7 +4435,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -5350,7 +4551,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -5686,7 +4887,7 @@
                     <use xlink:href="#arrow"></use>
                 </svg>
             </button>
-            <link href="./css/scroll-to-top.css" rel="stylesheet" />
+            <link href="./css/scroll-to-top.min.css" rel="stylesheet" />
             <script src="./js/scroll-to-top.min.js"></script>
             <div class="multi-button js-multi-button page__multi-button">
                 <div class="multi-button__button js-multi-button-trigger" role="button" aria-label="Открыть">
@@ -5734,7 +4935,7 @@
                     </button>
                 </div>
             </div>
-            <link href="./css/multi-button.css" rel="stylesheet" />
+            <link href="./css/multi-button.min.css" rel="stylesheet" />
             <script src="./js/multi-button.min.js"></script>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -5753,7 +4954,6 @@
             });
         </script>
         <script src="./js/core.min.js"></script>
-        <script src="./js/forms.js"></script>
 
     </body>
 </html>

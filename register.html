@@ -73,7 +73,7 @@
                         <div class="menu header__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -198,7 +198,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -505,18 +505,18 @@
                                     <use xlink:href="#close"></use>
                                 </svg>
                             </button>
-                            <button class="header__control" data-fancybox="modal" data-src="#login-modal" aria-label="Войти" data-tip="Войти">
+                            <a class="header__control" href="./login.html" aria-label="Войти" data-tip="Войти">
                                 <svg class="icon">
                                     <use xlink:href="#login"></use>
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="search-form header__search js-search-form">
                     <div class="page-container">
-                        <form class="search-form__form">
-                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" />
+                        <form class="search-form__form" action="./search.html" method="get">
+                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" name="q" />
                         </form>
                     </div>
                 </div>
@@ -1813,90 +1813,87 @@
             </header>
 
             <main class="page__content">
-                <section class="section section--dark">
+                <section class="section section--dark" id="register">
                     <div class="page-container">
                         <div class="section__head">
                             <h1 class="section__title animation animation--fade-in-left">Регистрация в «Пиксель Тулс»</h1>
+                            <div class="section__subtitle animation animation--fade-in">Уже зарегистрированы? <a href='./login.html'>Войдите</a>
+                            </div>
                         </div>
                         <div class="section__content animation animation--fade-in">
-                            <div class="form-section">
-                                <div class="form-section__content">
-                                    <div class="register-form" id="register-form">
-                                        <div class="register-form__login">Уже зарегистрированы?<a class="register-form__login-button" href="./login.html">Войдите</a>
+                            <div class="register register--light">
+                                <div class="register-form register__form">
+                                    <form class="form js-validation register-form__form" action="#" method="get">
+                                        <label class="input js-validation-wrapper input--tip">
+                                            <input class="input__element" type="email" required="required" placeholder="E-mail" name="email" />
+                                            <span class="tip input__tip" data-tip="Укажите ваш почтовый ящик вида support@pixeltools.ru. Почта (e-mail) будет использоваться для входа в сервис и для восстановления пароля. Убедитесь, что вы ввели адрес правильно, чтобы была возможность подтвердить его.">
+                                                <svg class="icon">
+                                                    <use xlink:href="#question"></use>
+                                                </svg>
+                                            </span>
+                                        </label>
+                                        <label class="input js-validation-wrapper input--tip">
+                                            <input class="input__element" type="password" required="required" placeholder="Пароль" name="password" />
+                                            <span class="tip input__tip" data-tip="Укажите пароль. Далее этот пароль будет использоваться при авторизации в сервисе. Мы рекомендуем использовать надежный пароль, который будет сложно угадать.">
+                                                <svg class="icon">
+                                                    <use xlink:href="#question"></use>
+                                                </svg>
+                                            </span>
+                                        </label>
+                                        <label class="input js-validation-wrapper input--tip">
+                                            <input class="input__element js-phone-input" data-parsley-iti="" type="tel" name="phone" />
+                                            <span class="tip input__tip" data-tip="Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках.">
+                                                <svg class="icon">
+                                                    <use xlink:href="#question"></use>
+                                                </svg>
+                                            </span>
+                                        </label>
+                                        <label class="input js-validation-wrapper">
+                                            <input class="input__element" type="text" placeholder="Никнейм" name="username" />
+                                        </label>
+                                        <div class="register-form__checkbox">
+                                            <label class="checkbox js-validation-wrapper">
+                                                <input class="checkbox__element" type="checkbox" name="offer" checked="checked" required="required" />
+                                                <span class="checkbox__fake"></span>
+                                                <span class="checkbox__label">Прочитал и принимаю условия&nbsp;<a href="./offer.html" data-fancybox="modal" data-src="#offer-modal">Оферты сервиса</a>
+                                                </span>
+                                            </label>
                                         </div>
-                                        <form class="form js-form js-validation register-form__form" action="#" method="post">
-                                            <label class="input js-validation-wrapper input--tip">
-                                                <input class="input__element" type="email" required="required" placeholder="E-mail" name="email" />
-                                                <span class="tip input__tip" data-tip="Укажите ваш почтовый ящик вида support@pixeltools.ru. Почта (e-mail) будет использоваться для входа в сервис и для восстановления пароля. Убедитесь, что вы ввели адрес правильно, чтобы была возможность подтвердить его.">
-                                                    <svg class="icon">
-                                                        <use xlink:href="#question"></use>
-                                                    </svg>
+                                        <div class="register-form__checkbox">
+                                            <label class="checkbox js-validation-wrapper">
+                                                <input class="checkbox__element" type="checkbox" name="policy" checked="checked" required="required" />
+                                                <span class="checkbox__fake"></span>
+                                                <span class="checkbox__label">Согласен с обработкой моих персональных данных в соответствии с&nbsp;<a href="./policy.html" data-fancybox="modal" data-src="#policy-modal">Политикой конфиденциальности</a>
                                                 </span>
                                             </label>
-                                            <label class="input js-validation-wrapper input--tip">
-                                                <input class="input__element" type="password" required="required" placeholder="Пароль" name="password" />
-                                                <span class="tip input__tip" data-tip="Укажите пароль. Далее этот пароль будет использоваться при авторизации в сервисе. Мы рекомендуем использовать надежный пароль, который будет сложно угадать.">
-                                                    <svg class="icon">
-                                                        <use xlink:href="#question"></use>
-                                                    </svg>
-                                                </span>
-                                            </label>
-                                            <label class="input js-validation-wrapper input--tip">
-                                                <input class="input__element js-phone-input" data-parsley-iti="" type="tel" name="phone" />
-                                                <span class="tip input__tip" data-tip="Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках.">
-                                                    <svg class="icon">
-                                                        <use xlink:href="#question"></use>
-                                                    </svg>
-                                                </span>
-                                            </label>
-                                            <label class="input js-validation-wrapper">
-                                                <input class="input__element" type="text" placeholder="Никнейм" name="username" />
-                                            </label>
-                                            <div class="register-form__checkbox">
-                                                <label class="checkbox js-validation-wrapper">
-                                                    <input class="checkbox__element" type="checkbox" name="offer" checked="checked" required="required" />
-                                                    <span class="checkbox__fake"></span>
-                                                    <span class="checkbox__label">Прочитал и принимаю условия&nbsp;<button class="register-form__checkbox-button" type="button" data-fancybox="modal-info" data-src="#offer-modal">Оферты сервиса</button>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="register-form__checkbox">
-                                                <label class="checkbox js-validation-wrapper">
-                                                    <input class="checkbox__element" type="checkbox" name="policy" checked="checked" required="required" />
-                                                    <span class="checkbox__fake"></span>
-                                                    <span class="checkbox__label">Согласен с обработкой моих персональных данных в соответствии с&nbsp;<button class="register-form__checkbox-button" type="button" data-fancybox="modal-info" data-src="#policy-modal">Политикой конфиденциальности</button>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="register-form__controls">
-                                                <button class="button register-form__control" type="submit">Зарегистрироваться за 30 секунд</button>
-                                            </div>
-                                        </form>
-                                        <div class="socials-auth register-form__socials">
-                                            <div class="socials-auth__title">Зарегистрироваться через</div>
-                                            <div class="socials-auth__list">
-                                                <a class="socials-auth__item socials-auth__item--vk" href="#" aria-label="Войти с помощью VK" data-tip="Войти с помощью VK">
-                                                    <svg class="icon">
-                                                        <use xlink:href="#vk"></use>
-                                                    </svg>
-                                                </a>
-                                                <a class="socials-auth__item socials-auth__item--google" href="#" aria-label="Войти с помощью Google" data-tip="Войти с помощью Google">
-                                                    <svg class="icon">
-                                                        <use xlink:href="#google"></use>
-                                                    </svg>
-                                                </a>
-                                                <a class="socials-auth__item socials-auth__item--yandex" href="#" aria-label="Войти с помощью Yandex" data-tip="Войти с помощью Yandex">
-                                                    <svg class="icon">
-                                                        <use xlink:href="#yandex"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
+                                        </div>
+                                        <div class="register-form__controls">
+                                            <button class="button register-form__control" type="submit">Зарегистрироваться за 30 секунд</button>
+                                        </div>
+                                    </form>
+                                    <div class="socials-auth register-form__socials">
+                                        <div class="socials-auth__title">Зарегистрироваться через</div>
+                                        <div class="socials-auth__list">
+                                            <a class="socials-auth__item socials-auth__item--vk" href="#" aria-label="Зарегистрироваться через VK" data-tip="Зарегистрироваться через VK">
+                                                <svg class="icon">
+                                                    <use xlink:href="#vk"></use>
+                                                </svg>
+                                            </a>
+                                            <a class="socials-auth__item socials-auth__item--google" href="#" aria-label="Зарегистрироваться через Google" data-tip="Зарегистрироваться через Google">
+                                                <svg class="icon">
+                                                    <use xlink:href="#google"></use>
+                                                </svg>
+                                            </a>
+                                            <a class="socials-auth__item socials-auth__item--yandex" href="#" aria-label="Зарегистрироваться через Yandex" data-tip="Зарегистрироваться через Yandex">
+                                                <svg class="icon">
+                                                    <use xlink:href="#yandex"></use>
+                                                </svg>
+                                            </a>
                                         </div>
                                     </div>
-                                    <link href="./css/register-form.css" rel="stylesheet" />
                                 </div>
                             </div>
-                            <link href="./css/form-section.css" rel="stylesheet" />
+                            <link href="./css/register.min.css" rel="stylesheet" />
                         </div>
                     </div>
                 </section>
@@ -1994,10 +1991,10 @@
                                         </div>
                                         <div class="slider-pagination register-advantages__pagination"></div>
                                     </div>
-                                    <a class="button register-advantages__button" href="#register-form">Зарегистрироваться за 30 секунд</a>
+                                    <a class="button register-advantages__button" href="#register">Зарегистрироваться за 30 секунд</a>
                                 </div>
                             </div>
-                            <link href="./css/register-advantages.css" rel="stylesheet" />
+                            <link href="./css/register-advantages.min.css" rel="stylesheet" />
                             <script src="./js/register-advantages.min.js"></script>
                         </div>
                     </div>
@@ -2035,7 +2032,6 @@
                                                 <p>Лимит — расчетная величина, используемая для целей оказания Услуг (учета стоимости оказанных Услуг), принятая в Пиксель Тулс.</p>
                                                 <p>Число доступных лимитов аккаунта — численное значение доступных Пользователю лимитов по запросу и предоставлению информации в сервисе Пиксель Тулс.</p>
                                                 <p>ЮKassa — платежный сервис предоставляющий возможность пополнения аккаунта Пользователя в системе, расположенный по адресу yookassa.ru.</p>
-                                                <p>Яндекс.XML — сервис для получения ответов поисковой базы Яндекса в формате XML, расположенный по адресу xml.yandex.ru.</p>
                                                 <p>IP-адрес — уникальный сетевой адрес узла в компьютерной сети, с которого идет подключение Пользователя к сервису Пиксель Тулс.</p>
                                                 <p>Проект — данные о сайте, включая URL сайта, группы ключевых слов и набор поисковых систем, которые необходимо отслеживать, контролировать и анализировать.</p>
                                                 <p>API-ключ — уникальный идентификатор, получаемый Пользователем, позволяющий получать услуги Пиксель Тулс в пределах Числа доступных лимитов аккаунта.</p>
@@ -2076,7 +2072,7 @@
                                                 <p>Пиксель Тулс не предоставляет никаких гарантий в отношении использования и результатов (эффективности) использования Пользователем полученной аналитической информации в рамках использования сервиса.</p>
                                             </li>
                                             <li>
-                                                <p>Пиксель Тулс не несет ответственности за технические неполадки и сбои, которые могут наблюдаться в работе сторонних сервисов, в том числе, но не ограничиваясь, сервисами Яндекс.Поиск, Ю.Касса, Яндекс.XML, Яндекс.Директ, Яндекс.Метрика, Яндекс.ВордCтат, поиск Google, WebMoney, YouTube и которые могут приводить к искажению предоставляемой сервисом Пиксель Тулс аналитической информации.</p>
+                                                <p>Пиксель Тулс не несет ответственности за технические неполадки и сбои, которые могут наблюдаться в работе сторонних сервисов, в том числе, но не ограничиваясь, сервисами Яндекс.Поиск, Ю.Касса, Яндекс.Директ, Яндекс.Метрика, Яндекс.ВордCтат, поиск Google, WebMoney, YouTube и которые могут приводить к искажению предоставляемой сервисом Пиксель Тулс аналитической информации.</p>
                                             </li>
                                         </ol>
                                     </li>
@@ -2115,7 +2111,7 @@
                                                         <p>Приостановить доступ Пользователя к системе и расторгнуть Договор в одностороннем порядке в случае причинение ущерба деловой репутации сервиса Пиксель Тулс и/или распространения заведомо ложной и/или порочащей репутацию информации о сервисе Пиксель Тулс, в том числе, но не ограничиваясь, использованием социальных сетей, массовых почтовых e-mail сообщений и прочих ресурсов в интернете.</p>
                                                     </li>
                                                     <li>
-                                                        <p>Приостановить доступ Пользователя к системе в случае нанесения финансового ущерба Сервису, например за создание 2 (Двух) и более аккаунтов, используемых в личных целях, на которых был взят тариф на 30 (Тридцать) дней за 1 (Один) рубль.</p>
+                                                        <p>Приостановить доступ Пользователя к системе в случае нанесения финансового ущерба Сервису, например за создание 2 (Двух) и более аккаунтов, используемых в личных целях, на которых был взят тариф на 30 (Тридцать) дней за 99 (девяносто девять) рублей.</p>
                                                     </li>
                                                     <li>
                                                         <p>Использовать обезличенные данные от пользователей для улучшения качества работы онлайн-инструментов и проведения исследовательской деятельности с дальнейшей презентацией итогов исследований в открытом доступе (в обезличенном, агрегированном виде).</p>
@@ -2418,7 +2414,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <link href="./css/document.css" rel="stylesheet" />
+                            <link href="./css/document.min.css" rel="stylesheet" />
                         </div>
                     </div>
                 </div>
@@ -2601,7 +2597,7 @@
                                     </li>
                                 </ol>
                             </div>
-                            <link href="./css/document.css" rel="stylesheet" />
+                            <link href="./css/document.min.css" rel="stylesheet" />
                         </div>
                     </div>
                 </div>
@@ -2616,7 +2612,7 @@
                             <div class="modal__title">Обсудим детали?</div>
                         </div>
                         <div class="modal__content">
-                            <form class="form js-form js-validation demo-form" action="#" method="post">
+                            <form class="form js-validation demo-form js-demo-form" action="#" method="post">
                                 <label class="input js-validation-wrapper">
                                     <input class="input__element" type="text" required="required" placeholder="Имя" minlength="2" />
                                 </label>
@@ -2635,7 +2631,41 @@
                                     </button>
                                 </div>
                             </form>
-                            <link href="./css/demo-form.css" rel="stylesheet" />
+                            <link href="./css/demo-form.min.css" rel="stylesheet" />
+                            <script src="./js/demo-form.min.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal modal--success" id="success-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Спасибо за обращение!</div>
+                            <div class="modal__description">
+                                <p>Менеджер свяжется с вами в ближайшее время для согласования удобного времени для проведения демонстрации.</p>
+                            </div>
+                            <div class="modal__caption">
+                                <p>Обращаем внимание, что заявки, оставленные в выходные дни будут обработаны в ближайший рабочий день.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal modal--error" id="error-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Произошла ошибка</div>
+                            <div class="modal__description">
+                                <p>Попробуйте повторить запрос позднее.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2650,7 +2680,7 @@
                         <div class="menu menu--position-top footer__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -2659,7 +2689,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -2775,7 +2805,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -3111,7 +3141,7 @@
                     <use xlink:href="#arrow"></use>
                 </svg>
             </button>
-            <link href="./css/scroll-to-top.css" rel="stylesheet" />
+            <link href="./css/scroll-to-top.min.css" rel="stylesheet" />
             <script src="./js/scroll-to-top.min.js"></script>
             <div class="multi-button js-multi-button page__multi-button">
                 <div class="multi-button__button js-multi-button-trigger" role="button" aria-label="Открыть">
@@ -3159,7 +3189,7 @@
                     </button>
                 </div>
             </div>
-            <link href="./css/multi-button.css" rel="stylesheet" />
+            <link href="./css/multi-button.min.css" rel="stylesheet" />
             <script src="./js/multi-button.min.js"></script>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -3178,7 +3208,6 @@
             });
         </script>
         <script src="./js/core.min.js"></script>
-        <script src="./js/forms.js"></script>
 
     </body>
 </html>

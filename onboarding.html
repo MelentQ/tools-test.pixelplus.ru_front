@@ -73,7 +73,7 @@
                         <div class="menu header__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -198,7 +198,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -505,18 +505,18 @@
                                     <use xlink:href="#close"></use>
                                 </svg>
                             </button>
-                            <button class="header__control" data-fancybox="modal" data-src="#login-modal" aria-label="Войти" data-tip="Войти">
+                            <a class="header__control" href="./login.html" aria-label="Войти" data-tip="Войти">
                                 <svg class="icon">
                                     <use xlink:href="#login"></use>
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="search-form header__search js-search-form">
                     <div class="page-container">
-                        <form class="search-form__form">
-                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" />
+                        <form class="search-form__form" action="./search.html" method="get">
+                            <input class="search-form__input js-search-form-input" placeholder="Что хотите найти?" type="text" name="q" />
                         </form>
                     </div>
                 </div>
@@ -1849,7 +1849,7 @@
                                     <div class="onboarding-card__text">Отслеживайте прогресс по позициям в выдаче и выполненным задачам</div>
                                 </div>
                             </div>
-                            <form class="form js-form js-validation form--row onboarding-form onboarding__form animation animation--fade-in" action="#" method="post">
+                            <form class="form js-validation onboarding-form js-onboarding-form onboarding-form--row onboarding__form animation animation--fade-in" action="#" method="post">
                                 <label class="input js-validation-wrapper">
                                     <input class="input__element" type="text" required="required" placeholder="Введите домен сайта" pattern="^[^\s@]+\.([a-zA-Zа-яА-Я]{2,})$" data-parsley-pattern-message="Введите адрес вида: domain.ru" />
                                 </label>
@@ -2615,10 +2615,11 @@
                                     </button>
                                 </div>
                             </form>
-                            <link href="./css/onboarding-form.css" rel="stylesheet" />
+                            <link href="./css/onboarding-form.min.css" rel="stylesheet" />
+                            <script src="./js/onboarding-form.min.js"></script>
                         </div>
                     </div>
-                    <link href="./css/onboarding.css" rel="stylesheet" />
+                    <link href="./css/onboarding.min.css" rel="stylesheet" />
                 </section>
                 <section class="section">
                     <div class="page-container">
@@ -2667,7 +2668,7 @@
                                                 <div class="od-card__head">
                                                     <div class="od-card__digit-block">
                                                         <div class="od-card__prefix">на</div>
-                                                        <div class="od-card__digit">300%</div>
+                                                        <div class="od-card__digit">200%</div>
                                                     </div>
                                                     <div class="od-card__title">рост клиентов</div>
                                                     <div class="od-card__icon">
@@ -2679,7 +2680,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="od-card__text-block">
-                                                    <div class="od-card__text">При заведении проекта в Пиксель Тулс заявки вырастают минимум в 4 раза за счет выявления новых точек роста</div>
+                                                    <div class="od-card__text">При заведении проекта в Пиксель Тулс заявки вырастают минимум в 3 раза за счет выявления новых точек роста</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2706,7 +2707,7 @@
                                 </div>
                                 <div class="slider-pagination onboarding-digits__pagination"></div>
                             </div>
-                            <link href="./css/onboarding-digits.css" rel="stylesheet" />
+                            <link href="./css/onboarding-digits.min.css" rel="stylesheet" />
                             <script src="./js/onboarding-digits.min.js"></script>
                         </div>
                     </div>
@@ -2780,7 +2781,7 @@
                                 </div>
                                 <div class="slider-pagination partners__pagination"></div>
                             </div>
-                            <link href="./css/partners.css" rel="stylesheet" />
+                            <link href="./css/partners.min.css" rel="stylesheet" />
                             <script src="./js/partners.min.js"></script>
                         </div>
                         <div class="section__footer animation animation--fade-in">
@@ -2799,6 +2800,74 @@
                         </div>
                     </div>
                 </section>
+                <div class="modal" id="demo-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Обсудим детали?</div>
+                        </div>
+                        <div class="modal__content">
+                            <form class="form js-validation demo-form js-demo-form" action="#" method="post">
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="text" required="required" placeholder="Имя" minlength="2" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element js-phone-input" data-parsley-iti="" type="tel" required="required" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="email" required="required" placeholder="E-mail" />
+                                </label>
+                                <label class="input js-validation-wrapper">
+                                    <input class="input__element" type="text" placeholder="Название компании" />
+                                </label>
+                                <div class="demo-form__controls">
+                                    <button class="button" type="submit">
+                                        <span class="spinner"></span>Отправить
+                                    </button>
+                                </div>
+                            </form>
+                            <link href="./css/demo-form.min.css" rel="stylesheet" />
+                            <script src="./js/demo-form.min.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal modal--success" id="success-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Спасибо за обращение!</div>
+                            <div class="modal__description">
+                                <p>Менеджер свяжется с вами в ближайшее время для согласования удобного времени для проведения демонстрации.</p>
+                            </div>
+                            <div class="modal__caption">
+                                <p>Обращаем внимание, что заявки, оставленные в выходные дни будут обработаны в ближайший рабочий день.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal modal--error" id="error-modal">
+                    <div class="modal__inner">
+                        <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                        <div class="modal__text">
+                            <div class="modal__title">Произошла ошибка</div>
+                            <div class="modal__description">
+                                <p>Попробуйте повторить запрос позднее.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
 
             <footer class="footer page__footer">
@@ -2810,7 +2879,7 @@
                         <div class="menu menu--position-top footer__menu">
                             <div class="menu__items" data-lenis-prevent="">
                                 <div class="menu__item">
-                                    <a href="#">Проекты</a>
+                                    <a href="./onboarding.html">Проекты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -2819,7 +2888,7 @@
                                     </div>
                                 </div>
                                 <div class="menu__item">
-                                    <a href="#">Инструменты</a>
+                                    <a href="./tools.html">Инструменты</a>
                                     <svg class="icon">
                                         <use xlink:href="#triangle"></use>
                                     </svg>
@@ -2935,7 +3004,7 @@
                                         <use xlink:href="#triangle"></use>
                                     </svg>
                                     <div class="menu__items" data-lenis-prevent="">
-                                        <a class="menu__item" href="#">Регистрация</a>
+                                        <a class="menu__item" href="./register.html">Регистрация</a>
                                         <a class="menu__item" href="#">Тарифы</a>
                                         <a class="menu__item" href="#">Промо-тариф</a>
                                         <a class="menu__item" href="#">Калькулятор лимитов</a>
@@ -3271,7 +3340,7 @@
                     <use xlink:href="#arrow"></use>
                 </svg>
             </button>
-            <link href="./css/scroll-to-top.css" rel="stylesheet" />
+            <link href="./css/scroll-to-top.min.css" rel="stylesheet" />
             <script src="./js/scroll-to-top.min.js"></script>
             <div class="multi-button js-multi-button page__multi-button">
                 <div class="multi-button__button js-multi-button-trigger" role="button" aria-label="Открыть">
@@ -3319,7 +3388,7 @@
                     </button>
                 </div>
             </div>
-            <link href="./css/multi-button.css" rel="stylesheet" />
+            <link href="./css/multi-button.min.css" rel="stylesheet" />
             <script src="./js/multi-button.min.js"></script>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -3338,7 +3407,6 @@
             });
         </script>
         <script src="./js/core.min.js"></script>
-        <script src="./js/forms.js"></script>
 
     </body>
 </html>
