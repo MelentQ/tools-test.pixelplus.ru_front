@@ -6,8 +6,11 @@ mixin reviews(props, section)
         .swiper-wrapper
           for item in props.items
             .reviews__slide.swiper-slide
-              +reviews-card(item)
+              +reviews-card({
+                ...item,
+                mods: section.mods && section.mods.includes("dark") ? item.mods ? [...item.mods, "light"] : ["light"] : item.mods
+              })
       +slider-navigation&attributes({class: "reviews__navigation"})
       +slider-pagination&attributes({class: "reviews__pagination"})
-    link(href="./css/reviews.css" rel="stylesheet")
+    link(href="./css/reviews.min.css" rel="stylesheet")
     script(src='./js/reviews.min.js')

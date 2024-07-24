@@ -4,14 +4,47 @@
       {
         "items": [
           {
+            "image": "",
+            "title": "UI-kit",
+            "button": {
+              "tag": "a",
+              "link": "./ui-kit.html",
+              "text": "Открыть"
+            }
+          }
+        ],
+        "section": {
+          "title": "Для разработки"
+        }
+      },
+      {
+        "items": [
+          {
             "image": "./assets/images/dev/pages/home.jpg",
             "title": "Главная",
-            "link": "./home.html"
+            "button": {
+              "tag": "a",
+              "link": "./home.html",
+              "text": "Открыть"
+            }
           },
           {
             "image": "./assets/images/dev/pages/onboarding.jpg",
             "title": "Онбординг",
-            "link": "./onboarding.html"
+            "button": {
+              "tag": "a",
+              "link": "./onboarding.html",
+              "text": "Открыть"
+            }
+          },
+          {
+            "image": "",
+            "title": "Инструменты",
+            "button": {
+              "tag": "a",
+              "link": "./tools.html",
+              "text": "Открыть"
+            }
           }
         ],
         "section": {
@@ -23,17 +56,29 @@
           {
             "image": "./assets/images/dev/pages/login.jpg",
             "title": "Вход",
-            "link": "./login.html"
+            "button": {
+              "tag": "a",
+              "link": "./login.html",
+              "text": "Открыть"
+            }
           },
           {
             "image": "./assets/images/dev/pages/register.jpg",
             "title": "Регистрация",
-            "link": "./register.html"
+            "button": {
+              "tag": "a",
+              "link": "./register.html",
+              "text": "Открыть"
+            }
           },
           {
             "image": "./assets/images/dev/pages/reset-password.jpg",
             "title": "Восстановление пароля",
-            "link": "./reset-password.html"
+            "button": {
+              "tag": "a",
+              "link": "./reset-password.html",
+              "text": "Открыть"
+            }
           }
         ],
         "section": {
@@ -45,22 +90,38 @@
           {
             "image": "./assets/images/dev/pages/offer.jpg",
             "title": "Публичная оферта",
-            "link": "./offer.html"
+            "button": {
+              "tag": "a",
+              "link": "./offer.html",
+              "text": "Открыть"
+            }
           },
           {
             "image": "./assets/images/dev/pages/policy.jpg",
             "title": "Политика конфиденциальности",
-            "link": "./policy.html"
+            "button": {
+              "tag": "a",
+              "link": "./policy.html",
+              "text": "Открыть"
+            }
           },
           {
             "image": "./assets/images/dev/pages/404.jpg",
             "title": "404",
-            "link": "./404.html"
+            "button": {
+              "tag": "a",
+              "link": "./404.html",
+              "text": "Открыть"
+            }
           },
           {
             "image": "./assets/images/dev/pages/search.jpg",
             "title": "Поиск по сайту",
-            "link": "./search.html"
+            "button": {
+              "tag": "a",
+              "link": "./search.html",
+              "text": "Открыть"
+            }
           }
         ],
         "section": {

@@ -1,0 +1,45 @@
+mixin login-form(props)
+  - props = props || {}
+  .login-form&attributes(attributes)
+    +form({
+      method: "get"
+    })&attributes({class: "login-form__form"})
+      +input({
+        placeholder: "E-mail",
+        type: "email",
+        name: "email",
+        required: true
+      })
+      +input({
+        placeholder: "Пароль",
+        required: true,
+        name: "password",
+        type: "password"
+      })
+      a.login-form__reset(href="./reset-password.html") Забыли пароль?
+      .login-form__remember
+        +checkbox({
+          name: "remember",
+          checked: true
+        }) Запомнить меня
+      .login-form__controls
+        +button({
+          type: "submit"
+        })&attributes({class: "login-form__control"}) Войти
+    +socials-auth({
+      title: "Войти с помощью",
+      items: [
+        {
+          "icon": "vk",
+          "alt": "Войти с помощью VK"
+        },
+        {
+          "icon": "google",
+          "alt": "Войти с помощью Google"
+        },
+        {
+          "icon": "yandex",
+          "alt": "Войти с помощью Yandex"
+        }
+      ]
+    })&attributes({class: "login-form__socials"})

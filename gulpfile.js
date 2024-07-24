@@ -39,13 +39,13 @@ function additionalStyles() {
       @import "layout/styles/mixins";
     `))
     .pipe(scss({
-      outputStyle: 'expanded',
+      outputStyle: process.env.MODE === 'production' ? 'compressed' : 'expanded',
       includePaths: ['src/'],
     }))
     .pipe(rename((file) => ({
       dirname: '.',
       basename: file.dirname,
-      extname: file.extname,
+      extname: '.min.css',
     })))
     .pipe(dest('build/css'));
 }

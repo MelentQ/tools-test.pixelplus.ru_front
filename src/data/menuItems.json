@@ -2,6 +2,7 @@
   "menuItems": [
     {
       "name": "Проекты",
+      "link": "./onboarding.html",
       "items": [
         {
           "name": "Добавить проект"
@@ -10,6 +11,7 @@
     },
     {
       "name": "Инструменты",
+      "link": "./tools.html",
       "items": [
         {
           "name": "AI-инструменты",
@@ -193,7 +195,8 @@
       "name": "О сервисе",
       "items": [
         {
-          "name": "Регистрация"
+          "name": "Регистрация",
+          "link": "./register.html"
         },
         {
           "name": "Тарифы"

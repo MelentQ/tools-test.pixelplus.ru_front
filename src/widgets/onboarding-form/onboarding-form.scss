@@ -1,4 +1,13 @@
 .onboarding-form {
+  &--row {
+    flex-direction: row;
+    justify-content: center;
+
+    @include breakpoint(s) {
+      flex-direction: column;
+    }
+  }
+
   &__controls--grid {
     display: grid;
     flex-shrink: 0;

@@ -1,9 +1,7 @@
 mixin form(props)
   - props = props || {}
-  - mods = props.mods ? props.mods.map(mod => `form--${mod}`).join(' ') : null;
-  form.form.js-form.js-validation(
-    class=mods
-    action='#'
-    method='post'
+  form.form.js-validation(
+    action="#"
+    method=props.method || "post"
   )&attributes(attributes)
     block

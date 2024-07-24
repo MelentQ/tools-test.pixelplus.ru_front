@@ -1,7 +1,7 @@
 mixin section(props)
   - props = props || {}
   - mods = props.mods ? props.mods.map(mod => `section--${mod}`).join(' ') : null;
-  section.section(class=mods)
+  section.section(class=mods)&attributes(props.attributes)
     .page-container
       if props.title || props.subtitle
         .section__head

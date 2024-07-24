@@ -1,4 +1,8 @@
 .cards-slider {
+  position: relative;
+
+  padding: 0 6rem;
+
   @include breakpoint(m) {
     width: calc(100% + 4rem);
     margin: 0 -2rem;
@@ -15,6 +19,19 @@
   &__slider {
     @include breakpoint(m) {
       overflow: visible;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    top: calc(50% - 3rem);
+    left: 0;
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    @include breakpoint(m) {
+      display: none;
     }
   }
 

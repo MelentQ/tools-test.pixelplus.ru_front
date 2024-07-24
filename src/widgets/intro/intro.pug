@@ -15,7 +15,13 @@ mixin intro(props)
             for item, i in props.items
               - tag = i === 0 ? "h1" : "div"
               #{tag}.intro__item !{item}
-        +onboarding-form({
-          hasDemoButton: true
-        })&attributes({class: "intro__form animation animation--fade-in"})
-    link(href="./css/intro.css" rel="stylesheet")
+        if props.hasOnboardingForm
+          +onboarding-form({
+            hasDemoButton: true
+          })&attributes({class: "intro__form animation animation--fade-in"})
+        if props.button
+          +button(props.button)&attributes({
+            class: "intro__button animation animation--fade-in",
+            ...props.button.attributes
+          })=props.button.text
+    link(href="./css/intro.min.css" rel="stylesheet")

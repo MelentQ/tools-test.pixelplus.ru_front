@@ -20,9 +20,14 @@
   --fs-t2: 1.4rem;
   --fs-t3: 1.2rem;
 
+  /* Системные */
+  --header-height: 7.1rem;
+
   @include breakpoint(m) {
     --fs-h1: 3rem;
     --fs-h2: 2.4rem;
+
+    --header-height: 5.1rem;
   }
 
   @include breakpoint(s) {

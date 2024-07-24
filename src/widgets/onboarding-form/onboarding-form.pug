@@ -1,12 +1,9 @@
 mixin onboarding-form(props)
   - props = props || {}
-  +form({
-    mods: [
-      props.isRow ? "row" : null
-    ]
-  })&attributes({
+  +form&attributes({
     class: [
-      "onboarding-form",
+      "onboarding-form js-onboarding-form",
+      props.isRow ? "onboarding-form--row" : null,
       attributes.class
     ]
   })
@@ -37,7 +34,7 @@ mixin onboarding-form(props)
           tag: "a"
         })&attributes({
           class: "onboarding-form__control"
-        }) Демо-проект
+        }) Демо-проекты
       +button({
         type: "submit"
       })&attributes({
@@ -45,4 +42,5 @@ mixin onboarding-form(props)
       })
         +spinner
         | Начать
-  link(href="./css/onboarding-form.css" rel="stylesheet")
+  link(href="./css/onboarding-form.min.css" rel="stylesheet")
+  script(src="./js/onboarding-form.min.js")

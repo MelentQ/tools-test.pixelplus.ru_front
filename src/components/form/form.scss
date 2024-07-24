@@ -7,15 +7,6 @@
 
   @include transition(opacity);
 
-  &--row {
-    flex-direction: row;
-    justify-content: center;
-
-    @include breakpoint(s) {
-      flex-direction: column;
-    }
-  }
-
   &.--loading {
     opacity: 0.75;
 

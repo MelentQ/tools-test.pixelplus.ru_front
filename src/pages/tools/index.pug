@@ -1,0 +1,143 @@
+extends ../../layout/landing
+
+block head
+  title № 1 SEO-инструменты и сервисы для анализа и продвижения сайта, СЕО-сервис Пиксель Тулс
+  meta(name="description" content="Ищите SEO-сервис для продвижения сайта «всё в одном»? Уверены, вы остановитесь на Пиксель Тулс! 55+ SEO-инструментов для автоматизации ваших задач. № 1 из СЕО-сервисов на рынке.")
+  meta(name="keywords" content="бесплатно продвижение инструменты программы")
+
+block content
+  +intro({
+    bg: {
+      desktop: "./assets/images/intro/index.jpg",
+      mobile: "./assets/images/intro/index-mobile.jpg"
+    },
+    items: [
+      "SEO-инструменты",
+      "Инструменты автоматизации",
+      "Аналитика для SEO и PPC"
+    ],
+    button: {
+      tag: "a",
+      link: "./register.html",
+      text: "Попробовать за 99 руб."
+    }
+  })
+  +video({
+    code: "DB7PwAaxqzQ"
+  }, {
+    mods: ["small", "dark"],
+    title: "Обзор возможностей",
+    button: {
+      attributes: {
+        "data-fancybox": "modal",
+        "data-src": "#demo-modal"
+      },
+      text: "Заказать демонстрацию"
+    }
+  })
+  +cards-slider({
+    isGallery: true,
+    items: widgets.features
+  }, {
+    title: "Что входит в Пиксель Тулс?"
+  })
+  +advantages({
+    items: widgets.advantages
+  }, {
+    mods: ["dark"],
+    title: "Основные возможности Пиксель Тулс",
+    subtitle: "Облегчаем работу команды SEO‑специалистов",
+    button: {
+      tag: "a",
+      text: "Заведите свой проект за 1 минуту"
+    }
+  })
+  +tariffs({
+    initialSlide: 1,
+    items: widgets.tariffs
+  }, {
+    mods: ["dark"],
+    title: "Выберите свой тариф",
+    subtitle: "от 99 ₽"
+  })
+  +reviews({
+    items: widgets.reviews
+  }, {
+    mods: ["dark"],
+    title: "Мнения экспертов"
+  })
+  +cards-slider({
+    isGallery: false,
+    items: [
+      {
+        image: "./assets/images/courses/course-1.webp",
+        title: "Бери и делай!",
+        text: "Бесплатный курс по SEO: от сбора семантики и заведения проекта до красивого отчета и экспериментов.",
+        button: {
+          tag: "a",
+          link: "https://pixelplus.skillspace.ru/course/10701/about",
+          text: "Узнать больше",
+          attributes: {
+            target: "_blank"
+          }
+        }
+      },
+      {
+        image: "./assets/images/courses/course-2.webp",
+        title: "НейроГений",
+        text: "Курс по нейросетям «НейроГений» построен в концепции Jobs-To-Be-Done, то есть, мы делимся не теорией, а учим решать реальные задачи с помощью ChatGPT и Midjorney.",
+        button: {
+          tag: "a",
+          link: "https://pixelplus.skillspace.ru/course/14887/about",
+          text: "Узнать больше",
+          attributes: {
+            target: "_blank"
+          }
+        }
+      },
+      {
+        image: "./assets/images/courses/course-3.webp",
+        title: "SEO для маркетологов",
+        text: "Курс по SEO для интернет-маркетологов и тех, кто хочет разобраться и полюбить поисковую оптимизацию.",
+        button: {
+          tag: "a",
+          link: "https://pixelplus.skillspace.ru/course/1787/about",
+          text: "Узнать больше",
+          attributes: {
+            target: "_blank"
+          }
+        }
+      },
+      {
+        image: "./assets/images/courses/course-4.webp",
+        title: "SEO для бизнеса",
+        text: "Если вы заказчик SEO-услуг, то важно не только «платить деньги», но и добиваться максимума прибыли по каналу! От чего зависит конечный результат, как умножить ROI и выполнить задачи бизнеса? Разбираемся на курсе от «Пиксель Плюс».",
+        button: {
+          tag: "a",
+          link: "https://pixelplus.skillspace.ru/course/6861/about",
+          text: "Узнать больше",
+          attributes: {
+            target: "_blank"
+          }
+        }
+      }
+    ]
+  }, {
+    title: "Образовательные курсы от Пиксель Тулс"
+  })
+  +register({
+    hideUsername: true
+  }, {
+    mods: ["dark"],
+    title: "Инструменты доступны после быстрой регистрации",
+    subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
+    tag: "h1",
+    attributes: {
+      id: "register"
+    }
+  })
+  +offer-modal
+  +policy-modal
+  +demo-modal
+  +success-modal
+  +error-modal

@@ -11,14 +11,7 @@ mixin modal(props)
       if props.title || props.description || props.caption
         .modal__text
           if props.title
-            if props.tip
-              .modal__title-wrapper
-                .modal__title
-                  =props.title
-                +tip({text: props.tip})
-            else
-              .modal__title=props.title
-
+            .modal__title=props.title
           if props.description
             .modal__description !{props.description}
           if props.caption
@@ -26,3 +19,9 @@ mixin modal(props)
       if block
         .modal__content
           block
+      if props.button
+        .modal__footer
+          +button(props.button)&attributes({
+            class: "modal__button",
+            ...props.button.attributes
+          })=props.button.text

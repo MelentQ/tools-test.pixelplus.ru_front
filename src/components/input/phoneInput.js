@@ -59,5 +59,3 @@ window.Parsley.addValidator('iti', {
     ru: 'Введите правильный номер мобильного телефона.',
   },
 });
-
-window.pts.initPhoneInputs = phoneInput;

@@ -1,0 +1,20 @@
+.register {
+  $block-name: &;
+
+  &__form {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+
+    background-color: var(--color-gray-lighter);
+    border-radius: $border-radius;
+
+    @include breakpoint(s) {
+      padding: 2rem 1.6rem;
+    }
+  }
+
+  &--light #{$block-name}__form {
+    background-color: var(--color-white);
+  }
+}

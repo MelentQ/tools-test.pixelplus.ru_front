@@ -13,9 +13,8 @@ mixin header(props)
           button.header__control.js-search-form-button(type="button" aria-label="Поиск" data-tip="Поиск")
             +icon("search")
             +icon("close")
-          button.header__control(
-            data-fancybox="modal"
-            data-src="#login-modal"
+          a.header__control(
+            href="./login.html"
             aria-label="Войти"
             data-tip="Войти"
           )

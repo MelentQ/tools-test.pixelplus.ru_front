@@ -1,0 +1,10 @@
+mixin register(props, section)
+  - props = props || {}
+  +section(section)
+    .register(
+      class=(section.mods && section.mods.includes("dark") ? "register--light" : null)
+    )&attributes(attributes)
+      +register-form(props)&attributes({
+        class: "register__form"
+      })
+    link(href="./css/register.min.css" rel="stylesheet")

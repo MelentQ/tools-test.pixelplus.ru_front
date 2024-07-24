@@ -31,5 +31,3 @@ export default function $validation() {
     return instance;
   });
 }
-
-window.pts.initValidation = $validation;

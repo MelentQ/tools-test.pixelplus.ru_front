@@ -7,6 +7,7 @@ block head
 block content
   for group, i in dev.pagesGroups
     +cards-slider({
+      isGallery: true,
       items: group.items,
       index: i
     }, {

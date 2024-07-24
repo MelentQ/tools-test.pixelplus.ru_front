@@ -65,6 +65,16 @@
     @include breakpoint(s) {
       font-size: 1.4rem;
     }
+
+    a {
+      @include color(var(--color-primary));
+
+      @include transition(color);
+
+      @include hover {
+        @include color(var(--color-primary-dark));
+      }
+    }
   }
 
   &--small #{$block-name}__content {

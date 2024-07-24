@@ -5,16 +5,15 @@ block head
   meta(name="description" content="Регистрация в сервисе «Пиксель Тулс»")
 
 block content
-  +form-section({}, {
+  +register({}, {
     mods: ["dark"],
     title: "Регистрация в «Пиксель Тулс»",
-    tag: "h1"
+    subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
+    tag: "h1",
+    attributes: {
+      id: "register"
+    }
   })
-    +register-form({
-      loginLinkType: "link"
-    })&attributes({
-      id: 'register-form'
-    })
   +section({
     title: "У вас остались вопросы?",
     subtitle: "<b>Оставьте заявку в течение 2 часов</b>, и наш специалист бесплатно покажет вам 15 возможностей модуля проектов!",
@@ -54,7 +53,7 @@ block content
         text: "Использование «Пиксель Тулс» приносит радость и положительные эмоции. Скорость работы инструментов и отзывчивый саппорт поможет решить поставленные вами задачи. Спешите!"
       }
     ],
-    anchor: "#register-form"
+    anchor: "#register"
   }, {
     mods: ["dark", "small"],
     title: "После регистрации в «Пиксель Тулс»"
@@ -62,3 +61,5 @@ block content
   +offer-modal
   +policy-modal
   +demo-modal
+  +success-modal
+  +error-modal

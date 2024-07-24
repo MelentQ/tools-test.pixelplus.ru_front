@@ -2,5 +2,9 @@ mixin search-form(props)
   - props = props || {}
   .search-form&attributes(attributes)
     .page-container
-      form.search-form__form
-        input.search-form__input.js-search-form-input(placeholder="Что хотите найти?" type="text")
+      form.search-form__form(action="./search.html" method="get")
+        input.search-form__input.js-search-form-input(
+          placeholder="Что хотите найти?"
+          type="text"
+          name="q"
+        )
