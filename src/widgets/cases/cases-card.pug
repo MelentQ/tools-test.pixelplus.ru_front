@@ -1,0 +1,21 @@
+mixin cases-card(props)
+  - props = props || {}
+  .cases-card
+    if props.image
+      .cases-card__image
+        img(src=props.image title=props.title loading="lazy")
+    .cases-card__content
+      if props.title
+        .cases-card__title !{props.title}
+      if props.tasks
+        .cases-card__list-block
+          .cases-card__list-title Для этого были проработаны задачи из TO DO:
+          ul.cases-card__list
+            for item in props.tasks
+              li=item
+      if props.results
+        .cases-card__list-block
+          .cases-card__list-title Итог:
+          ul.cases-card__list
+            for item in props.results
+              li=item

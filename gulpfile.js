@@ -29,7 +29,8 @@ function coreStyles() {
     .pipe(rename({
       extname: '.min.css',
     }))
-    .pipe(dest('build/css'));
+    .pipe(dest('build/css'))
+    .pipe(browserSync.stream());
 }
 
 function additionalStyles() {
@@ -47,21 +48,24 @@ function additionalStyles() {
       basename: file.dirname,
       extname: '.min.css',
     })))
-    .pipe(dest('build/css'));
+    .pipe(dest('build/css'))
+    .pipe(browserSync.stream());
 }
 
 function coreScripts() {
   return src(['src/layout/core.js'])
     .pipe(named((file) => path.basename('core', path.extname(file.path))))
     .pipe(webpack(webpackConfig))
-    .pipe(dest('build/js'));
+    .pipe(dest('build/js'))
+    .pipe(browserSync.stream());
 }
 
 function additionalScripts() {
   return src(['src/widgets/**/index.js'], { base: process.cwd() })
     .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
     .pipe(webpack(webpackConfig))
-    .pipe(dest('build/js'));
+    .pipe(dest('build/js'))
+    .pipe(browserSync.stream());
 }
 
 function sprite() {
@@ -139,6 +143,7 @@ function watching() {
   watch(['src/**/*.json', '!src/layout/data/data.json'], json);
   watch(['src/**/*.pug', 'src/layout/data/data.json', 'src/components/icon/sprite.svg'], html);
   watch(['public/**/*'], assets);
+  watch(['build/*.html']).on('change', browserSync.reload);
 }
 
 function server() {
@@ -147,7 +152,6 @@ function server() {
       baseDir: 'build',
     },
     ui: false,
-    watch: true,
   });
 }
 
