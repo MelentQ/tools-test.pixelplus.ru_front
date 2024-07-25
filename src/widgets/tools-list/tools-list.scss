@@ -1,0 +1,129 @@
+.tools-list {
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 3rem;
+  }
+
+  &__tab {
+    position: relative;
+
+    padding: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-t1);
+
+    background: none;
+    border: none;
+
+    @include transition(color);
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      display: block;
+      width: 100%;
+
+      border-bottom: 1px dashed currentColor;
+
+      content: '';
+      pointer-events: none;
+    }
+
+    &.--active {
+      color: var(--color-primary);
+
+      pointer-events: none;
+    }
+  }
+
+  &__panels {
+    position: relative;
+
+    @include breakpointMF(l) {
+      width: calc(100% + 2rem);
+      margin: -1rem;
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    @include transition(opacity, visibility);
+
+    @include breakpointMF(l) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include breakpoint(m) {
+      width: calc(100% + 4rem);
+      margin: 0 -2rem;
+      padding: 0 2rem;
+      overflow: hidden;
+    }
+
+    @include breakpoint(s) {
+      width: calc(100% + 3.2rem);
+      margin: 0 -1.6rem;
+      padding: 0 1.6rem;
+    }
+
+    &.--active {
+      position: static;
+
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: all;
+    }
+  }
+
+  &__slider,
+  &__slider-wrapper,
+  &__slide {
+    @include breakpointMF(l) {
+      display: contents;
+    }
+  }
+
+  &__slider {
+    @include breakpoint(m) {
+      overflow: visible;
+    }
+  }
+
+  &__card {
+    @include breakpointMF(l) {
+      width: calc(25% - 2rem);
+      margin: 1rem;
+    }
+
+    @include breakpoint(m) {
+      width: 100%;
+    }
+  }
+
+  &__pagination {
+    margin-top: 2rem;
+
+    @include breakpointMF(l) {
+      display: none;
+    }
+  }
+}

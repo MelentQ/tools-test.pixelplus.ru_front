@@ -1,0 +1,6 @@
+mixin tl-card(props)
+  - props = props || {}
+  .tl-card&attributes(attributes)
+    .tl-card__icon
+      +icon(props.icon)
+    a.tl-card__title(href="#")=props.title

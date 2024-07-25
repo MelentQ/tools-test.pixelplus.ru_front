@@ -38,7 +38,7 @@
             }
           },
           {
-            "image": "",
+            "image": "./assets/images/dev/pages/tools.jpg",
             "title": "Инструменты",
             "button": {
               "tag": "a",

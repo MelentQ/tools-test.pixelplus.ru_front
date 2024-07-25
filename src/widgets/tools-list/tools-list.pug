@@ -1,0 +1,25 @@
+mixin tools-list(props, section)
+  - props = props || {}
+  +section(section)
+    .tools-list.js-tools-list
+      .tools-list__tabs
+        for category, i in props.categories
+          button.tools-list__tab.js-tools-list-tab(
+            class=(i === 0 ? "--active" : null)
+            type="button"
+          )=category.name
+      .tools-list__panels
+        for category, i in props.categories
+          .tools-list__panel.js-tools-list-panel(
+            class=(i === 0 ? "--active" : null)
+          )
+            .tools-list__slider.swiper.loader
+              .tools-list__slider-wrapper.swiper-wrapper
+                for item in category.items
+                  .tools-list__slide.swiper-slide
+                    +tl-card(item)&attributes({
+                      class: "tools-list__card"
+                    })
+            +slider-pagination&attributes({class: "tools-list__pagination"})
+    link(href="./css/tools-list.min.css" rel="stylesheet")
+    script(src="./js/tools-list.min.js")

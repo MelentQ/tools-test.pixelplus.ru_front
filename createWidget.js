@@ -29,8 +29,8 @@ if (name) {
   - props = props || {}
   +section(section)
     .${name}
-    link(href="./css/${name}.css" rel="stylesheet")
-    script(src="./js/${name}.js")\n`,
+    link(href="./css/${name}.min.css" rel="stylesheet")
+    script(src="./js/${name}.min.js")\n`,
     },
     {
       name: 'index.scss',

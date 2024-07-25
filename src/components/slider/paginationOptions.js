@@ -4,4 +4,5 @@ export default {
   bulletActiveClass: 'slider-pagination__item--active',
   modifierClass: 'slider-pagination--',
   lockClass: 'slider-pagination--lock',
+  progressbarFillClass: 'slider-pagination__progressbar-fill',
 };

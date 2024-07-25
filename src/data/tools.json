@@ -1,0 +1,234 @@
+{
+  "tools": [
+    {
+      "name": "Нейросети",
+      "key": "ai-tools",
+      "items": [
+        {
+          "title": "AI-генератор контента",
+          "icon": "ai-content"
+        },
+        {
+          "title": "AI-генератор изображений",
+          "icon": "ai-images"
+        },
+        {
+          "title": "AI-генератор аудио",
+          "icon": "ai-audio"
+        }
+      ]
+    },
+    {
+      "name": "Внутренняя оптимизация",
+      "key": "internal-optimization",
+      "items": [
+        {
+          "title": "Оценка качества оптимизации",
+          "icon": "gears"
+        },
+        {
+          "title": "Проверка текста на уникальность",
+          "icon": "fingerprint"
+        },
+        {
+          "title": "ТЗ на SEO-копирайтинг с анализом ТОПа",
+          "icon": "text-block"
+        },
+        {
+          "title": "Анализ структуры проекта",
+          "icon": "maze"
+        },
+        {
+          "title": "Текстовый анализатор",
+          "icon": "seo-key"
+        },
+        {
+          "title": "Анализ SEO-тегов для списка URL",
+          "icon": "bubble-sharp"
+        },
+        {
+          "title": "Визуальный HTML-редактор",
+          "icon": "html-editor"
+        },
+        {
+          "title": "Генератор Title, Description и H1",
+          "icon": "snippets"
+        },
+        {
+          "title": "Комплексная оценка текста",
+          "icon": "brilliant"
+        }
+      ]
+    },
+    {
+      "name": "Аудит и аналитика",
+      "key": "audit",
+      "items": [
+        {
+          "title": "Проверка позиций сайта в Яндексе и Google",
+          "icon": "double-check"
+        },
+        {
+          "title": "Анализ ТОП выдачи Яндекса и Google",
+          "icon": "four-numbers"
+        },
+        {
+          "title": "Быстрый аудит сайта",
+          "icon": "moustache"
+        },
+        {
+          "title": "Анализ ТОП выдачи Яндекса и Google по группе запросов",
+          "icon": "numbers"
+        },
+        {
+          "title": "Анализ видимости и конкурентов",
+          "icon": "loupe-ok"
+        },
+        {
+          "title": "Список URL в ТОП",
+          "icon": "loupe"
+        },
+        {
+          "title": "Проверка индексации страниц в Яндексе и Google",
+          "icon": "age-doc"
+        },
+        {
+          "title": "Быстрый анализ списка сайтов",
+          "icon": "chip"
+        },
+        {
+          "title": "Релевантность зон документа",
+          "icon": "title"
+        },
+        {
+          "title": "Yandex Search API (Яндекс.XML)",
+          "icon": "xml"
+        },
+        {
+          "title": "Анализ поведенческих факторов в Яндексе",
+          "icon": "user"
+        },
+        {
+          "title": "Аудит поведенческих факторов с помощью Яндекс.Метрики",
+          "icon": "metrika"
+        },
+        {
+          "title": "Калькулятор KPI для бизнеса",
+          "icon": "calc"
+        },
+        {
+          "title": "Парсинг сниппетов из Яндекса и Google",
+          "icon": "loudspeaker"
+        },
+        {
+          "title": "Проверка привязки сайта к региону",
+          "icon": "map-marker"
+        },
+        {
+          "title": "Анализ конкурентов: SEO, контекст",
+          "icon": "binoculars"
+        }
+      ]
+    },
+    {
+      "name": "Семантическое ядро",
+      "key": "semantic-core",
+      "items": [
+        {
+          "title": "Комплексный анализ запросов",
+          "icon": "atom"
+        },
+        {
+          "title": "Группировка запросов по ТОПу",
+          "icon": "circles"
+        },
+        {
+          "title": "Лемматизация и удаление дублей",
+          "icon": "book"
+        },
+        {
+          "title": "Список запросов из Яндекс.Вебмастера",
+          "icon": "lists"
+        },
+        {
+          "title": "Получение данных из Яндекс.Вордстат",
+          "icon": "bubble"
+        },
+        {
+          "title": "Детальный анализ запроса",
+          "icon": "ws"
+        },
+        {
+          "title": "Поисковые подсказки Яндекса",
+          "icon": "yandex-search"
+        },
+        {
+          "title": "Поисковые подсказки Google",
+          "icon": "google-search"
+        },
+        {
+          "title": "Парсинг подсказок YouTube",
+          "icon": "youtube-search"
+        },
+        {
+          "title": "Подбор семантики для сайта или страницы",
+          "icon": "key-loupe"
+        },
+        {
+          "title": "Поиск дополняющих запросов",
+          "icon": "key-wall"
+        }
+      ]
+    },
+    {
+      "name": "Санкции / Фильтры",
+      "key": "sanctions",
+      "items": [
+        {
+          "title": "Расширенная проверка на переоптимизацию",
+          "icon": "checklist"
+        },
+        {
+          "title": "Комплексная проверка на фильтры Яндекса",
+          "icon": "man-in-circle"
+        }
+      ]
+    },
+    {
+      "name": "Внешняя оптимизация",
+      "key": "external-optimization",
+      "items": [
+        {
+          "title": "Анализ ссылочной массы",
+          "icon": "arrows-www"
+        },
+        {
+          "title": "Генератор UTM-меток",
+          "icon": "utm"
+        }
+      ]
+    },
+    {
+      "name": "Техническая оптимизация",
+      "key": "technical-optimization",
+      "items": [
+        {
+          "title": "Поиск поддоменов сайта",
+          "icon": "tree"
+        },
+        {
+          "title": "Поиск зеркал для домена",
+          "icon": "mirror"
+        },
+        {
+          "title": "Проверка кода ответа, скорости загрузки и размера страниц",
+          "icon": "speedometer"
+        },
+        {
+          "title": "Анализ XML-карты сайта",
+          "icon": "sitemap"
+        }
+      ]
+    }
+  ]
+}
