@@ -1,0 +1,27 @@
+.numbers {
+  display: flex;
+
+  @include breakpointMF(m) {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: calc(100% + 2rem);
+    margin: -1rem;
+  }
+
+  @include breakpoint(s) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__card {
+    @include breakpointMF(m) {
+      width: calc(100% / 3 - 2rem);
+      margin: 1rem;
+    }
+
+    @include breakpointMF(l) {
+      width: calc(25% - 2rem);
+    }
+  }
+}

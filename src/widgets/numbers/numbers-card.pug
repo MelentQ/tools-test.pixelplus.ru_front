@@ -1,0 +1,7 @@
+mixin numbers-card(props)
+  - props = props || {}
+  .numbers-card&attributes(attributes)
+    .numbers-card__value(
+      class=(props.animation ? "js-numbers-card-animation" : null)
+    )=props.value
+    .numbers-card__text=props.text

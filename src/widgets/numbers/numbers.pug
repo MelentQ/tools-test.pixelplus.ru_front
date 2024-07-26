@@ -1,0 +1,8 @@
+mixin numbers(props, section)
+  - props = props || {}
+  +section(section)
+    .numbers.js-numbers
+      for item in props.items
+        +numbers-card(item)&attributes({class: "numbers__card"})
+    link(href="./css/numbers.min.css" rel="stylesheet")
+    script(src="./js/numbers.min.js")

@@ -42,7 +42,12 @@ if (name) {
     },
     {
       name: 'index.js',
-      content: 'document.addEventListener(\'DOMContentLoaded\', () => {});\n',
+      content: `document.addEventListener('DOMContentLoaded', () => {
+  const containers = document.querySelectorAll('.js-${name}:not(.--initialized)');
+  containers.forEach((container) => {
+    container.classList.add('--initialized');
+  });
+});\n`,
     },
   ];
 

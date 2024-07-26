@@ -23,11 +23,6 @@ mixin register-form(props)
         type: "tel",
         tip: "Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках."
       })
-      if !props.hideUsername
-        +input({
-          placeholder: "Никнейм",
-          name: "username"
-        })
       .register-form__checkbox
         +checkbox({
           name: "offer",

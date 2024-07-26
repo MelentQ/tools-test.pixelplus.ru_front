@@ -33,7 +33,7 @@ block content
     code: "DB7PwAaxqzQ"
   }, {
     mods: ["small", "dark"],
-    title: "Обзор возможностей",
+    title: "Быстрое знакомство с сервисом",
     button: {
       attributes: {
         "data-fancybox": "modal",
@@ -110,6 +110,24 @@ block content
     title: "Выберите свой тариф",
     subtitle: "от 99 ₽"
   })
+  +numbers({
+    items: [
+      {
+        value: "228782",
+        text: "Пользователей системы",
+        animation: true
+      },
+      {
+        value: "47",
+        text: "Инструментов для профессионалов",
+        animation: true
+      },
+      {
+        value: "Бесконечно!",
+        text: "Развитие проекта"
+      }
+    ]
+  })
   +reviews({
     items: widgets.reviews
   }, {
@@ -175,9 +193,7 @@ block content
   }, {
     title: "Образовательные курсы от Пиксель Тулс"
   })
-  +register({
-    hideUsername: true
-  }, {
+  +register({}, {
     mods: ["dark"],
     title: "Инструменты доступны после быстрой регистрации",
     subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
