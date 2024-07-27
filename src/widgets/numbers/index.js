@@ -1,14 +1,9 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
 document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.js-numbers:not(.--initialized)');
   containers.forEach((container) => {
     const numbers = container.querySelectorAll('.js-numbers-card-animation');
 
-    gsap.from(numbers, {
+    window.pts.gsap.from(numbers, {
       scrollTrigger: container,
       textContent: 0,
       duration: 2,

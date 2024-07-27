@@ -10,8 +10,14 @@ import select from '@/components/select/select';
 import modal from '@/components/modal/modal';
 import phoneInput from '@/components/input/phoneInput';
 import scrollToAnchor from '@/layout/scripts/scrollToAnchor';
+import handleForms from '@/components/form/handleForms';
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.pts.accordion = accordion;
+  window.pts.utils.form = {
+    handleForms,
+  };
+
   smoothScrolling();
   animation();
   accordion();

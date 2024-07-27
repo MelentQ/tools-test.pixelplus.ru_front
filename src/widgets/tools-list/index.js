@@ -1,11 +1,3 @@
-import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
-import paginationOptions from '@/components/slider/paginationOptions';
-import hideLoader from '@/components/slider/hideLoader';
-import showLoader from '@/components/slider/showLoader';
-
-Swiper.use([Pagination]);
-
 document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.js-tools-list:not(.--initialized)');
   containers.forEach((container) => {
@@ -17,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function init() {
       if (window.matchMedia('(max-width: 991px)').matches) {
         if (!instance) {
-          instance = new Swiper(panels[currentTabIndex].querySelector('.swiper'), {
+          instance = new window.pts.Swiper(panels[currentTabIndex].querySelector('.swiper'), {
             slidesPerView: 2,
             spaceBetween: 16,
             pagination: {
               el: panels[currentTabIndex].querySelector('.slider-pagination'),
               type: 'progressbar',
-              ...paginationOptions,
+              ...window.pts.utils.slider.paginationOptions,
             },
             breakpoints: {
               768: {
@@ -32,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
               },
             },
             on: {
-              init: hideLoader,
-              destroy: showLoader,
+              init: window.pts.utils.slider.hideLoader,
+              destroy: window.pts.utils.slider.showLoader,
             },
           });
         }

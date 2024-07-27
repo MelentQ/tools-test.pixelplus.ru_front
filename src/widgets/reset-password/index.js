@@ -1,7 +1,5 @@
-import handleForms from '@/components/form/handleForms';
-
 window.addEventListener('load', () => {
-  handleForms({
+  window.pts.utils.form.handleForms({
     selector: '.js-reset-password-form',
     onSuccess(response, form) {
       window.pts.Fancybox.show([{ src: '#error-modal' }]);

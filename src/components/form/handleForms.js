@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default function handleForms({
   selector, onSuccess, onError, onComplete, isFake,
 }) {
@@ -11,7 +13,7 @@ export default function handleForms({
       const data = new FormData(form);
 
       const send = () => {
-        window.pts.axios({
+        axios({
           method: form.method,
           url: form.action,
           data,

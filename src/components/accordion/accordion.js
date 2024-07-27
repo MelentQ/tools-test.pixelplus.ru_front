@@ -78,5 +78,3 @@ export default function accordion(config) {
     }
   });
 }
-
-window.pts.accordion = accordion;
