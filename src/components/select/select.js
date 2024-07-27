@@ -16,7 +16,17 @@ export default function select() {
       shouldSort: false,
       allowHTML: false,
       callbackOnCreateTemplates: () => ({
-        dropdown: (...args) => {
+        itemList(...args) {
+          const div = Choices.defaults.templates.itemList.call(this, ...args);
+          div.setAttribute('role', 'listbox');
+          return div;
+        },
+        item(...args) {
+          const div = Choices.defaults.templates.item.call(this, ...args);
+          div.setAttribute('role', 'option');
+          return div;
+        },
+        dropdown(...args) {
           const div = Choices.defaults.templates.dropdown.call(this, ...args);
           Object.assign(div.dataset, {
             lenisPrevent: '',

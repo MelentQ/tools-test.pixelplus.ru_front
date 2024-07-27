@@ -3,7 +3,7 @@ mixin onboarding(props)
   section.onboarding
     .page-container
       .onboarding__content
-        .onboarding__title.animation.animation--fade-in-left !{props.title}
+        h1.onboarding__title.animation.animation--fade-in-left !{props.title}
         .onboarding__subtitle.animation.animation--fade-in-left !{props.subtitle}
         .onboarding__list.animation.animation--fade-in
           for item in props.items

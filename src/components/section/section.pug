@@ -1,12 +1,14 @@
 mixin section(props)
   - props = props || {}
   - mods = props.mods ? props.mods.map(mod => `section--${mod}`).join(' ') : null;
+  - tag = props.tag || "h2"
   section.section(class=mods)&attributes(props.attributes)
     .page-container
+      if props.hiddenTitle
+        #{tag}.visually-hidden=props.hiddenTitle
       if props.title || props.subtitle
         .section__head
           if props.title
-            - tag = props.tag || "h2"
             #{tag}.section__title.animation.animation--fade-in-left !{props.title}
           if props.subtitle
             .section__subtitle.animation.animation--fade-in !{props.subtitle}

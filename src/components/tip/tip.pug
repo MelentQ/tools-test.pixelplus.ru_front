@@ -2,5 +2,6 @@ mixin tip(props)
   - props = props || {}
   span.tip(
     data-tip=props.text
+    aria-label=(props.name || "Подсказка")
   )&attributes(attributes)
     +icon('question')
