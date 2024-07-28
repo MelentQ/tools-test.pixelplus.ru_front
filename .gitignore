@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 src/layout/data/data.json
+src/data/ui-kit.json
 src/components/icon/sprite.svg
 
 node_modules

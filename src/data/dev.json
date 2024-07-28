@@ -4,7 +4,7 @@
       {
         "items": [
           {
-            "image": "",
+            "image": "./assets/images/dev/pages/ui-kit.jpg",
             "title": "UI-kit",
             "button": {
               "tag": "a",

@@ -18,6 +18,7 @@ const svgSprite = require('gulp-svg-sprite');
 const merge = require('gulp-merge-json');
 const webpackConfig = require('./webpack.config');
 const devConfig = require('./dev-config');
+const { generateUiKit } = require('./utils');
 
 function coreStyles() {
   return src(['src/layout/core.scss'])
@@ -170,6 +171,7 @@ exports.default = series(
     coreScripts,
     additionalScripts,
     html,
+    generateUiKit,
   ),
   parallel(
     watching,
@@ -188,5 +190,6 @@ exports.build = series(
     coreScripts,
     additionalScripts,
     html,
+    generateUiKit,
   ),
 );

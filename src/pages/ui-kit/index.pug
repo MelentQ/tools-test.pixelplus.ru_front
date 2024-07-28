@@ -1,7 +1,87 @@
 extends ../../layout/landing
 
 block head
-  title UI-kit
-  meta(name="description" content="UI-kit")
+  title UI Kit
+  meta(name="description" content="UI Kit")
 
 block content
+  +section({
+    mods: ["border"],
+    title: "UI Kit",
+    subtitle: "Для дизайнеров и разработчиков",
+    tag: "h1"
+  })
+    p По умолчанию некоторые теги уже имеют браузерные стили (normalize.css)
+    ul
+      li Шрифт – <a target="_blank" href="https://fonts.google.com/specimen/Open+Sans"><b>Open Sans</b></a>
+      li Стандартный размер шрифта – <b>16px</b>
+      li Толщина шрифта – <b>400 (normal)</b>
+      li Интерлиньяж (line-height) – <b>120% (1.2)</b>
+      li Цвет текста – <b>#333333</b>
+      li Цвет бренда - <b style="color: #e32d35;">#e32d35</b>
+      li Скругление углов – <b>6px</b>
+  +section({
+    mods: ["border"],
+    title: "Навигация",
+    subtitle: "Может помочь браузерный поиск <b>Ctrl + F</b>. У большинства компонентов есть теги для быстрого поиска"
+  })
+    ol
+      li
+        a(href="#colors") Цвета
+      li
+        a(href="#typography") Типографика
+      li
+        a(href="#components") Компоненты
+      li
+        a(href="#widgets") Блоки
+      li
+        a(href="#sprite") SVG-спрайт
+      li
+        a(href="#modals") Модальные окна
+  +section({
+    mods: ["border"],
+    title: "Цвета",
+  })&attributes({
+    id: "colors"
+  })
+  +section({
+    mods: ["border"],
+    title: "Типографика",
+  })&attributes({
+    id: "typography"
+  })
+  +section({
+    mods: ["border"],
+    title: "Компоненты",
+    subtitle: "Неотъемлемая часть сайта",
+  })&attributes({
+    id: "components"
+  })
+  +cards-slider({
+    items: ui.widgets,
+    isGallery: true,
+  }, {
+    mods: ["border"],
+    title: "Блоки",
+    subtitle: "Независимые секции",
+    attributes: {
+      id: "widgets"
+    }
+  })
+  +sprite-list({
+    items: ui.sprite,
+    size: ui.spriteSize
+  }, {
+    mods: ["border"],
+    title: "SVG-спрайт",
+    subtitle: "Подключается на все страницы",
+    attributes: {
+      id: "sprite"
+    }
+  })
+  +section({
+    mods: ["border"],
+    title: "Модальные окна",
+  })&attributes({
+    id: "modals"
+  })
