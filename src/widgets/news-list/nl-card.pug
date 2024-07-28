@@ -1,0 +1,5 @@
+mixin nl-card(props)
+  - props = props || {}
+  .nl-card&attributes(attributes)
+    .nl-card__date=props.date
+    a.nl-card__title(href="#")=props.title

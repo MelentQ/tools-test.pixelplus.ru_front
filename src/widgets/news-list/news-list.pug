@@ -1,0 +1,12 @@
+mixin news-list(props, section)
+  - props = props || {}
+  +section(section)
+    .news-list.js-news-list
+      .news-list__slider.swiper.loader
+        .news-list__slider-wrapper.swiper-wrapper
+          for item in props.items
+            .news-list__slide.swiper-slide
+              +nl-card(item)&attributes({class: "news-list__card"})
+      +slider-pagination&attributes({class: "news-list__pagination"})
+    link(href="./css/news-list.min.css" rel="stylesheet")
+    script(src="./js/news-list.min.js")

@@ -1,0 +1,5 @@
+mixin about-card(props)
+  - props = props || {}
+  .about-card&attributes(attributes)
+    .about-card__value=`${props.place} место`
+    .about-card__title !{props.title}

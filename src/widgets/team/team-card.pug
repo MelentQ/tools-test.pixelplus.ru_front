@@ -1,7 +1,8 @@
 mixin team-card(props)
   - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `team-card--${mod}`).join(" ") : null;
   .team-card(
-    class=(props.isSingle ? "team-card--single" : null)
+    class=mods
   )
     if props.image
       .team-card__image

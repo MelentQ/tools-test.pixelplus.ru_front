@@ -45,6 +45,15 @@
               "link": "./tools.html",
               "text": "Открыть"
             }
+          },
+          {
+            "image": "./assets/images/dev/pages/about.jpg",
+            "title": "О сервисе",
+            "button": {
+              "tag": "a",
+              "link": "./about.html",
+              "text": "Открыть"
+            }
           }
         ],
         "section": {

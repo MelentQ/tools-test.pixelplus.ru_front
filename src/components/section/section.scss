@@ -77,8 +77,13 @@
     }
   }
 
-  &--small #{$block-name}__content {
+  &--width-s #{$block-name}__content {
     max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  &--width-xs #{$block-name}__content {
+    max-width: 50rem;
     margin: 0 auto;
   }
 

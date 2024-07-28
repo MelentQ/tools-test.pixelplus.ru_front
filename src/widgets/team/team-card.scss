@@ -9,6 +9,10 @@
   background-color: var(--color-gray-lighter);
   border-radius: $border-radius;
 
+  &--light {
+    background-color: var(--color-white);
+  }
+
   &--single {
     @include breakpointMF(m) {
       width: calc((100% + 2rem) / 3 - 2rem);

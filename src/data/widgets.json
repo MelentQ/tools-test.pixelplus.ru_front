@@ -171,6 +171,92 @@
         "oldPrice": "1 594 ₽",
         "price": "990 ₽ / месяц"
       }
+    ],
+    "numbers": [
+      {
+        "value": "228782",
+        "text": "Пользователей системы",
+        "animation": true
+      },
+      {
+        "value": "47",
+        "text": "Инструментов для профессионалов",
+        "animation": true
+      },
+      {
+        "value": "Бесконечно!",
+        "text": "Развитие проекта"
+      }
+    ],
+    "team":[
+      {
+        "mods": ["single"],
+        "image": "./assets/images/team/users.svg",
+        "title": "Наши пользователи",
+        "label": "Основа проекта"
+      },
+      {
+        "image": "./assets/images/team/team-1.webp",
+        "title": "Александр Захаренко",
+        "label": "Тимлид"
+      },
+      {
+        "image": "./assets/images/team/team-2.webp",
+        "title": "Владислав Татаринов",
+        "label": "Программист"
+      },
+      {
+        "image": "./assets/images/team/team-3.webp",
+        "title": "Данил Мелентьев",
+        "label": "Программист"
+      },
+      {
+        "image": "./assets/images/team/team-4.webp",
+        "title": "Алла Аверина",
+        "label": "Программист"
+      },
+      {
+        "image": "./assets/images/team/team-5.webp",
+        "title": "Александра Христенко",
+        "label": "Менеджер по работе с клиентами"
+      },
+      {
+        "image": "./assets/images/team/team-6.webp",
+        "title": "Артем Азаров",
+        "label": "Поддержка и развитие проекта"
+      },
+      {
+        "image": "./assets/images/team/team-7.webp",
+        "title": "Владимир Арнаут",
+        "label": "Специалист тех. поддержки"
+      },
+      {
+        "image": "./assets/images/team/team-8.webp",
+        "title": "Александра Масюнина",
+        "label": "Менеджер проекта"
+      },
+      {
+        "image": "./assets/images/team/team-9.webp",
+        "title": "Дмитрий Севальнев",
+        "label": "Евангелист проекта"
+      }
+    ],
+    "achievements": [
+      {
+        "place": "1",
+        "title": "По версии <a href=\"#\">RUWARD AWARD 2024</a>",
+        "logo": "./assets/images/achievements/ruward.svg"
+      },
+      {
+        "place": "1",
+        "title": "В списке любимых сервисов SEO‑специалистов",
+        "logo": "./assets/images/achievements/referr.svg"
+      },
+      {
+        "place": "4",
+        "title": "В рейтинге известности SEO‑сервисов 2022 от <a href=\"#\">SeoNews</a>",
+        "logo": "./assets/images/achievements/seo-news.svg"
+      }
     ]
   }
 }
