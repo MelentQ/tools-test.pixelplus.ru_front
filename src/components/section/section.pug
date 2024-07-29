@@ -6,7 +6,7 @@ mixin section(props)
     ...attributes,
     ...props.attributes
   })
-    .page-container
+    .page-container.page-container--small
       if props.hiddenTitle
         #{tag}.visually-hidden=props.hiddenTitle
       if props.title || props.subtitle

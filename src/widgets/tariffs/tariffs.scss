@@ -47,7 +47,7 @@
     }
 
     @include breakpointMF(l) {
-      width: calc(25% - 3rem);
+      width: calc(100% / 3 - 3rem);
       margin: 1.5rem;
 
       &:not(&--accent) {
