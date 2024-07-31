@@ -13,11 +13,11 @@ function fileExist(filePath) {
   return true;
 }
 
-function getWidgetsList(source) {
+function getBlocksList(source) {
   return fs.readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory() && fileExist(`${source}${dirent.name}/preview.jpg`))
     .map((dirent) => ({
-      image: `./assets/images/dev/widgets/${dirent.name}.jpg`,
+      image: `./assets/images/dev/blocks/${dirent.name}.jpg`,
       title: dirent.name,
     }));
 }
@@ -38,9 +38,9 @@ function getSpriteFileSize(source) {
 function generateUiKitJSON() {
   const data = {
     ui: {
-      widgets: getWidgetsList('src/widgets/'),
-      sprite: getSpriteList('src/components/icon/sprite'),
-      spriteSize: getSpriteFileSize('src/components/icon/sprite.svg'),
+      blocks: getBlocksList('src/blocks/'),
+      sprite: getSpriteList('src/ui/icon/sprite'),
+      spriteSize: getSpriteFileSize('src/ui/icon/sprite.svg'),
     },
   };
 
@@ -52,13 +52,13 @@ function generateUiKitJSON() {
 function generateUiKit() {
   generateUiKitJSON();
 
-  return src(['src/widgets/**/preview.jpg'])
+  return src(['src/blocks/**/preview.jpg'])
     .pipe(rename((file) => ({
       dirname: path.dirname(file.dirname),
       basename: file.dirname,
       extname: file.extname,
     })))
-    .pipe(dest('build/assets/images/dev/widgets'));
+    .pipe(dest('build/assets/images/dev/blocks'));
 }
 
 exports.generateUiKit = generateUiKit;

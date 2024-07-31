@@ -1,0 +1,11 @@
+mixin icon-cards(props)
+  - props = props || {}
+  .icon-cards.js-icon-cards
+    .icon-cards__slider.swiper.loader
+      .icon-cards__slider-wrapper.swiper-wrapper
+        for item in props.items
+          .icon-cards__slide.swiper-slide
+            +ic-card(item)&attributes({class: 'icon-cards__card'})
+    +slider-pagination&attributes({class: "icon-cards__pagination"})
+  link(href="./css/icon-cards.min.css" rel="stylesheet")
+  script(src='./js/icon-cards.min.js')

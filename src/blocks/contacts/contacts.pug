@@ -1,0 +1,10 @@
+mixin contacts(props)
+  - props = props || {}
+  section.contacts.section.section--dark
+    .page-container.page-container--size-s
+      .contacts__content
+        h1.contacts__title.animation.animation--fade-in-left=props.title
+        .contacts__subtitle.animation.animation--fade-in !{props.subtitle}
+        +contacts-form&attributes({class: "contacts__form animation animation--fade-in"})
+    link(href="./css/contacts.min.css" rel="stylesheet")
+    script(src="./js/contacts.min.js")

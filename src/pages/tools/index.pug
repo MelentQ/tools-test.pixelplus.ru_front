@@ -22,17 +22,16 @@ block content
       text: "Попробовать за 99 руб."
     }
   })
-  +tools-list({
-    categories: tools
-  }, {
-    mods: ["small"],
+  +section({
+    mods: ["size-s"],
     title: "Больше возможностей с Пиксель Тулс",
     footerText: "Чтобы страница заняла высокие позиции в выдаче поисковых систем, она должна быть релевантной (раскрывать тему, отвечать на запрос пользователя) и оптимизированной (содержать ключевые слова). Наш инструмент проверяет оптимизацию документа, находит ошибки, дает рекомендации по работе с текстом."
   })
-  +video({
-    code: "DB7PwAaxqzQ"
-  }, {
-    mods: ["small", "dark"],
+    +tools-list({
+      categories: tools
+    })
+  +section({
+    mods: ["size-s", "dark"],
     title: "Быстрое знакомство с сервисом",
     button: {
       attributes: {
@@ -42,14 +41,16 @@ block content
       text: "Заказать демонстрацию"
     }
   })
-  +features({
-    items: widgets.features
-  }, {
+    +video({
+      code: "DB7PwAaxqzQ"
+    })
+  +section({
     title: "Что входит в Пиксель Тулс?"
   })
-  +advantages({
-    items: widgets.advantages
-  }, {
+    +features({
+      items: blocks.features
+    })
+  +section({
     mods: ["dark"],
     title: "Основные возможности Пиксель Тулс",
     subtitle: "Облегчаем работу команды SEO‑специалистов",
@@ -58,131 +59,137 @@ block content
       text: "Заведите свой проект за 1 минуту"
     }
   })
-  +cases({
-    items: [
-      {
-        image: "./assets/images/cases/case-1.webp",
-        title: "Кейс «Флаг.ру»: увеличение видимости сайта на <b>24%</b>",
-        tasks: [
-          "Оптимизация Title",
-          "Оптимизация текстов",
-          "Устранены технические ошибки на сайте"
-        ],
-        results: [
-          "Рост SEO-трафика и звонков"
-        ]
-      },
-      {
-        image: "./assets/images/cases/case-2.webp",
-        title: "Кейс «Mrtcentre.ru»: увеличение видимости сайта на <b>24%</b>",
-        tasks: [
-          "Оптимизация Title",
-          "Оптимизация текстов",
-          "А также выполнена внутренняя перелинковка сайта"
-        ],
-        results: [
-          "SEO-трафик увеличился в 4 раза. Звонки и заявки также показали кратный рост"
-        ]
-      },
-      {
-        image: "./assets/images/cases/case-3.webp",
-        title: "Кейс «Rosetaxi.ru»: увеличение видимости сайта на <b>31%</b>",
-        tasks: [
-          "Перегруппировка запросов",
-          "Снятие пост-фильтров",
-          "Оптимизация Title",
-          "Оптимизация текстов",
-          "Коммерческие факторы"
-        ],
-        results: [
-          "Рост SEO-трафика и заявок на подключение"
-        ]
-      }
-    ]
-  }, {
+    +advantages({
+      items: blocks.advantages
+    })
+  +section({
     title: "Наши кейсы"
   })
-  +tariffs({
-    initialSlide: 1,
-    items: widgets.tariffs
-  }, {
+    +cases({
+      items: [
+        {
+          image: "./assets/images/cases/case-1.webp",
+          title: "Кейс «Флаг.ру»: увеличение видимости сайта на <b>24%</b>",
+          tasks: [
+            "Оптимизация Title",
+            "Оптимизация текстов",
+            "Устранены технические ошибки на сайте"
+          ],
+          results: [
+            "Рост SEO-трафика и звонков"
+          ]
+        },
+        {
+          image: "./assets/images/cases/case-2.webp",
+          title: "Кейс «Mrtcentre.ru»: увеличение видимости сайта на <b>24%</b>",
+          tasks: [
+            "Оптимизация Title",
+            "Оптимизация текстов",
+            "А также выполнена внутренняя перелинковка сайта"
+          ],
+          results: [
+            "SEO-трафик увеличился в 4 раза. Звонки и заявки также показали кратный рост"
+          ]
+        },
+        {
+          image: "./assets/images/cases/case-3.webp",
+          title: "Кейс «Rosetaxi.ru»: увеличение видимости сайта на <b>31%</b>",
+          tasks: [
+            "Перегруппировка запросов",
+            "Снятие пост-фильтров",
+            "Оптимизация Title",
+            "Оптимизация текстов",
+            "Коммерческие факторы"
+          ],
+          results: [
+            "Рост SEO-трафика и заявок на подключение"
+          ]
+        }
+      ]
+    })
+  +section({
     mods: ["dark"],
     title: "Выберите свой тариф",
     subtitle: "от 99 ₽"
   })
+    +tariffs({
+      initialSlide: 1,
+      items: blocks.tariffs
+    })
   +section({
     hiddenTitle: "О сервисе в цифрах"
   })
     +numbers({
-      items: widgets.numbers
+      items: blocks.numbers
     })
-  +reviews({
-    items: widgets.reviews
-  }, {
+  +section({
     mods: ["dark"],
     title: "Мнения экспертов"
   })
-  +cards-slider({
-    isGallery: false,
-    items: [
-      {
-        image: "./assets/images/courses/course-1.webp",
-        title: "Бери и делай!",
-        text: "Бесплатный курс по SEO: от сбора семантики и заведения проекта до красивого отчета и экспериментов.",
-        button: {
-          tag: "a",
-          link: "https://pixelplus.skillspace.ru/course/10701/about",
-          text: "Узнать больше",
-          attributes: {
-            target: "_blank"
-          }
-        }
-      },
-      {
-        image: "./assets/images/courses/course-2.webp",
-        title: "НейроГений",
-        text: "Курс по нейросетям «НейроГений» построен в концепции Jobs-To-Be-Done, то есть, мы делимся не теорией, а учим решать реальные задачи с помощью ChatGPT и Midjorney.",
-        button: {
-          tag: "a",
-          link: "https://pixelplus.skillspace.ru/course/14887/about",
-          text: "Узнать больше",
-          attributes: {
-            target: "_blank"
-          }
-        }
-      },
-      {
-        image: "./assets/images/courses/course-3.webp",
-        title: "SEO для маркетологов",
-        text: "Курс по SEO для интернет-маркетологов и тех, кто хочет разобраться и полюбить поисковую оптимизацию.",
-        button: {
-          tag: "a",
-          link: "https://pixelplus.skillspace.ru/course/1787/about",
-          text: "Узнать больше",
-          attributes: {
-            target: "_blank"
-          }
-        }
-      },
-      {
-        image: "./assets/images/courses/course-4.webp",
-        title: "SEO для бизнеса",
-        text: "Если вы заказчик SEO-услуг, то важно не только «платить деньги», но и добиваться максимума прибыли по каналу! От чего зависит конечный результат, как умножить ROI и выполнить задачи бизнеса? Разбираемся на курсе от «Пиксель Плюс».",
-        button: {
-          tag: "a",
-          link: "https://pixelplus.skillspace.ru/course/6861/about",
-          text: "Узнать больше",
-          attributes: {
-            target: "_blank"
-          }
-        }
-      }
-    ]
-  }, {
+    +reviews({
+      items: blocks.reviews
+    })
+  +section({
     title: "Образовательные курсы от Пиксель Тулс"
   })
-  +register({}, {
-    mods: ["dark", "form"],
+    +cards-slider({
+      items: [
+        {
+          image: "./assets/images/courses/course-1.webp",
+          title: "Бери и делай!",
+          text: "Бесплатный курс по SEO: от сбора семантики и заведения проекта до красивого отчета и экспериментов.",
+          button: {
+            tag: "a",
+            link: "https://pixelplus.skillspace.ru/course/10701/about",
+            text: "Узнать больше",
+            attributes: {
+              target: "_blank"
+            }
+          }
+        },
+        {
+          image: "./assets/images/courses/course-2.webp",
+          title: "НейроГений",
+          text: "Курс по нейросетям «НейроГений» построен в концепции Jobs-To-Be-Done, то есть, мы делимся не теорией, а учим решать реальные задачи с помощью ChatGPT и Midjorney.",
+          button: {
+            tag: "a",
+            link: "https://pixelplus.skillspace.ru/course/14887/about",
+            text: "Узнать больше",
+            attributes: {
+              target: "_blank"
+            }
+          }
+        },
+        {
+          image: "./assets/images/courses/course-3.webp",
+          title: "SEO для маркетологов",
+          text: "Курс по SEO для интернет-маркетологов и тех, кто хочет разобраться и полюбить поисковую оптимизацию.",
+          button: {
+            tag: "a",
+            link: "https://pixelplus.skillspace.ru/course/1787/about",
+            text: "Узнать больше",
+            attributes: {
+              target: "_blank"
+            }
+          }
+        },
+        {
+          image: "./assets/images/courses/course-4.webp",
+          title: "SEO для бизнеса",
+          text: "Если вы заказчик SEO-услуг, то важно не только «платить деньги», но и добиваться максимума прибыли по каналу! От чего зависит конечный результат, как умножить ROI и выполнить задачи бизнеса? Разбираемся на курсе от «Пиксель Плюс».",
+          button: {
+            tag: "a",
+            link: "https://pixelplus.skillspace.ru/course/6861/about",
+            text: "Узнать больше",
+            attributes: {
+              target: "_blank"
+            }
+          }
+        }
+      ]
+    })
+  +section({
+    mods: ["dark", "size-xs"],
     title: "Инструменты доступны после быстрой регистрации",
     subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
     tag: "h1",
@@ -190,6 +197,10 @@ block content
       id: "register"
     }
   })
+    +form-wrapper
+      +register-form
+
+block modals
   +offer-modal
   +policy-modal
   +demo-modal

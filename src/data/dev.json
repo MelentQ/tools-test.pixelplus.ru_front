@@ -54,6 +54,15 @@
               "link": "./about.html",
               "text": "Открыть"
             }
+          },
+          {
+            "image": "./assets/images/dev/pages/contacts.jpg",
+            "title": "Контакты",
+            "button": {
+              "tag": "a",
+              "link": "./contacts.html",
+              "text": "Открыть"
+            }
           }
         ],
         "section": {

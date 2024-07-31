@@ -16,7 +16,7 @@ block content
       li Шрифт – <a target="_blank" href="https://fonts.google.com/specimen/Open+Sans"><b>Open Sans</b></a>
       li Стандартный размер шрифта – <b>16px</b>
       li Толщина шрифта – <b>400 (normal)</b>
-      li Интерлиньяж (line-height) – <b>120% (1.2)</b>
+      li Интерлиньяж (line-height) – <b>130% (1.3)</b>
       li Цвет текста – <b>#333333</b>
       li Цвет бренда - <b style="color: #e32d35;">#e32d35</b>
       li Скругление углов – <b>6px</b>
@@ -33,7 +33,7 @@ block content
       li
         a(href="#components") Компоненты
       li
-        a(href="#widgets") Блоки
+        a(href="#blocks") Блоки
       li
         a(href="#sprite") SVG-спрайт
       li
@@ -57,28 +57,27 @@ block content
   })&attributes({
     id: "components"
   })
-  +cards-slider({
-    items: ui.widgets,
-    isGallery: true,
-  }, {
+  +section({
     mods: ["border"],
     title: "Блоки",
-    subtitle: "Независимые секции",
-    attributes: {
-      id: "widgets"
-    }
+    subtitle: "Независимые секции"
+  })&attributes({
+    id: "blocks"
   })
-  +sprite-list({
-    items: ui.sprite,
-    size: ui.spriteSize
-  }, {
+    +cards-slider({
+      items: ui.blocks,
+    })
+  +section({
     mods: ["border"],
     title: "SVG-спрайт",
-    subtitle: "Подключается на все страницы",
-    attributes: {
-      id: "sprite"
-    }
+    subtitle: "Подключается на все страницы"
+  })&attributes({
+    id: "prite"
   })
+    +sprite-list({
+      items: ui.sprite,
+      size: ui.spriteSize
+    })
   +section({
     mods: ["border"],
     title: "Модальные окна",

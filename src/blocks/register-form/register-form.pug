@@ -1,0 +1,71 @@
+mixin register-form(props)
+  - props = props || {}
+  .register-form&attributes(attributes)
+    +form({
+      method: "get"
+    })&attributes({class: "register-form__form"})
+      +input({
+        placeholder: "E-mail",
+        type: "email",
+        name: "email",
+        required: true,
+        tip: "Укажите ваш почтовый ящик вида support@pixeltools.ru. Почта (e-mail) будет использоваться для входа в сервис и для восстановления пароля. Убедитесь, что вы ввели адрес правильно, чтобы была возможность подтвердить его."
+      })
+      +input({
+        placeholder: "Пароль",
+        required: true,
+        name: "password",
+        type: "password",
+        tip: "Укажите пароль. Далее этот пароль будет использоваться при авторизации в сервисе. Мы рекомендуем использовать надежный пароль, который будет сложно угадать."
+      })
+      +input({
+        name: "phone",
+        type: "tel",
+        tip: "Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках."
+      })
+      .register-form__checkbox
+        +checkbox({
+          name: "offer",
+          checked: true,
+          required: true
+        })
+          | Прочитал и принимаю условия&nbsp;
+          a(
+            href="./offer.html"
+            data-fancybox="modal"
+            data-src="#offer-modal"
+          ) Оферты сервиса
+      .register-form__checkbox
+        +checkbox({
+          name: "policy",
+          checked: true,
+          required: true
+        })
+          | Согласен с обработкой моих персональных данных в соответствии с&nbsp;
+          a(
+            href="./policy.html"
+            data-fancybox="modal"
+            data-src="#policy-modal"
+          ) Политикой конфиденциальности
+      .register-form__controls
+        +button({
+          type: "submit"
+        })&attributes({class: "register-form__control"}) Зарегистрироваться
+    +socials-auth({
+      title: "Зарегистрироваться через",
+      items: [
+        {
+          "icon": "vk",
+          "alt": "Зарегистрироваться через VK"
+        },
+        {
+          "icon": "google",
+          "alt": "Зарегистрироваться через Google"
+        },
+        {
+          "icon": "yandex",
+          "alt": "Зарегистрироваться через Yandex"
+        }
+      ]
+    })&attributes({class: "register-form__socials"})
+  link(href="./css/register-form.min.css" rel="stylesheet")

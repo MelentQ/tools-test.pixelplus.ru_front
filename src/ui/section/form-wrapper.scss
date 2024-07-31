@@ -1,0 +1,29 @@
+.form-wrapper {
+  $block-name: &;
+
+  &__content {
+    padding: 3rem 2rem;
+
+    background-color: var(--color-gray-lighter);
+    border-radius: $border-radius;
+
+    @include breakpoint(s) {
+      padding: 2rem 1.6rem;
+    }
+  }
+
+  @at-root .section--dark &__content,
+  &--light #{$block-name}__content {
+    background-color: var(--color-white);
+  }
+
+  &__caption {
+    margin-top: 4rem;
+    padding-top: 4rem;
+
+    font-size: var(--fs-t2);
+    text-align: center;
+
+    border-top: 2px solid var(--color-gray-lighter);
+  }
+}

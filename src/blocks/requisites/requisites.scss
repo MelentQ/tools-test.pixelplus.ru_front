@@ -1,0 +1,56 @@
+.requisites {
+  &__item {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: space-between;
+
+    font-size: var(--fs-t1);
+    line-height: 1.4;
+
+    @include breakpoint(m) {
+      font-size: var(--fs-t2);
+    }
+
+    @include breakpoint(s) {
+      flex-direction: column;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &::before {
+      display: block;
+      flex-grow: 1;
+      order: 2;
+      min-width: 2rem;
+      margin-bottom: 0.4rem;
+      
+      border-bottom: 1px dotted var(--color-gray-light);
+
+      content: '';
+      pointer-events: none;
+
+      @include breakpoint(s) {
+        content: none;
+      }
+    }
+  }
+
+  &__name {
+    flex-shrink: 0;
+    order: 1;
+
+    @include breakpoint(s) {
+      color: var(--color-gray);
+    }
+  }
+
+  &__value {
+    order: 3;
+
+    @include breakpointMF(m) {
+      text-align: right;
+    }
+  }
+}

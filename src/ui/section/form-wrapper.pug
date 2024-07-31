@@ -1,0 +1,8 @@
+mixin form-wrapper(props)
+  - props = props || {}
+  .form-wrapper
+    if block
+      .form-wrapper__content
+        block
+    if props.caption
+      .form-wrapper__caption !{props.caption}

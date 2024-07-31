@@ -5,7 +5,8 @@ block head
   meta(name="description" content="Ошибка 404")
 
 block content
-  +error({
-    code: "404",
-    description: "Извините, но данной страницы на сайте не найдено."
-  })
+  +section
+    +error({
+      code: "404",
+      description: "Извините, но данной страницы на сайте не найдено."
+    })

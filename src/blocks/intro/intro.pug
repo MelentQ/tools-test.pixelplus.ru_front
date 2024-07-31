@@ -1,0 +1,27 @@
+mixin intro(props)
+  - props = props || {}
+  section.intro
+    if props.bg && props.bg.desktop
+      picture
+        if props.bg.mobile
+          source(srcset=props.bg.mobile media="(max-width: 767px)")
+        if props.bg.tablet
+          source(srcset=props.bg.tablet media="(max-width: 991px)")
+        img.intro__bg(src=props.bg.desktop alt="Пиксель Тулс" loading="lazy")
+    .page-container
+      .intro__content
+        if props.items
+          .intro__list.animation.animation--fade-in-left
+            for item, i in props.items
+              - tag = i === 0 ? "h1" : "div"
+              #{tag}.intro__item !{item}
+        if props.hasOnboardingForm
+          +onboarding-form({
+            hasDemoButton: true
+          })&attributes({class: "intro__form animation animation--fade-in"})
+        if props.button
+          +button(props.button)&attributes({
+            class: "intro__button",
+            ...props.button.attributes
+          })=props.button.text
+    link(href="./css/intro.min.css" rel="stylesheet")

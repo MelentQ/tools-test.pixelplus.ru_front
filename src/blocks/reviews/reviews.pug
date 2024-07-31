@@ -1,0 +1,12 @@
+mixin reviews(props)
+  - props = props || {}
+  .reviews.js-reviews
+    .reviews__slider.swiper.loader
+      .swiper-wrapper
+        for item in props.items
+          .reviews__slide.swiper-slide
+            +reviews-card(item)
+    +slider-navigation&attributes({class: "reviews__navigation"})
+    +slider-pagination&attributes({class: "reviews__pagination"})
+  link(href="./css/reviews.min.css" rel="stylesheet")
+  script(src='./js/reviews.min.js')

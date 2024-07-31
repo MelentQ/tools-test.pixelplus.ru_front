@@ -6,11 +6,11 @@ block head
 
 block content
   for group, i in dev.pagesGroups
-    +cards-slider({
-      isGallery: true,
-      items: group.items,
-      index: i
-    }, {
+    +section({
       title: `${group.section.title} (${group.items.length})`,
       mods: ["border"]
     })
+      +cards-slider({
+        items: group.items,
+        index: i
+      })

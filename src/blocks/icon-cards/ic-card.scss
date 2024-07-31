@@ -1,0 +1,50 @@
+.ic-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 2rem;
+
+  text-align: center;
+
+  background-color: var(--color-gray-lighter);
+  border-radius: $border-radius;
+
+  @at-root .section--dark &,
+  &--light {
+    background-color: var(--color-white);
+  }
+
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    height: 7rem;
+    margin: 0 auto 2rem;
+
+    background-color: var(--color-primary);
+    border-radius: 50%;
+
+    svg {
+      display: block;
+      width: 4rem;
+      height: 5rem;
+
+      fill: var(--color-white);
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+
+    font-size: var(--fs-t1);
+  }
+
+  &__text {
+    margin-top: 1.2rem;
+
+    font-size: var(--fs-t2);
+  }
+}

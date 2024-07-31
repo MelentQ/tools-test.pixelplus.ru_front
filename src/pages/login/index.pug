@@ -5,12 +5,14 @@ block head
   meta(name="description" content="Вход в сервис «Пиксель Тулс»")
 
 block content
-  +login({}, {
-    mods: ["form"],
+  +section({
+    mods: ["size-xs"],
     title: "Вход в «Пиксель Тулс»",
     subtitle: "У вас ещё нет аккаунта? <a href='./register.html'>Зарегистрируйтесь</a>",
     tag: "h1"
   })
+    +form-wrapper
+      +login-form
   +section({
     mods: ["dark"],
     title: "У вас остались вопросы?",
@@ -23,6 +25,8 @@ block content
       text: "Заказать демонстрацию"
     }
   })
+
+block modals
   +demo-modal
   +success-modal
   +error-modal

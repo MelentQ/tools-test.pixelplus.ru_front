@@ -1,0 +1,11 @@
+mixin achievements(props)
+  - props = props || {}
+  .achievements.js-achievements
+    .achievements__slider.swiper.loader
+      .achievements__slider-wrapper.swiper-wrapper
+        for item in props.items
+          .achievements__slide.swiper-slide
+            +achievements-card(item)&attributes({class: 'achievements__card'})
+    +slider-pagination&attributes({class: "achievements__pagination"})
+  link(href="./css/achievements.min.css" rel="stylesheet")
+  script(src='./js/achievements.min.js')

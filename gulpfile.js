@@ -35,7 +35,7 @@ function coreStyles() {
 }
 
 function additionalStyles() {
-  return src(['src/widgets/**/index.scss'])
+  return src(['src/blocks/**/index.scss'])
     .pipe(header(`
       @import "layout/styles/scss-variables";
       @import "layout/styles/mixins";
@@ -62,7 +62,7 @@ function coreScripts() {
 }
 
 function additionalScripts() {
-  return src(['src/widgets/**/index.js'], { base: process.cwd() })
+  return src(['src/blocks/**/index.js'], { base: process.cwd() })
     .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
@@ -70,7 +70,7 @@ function additionalScripts() {
 }
 
 function sprite() {
-  return src(['src/components/icon/sprite/*.svg'])
+  return src(['src/ui/icon/sprite/*.svg'])
     .pipe(svgSprite({
       mode: {
         inline: true,
@@ -94,7 +94,7 @@ function sprite() {
         namespaceIDs: false,
       },
     }))
-    .pipe(dest('src/components/icon'));
+    .pipe(dest('src/ui/icon'));
 }
 
 function json() {
@@ -136,13 +136,13 @@ function assets() {
 }
 
 function watching() {
-  watch(['src/**/*.scss', '!src/widgets/**/*.scss'], coreStyles);
-  watch(['src/widgets/**/*.scss'], additionalStyles);
-  watch(['src/**/*.js', '!src/widgets/**/*.js'], coreScripts);
-  watch(['src/widgets/**/*.js'], additionalScripts);
-  watch(['src/components/icon/sprite/*.svg'], sprite);
+  watch(['src/**/*.scss', '!src/blocks/**/*.scss'], coreStyles);
+  watch(['src/blocks/**/*.scss'], additionalStyles);
+  watch(['src/**/*.js', '!src/blocks/**/*.js'], coreScripts);
+  watch(['src/blocks/**/*.js'], additionalScripts);
+  watch(['src/ui/icon/sprite/*.svg'], sprite);
   watch(['src/**/*.json', '!src/layout/data/data.json'], json);
-  watch(['src/**/*.pug', 'src/layout/data/data.json', 'src/components/icon/sprite.svg'], html);
+  watch(['src/**/*.pug', 'src/layout/data/data.json', 'src/ui/icon/sprite.svg'], html);
   watch(['public/**/*'], assets);
   watch(['build/*.html']).on('change', browserSync.reload);
 }

@@ -1,5 +1,5 @@
-include /src/components/index
-include /src/widgets/index
+include /src/ui/index
+include /src/blocks/index
 
 doctype html
 html(lang="ru")
@@ -13,7 +13,7 @@ html(lang="ru")
     block head
   body.page.js-smooth-scrolling
     #svg-sprite.visually-hidden
-      include /src/components/icon/sprite.svg
+      include /src/ui/icon/sprite.svg
     .page__inner
       +header&attributes({class: "page__header"})
       main.page__content
@@ -23,6 +23,7 @@ html(lang="ru")
       +multi-button({
         items: multiButtons
       })&attributes({class: "page__multi-button"})
+    block modals
     script(src="https://code.jquery.com/jquery-3.7.1.min.js")
     script
       include ./iti.js

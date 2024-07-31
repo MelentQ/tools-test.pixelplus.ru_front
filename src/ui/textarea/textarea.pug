@@ -1,0 +1,8 @@
+mixin textarea(props)
+  label.textarea
+    textarea.textarea__element(
+      required=props.required
+      placeholder=props.placeholder
+      name=props.name
+    )&attributes(attributes)
+      block

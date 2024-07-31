@@ -1,0 +1,17 @@
+mixin search(props)
+  - props = props || {}
+  .search
+    form.search__form(action='#' method='post')
+      +input({
+        placeholder: "Что хотите найти?",
+        value: props.value
+      })
+      button.search__form-button(type="submit" aria-label="Найти")
+        +icon("search")
+    .search__result
+      for item in props.items
+        +search-card(item)&attributes({class: "search__card"})
+    +pagination&attributes({
+      class: "search__pagination"
+    })
+  link(href="./css/search.min.css" rel="stylesheet")

@@ -1,16 +1,16 @@
 import './bootstrap';
-import animation from '@/components/animation/animation';
-import accordion from '@/components/accordion/accordion';
-import smoothScrolling from '@/components/page/smoothScrolling';
-import tip from '@/components/tip/tip';
-import searchForm from '@/components/header/searchForm';
-import burgerMenu from '@/components/header/burgerMenu';
-import $validation from '@/components/form/validation';
-import select from '@/components/select/select';
-import modal from '@/components/modal/modal';
-import phoneInput from '@/components/input/phoneInput';
+import animation from '@/ui/animation/animation';
+import accordion from '@/ui/accordion/accordion';
+import smoothScrolling from '@/ui/page/smoothScrolling';
+import tip from '@/ui/tip/tip';
+import searchForm from '@/ui/header/searchForm';
+import burgerMenu from '@/ui/header/burgerMenu';
+import $validation from '@/ui/form/validation';
+import select from '@/ui/select/select';
+import modal from '@/ui/modal/modal';
+import phoneInput from '@/ui/input/phoneInput';
 import scrollToAnchor from '@/layout/scripts/scrollToAnchor';
-import handleForms from '@/components/form/handleForms';
+import handleForms from '@/ui/form/handleForms';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.pts.accordion = accordion;

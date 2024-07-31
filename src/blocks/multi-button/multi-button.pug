@@ -1,0 +1,16 @@
+mixin multi-button(props)
+  - props = props || {}
+  .multi-button.js-multi-button&attributes(attributes)
+    .multi-button__button.js-multi-button-trigger(role="button" aria-label="Открыть")
+      +icon("question")
+      +icon("close")
+    .multi-button__controls
+      for item in props.items
+        #{item.tag}.multi-button__control(
+          type=(item.tag === "button" ? "button" : null)
+          href=(item.tag === "a" ? "#" : null)
+        )
+          span.multi-button__control-name=item.name
+          span.multi-button__control-icon !{item.icon}
+  link(href="./css/multi-button.min.css" rel="stylesheet")
+  script(src="./js/multi-button.min.js")

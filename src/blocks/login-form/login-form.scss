@@ -1,0 +1,50 @@
+.login-form {
+  &__form {
+
+  }
+
+  &__reset {
+    margin: 0 auto;
+    padding: 0;
+
+    color: var(--color-primary);
+
+    font-size: var(--fs-t2);
+    line-height: 1;
+
+    background: none;
+    border: none;
+
+    @include transition(color);
+
+    @include hover {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &__remember {
+    margin: 1rem auto 0;
+  }
+
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    @include breakpoint(s) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__control {
+    min-width: 16rem;
+  }
+
+  &__socials {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,20 @@
+mixin cs-card(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `cs-card--${mod}`).join(" ") : null;
+  .cs-card(class=mods)
+    .cs-card__image
+      if props.image
+        img(
+          src=props.image
+          alt=props.title
+          loading="lazy"
+        )
+    if props.title
+      .cs-card__title=props.title
+    if props.text
+      .cs-card__text !{props.text}
+    if props.button
+      +button(props.button)&attributes({
+        class: "cs-card__button",
+        ...props.button.attributes
+      })=props.button.text

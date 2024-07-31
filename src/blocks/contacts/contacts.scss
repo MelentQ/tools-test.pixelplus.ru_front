@@ -1,0 +1,55 @@
+.contacts {
+  color: var(--color-white);
+
+  background-image: url("../assets/images/intro/contacts.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &__content {
+
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+
+    font-weight: 700;
+    font-size: var(--fs-h1);
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    line-height: 1.4;
+    text-align: center;
+
+    @include breakpoint(m) {
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint(s) {
+      font-size: 1.4rem;
+    }
+
+    a {
+      text-decoration: none;
+
+      @include color(var(--color-primary));
+
+      @include transition(color);
+
+      @include hover {
+        @include color(var(--color-primary-dark));
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 4rem;
+
+    @include breakpoint(s) {
+      margin-top: 3rem;
+    }
+  }
+}

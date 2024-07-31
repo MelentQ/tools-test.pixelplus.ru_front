@@ -4,10 +4,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Swiper from 'swiper';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import paginationOptions from '@/components/slider/paginationOptions';
-import navigationOptions from '@/components/slider/navigationOptions';
-import hideLoader from '@/components/slider/hideLoader';
-import showLoader from '@/components/slider/showLoader';
+import paginationOptions from '@/ui/slider/paginationOptions';
+import navigationOptions from '@/ui/slider/navigationOptions';
+import hideLoader from '@/ui/slider/hideLoader';
+import showLoader from '@/ui/slider/showLoader';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

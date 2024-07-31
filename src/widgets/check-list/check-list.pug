@@ -1,7 +1,0 @@
-mixin check-list(props, section)
-  - props = props || {}
-  +section(section)
-    ul.check-list
-      for item in props.items
-        li.check-list__item=item
-    link(href="./css/check-list.min.css" rel="stylesheet")

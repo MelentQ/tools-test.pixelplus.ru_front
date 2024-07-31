@@ -1,0 +1,8 @@
+mixin requisites(props)
+  - props = props || {}
+  .requisites
+    for item in props.items
+      .requisites__item
+        .requisites__name=item.name
+        .requisites__value=item.value
+  link(href="./css/requisites.min.css" rel="stylesheet")

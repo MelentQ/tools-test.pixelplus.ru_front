@@ -5,13 +5,17 @@ block head
   meta(name="description" content="Забыли свой пароль?")
 
 block content
-  +reset-password({
-    caption: "Если вы не получили письмо на почту в течение нескольких минут, возможно письмо попало в спам или папку с нежелательной почтой. Письмо придет с адреса: <b>support@pixeltools.ru</b>."
-  }, {
-    mods: ["form"],
+  +section({
+    mods: ["size-xs"],
     title: "Забыли пароль?",
     subtitle: "Введите ваш email адрес в поле ниже, вам будут высланы инструкции для востановления пароля.",
     tag: "h1"
   })
+    +form-wrapper({
+      caption: "Если вы не получили письмо на почту в течение нескольких минут, возможно письмо попало в спам или папку с нежелательной почтой. Письмо придет с адреса: <b>support@pixeltools.ru</b>."
+    })
+      +reset-password-form
+
+block modals
   +reset-password-success-modal
   +error-modal

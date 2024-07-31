@@ -1,0 +1,34 @@
+.contacts-form {
+  &__form {
+
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+
+    @include breakpoint(s) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    @include breakpoint(s) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__control {
+    min-width: 24rem;
+  }
+}

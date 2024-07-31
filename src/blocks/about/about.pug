@@ -1,0 +1,21 @@
+mixin about(props)
+  - props = props || {}
+  section.about.section
+    .about__bg
+    .page-container.page-container--size-s
+      .about__content
+        .about__text-block
+          h1.about__title.animation.animation--fade-in-left !{props.title}
+          .about__text.animation.animation--fade-in !{props.text}
+          a.about__link(href="./register.html") Присоединяйтесь!
+        .about__list.animation.animation--fade-in
+          for item in props.achievements
+            +about-card(item)&attributes({
+              class: "about__card"
+            })
+    .page-container.page-container--size-s
+      .about__numbers.animation.animation--fade-in
+        +numbers({
+          items: props.numbers
+        })
+    link(href="./css/about.min.css" rel="stylesheet")

@@ -1,0 +1,29 @@
+mixin contacts-form(props)
+  - props = props || {}
+  .contacts-form&attributes(attributes)
+    +form&attributes({class: "contacts-form__form js-contacts-form"})
+      .contacts-form__form-row
+        +input({
+          placeholder: "Имя",
+          required: true
+        })&attributes({
+          minlength: 2
+        })
+        +input({
+          required: true,
+          type: "tel"
+        })
+        +input({
+          placeholder: "E-mail",
+          required: true,
+          type: "email"
+        })
+      +textarea({
+        placeholder: "Что вас интересует"
+      })
+      .contacts-form__controls
+        +button({
+          type: "submit"
+        })&attributes({class: "contacts-form__control"})
+          +spinner
+          | Отправить

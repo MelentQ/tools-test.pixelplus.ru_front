@@ -8,13 +8,11 @@ block content
   +about({
     title: "О сервисе<br>«Пиксель Тулс»",
     text: "<p><b>28 марта 2016 года</b> — день рождения проекта «Пиксель Тулс». Сервис стремительно растёт как по числу довольных пользователей, так и тем возможностям, которые он открывает для SEO-специалистов и интернет-маркетологов.</p><p>Активное развитие системы позволяет предлагать всем пользователям проекта самые современные инструменты автоматизации процессов продвижения сайта и существенно увеличивать производительность работ.</p>",
-    achievements: widgets.achievements,
-    numbers: widgets.numbers
+    achievements: blocks.achievements,
+    numbers: blocks.numbers
   })
-  +video({
-    code: "pjxSU1iWa7o"
-  }, {
-    mods: ["small"],
+  +section({
+    mods: ["size-s"],
     title: "Для чего создан Пиксель Тулс?",
     subtitle: "Смотрите видео из SEO-курса «Бери и делай» от «Пиксель Плюс». Бесплатный доступ для всех пользователей сервиса. Никакой воды, только практика решения реальных SEO-задач.",
     footerText: "<p>После курса: самостоятельное решение 17 самых важных задач по продвижению сайта.<br>Узнать больше в курсе по SEO с нуля «Бери и делай!» от Пиксель Тулс:</p>",
@@ -27,48 +25,54 @@ block content
       }
     }
   })
-  +team({
-    items: widgets.team
-  }, {
+    +video({
+      code: "pjxSU1iWa7o"
+    })
+  +section({
     mods: ["dark"],
     title: "Команда проекта"
   })
-  +reviews({
-    items: widgets.reviews
-  }, {
+    +team({
+      items: blocks.team
+    })
+  +section({
     title: "Мнения экспертов"
   })
+    +reviews({
+      items: blocks.reviews
+    })
   +section({
-    mods: ["dark", "form"],
+    mods: ["dark", "size-xs"],
     title: "Знакомство с сервисом"
   })
     +demo-form({
       buttonText: "Заказать бесплатную демонстрацию"
     })
-  +news-list({
-    items: [
-      {
-        date: "24.07.2024",
-        title: "Анонс вебинара «Как работать с SERM, улучшение репутации»"
-      },
-      {
-        date: "16.07.2024",
-        title: "Добавили API для генерации изображений"
-      },
-      {
-        date: "12.07.2024",
-        title: "Добавили в модуль проектов массовые действия"
-      }
-    ]
-  }, {
+  +section({
     title: "Последние новости",
     button: {
       tag: "a",
       text: "Все новости"
     }
   })
-  +register({}, {
-    mods: ["dark", "form"],
+    +news-list({
+      items: [
+        {
+          date: "24.07.2024",
+          title: "Анонс вебинара «Как работать с SERM, улучшение репутации»"
+        },
+        {
+          date: "16.07.2024",
+          title: "Добавили API для генерации изображений"
+        },
+        {
+          date: "12.07.2024",
+          title: "Добавили в модуль проектов массовые действия"
+        }
+      ]
+    })
+  +section({
+    mods: ["dark", "size-xs"],
     title: "Для полного функционала — зарегистрируйтесь",
     subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
     tag: "h1",
@@ -76,6 +80,10 @@ block content
       id: "register"
     }
   })
+    +form-wrapper
+      +register-form
+
+block modals
   +offer-modal
   +policy-modal
   +success-modal
