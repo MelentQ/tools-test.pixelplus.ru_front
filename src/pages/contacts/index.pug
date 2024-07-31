@@ -10,6 +10,38 @@ block content
     subtitle: "Вы можете посетить страницу <a href='#'>FAQ</a>, чтобы посмотреть список основных вопросов наших пользователей. Если вам нужна помощь — воспользуйтесь формой ниже, либо позвоните."
   })
   +section({
+    hiddenTitle: "Контакты"
+  })
+    +contacts-list({
+      initialSlide: 1,
+      items: [
+        {
+          title: "Офис",
+          address: "115093, Россия, Москва, улица Люсиновская, дом 36, строение 1 (БЦ «Гласс Хаус»), м. Серпуховская (серая линия), примерно 5-8 мин. пешком от метро"
+        },
+        {
+          title: "Техническая поддержка",
+          email: "support@pixeltools.ru",
+          time: "пн – пт с 10:00 до 18:00",
+          caption: "Вы можете оставить сообщение на странице <a href='#'>/support/</a> и в ближайшее рабочее время мы обязательно вам ответим."
+        },
+        {
+          title: "Отдел продаж",
+          phone: "+7 (495) 032-81-81",
+          email: "manager@pixeltools.ru",
+          time: "пн – пт с 10:00 до 18:00",
+        }
+      ]
+    })
+  +section({
+    hiddenTitle: "Офис на карте"
+  })
+    +map({
+      image: "./assets/images/contacts/contacts.webp",
+      src: "https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=true&source=constructor-api&um=constructor%3A19e385f50afbc37ab4eab1e7c11f51377e038a9b4d0d892d7ec49b1de97e2dc9"
+    })
+  +section({
+    mods: ["dark"],
     title: "Реквизиты"
   })
     +requisites({
@@ -19,8 +51,12 @@ block content
           value: "1177746430806"
         },
         {
-          name: "ИНН / КПП",
-          value: "7735162402 / 773501001"
+          name: "ИНН",
+          value: "7735162402"
+        },
+        {
+          name: "КПП",
+          value: "773501001"
         },
         {
           name: "Полное наименование",
@@ -41,6 +77,18 @@ block content
       ]
     })
   +section({
+    title: "Документы"
+  })
+    +documents-list({
+      items: [
+        {
+          icon: "pdf",
+          title: "Товарный знак"
+        }
+      ]
+    })
+  +section({
+    mods: ["dark"],
     title: "Решение задач",
     button: {
       tag: "a",
@@ -64,7 +112,7 @@ block content
       ]
     })
   +section({
-    mods: ["dark", "size-xs"],
+    mods: ["size-xs"],
     title: "Для полного функционала — зарегистрируйтесь",
     subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
     tag: "h1",

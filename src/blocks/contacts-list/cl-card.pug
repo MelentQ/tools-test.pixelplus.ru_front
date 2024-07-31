@@ -1,0 +1,13 @@
+mixin cl-card(props)
+  - props = props || {}
+  .cl-card&attributes(attributes)
+    if props.title
+      .cl-card__title=props.title
+    if props.address
+      .cl-card__address=props.address
+    if props.phone
+      a.cl-card__link(href=`tel:${props.phone}`)=props.phone
+    if props.email
+      a.cl-card__link(href=`mailto:${props.email}`)=props.email
+    if props.caption
+      .cl-card__caption !{props.caption}

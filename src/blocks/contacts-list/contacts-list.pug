@@ -1,0 +1,11 @@
+mixin contacts-list(props)
+  - props = props || {}
+  .contacts-list.js-contacts-list(data-initial-slide=props.initialSlide)
+    .contacts-list__slider.swiper.loader
+      .contacts-list__slider-wrapper.swiper-wrapper
+        for item in props.items
+          .contacts-list__slide.swiper-slide
+            +cl-card(item)&attributes({class: "contacts-list__card"})
+    +slider-pagination&attributes({class: "contacts-list__pagination"})
+  link(href="./css/contacts-list.min.css" rel="stylesheet")
+  script(src="./js/contacts-list.min.js")

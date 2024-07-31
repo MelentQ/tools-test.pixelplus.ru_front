@@ -1,0 +1,50 @@
+.cl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+
+  text-align: center;
+
+  background-color: var(--color-gray-lighter);
+
+  border-radius: $border-radius;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-weight: 700;
+    font-size: var(--fs-t1);
+  }
+
+  &__address {
+    font-size: var(--fs-t2);
+  }
+
+  &__link {
+    align-self: center;
+
+    font-size: var(--fs-t2);
+  }
+
+  &__caption {
+    margin-top: 1rem;
+    padding-top: 2rem;
+
+    font-size: var(--fs-t2);
+
+    border-top: 1px solid var(--color-gray-light);
+  }
+
+  a {
+    text-decoration: none;
+
+    @include color(var(--color-primary));
+    @include transition(color);
+
+    @include hover {
+      @include color(var(--color-primary-dark));
+    }
+  }
+}

@@ -24,7 +24,7 @@
       flex-grow: 1;
       order: 2;
       min-width: 2rem;
-      margin-bottom: 0.4rem;
+      height: calc(var(--fs-t2) * 1.4 - 0.2rem);
       
       border-bottom: 1px dotted var(--color-gray-light);
 

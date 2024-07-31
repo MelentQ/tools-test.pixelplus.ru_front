@@ -1,0 +1,6 @@
+mixin dl-card(props)
+  - props = props || {}
+  .dl-card&attributes(attributes)
+    .dl-card__icon
+      +icon(props.icon)
+    a.dl-card__title(href="#")=props.title

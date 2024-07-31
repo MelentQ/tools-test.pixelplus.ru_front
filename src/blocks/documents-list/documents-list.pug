@@ -1,0 +1,11 @@
+mixin documents-list(props)
+  - props = props || {}
+  .documents-list.js-documents-list
+    .documents-list__slider.swiper.loader
+      .documents-list__slider-wrapper.swiper-wrapper
+        for item in props.items
+          .documents-list__slide.swiper-slide
+            +dl-card(item)&attributes({class: "documents-list__card"})
+    +slider-pagination&attributes({class: "documents-list__pagination"})
+  link(href="./css/documents-list.min.css" rel="stylesheet")
+  script(src="./js/documents-list.min.js")

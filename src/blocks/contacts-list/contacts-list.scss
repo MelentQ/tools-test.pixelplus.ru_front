@@ -1,0 +1,57 @@
+.contacts-list {
+  @include breakpoint(s) {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+    overflow: hidden;
+  }
+
+  @include breakpointMF(m) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% + 2rem);
+    margin: -1rem;
+  }
+
+  @include breakpointMF(l) {
+    width: calc(100% + 3rem);
+    margin: -1.5rem;
+  }
+
+  &__slider {
+    @include breakpoint(s) {
+      overflow: visible;
+    }
+  }
+
+  &__slider,
+  &__slider-wrapper,
+  &__slide {
+    @include breakpointMF(m) {
+      display: contents;
+    }
+  }
+
+  &__card {
+    width: 100%;
+
+    @include breakpointMF(m) {
+      width: calc(100% / 3 - 2rem);
+      margin: 1rem;
+    }
+
+    @include breakpointMF(l) {
+      width: calc(25% - 3rem);
+      margin: 1.5rem;
+    }
+  }
+
+  &__pagination {
+    margin-top: 2rem;
+
+    @include breakpointMF(m) {
+      display: none;
+    }
+  }
+}

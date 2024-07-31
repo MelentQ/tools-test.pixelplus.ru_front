@@ -1,11 +1,12 @@
-.nl-card {
+.dl-card {
   $block-name: &;
 
   position: relative;
 
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
 
   background-color: var(--color-gray-lighter);
@@ -17,9 +18,14 @@
     background-color: var(--color-white);
   }
 
-  &__date {
-    color: var(--color-gray);
-    font-size: var(--fs-t3);
+  &__icon {
+    svg {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+
+      fill: var(--color-primary);
+    }
   }
 
   &__title {

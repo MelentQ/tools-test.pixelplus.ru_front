@@ -1,0 +1,9 @@
+mixin map(props)
+  - props = props || {}
+  .map.js-map(data-src=props.src)
+    img(src=props.image alt='Map' loading='lazy')
+    .map__placeholder.js-contacts-button(role='button' tabindex='0')
+      +icon('touch')
+      .map__text Нажмите, чтобы активироовать
+  link(href="./css/map.min.css" rel="stylesheet")
+  script(src="./js/map.min.js")
