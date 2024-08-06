@@ -6,7 +6,8 @@
   ],
   "extends": [
     "stylelint-config-recommended-scss",
-    "stylelint-config-rational-order-fix"
+    "stylelint-config-rational-order-fix",
+    "stylelint-config-recommended-vue"
   ],
   "rules": {
     "plugin/rational-order": [

@@ -1,6 +1,8 @@
 const path = require('path');
+const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   output: {
@@ -25,9 +27,21 @@ module.exports = {
         },
       },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader', 'css-loader',
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
     ],
@@ -40,16 +54,22 @@ module.exports = {
   },
   stats: { warnings: false },
   plugins: [
-    process.env.MODE === 'production' && new StatoscopeWebpackPlugin({
+    process.env.NODE_ENV === 'production' && new StatoscopeWebpackPlugin({
       compressor: false,
     }),
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false,
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+    }),
+    new VueLoaderPlugin(),
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  mode: process.env.MODE || 'development',
+  mode: process.env.NODE_ENV || 'development',
   externals: {
     jquery: 'jQuery',
   },

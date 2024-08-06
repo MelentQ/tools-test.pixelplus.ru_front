@@ -9,6 +9,8 @@
   ],
   "extends": [
     "airbnb-base",
+    "plugin:vue/vue3-recommended",
+    "@vue/airbnb",
     "plugin:editorconfig/all"
   ],
   "settings": {

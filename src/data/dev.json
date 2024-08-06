@@ -63,6 +63,15 @@
               "link": "./contacts.html",
               "text": "Открыть"
             }
+          },
+          {
+            "image": "",
+            "title": "Инструмент без авторизации",
+            "button": {
+              "tag": "a",
+              "link": "./tool-public.html",
+              "text": "Открыть"
+            }
           }
         ],
         "section": {

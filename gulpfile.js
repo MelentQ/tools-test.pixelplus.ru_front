@@ -24,7 +24,7 @@ function coreStyles() {
   return src(['src/layout/core.scss'])
     .pipe(sassGlob())
     .pipe(scss({
-      outputStyle: process.env.MODE === 'production' ? 'compressed' : 'expanded',
+      outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['node_modules/'],
     }))
     .pipe(rename({
@@ -41,7 +41,7 @@ function additionalStyles() {
       @import "layout/styles/mixins";
     `))
     .pipe(scss({
-      outputStyle: process.env.MODE === 'production' ? 'compressed' : 'expanded',
+      outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['src/'],
     }))
     .pipe(rename((file) => ({
@@ -62,7 +62,7 @@ function coreScripts() {
 }
 
 function additionalScripts() {
-  return src(['src/blocks/**/index.js'], { base: process.cwd() })
+  return src(['src/blocks/*/index.js', 'src/vue/apps/*/index.js'], { base: process.cwd() })
     .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
@@ -106,13 +106,13 @@ function json() {
 }
 
 function html() {
-  const pages = process.env.MODE === 'production' ? ['src/pages/*/index.pug'] : devConfig.pages;
+  const pages = process.env.NODE_ENV === 'production' ? ['src/pages/*/index.pug'] : devConfig.pages;
   return src(pages, { base: process.cwd() })
     .pipe(pug({
       basedir: './',
       locals: JSON.parse(readFileSync('src/layout/data/data.json')),
     }))
-    .pipe(gulpif(process.env.MODE === 'production', prettyHtml({
+    .pipe(gulpif(process.env.NODE_ENV === 'production', prettyHtml({
       indent_size: 4,
       indent_char: ' ',
       indent_inner_html: true,
@@ -139,7 +139,7 @@ function watching() {
   watch(['src/**/*.scss', '!src/blocks/**/*.scss'], coreStyles);
   watch(['src/blocks/**/*.scss'], additionalStyles);
   watch(['src/**/*.js', '!src/blocks/**/*.js'], coreScripts);
-  watch(['src/blocks/**/*.js'], additionalScripts);
+  watch(['src/blocks/**/*.js', 'src/vue/**/*.js', 'src/vue/**/*.vue'], additionalScripts);
   watch(['src/ui/icon/sprite/*.svg'], sprite);
   watch(['src/**/*.json', '!src/layout/data/data.json'], json);
   watch(['src/**/*.pug', 'src/layout/data/data.json', 'src/ui/icon/sprite.svg'], html);

@@ -1,5 +1,6 @@
 module.exports = {
   pages: [
-    'src/pages/*/index.pug',
+    'src/pages/index/index.pug',
+    'src/pages/tool-public/index.pug',
   ],
 };

@@ -1,0 +1,10 @@
+mixin vue-app(props)
+  - props = props || {}
+  .vue-app
+    div(
+      id=(props.id || props.name || 'app')
+      data-props=props.initialProps
+    )
+    script(
+      src=(props.script || `./js/${props.name || props.id}.min.js`)
+    )
