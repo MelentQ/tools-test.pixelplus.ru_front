@@ -1,6 +1,8 @@
 module.exports = {
   pages: [
-    'src/pages/index/index.pug',
-    'src/pages/tool-public/index.pug',
+    'src/pages/**/index.pug',
+  ],
+  scripts: [
+    'src/vue/apps/tool-ai-content/index.js',
   ],
 };

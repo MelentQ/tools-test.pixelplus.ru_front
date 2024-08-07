@@ -6,12 +6,23 @@ html(lang="ru")
   head
     meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    if meta.title
+      title=meta.title
+    if meta.description
+      meta(name="description" content=meta.description)
+    if meta.keywords
+      meta(name="keywords" content=meta.keywords)
 
     link(href="./favicon.ico" rel="shortcut icon" type="image/x-icon")
     link(href="./css/core.min.css" rel="stylesheet")
 
     block head
-  body.page.js-smooth-scrolling
+  body.page(
+    class={
+      'js-smooth-scrolling': smoothScrolling,
+      'js-env-development': system.env === 'development'
+    }
+  )
     #svg-sprite.visually-hidden
       include /src/ui/icon/sprite.svg
     .page__inner
@@ -24,7 +35,7 @@ html(lang="ru")
         items: multiButtons
       })&attributes({class: "page__multi-button"})
     block modals
-    script(src="https://code.jquery.com/jquery-3.7.1.min.js")
+    script(src="./assets/libs/jquery-3.7.1.min.js")
     script
       include ./iti.js
     script(src="./js/core.min.js")

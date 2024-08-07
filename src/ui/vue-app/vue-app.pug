@@ -1,10 +1,18 @@
 mixin vue-app(props)
   - props = props || {}
   .vue-app
-    div(
+    .vue-app__container(
       id=(props.id || props.name || 'app')
       data-props=props.initialProps
     )
+      .vue-app__loader
+        +spinner({mods: ["large"]})
+        if props.loaderText
+          .vue-app__loader-text=props.loaderText
+      if block
+        .visually-hidden
+          block
     script(
       src=(props.script || `./js/${props.name || props.id}.min.js`)
+      defer=""
     )

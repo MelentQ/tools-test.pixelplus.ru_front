@@ -55,10 +55,12 @@ todo
 
 ## О сборке
 
-* Gulp 4
-* Webpack
-* Pug
-* SCSS
+* [Gulp](https://gulpjs.com/)
+* [Webpack](https://webpack.js.org/)
+* [Pug](https://pugjs.org/api/getting-started.html)
+* [SCSS](https://sass-lang.com/)
+* [Vue.js](https://vuejs.org/)
+* [PrimeVue](https://primevue.org/)
 
 Не забудь включить линтеры в своём IDE
 

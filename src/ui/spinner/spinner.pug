@@ -1,4 +1,4 @@
 mixin spinner(props)
   - props = props || {}
   - mods = props.mods ? props.mods.map(mod => `spinner--${mod}`).join(' ') : '';
-  span.spinner(class=mods)
+  span.spinner(class=mods)&attributes(attributes)

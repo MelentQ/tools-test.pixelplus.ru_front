@@ -52,7 +52,7 @@ function generateUiKitJSON() {
 function generateUiKit() {
   generateUiKitJSON();
 
-  return src(['src/blocks/**/preview.jpg'])
+  return src(['src/blocks/**/preview.jpg'], { encoding: false })
     .pipe(rename((file) => ({
       dirname: path.dirname(file.dirname),
       basename: file.dirname,

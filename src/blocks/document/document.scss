@@ -48,8 +48,9 @@
   }
 
   a {
-    @include color(var(--color-primary));
     text-decoration: underline;
+
+    @include color(var(--color-primary));
 
     @include hover {
       @include color(var(--color-primary-dark));

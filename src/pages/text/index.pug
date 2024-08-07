@@ -1,0 +1,10 @@
+extends /src/layout/landing
+
+block content
+  +section({
+    tag: "h1",
+    title: "Текстовый контент в статьях, новостях, лендингах",
+    subtitle: "Текст получает такие стили, если находится внутри блока с классом <i>page-text-content</i>"
+  })
+    .page-text-content
+      | todo

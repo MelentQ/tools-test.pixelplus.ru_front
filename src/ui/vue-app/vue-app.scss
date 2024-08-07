@@ -1,0 +1,24 @@
+.vue-app {
+  position: relative;
+
+  &__container {
+
+  }
+
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 40rem;
+    padding: 4rem;
+
+    background-color: var(--color-gray-lighter);
+    border-radius: $border-radius;
+  }
+
+  &__loader-text {
+    font-size: var(--fs-t2);
+  }
+}

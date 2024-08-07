@@ -1,8 +1,4 @@
-extends ../../layout/landing
-
-block head
-  title UI Kit
-  meta(name="description" content="UI Kit")
+extends /src/layout/landing
 
 block content
   +section({
@@ -40,23 +36,26 @@ block content
         a(href="#modals") Модальные окна
   +section({
     mods: ["border"],
-    title: "Цвета",
+    title: "Цвета"
   })&attributes({
     id: "colors"
   })
+    | todo
   +section({
     mods: ["border"],
-    title: "Типографика",
+    title: "Типографика"
   })&attributes({
     id: "typography"
   })
+    | todo
   +section({
     mods: ["border"],
     title: "Компоненты",
-    subtitle: "Неотъемлемая часть сайта",
+    subtitle: "Неотъемлемая часть сайта"
   })&attributes({
     id: "components"
   })
+    | todo
   +section({
     mods: ["border"],
     title: "Блоки",
@@ -80,7 +79,8 @@ block content
     })
   +section({
     mods: ["border"],
-    title: "Модальные окна",
+    title: "Модальные окна"
   })&attributes({
     id: "modals"
   })
+    | todo

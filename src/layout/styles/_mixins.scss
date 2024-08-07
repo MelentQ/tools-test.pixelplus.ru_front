@@ -1,10 +1,14 @@
 @mixin transition($properties...) {
-  transition-duration: 0.3s;
-  transition-property: $properties;
+  & {
+    transition-duration: 0.3s;
+    transition-property: $properties;
+  }
 }
 
 @mixin color($color) {
-  color: $color;
+  & {
+    color: $color;
+  }
 
   &:link,
   &:visited {
@@ -17,47 +21,6 @@
     &:hover {
       @content;
     }
-  }
-}
-
-@mixin highlight-title($leftOffset: 0, $height: calc(100% - 0.6em), $topOffset: 0.3em) {
-  position: relative;
-
-  &::before {
-    position: absolute;
-    top: $topOffset;
-    left: $leftOffset;
-
-    display: block;
-    width: 0.4rem;
-    height: $height;
-
-    background-color: $error;
-
-    content: '';
-    pointer-events: none;
-  }
-}
-
-@mixin list-donut($line-height: 1.4) {
-  position: relative;
-
-  &::before {
-    position: absolute;
-    top: calc(0.5em * #{$line-height});
-    left: 0;
-
-    display: block;
-    width: 0.8rem;
-    height: 0.8rem;
-
-    border: 2px solid $primary-800;
-
-    border-radius: 50%;
-    transform: translateY(-50%);
-
-    content: '';
-    pointer-events: none;
   }
 }
 

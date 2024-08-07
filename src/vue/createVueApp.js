@@ -1,8 +1,8 @@
-import {createApp} from 'vue/dist/vue.runtime.esm-bundler';
+import { createApp } from 'vue/dist/vue.runtime.esm-bundler';
 import PrimeVue from 'primevue/config';
-import PixelTools from "@/vue/ui/themes/PixelTools";
+import primeVueConfig from '@/vue/ui/primeVueConfig';
 
-export default function createVueApp({containerId, rootApp}) {
+export default function createVueApp({ containerId, rootApp }) {
   const container = document.getElementById(containerId);
 
   if (!container) {
@@ -17,7 +17,7 @@ export default function createVueApp({containerId, rootApp}) {
       rootApp || {},
       initialProps || null,
     )
-      .use(PrimeVue, {theme: {preset: PixelTools}})
+      .use(PrimeVue, primeVueConfig)
       .mount(container);
   } catch (e) {
     console.warn(e.message);

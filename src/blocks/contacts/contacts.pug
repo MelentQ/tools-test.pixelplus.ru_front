@@ -7,4 +7,4 @@ mixin contacts(props)
         .contacts__subtitle.animation.animation--fade-in !{props.subtitle}
         +contacts-form&attributes({class: "contacts__form animation animation--fade-in"})
     link(href="./css/contacts.min.css" rel="stylesheet")
-    script(src="./js/contacts.min.js")
+    script(src="./js/contacts.min.js" defer="")

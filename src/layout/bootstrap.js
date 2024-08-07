@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 Swiper.use([Autoplay, Navigation, Pagination]);
 
 window.pts = {
+  dev: document.body.classList.contains('js-env-development'),
   axios,
   gsap,
   Swiper,

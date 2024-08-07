@@ -29,7 +29,7 @@ if (name) {
   - props = props || {}
   .${name}
   link(href="./css/${name}.min.css" rel="stylesheet")
-  script(src="./js/${name}.min.js")\n`,
+  script(src="./js/${name}.min.js" defer="")\n`,
     },
     {
       name: 'index.scss',

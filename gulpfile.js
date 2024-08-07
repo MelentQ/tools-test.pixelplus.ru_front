@@ -6,13 +6,14 @@ const {
 const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
 const del = require('del');
-const header = require('gulp-header');
+const header = require('@fomantic/gulp-header');
 const scss = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const webpack = require('webpack-stream');
 const named = require('vinyl-named');
 const browserSync = require('browser-sync').create();
 const pug = require('gulp-pug');
+const data = require('gulp-data');
 const prettyHtml = require('gulp-pretty-html');
 const svgSprite = require('gulp-svg-sprite');
 const merge = require('gulp-merge-json');
@@ -21,7 +22,7 @@ const devConfig = require('./dev-config');
 const { generateUiKit } = require('./utils');
 
 function coreStyles() {
-  return src(['src/layout/core.scss'])
+  return src(['src/layout/core.scss'], { encoding: false })
     .pipe(sassGlob())
     .pipe(scss({
       outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
@@ -35,7 +36,7 @@ function coreStyles() {
 }
 
 function additionalStyles() {
-  return src(['src/blocks/**/index.scss'])
+  return src(['src/blocks/**/index.scss'], { encoding: false })
     .pipe(header(`
       @import "layout/styles/scss-variables";
       @import "layout/styles/mixins";
@@ -54,7 +55,7 @@ function additionalStyles() {
 }
 
 function coreScripts() {
-  return src(['src/layout/core.js'])
+  return src(['src/layout/core.js'], { encoding: false })
     .pipe(named((file) => path.basename('core', path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
@@ -62,7 +63,11 @@ function coreScripts() {
 }
 
 function additionalScripts() {
-  return src(['src/blocks/*/index.js', 'src/vue/apps/*/index.js'], { base: process.cwd() })
+  const scripts = process.env.NODE_ENV === 'production'
+    ? ['src/blocks/*/index.js', 'src/vue/apps/*/index.js']
+    : ['src/blocks/*/index.js', ...devConfig.scripts];
+
+  return src(scripts, { base: process.cwd(), encoding: false })
     .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
@@ -70,7 +75,7 @@ function additionalScripts() {
 }
 
 function sprite() {
-  return src(['src/ui/icon/sprite/*.svg'])
+  return src(['src/ui/icon/sprite/*.svg'], { encoding: false })
     .pipe(svgSprite({
       mode: {
         inline: true,
@@ -98,7 +103,7 @@ function sprite() {
 }
 
 function json() {
-  return src(['src/**/*.json', '!src/layout/data/data.json'])
+  return src(['src/**/*.json', '!src/layout/data/data.json'], { encoding: false })
     .pipe(merge({
       fileName: 'data.json',
     }))
@@ -106,11 +111,26 @@ function json() {
 }
 
 function html() {
-  const pages = process.env.NODE_ENV === 'production' ? ['src/pages/*/index.pug'] : devConfig.pages;
-  return src(pages, { base: process.cwd() })
+  const pages = process.env.NODE_ENV === 'production'
+    ? ['src/pages/**/index.pug']
+    : devConfig.pages;
+
+  return src(pages, { base: process.cwd(), encoding: false })
+    .pipe(data((file) => {
+      try {
+        return JSON.parse(readFileSync(`${file.path}.json`));
+      } catch (err) {
+        return null;
+      }
+    }))
     .pipe(pug({
       basedir: './',
-      locals: JSON.parse(readFileSync('src/layout/data/data.json')),
+      locals: {
+        system: {
+          env: process.env.NODE_ENV || 'development',
+        },
+        ...JSON.parse(readFileSync('src/layout/data/data.json')),
+      },
     }))
     .pipe(gulpif(process.env.NODE_ENV === 'production', prettyHtml({
       indent_size: 4,
@@ -131,7 +151,7 @@ function html() {
 }
 
 function assets() {
-  return src(['public/**/*'])
+  return src(['public/**/*'], { encoding: false })
     .pipe(dest('build'));
 }
 
@@ -163,6 +183,7 @@ function clean() {
 exports.default = series(
   clean,
   sprite,
+  generateUiKit,
   json,
   parallel(
     assets,
@@ -171,7 +192,6 @@ exports.default = series(
     coreScripts,
     additionalScripts,
     html,
-    generateUiKit,
   ),
   parallel(
     watching,
@@ -182,6 +202,7 @@ exports.default = series(
 exports.build = series(
   clean,
   sprite,
+  generateUiKit,
   json,
   parallel(
     assets,
@@ -190,6 +211,5 @@ exports.build = series(
     coreScripts,
     additionalScripts,
     html,
-    generateUiKit,
   ),
 );

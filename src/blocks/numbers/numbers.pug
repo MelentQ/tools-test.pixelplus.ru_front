@@ -4,4 +4,4 @@ mixin numbers(props)
     for item in props.items
       +numbers-card(item)&attributes({class: "numbers__card"})
   link(href="./css/numbers.min.css" rel="stylesheet")
-  script(src="./js/numbers.min.js")
+  script(src="./js/numbers.min.js" defer="")
