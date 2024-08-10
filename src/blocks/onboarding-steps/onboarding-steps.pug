@@ -1,0 +1,6 @@
+mixin onboarding-steps(props)
+  - props = props || {}
+  .onboarding-steps&attributes(attributes)
+    for item in props.items
+      +os-card(item)&attributes({class: "onboarding-steps__card"})
+  link(href="./css/onboarding-steps.min.css" rel="stylesheet")

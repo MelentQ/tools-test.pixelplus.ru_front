@@ -27,6 +27,7 @@
     "intl-tel-input": "^22.0.2",
     "normalize.css": "^8.0.1",
     "parsleyjs": "^2.9.2",
+    "primelocale": "^1.0.0",
     "primevue": "^4.0.4",
     "swiper": "^11.1.4",
     "tippy.js": "^6.3.7",

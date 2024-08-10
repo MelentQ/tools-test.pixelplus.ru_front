@@ -17,6 +17,15 @@
     background-color: var(--color-white);
   }
 
+  &__footer {
+    margin-top: 2rem;
+  }
+
+  &__rating {
+    width: fit-content;
+    margin-left: auto;
+  }
+
   &__caption {
     margin-top: 4rem;
     padding-top: 4rem;

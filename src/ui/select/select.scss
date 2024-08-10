@@ -33,14 +33,21 @@ $choices-icon-cross-inverse: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEi
     line-height: 1;
 
     background-color: var(--color-white);
+    border: 2px solid var(--color-gray-light);
 
     border-radius: $border-radius;
 
     appearance: none;
 
+    @include transition(border-color);
+
     &[multiple] {
       height: 3.8rem;
     }
+  }
+
+  &.--error select {
+    border-color: var(--color-primary);
   }
 
   .choices {

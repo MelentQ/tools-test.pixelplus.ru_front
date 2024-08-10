@@ -1,0 +1,6 @@
+mixin os-card(props)
+  - props = props || {}
+  .os-card&attributes(attributes)
+    .os-card__icon !{props.icon}
+    .os-card__title=props.title
+    .os-card__text=props.text

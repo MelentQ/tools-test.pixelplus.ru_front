@@ -1,0 +1,43 @@
+.onboarding-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+  margin-top: 6rem;
+
+  counter-reset: ordered-list;
+
+  @include breakpoint(s) {
+    display: flex;
+    flex-direction: column;
+    order: 4;
+    margin-top: 4rem;
+  }
+
+  &__card {
+    &:not(:last-child) {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: calc(100% + 1.5rem);
+
+        width: 14.6rem;
+        height: 1.9rem;
+
+        background-image: url("../assets/images/decoration/step-arrow.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        transform: translateX(-50%);
+
+        content: '';
+        pointer-events: none;
+
+        @include breakpoint(s) {
+          content: none;
+        }
+      }
+    }
+  }
+}

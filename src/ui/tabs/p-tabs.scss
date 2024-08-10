@@ -1,0 +1,39 @@
+// PrimeVue Tabs
+
+.p-tablist-tab-list {
+  background: none !important;
+  border-color: var(--color-gray-light) !important;
+}
+
+.p-tab {
+  font-size: var(--fs-t2);
+  text-decoration: underline;
+
+  border-width: 0.4rem 1px 1px 1px !important;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: var(--color-gray-light) !important;
+  border-left-color: transparent !important;
+  text-decoration-style: dotted;
+}
+
+.p-tab-active {
+  color: var(--color-primary) !important;
+  text-decoration: none;
+
+  background: white !important;
+  border-top-color: var(--color-primary) !important;
+  border-right-color: var(--color-gray-light) !important;
+  border-bottom-color: white !important;
+  border-left-color: var(--color-gray-light) !important;
+}
+
+.p-tablist-active-bar {
+  display: none !important;
+}
+
+.p-tabpanels {
+  padding: 2rem 0 0 !important;
+
+  background: none !important;
+}

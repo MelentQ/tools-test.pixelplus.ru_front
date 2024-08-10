@@ -1,5 +1,6 @@
 import { definePreset } from '@primevue/themes';
 import Aura from '@primevue/themes/aura';
+import { ru } from 'primelocale/ru.json';
 
 export default {
   theme: {
@@ -31,6 +32,7 @@ export default {
       },
     }),
   },
+  locale: ru,
   pt: {
     select: {
       listContainer: {

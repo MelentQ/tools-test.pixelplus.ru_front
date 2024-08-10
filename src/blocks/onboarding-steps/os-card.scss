@@ -1,4 +1,4 @@
-.onboarding-card {
+.os-card {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -12,6 +12,8 @@
     justify-content: center;
     width: 10rem;
     height: 10rem;
+
+    color: var(--color-white);
 
     background-color: var(--color-primary);
     border-radius: 50%;

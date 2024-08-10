@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  &__label {
+    font-size: var(--fs-t2);
+  }
+
+  &__votes {
+    color: var(--color-gray);
+    font-size: var(--fs-t3);
+  }
+}

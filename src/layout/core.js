@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tip();
   searchForm();
   burgerMenu();
-  $validation();
   select();
+  $validation();
   modal();
   phoneInput();
   scrollToAnchor();

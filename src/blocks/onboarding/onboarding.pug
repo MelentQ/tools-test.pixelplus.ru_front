@@ -5,9 +5,9 @@ mixin onboarding(props)
       .onboarding__content
         h1.onboarding__title.animation.animation--fade-in-left !{props.title}
         .onboarding__subtitle.animation.animation--fade-in-left !{props.subtitle}
-        .onboarding__list.animation.animation--fade-in
-          for item in props.items
-            +onboarding-card(item)&attributes({class: "onboarding__card"})
+        +onboarding-steps({
+          items: props.items
+        })&attributes({class: "onboarding__list animation animation--fade-in"})
         +onboarding-form({
           isRow: true
         })&attributes({class: "onboarding__form animation animation--fade-in"})

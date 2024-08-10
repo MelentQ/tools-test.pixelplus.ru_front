@@ -1,0 +1,16 @@
+// PrimeVue Rating
+
+.p-rating.p-readonly .p-rating-option {
+  cursor: default !important;
+}
+
+.p-rating-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+
+  color: var(--color-gray-light) !important;
+}
+
+.p-rating-option-active .p-rating-icon {
+  color: gold !important;
+}

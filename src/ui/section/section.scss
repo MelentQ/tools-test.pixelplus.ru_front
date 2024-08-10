@@ -55,12 +55,8 @@
   }
 
   &__subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.4;
-
-    @include breakpoint(m) {
-      font-size: 1.8rem;
-    }
 
     @include breakpoint(s) {
       font-size: 1.4rem;
@@ -107,12 +103,8 @@
   }
 
   &__footer-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.4;
-
-    @include breakpoint(m) {
-      font-size: 1.8rem;
-    }
 
     @include breakpoint(s) {
       font-size: 1.4rem;

@@ -26,6 +26,13 @@ export default function select() {
           div.setAttribute('role', 'option');
           return div;
         },
+        input(...args) {
+          const input = Choices.defaults.templates.input.call(this, ...args);
+          Object.assign(input.dataset, {
+            parsleyExcluded: true,
+          });
+          return input;
+        },
         dropdown(...args) {
           const div = Choices.defaults.templates.dropdown.call(this, ...args);
           Object.assign(div.dataset, {
