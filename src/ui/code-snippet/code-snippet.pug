@@ -1,0 +1,13 @@
+mixin code-snippet(props)
+  - props = props || {}
+  .code-snippet
+    pre.line-numbers(
+      lang="ru"
+      data-prismjs-copy="Скопировать"
+      data-prismjs-copy-error="Нажмите Ctrl+C, чтобы скопировать"
+      data-prismjs-copy-success="Скопировано!"
+    )
+      code(class=`language-${props.lang}`)
+        | <!--
+        block
+        | -->

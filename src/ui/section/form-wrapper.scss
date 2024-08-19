@@ -1,7 +1,22 @@
 .form-wrapper {
   $block-name: &;
 
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 3rem;
+
+    @include breakpoint(m) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+  }
+
   &__content {
+    grid-column: 3 / 6;
     padding: 3rem 2rem;
 
     background-color: var(--color-gray-lighter);
@@ -15,6 +30,11 @@
   @at-root .section--dark &__content,
   &--light #{$block-name}__content {
     background-color: var(--color-white);
+  }
+
+  &__board {
+    grid-column: span 2;
+    align-self: flex-start;
   }
 
   &__footer {

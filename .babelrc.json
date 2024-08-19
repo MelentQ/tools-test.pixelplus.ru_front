@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": [
+          "js",
+          "css",
+          "scss",
+          "html",
+          "pug"
+        ],
+        "plugins": [
+          "toolbar",
+          "line-numbers",
+          "normalize-whitespace",
+          "show-language",
+          "copy-to-clipboard",
+          "unescaped-markup"
+        ],
+        "theme": "tomorrow",
+        "css": true
+      }
+    ]
+  ]
+}

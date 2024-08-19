@@ -1,0 +1,43 @@
++ui-component({
+  title: "SVG-спрайт",
+  description: `Подключается на каждой странице, с помощью него можно быстро получить иконку<br>
+                Файл SVG-спрайта генерируется один раз на фронте (на сборщике Gulp)<br>
+                Для добавления новой иконки достаточно поместить файл в директорию <b>/src/ui/icon/sprite/</b><br>
+                Желательно заранее оптимизировать иконку и привести к размеру 24px на 24px<br>
+                Количество иконок: ${ui.sprite.length}<br>
+                Вес: ${Math.round(ui.spriteSize * 100 / 1024) / 100} Кб`,
+  tags: ["icon", "sprite"]
+})
+  +tabs({
+    tabs: [
+      {
+        key: "preview",
+        name: "Просмотр"
+      },
+      {
+        key: "raw",
+        name: "Актуальный файл"
+      },
+      {
+        key: "html",
+        name: "HTML"
+      },
+      {
+        key: "pug",
+        name: "Pug"
+      }
+    ]
+  })
+    +slot("preview")
+      +ui-sprite({
+        items: ui.sprite
+      })
+    +slot("raw")
+      +code-snippet({lang: 'html'})
+        include:raw /src/ui/icon/sprite.svg
+    +slot("html")
+      +code-snippet({lang: 'html'})
+        include preview
+    +slot("pug")
+      +code-snippet({lang: 'pug'})
+        include:raw preview

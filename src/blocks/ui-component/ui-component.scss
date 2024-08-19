@@ -1,0 +1,41 @@
+.ui-component {
+  padding: 2rem;
+
+  background-color: var(--color-gray-lighter);
+  border-radius: $border-radius;
+
+  &__head {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  &__info {
+
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: var(--fs-h3);
+  }
+
+  &__description {
+    margin-top: 1rem;
+
+    font-size: var(--fs-t2);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-self: flex-start;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    margin-top: 2rem;
+  }
+}

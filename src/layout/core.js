@@ -11,6 +11,8 @@ import modal from '@/ui/modal/modal';
 import phoneInput from '@/ui/input/phoneInput';
 import scrollToAnchor from '@/layout/scripts/scrollToAnchor';
 import handleForms from '@/ui/form/handleForms';
+import codeSnippet from '@/ui/code-snippet/codeSnippet';
+import tabs from '@/ui/tabs/tabs';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.pts.accordion = accordion;
@@ -29,4 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   modal();
   phoneInput();
   scrollToAnchor();
+  codeSnippet();
+  tabs();
 });

@@ -9,17 +9,22 @@ export default function createVueApp({ containerId, rootApp }) {
     console.warn(`Контейнер для приложения ${containerId} не найден.`);
     return;
   }
+  
+  const dataProps = container.getAttribute('data-props');
+  let initialProps = null;
 
-  try {
-    const initialProps = JSON.parse(container.getAttribute('data-props'));
-
-    createApp(
-      rootApp || {},
-      initialProps || null,
-    )
-      .use(PrimeVue, primeVueConfig)
-      .mount(container);
-  } catch (e) {
-    console.warn(e.message);
+  if (dataProps) {
+    try {
+      initialProps = JSON.parse(dataProps);
+    } catch (e) {
+      console.warn(e.message);
+    }
   }
+
+  createApp(
+    rootApp || {},
+    initialProps,
+  )
+    .use(PrimeVue, primeVueConfig)
+    .mount(container);
 }

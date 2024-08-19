@@ -29,7 +29,7 @@ npm run build
 Создать шаблон блока в директории `src/blocks`
 
 ```bash
-node createWidget
+node createBlock [название блока]
 ```
 
 ## Todo
@@ -37,6 +37,10 @@ node createWidget
 * CSS `.loader` ломает сайт без JS
 * Фокус для интерактивных элементов
 * `.animation` не работает для ссылок и кнопок (интро, о компании)
+* Доделать стили для селекта (select.scss)
+* Переписать переменные bootstrap или лучше выборочно забрать стили
+* Боковое меню в ui-kit
+* Вернуть тени в карточки, селекты и тд
 
 ## Страницы
 
@@ -45,22 +49,26 @@ todo
 ## Используемые библиотеки
 
 * [normalize.css](https://necolas.github.io/normalize.css/)
+* [Bootstrap.css](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Только лейаут
 * [GSAP](https://gsap.com/) - для анимаций
 * [Lenis](https://github.com/darkroomengineering/lenis) - плавный скролл на сайте
 * [Fancybox](https://fancyapps.com/fancybox/) - модалки и галереи
 * [Axios](https://axios-http.com/docs/intro)
+* [JS Cookie](https://github.com/js-cookie/js-cookie#readme)
 * [International Telephone Input](https://github.com/jackocnr/intl-tel-input)
 * [Swiper](https://swiperjs.com/swiper-api) - слайдеры (карусели)
+* [jQuery 3.7.1](https://api.jquery.com/) - желательно не использовать просто так
 * [Parsley.js](https://parsleyjs.org/doc/index.html) - валидация форм, требует `jQuery`
+* [Prism.js](https://prismjs.com/) - code-highlighter
+* [Vue.js](https://vuejs.org/) - Vue 3 Composition Api
+* [PrimeVue](https://primevue.org/) - UI-kit для Vue
 
-## О сборке
+## О сборщике
 
-* [Gulp](https://gulpjs.com/)
+* [Gulp 5](https://gulpjs.com/)
 * [Webpack](https://webpack.js.org/)
 * [Pug](https://pugjs.org/api/getting-started.html)
 * [SCSS](https://sass-lang.com/)
-* [Vue.js](https://vuejs.org/)
-* [PrimeVue](https://primevue.org/)
 
 Не забудь включить линтеры в своём IDE
 
@@ -76,6 +84,9 @@ todo
   * `src/layout` - общий код, общие стили, js и лейаут. Отсюда собирается `core.min.js` и `core.min.css`
   * `src/pages` - страницы сайта
   * `src/ui` - переиспользуемые компоненты, ui-kit - неотъемлемая часть сайта (core)
+  * `src/vue` - todo
+    * `src/vue/apps` - todo
+    * `src/vue/ui` - todo
 * `public` - файлы, которые нужно просто перенести в билд в исходном виде
 * `build` - собранный проект для бекенда
 
@@ -98,3 +109,14 @@ todo
 #### Vue.js
 
 todo
+
+## Какие-то правила
+
+* Все связанные с JS классы должно начинаться на `js-`
+* Не использовать id, исключение - модалки
+* Модалки должны заканчиваться на `-modal`
+* Вёрстка в `rem`-ах, исключение - `1px`
+* CSS БЭМ, разделитель для модификаторов `--`
+* Размер иконок в спрайте - 24 на 24
+* Добавить иконку поиска в селект
+* todo

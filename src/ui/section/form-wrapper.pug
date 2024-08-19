@@ -1,8 +1,11 @@
 mixin form-wrapper(props)
   - props = props || {}
   .form-wrapper
-    if block
-      .form-wrapper__content
-        block
+    .form-wrapper__layout
+      if block
+        .form-wrapper__content
+          block
+      if props.board
+        +board(props.board)&attributes({class: "form-wrapper__board"})
     if props.caption
       .form-wrapper__caption !{props.caption}

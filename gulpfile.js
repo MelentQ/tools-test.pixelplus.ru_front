@@ -64,7 +64,7 @@ function coreScripts() {
 
 function additionalScripts() {
   const scripts = process.env.NODE_ENV === 'production'
-    ? ['src/blocks/*/index.js', 'src/vue/apps/*/index.js']
+    ? ['src/blocks/*/index.js', 'src/vue/apps/**/index.js']
     : ['src/blocks/*/index.js', ...devConfig.scripts];
 
   return src(scripts, { base: process.cwd(), encoding: false })
@@ -125,6 +125,7 @@ function html() {
     }))
     .pipe(pug({
       basedir: './',
+      filters: { raw: (text) => text },
       locals: {
         system: {
           env: process.env.NODE_ENV || 'development',

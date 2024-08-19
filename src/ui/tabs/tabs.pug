@@ -1,0 +1,26 @@
+mixin tabs(props)
+  - props = props || {}
+  - props.defaultTab = props.defaultTab || props.tabs[0].key
+  - slots = {}
+
+  mixin slot(name)
+    - slots[name] = block
+
+  - block ? block() : undefined // Ignore block
+
+  .tabs.js-tabs
+    .tabs__buttons
+      for tab in props.tabs
+        button.tabs__button.js-tabs-button(
+          data-key=tab.key
+          class={'--active': props.defaultTab === tab.key}
+          type="button"
+        )=tab.name
+    .tabs__panels
+      for tab in props.tabs
+        if slots[tab.key]
+          .tabs__panel.js-tabs-panel(
+            data-key=tab.key
+            class={'--active': props.defaultTab === tab.key}
+          )
+            - slots[tab.key]()

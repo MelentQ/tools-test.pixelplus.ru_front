@@ -6,6 +6,10 @@
 }
 
 .p-tab {
+  padding: 1rem 1.6rem 1rem !important;
+
+  color: var(--color-gray-dark) !important;
+
   font-size: var(--fs-t2);
   text-decoration: underline;
 
@@ -26,6 +30,9 @@
   border-right-color: var(--color-gray-light) !important;
   border-bottom-color: white !important;
   border-left-color: var(--color-gray-light) !important;
+  cursor: default;
+
+  pointer-events: none;
 }
 
 .p-tablist-active-bar {

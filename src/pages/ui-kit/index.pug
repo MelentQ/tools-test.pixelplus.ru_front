@@ -15,7 +15,7 @@ block content
       li Интерлиньяж (line-height) – <b>130% (1.3)</b>
       li Цвет текста – <b>#333333</b>
       li Цвет бренда - <b style="color: #e32d35;">#e32d35</b>
-      li Скругление углов – <b>6px</b>
+      li Скругление углов – <b>8px</b>
   +section({
     mods: ["border"],
     title: "Навигация",
@@ -27,7 +27,11 @@ block content
       li
         a(href="#typography") Типографика
       li
+        a(href="#layout") Лейаут
+      li
         a(href="#components") Компоненты
+      li
+        a(href="#vue-components") Vue-компоненты
       li
         a(href="#blocks") Блоки
       li
@@ -40,7 +44,30 @@ block content
   })&attributes({
     id: "colors"
   })
-    | todo
+    +ui-component({
+      title: "Цвета"
+    })
+      +tabs({
+        tabs: [
+          {
+            key: "preview",
+            name: "Просмотр"
+          },
+          {
+            key: "css",
+            name: "CSS"
+          }
+        ]
+      })
+        +slot("preview")
+          +ui-colors(colors)
+        +slot("css")
+          +code-snippet({
+            lang: "css"
+          })
+            | button {
+            |   background-color: var(--gray-semi-light);
+            | }
   +section({
     mods: ["border"],
     title: "Типографика"
@@ -50,12 +77,30 @@ block content
     | todo
   +section({
     mods: ["border"],
+    title: "Лейаут"
+  })&attributes({
+    id: "layout"
+  })
+    | todo
+  +section({
+    mods: ["border"],
     title: "Компоненты",
     subtitle: "Неотъемлемая часть сайта"
   })&attributes({
     id: "components"
   })
-    | todo
+    .d-flex.flex-column.gap-5
+      include /src/ui/button/preview/index
+      include /src/ui/select/preview/index
+  +section({
+    mods: ["border"],
+    title: "Vue-компоненты"
+  })&attributes({
+    id: "vue-components"
+  })
+    .d-flex.flex-column.gap-5
+      include /src/ui/vue-app/preview/index
+      include /src/ui/select/vue-preview/index
   +section({
     mods: ["border"],
     title: "Блоки",
@@ -68,19 +113,59 @@ block content
     })
   +section({
     mods: ["border"],
-    title: "SVG-спрайт",
-    subtitle: "Подключается на все страницы"
+    title: "SVG-спрайт"
   })&attributes({
-    id: "prite"
+    id: "sprite"
   })
-    +sprite-list({
-      items: ui.sprite,
-      size: ui.spriteSize
-    })
+    include /src/ui/icon/preview/index
   +section({
     mods: ["border"],
     title: "Модальные окна"
   })&attributes({
     id: "modals"
   })
-    | todo
+    .d-flex.flex-wrap.gap-3
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#welcome-message-modal"
+      }) #welcome-message-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#offer-modal"
+      }) #offer-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#policy-modal"
+      }) #policy-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#demo-modal"
+      }) #demo-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#success-modal"
+      }) #success-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#error-modal"
+      }) #error-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#warning-modal"
+      }) #warning-modal
+      +button&attributes({
+        "data-fancybox": "modal",
+        "data-src": "#reset-password-success-modal"
+      }) #reset-password-success-modal
+    +code-snippet({lang: "js"})
+      | window.pts.Fancybox.close();
+      | window.pts.Fancybox.show([{ src: '#welcome-message-modal' }]);
+
+block modals
+  +offer-modal
+  +policy-modal
+  +demo-modal
+  +success-modal
+  +error-modal
+  +warning-modal
+  +reset-password-success-modal

@@ -1,0 +1,16 @@
+mixin ui-colors(props)
+  - props = props || {}
+  .ui-colors
+    table
+      thead
+        th
+        for column in props.columns
+          th=column
+      tbody
+        for row in props.rows
+          tr
+            th=row.name
+            for item in row.items
+              td
+                +ui-c-card(item)
+  link(href="./css/ui-colors.min.css" rel="stylesheet")

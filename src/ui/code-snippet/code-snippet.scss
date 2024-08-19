@@ -1,0 +1,7 @@
+.code-snippet {
+  color: var(--color-white);
+
+  pre[class*="language-"] {
+    border-radius: $border-radius;
+  }
+}

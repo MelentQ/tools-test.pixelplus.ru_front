@@ -4,5 +4,177 @@
     "description": "UI Kit"
   },
   "hideMenu": false,
-  "smoothScrolling": true
+  "smoothScrolling": true,
+  "colors": {
+    "columns": [
+      "Ultra-Light",
+      "Light",
+      "Semi-Light",
+      "Base Color",
+      "Semi-Dark",
+      "Dark",
+      "Ultra-Dark"
+    ],
+    "rows": [
+      {
+        "name": "Primary",
+        "items": [
+          {},
+          {},
+          {},
+          {
+            "hex": "#e32d35",
+            "name": "primary"
+          },
+          {
+            "hex": "#cb131b",
+            "name": "primary-semi-dark"
+          },
+          {},
+          {}
+        ]
+      },
+      {
+        "name": "Gray",
+        "items": [
+          {
+            "hex": "#f5f5f5",
+            "name": "gray-ultra-light"
+          },
+          {
+            "hex": "#e5e5e5",
+            "name": "gray-light"
+          },
+          {
+            "hex": "#d4d4d4",
+            "name": "gray-semi-light"
+          },
+          {
+            "hex": "#a3a3a3",
+            "name": "gray"
+          },
+          {
+            "hex": "#737373",
+            "name": "gray-semi-dark"
+          },
+          {
+            "hex": "#525252",
+            "name": "gray-dark"
+          },
+          {
+            "hex": "#333333",
+            "name": "gray-ultra-dark"
+          }
+        ]
+      },
+      {
+        "name": "Green",
+        "items": [
+          {},
+          {
+            "hex": "#86efac",
+            "name": "green-light"
+          },
+          {
+            "hex": "#4ade80",
+            "name": "green-semi-light"
+          },
+          {
+            "hex": "#22c55e",
+            "name": "green"
+          },
+          {
+            "hex": "#16a34a",
+            "name": "green-semi-dark"
+          },
+          {
+            "hex": "#15803d",
+            "name": "green-dark"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "Red",
+        "items": [
+          {},
+          {
+            "hex": "#fca5a5",
+            "name": "red-light"
+          },
+          {
+            "hex": "#f87171",
+            "name": "red-semi-light"
+          },
+          {
+            "hex": "#ef4444",
+            "name": "red"
+          },
+          {
+            "hex": "#dc2626",
+            "name": "red-semi-dark"
+          },
+          {
+            "hex": "#b91c1c",
+            "name": "red-dark"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "Yellow",
+        "items": [
+          {},
+          {
+            "hex": "#fde047",
+            "name": "yellow-light"
+          },
+          {
+            "hex": "#facc15",
+            "name": "yellow-semi-light"
+          },
+          {
+            "hex": "#eab308",
+            "name": "yellow"
+          },
+          {
+            "hex": "#ca8a04",
+            "name": "yellow-semi-dark"
+          },
+          {
+            "hex": "#a16207",
+            "name": "yellow-dark"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "Blue",
+        "items": [
+          {},
+          {
+            "hex": "#93c5fd",
+            "name": "blue-light"
+          },
+          {
+            "hex": "#60a5fa",
+            "name": "blue-semi-light"
+          },
+          {
+            "hex": "#3b82f6",
+            "name": "blue"
+          },
+          {
+            "hex": "#2563eb",
+            "name": "blue-semi-dark"
+          },
+          {
+            "hex": "#1d4ed8",
+            "name": "blue-dark"
+          },
+          {}
+        ]
+      }
+    ]
+  }
 }

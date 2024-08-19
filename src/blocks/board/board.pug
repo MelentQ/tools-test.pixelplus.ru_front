@@ -1,0 +1,15 @@
+mixin board(props)
+  - props = props || {}
+  .board.js-board(data-name=props.name)&attributes(attributes)
+    button.board__close.js-board-close-button(type="button" aria-label="Закрыть")
+      +icon("close")
+    .board__title=props.title
+    .board__text !{props.text}
+    +button({
+      mods: ["white"]
+    })&attributes({
+      ...props.button.attributes,
+      class: "board__button"
+    })=props.button.text
+  link(href="./css/board.min.css" rel="stylesheet")
+  script(src="./js/board.min.js" defer="")

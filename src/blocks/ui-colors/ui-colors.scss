@@ -1,0 +1,32 @@
+.ui-colors {
+  overflow: auto;
+
+  @include breakpoint(m) {
+    width: calc(100% + 4rem);
+    margin: 0 -2rem;
+    padding: 0 2rem;
+  }
+
+  @include breakpoint(s) {
+    width: calc(100% + 3.2rem);
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+  }
+
+  table {
+    width: 100%;
+
+    font-size: 14px;
+
+    th, td {
+      padding: 0.6rem;
+    }
+
+    th {
+      width: 12.5%;
+
+      font-weight: 400;
+      text-align: left;
+    }
+  }
+}

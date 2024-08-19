@@ -1,0 +1,19 @@
+mixin ui-component(props)
+  - props = props || {}
+  .ui-component
+    if props.title || props.description || props.tags
+      .ui-component__head
+        if props.title || props.description
+          .ui-component__info
+            if props.title
+              .ui-component__title=props.title
+            if props.description
+              .ui-component__description !{props.description}
+        if props.tags
+          .ui-component__tags
+            for tag in props.tags
+              +c-tag=tag
+    if block
+      .ui-component__content
+        block
+  link(href="./css/ui-component.min.css" rel="stylesheet")

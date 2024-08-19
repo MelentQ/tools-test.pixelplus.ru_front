@@ -1,0 +1,17 @@
+.ui-c-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  &__box {
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: $border-radius;
+  }
+
+  &__name {
+    color: var(--color-gray);
+    font-size: var(--fs-t2);
+  }
+}

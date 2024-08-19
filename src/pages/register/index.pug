@@ -2,28 +2,30 @@ extends /src/layout/landing
 
 block content
   +section({
-    mods: ["dark", "size-xs"],
+    mods: ["dark"],
     title: "Регистрация в «Пиксель Тулс»",
     subtitle: "Уже зарегистрированы? <a href='./login.html'>Войдите</a>",
     tag: "h1"
   })&attributes({
     id: "register"
   })
-    +form-wrapper
+    +form-wrapper({
+      board: {
+        name: "demo",
+        title: "У вас остались вопросы?",
+        text: "<b>Оставьте заявку в течение 2 часов</b> и наш специалист бесплатно покажет вам 15 возможностей модуля проектов!",
+        button: {
+          attributes: {
+            "data-fancybox": "modal",
+            "data-src": "#demo-modal"
+          },
+          text: "Заказать демонстрацию"
+        }
+      }
+    })
       +register-form
   +section({
-    title: "У вас остались вопросы?",
-    subtitle: "<b>Оставьте заявку в течение 2 часов</b>, и наш специалист бесплатно покажет вам 15 возможностей модуля проектов!",
-    button: {
-      attributes: {
-        "data-fancybox": "modal",
-        "data-src": "#demo-modal"
-      },
-      text: "Заказать демонстрацию"
-    }
-  })
-  +section({
-    mods: ["dark", "size-s"],
+    mods: ["size-s"],
     title: "После регистрации в «Пиксель Тулс»"
   })
     +register-advantages({

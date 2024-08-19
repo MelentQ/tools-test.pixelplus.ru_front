@@ -1,0 +1,8 @@
+mixin ui-sprite(props)
+  - props = props || {}
+  .ui-sprite
+    .ui-sprite__list
+      for item in props.items
+        +ui-s-card(item)
+  link(href="./css/ui-sprite.min.css" rel="stylesheet")
+  script(src="./js/ui-sprite.min.js" defer="")

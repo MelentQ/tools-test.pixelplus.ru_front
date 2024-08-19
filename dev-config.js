@@ -3,6 +3,6 @@ module.exports = {
     'src/pages/**/index.pug',
   ],
   scripts: [
-    'src/vue/apps/tool-ai-content/index.js',
+    'src/vue/apps/**/index.js',
   ],
 };

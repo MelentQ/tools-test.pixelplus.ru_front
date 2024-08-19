@@ -8,11 +8,11 @@ export default {
       primitive: {
         borderRadius: {
           none: '0',
-          xs: '6px',
-          sm: '6px',
-          md: '6px',
-          lg: '6px',
-          xl: '6px',
+          xs: '0.8rem',
+          sm: '0.8rem',
+          md: '0.8rem',
+          lg: '0.8rem',
+          xl: '0.8rem',
         },
       },
       semantic: {

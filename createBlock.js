@@ -1,5 +1,5 @@
-// Генератор заготовок для виджетов
-// Использование: node createWidget.js [имя виджета]
+// Генератор заготовок для блоков
+// Использование: node createBlock.js [название блока]
 
 const fs = require('fs');
 const { mkdirp } = require('mkdirp');

@@ -1,0 +1,6 @@
+mixin ui-s-card(props)
+  - props = props || {}
+  .ui-s-card
+    .ui-s-card__icon
+      +icon(props.name)
+    .ui-s-card__name=props.name

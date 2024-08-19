@@ -1,0 +1,66 @@
+.tabs {
+  &__buttons {
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  &__button {
+    margin-bottom: -1px;
+    padding: 1rem 1.6rem 1rem;
+
+    color: var(--color-gray-dark);
+
+    font-weight: 600;
+    font-size: var(--fs-t2);
+    text-decoration: underline;
+
+    background: none;
+    border-style: solid;
+    border-width: 0.4rem 1px 1px 1px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--color-gray-light);
+    border-left-color: transparent;
+    text-decoration-style: dotted;
+
+    &.--active {
+      color: var(--color-primary);
+      text-decoration: none;
+
+      background-color: white;
+      border-top-color: var(--color-primary);
+      border-right-color: var(--color-gray-light);
+      border-bottom-color: white;
+      border-left-color: var(--color-gray-light);
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &__panels {
+    position: relative;
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    margin-top: 1rem;
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    &.--active {
+      position: static;
+
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: all;
+    }
+  }
+}

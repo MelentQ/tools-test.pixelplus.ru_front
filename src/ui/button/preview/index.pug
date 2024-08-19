@@ -1,0 +1,41 @@
++ui-component({
+  title: "Кнопка",
+  description: "Описание компонента",
+  tags: ["button", "submit"]
+})
+  +tabs({
+    tabs: [
+      {
+        key: "preview",
+        name: "Просмотр"
+      },
+      {
+        key: "mods",
+        name: "Модификации"
+      },
+      {
+        key: "state",
+        name: "Состояния"
+      },
+      {
+        key: "html",
+        name: "HTML"
+      },
+      {
+        key: "pug",
+        name: "Pug"
+      }
+    ]
+  })
+    +slot("preview")
+      include preview
+    +slot("mods")
+      p mods
+    +slot("state")
+      p state
+    +slot("html")
+      +code-snippet({lang: 'html'})
+        include preview
+    +slot("pug")
+      +code-snippet({lang: 'pug'})
+        include:raw preview

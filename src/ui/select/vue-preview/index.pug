@@ -1,0 +1,26 @@
++ui-component({
+  title: "PrimeVue Select",
+  description: "Описание компонента"
+})
+  +tabs({
+    tabs: [
+      {
+        key: "compare",
+        name: "Сравнение"
+      }
+    ]
+  })
+    +slot("compare")
+      .row
+        .col HTML + JS
+        .col PrimeVue
+      .row
+        .col
+          include /src/ui/select/preview/preview
+        .col
+          +vue-app({
+            name: "ui-select",
+            initialProps: {
+              cities: cities
+            }
+          })

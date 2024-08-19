@@ -78,11 +78,6 @@
     margin: 0 auto;
   }
 
-  &--size-xs #{$block-name}__content {
-    max-width: 50rem;
-    margin: 0 auto;
-  }
-
   &__footer {
     display: flex;
     flex-direction: column;

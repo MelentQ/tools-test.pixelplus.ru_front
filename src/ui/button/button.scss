@@ -52,6 +52,18 @@
     }
   }
 
+  &--white {
+    background-color: var(--color-white);
+    border-color: var(--color-gray-light);
+
+    @include color(var(--color-gray-darken));
+
+    @include hover {
+      background-color: var(--color-gray-lighter);
+      border-color: var(--color-gray-light);
+    }
+  }
+
   &--dark {
     background-color: transparent;
     border-color: var(--color-gray-darker);
