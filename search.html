@@ -2579,7 +2579,33 @@
             <link href="./css/multi-button.min.css" rel="stylesheet" />
             <script src="./js/multi-button.min.js" defer=""></script>
         </div>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <div class="modal" id="welcome-message-modal">
+            <div class="modal__inner">
+                <button class="modal__close" type="button" data-fancybox-close="" aria-label="Закрыть">
+                    <svg class="icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <div class="modal__text">
+                    <div class="modal__title">Пиксель Тулс — сервис № 1 для решения ваших SEO-задач и работы с нейросетями</div>
+                </div>
+                <div class="modal__content">
+                    <div class="welcome-message">
+                        <ol class="welcome-message__list">
+                            <li>Модуль ведения SEO-проектов.</li>
+                            <li>47 инструментов для автоматизации.</li>
+                            <li>Нажимая «Продолжить» или закрывая окно вы соглашаетесь с использованием cookie-файлов и обработку персональных данных с использованием Яндекс.Метрики и Google Analytics.</li>
+                        </ol>
+                        <div class="welcome-message__controls">
+                            <button class="button" type="button" data-fancybox-close="">Продолжить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <link href="./css/welcome-message.min.css" rel="stylesheet" />
+        <script src="./js/welcome-message.min.js" defer=""></script>
+        <script src="./assets/libs/jquery-3.7.1.min.js"></script>
         <script>
             // https://github.com/jackocnr/intl-tel-input
             document.addEventListener('DOMContentLoaded', () => {
