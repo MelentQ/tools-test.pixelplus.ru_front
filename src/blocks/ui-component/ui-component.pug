@@ -1,5 +1,12 @@
 mixin ui-component(props)
   - props = props || {}
+  - slots = {}
+
+  mixin slot(name)
+    - slots[name] = block
+
+  - block ? block() : undefined
+
   .ui-component
     if props.title || props.description || props.tags
       .ui-component__head
@@ -7,13 +14,17 @@ mixin ui-component(props)
           .ui-component__info
             if props.title
               .ui-component__title=props.title
-            if props.description
-              .ui-component__description !{props.description}
+            if slots.description || props.description
+              .ui-component__description
+                if slots.description
+                  - slots.description()
+                else if props.description
+                  | !{props.description}
         if props.tags
           .ui-component__tags
             for tag in props.tags
               +c-tag=tag
-    if block
+    if slots.content
       .ui-component__content
-        block
+        - slots.content()
   link(href="./css/ui-component.min.css" rel="stylesheet")

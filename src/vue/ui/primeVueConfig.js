@@ -8,11 +8,11 @@ export default {
       primitive: {
         borderRadius: {
           none: '0',
-          xs: '0.8rem',
-          sm: '0.8rem',
-          md: '0.8rem',
-          lg: '0.8rem',
-          xl: '0.8rem',
+          xs: 'var(--border-radius)',
+          sm: 'var(--border-radius)',
+          md: 'var(--border-radius)',
+          lg: 'var(--border-radius)',
+          xl: 'var(--border-radius)',
         },
       },
       semantic: {

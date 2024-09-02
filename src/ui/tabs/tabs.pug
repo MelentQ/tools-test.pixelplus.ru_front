@@ -6,7 +6,7 @@ mixin tabs(props)
   mixin slot(name)
     - slots[name] = block
 
-  - block ? block() : undefined // Ignore block
+  - block ? block() : undefined
 
   .tabs.js-tabs
     .tabs__buttons

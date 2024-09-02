@@ -11,7 +11,7 @@
   padding: 2rem 1.6rem;
 
   background-color: var(--color-gray-lighter);
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
 
   &__icon {
     svg {

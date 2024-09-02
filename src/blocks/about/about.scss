@@ -260,7 +260,7 @@
     padding: 3rem;
 
     background-color: var(--color-white);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, .09);
 
     @include breakpoint(m) {

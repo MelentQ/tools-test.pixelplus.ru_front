@@ -1,4 +1,4 @@
-extends /src/layout/landing
+extends /src/layout/layout
 
 block content
   +section({
@@ -47,27 +47,28 @@ block content
     +ui-component({
       title: "Цвета"
     })
-      +tabs({
-        tabs: [
-          {
-            key: "preview",
-            name: "Просмотр"
-          },
-          {
-            key: "css",
-            name: "CSS"
-          }
-        ]
-      })
-        +slot("preview")
-          +ui-colors(colors)
-        +slot("css")
-          +code-snippet({
-            lang: "css"
-          })
-            | button {
-            |   background-color: var(--gray-semi-light);
-            | }
+      +slot("content")
+        +tabs({
+          tabs: [
+            {
+              key: "preview",
+              name: "Просмотр"
+            },
+            {
+              key: "css",
+              name: "CSS"
+            }
+          ]
+        })
+          +slot("preview")
+            +ui-colors(colors)
+          +slot("css")
+            +code-snippet({
+              lang: "css"
+            })
+              | button {
+              |   background-color: var(--gray-semi-light);
+              | }
   +section({
     mods: ["border"],
     title: "Типографика"
@@ -100,7 +101,75 @@ block content
   })
     .d-flex.flex-column.gap-5
       include /src/ui/vue-app/preview/index
-      include /src/ui/select/vue-preview/index
+      +ui-component({
+        title: "Стилизация PrimeVue"
+      })
+        +slot("content")
+          +tabs({
+            tabs: [
+              {
+                key: "compare",
+                name: "Сравнение"
+              }
+            ]
+          })
+            +slot("compare")
+              .row.mb-3
+                .col HTML + JS
+                .col PrimeVue
+              .row
+                .col
+                  form.form.js-validation
+                    include /src/ui/select/preview/preview
+                    button(type="submit") Отправить
+                .col
+                  +vue-app({
+                    name: "ui-compare",
+                    initialProps: {
+                      cities: [
+                        {
+                          "label": "Москва",
+                          "value": "213"
+                        },
+                        {
+                          "label": "Санкт-Петербург",
+                          "value": "2"
+                        },
+                        {
+                          "label": "Екатеринбург",
+                          "value": "54"
+                        },
+                        {
+                          "label": "Казань",
+                          "value": "43"
+                        },
+                        {
+                          "label": "Нижний Новгород",
+                          "value": "47"
+                        },
+                        {
+                          "label": "Новосибирск",
+                          "value": "65"
+                        },
+                        {
+                          "label": "Омск",
+                          "value": "66"
+                        },
+                        {
+                          "label": "Ростов-на-Дону",
+                          "value": "39"
+                        },
+                        {
+                          "label": "Самара",
+                          "value": "51"
+                        },
+                        {
+                          "label": "Уфа",
+                          "value": "172"
+                        }
+                      ]
+                    }
+                  })
   +section({
     mods: ["border"],
     title: "Блоки",
@@ -124,42 +193,7 @@ block content
   })&attributes({
     id: "modals"
   })
-    .d-flex.flex-wrap.gap-3
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#welcome-message-modal"
-      }) #welcome-message-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#offer-modal"
-      }) #offer-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#policy-modal"
-      }) #policy-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#demo-modal"
-      }) #demo-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#success-modal"
-      }) #success-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#error-modal"
-      }) #error-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#warning-modal"
-      }) #warning-modal
-      +button&attributes({
-        "data-fancybox": "modal",
-        "data-src": "#reset-password-success-modal"
-      }) #reset-password-success-modal
-    +code-snippet({lang: "js"})
-      | window.pts.Fancybox.close();
-      | window.pts.Fancybox.show([{ src: '#welcome-message-modal' }]);
+    include /src/ui/modal/preview/index
 
 block modals
   +offer-modal

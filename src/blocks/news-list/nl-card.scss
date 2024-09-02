@@ -10,7 +10,7 @@
 
   background-color: var(--color-gray-lighter);
 
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
 
   @at-root .section--dark &,
   &--light {

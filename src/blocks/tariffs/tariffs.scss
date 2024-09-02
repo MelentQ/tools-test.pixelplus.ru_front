@@ -90,7 +90,7 @@
 
     background-color: var(--color-white);
 
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
 
     @include breakpoint(m) {
       padding: 2rem 4.2rem 2rem 14rem;

@@ -6,7 +6,7 @@
   padding: 2.4rem 1.6rem;
 
   background-color: var(--color-gray-lighter);
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
 
   @at-root .section--dark &,
   &--light {
@@ -24,7 +24,7 @@
     background-color: var(--color-gray-lighter);
 
     border: 2px solid var(--color-gray-light);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
 
     img {
       position: absolute;

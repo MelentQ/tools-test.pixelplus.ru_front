@@ -15,7 +15,7 @@
     padding: 2rem 2rem 4rem;
 
     border: 2px solid var(--color-primary);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
 
     @include breakpoint(m) {
       gap: 0.6rem;
@@ -164,7 +164,7 @@
     padding: 4rem;
 
     background-color: var(--color-gray-lighter);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
 
     @include breakpoint(m) {
       margin-top: 2rem;

@@ -38,7 +38,7 @@
     overflow: hidden;
 
     background-color: var(--color-gray-light);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
   }
 
   &__progressbar-fill {

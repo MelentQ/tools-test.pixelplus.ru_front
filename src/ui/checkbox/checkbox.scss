@@ -24,7 +24,7 @@
 
     border: 2px solid var(--color-gray-light);
 
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     transform: translateY(-50%);
 
     cursor: pointer;

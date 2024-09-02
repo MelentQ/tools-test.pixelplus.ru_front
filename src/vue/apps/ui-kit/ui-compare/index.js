@@ -3,7 +3,7 @@ import App from './App.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
   createVueApp({
-    containerId: 'ui-select',
+    containerId: 'ui-compare',
     rootApp: App,
   });
 });

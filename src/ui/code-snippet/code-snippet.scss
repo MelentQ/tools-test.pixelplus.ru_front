@@ -2,6 +2,6 @@
   color: var(--color-white);
 
   pre[class*="language-"] {
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
   }
 }

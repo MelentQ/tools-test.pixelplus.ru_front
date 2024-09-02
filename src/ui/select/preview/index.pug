@@ -1,35 +1,35 @@
 +ui-component({
   title: "Выпадающий список",
-  description: "Описание компонента",
   tags: ["dropdown", "селект", "select", "choices.js"]
 })
-  +tabs({
-    tabs: [
-      {
-        key: "preview",
-        name: "Просмотр"
-      },
-      {
-        key: "state",
-        name: "Состояния"
-      },
-      {
-        key: "html",
-        name: "HTML"
-      },
-      {
-        key: "pug",
-        name: "Pug"
-      }
-    ]
-  })
-    +slot("preview")
-      include preview
-    +slot("state")
-      p state
-    +slot("html")
-      +code-snippet({lang: 'html'})
+  +slot("content")
+    +tabs({
+      tabs: [
+        {
+          key: "preview",
+          name: "Просмотр"
+        },
+        {
+          key: "state",
+          name: "Состояния"
+        },
+        {
+          key: "html",
+          name: "HTML"
+        },
+        {
+          key: "pug",
+          name: "Pug"
+        }
+      ]
+    })
+      +slot("preview")
         include preview
-    +slot("pug")
-      +code-snippet({lang: 'pug'})
-        include:raw preview
+      +slot("state")
+        p state
+      +slot("html")
+        +code-snippet({lang: 'html'})
+          include preview
+      +slot("pug")
+        +code-snippet({lang: 'pug'})
+          include:raw preview

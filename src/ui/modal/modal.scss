@@ -18,7 +18,7 @@
     padding: 4rem 2.4rem;
 
     background-color: var(--color-white);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
 
     @include breakpoint(m) {
       padding: 3rem 2rem;

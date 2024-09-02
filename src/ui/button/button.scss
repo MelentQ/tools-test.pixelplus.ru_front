@@ -16,7 +16,7 @@
   background: none;
   background-color: var(--color-success);
   border: 2px solid var(--color-success);
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
 
   @include transition(color, border-color, background-color);
   @include color(var(--color-white));

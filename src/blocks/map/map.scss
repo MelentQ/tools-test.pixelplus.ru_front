@@ -8,7 +8,7 @@
   overflow: hidden;
 
   background-color: var(--color-gray-lighter);
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
 
   @include breakpoint(s) {
     min-height: 20rem;

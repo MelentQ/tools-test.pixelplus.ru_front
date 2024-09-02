@@ -1,0 +1,69 @@
++ui-component({
+  title: "Кнопка",
+  tags: ["button", "submit"]
+})
+  +slot("content")
+    +tabs({
+      tabs: [
+        {
+          key: "preview",
+          name: "Все модалки на сайте"
+        },
+        {
+          key: "html",
+          name: "HTML"
+        },
+        {
+          key: "pug",
+          name: "Pug"
+        },
+        {
+          key: "js",
+          name: "JS"
+        }
+      ]
+    })
+      +slot("preview")
+        .d-flex.flex-wrap.gap-3
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#welcome-message-modal"
+          }) #welcome-message-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#offer-modal"
+          }) #offer-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#policy-modal"
+          }) #policy-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#demo-modal"
+          }) #demo-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#success-modal"
+          }) #success-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#error-modal"
+          }) #error-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#warning-modal"
+          }) #warning-modal
+          +button&attributes({
+            "data-fancybox": "modal",
+            "data-src": "#reset-password-success-modal"
+          }) #reset-password-success-modal
+      +slot("html")
+        +code-snippet({lang: 'html'})
+          include preview
+      +slot("pug")
+        +code-snippet({lang: 'pug'})
+          include:raw preview
+      +slot("js")
+        +code-snippet({lang: "js"})
+          | window.pts.Fancybox.close();
+          | window.pts.Fancybox.show([{ src: '#welcome-message-modal' }]);

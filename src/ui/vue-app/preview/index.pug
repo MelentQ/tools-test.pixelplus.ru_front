@@ -1,34 +1,43 @@
 +ui-component({
   title: "Подключение Vue-приложения на страницу",
-  description: `Для приложения собирается собственный JS (вес в среднем от 300 до 500 Кб)<br>
-                В примере ниже установлен таймер в 5 секунд, чтобы можно было увидеть лоадер<br>
-                Чтобы создать новое приложение читай <b>readme.md</b><br>
-                Можно указывать начальное состояние (initial props), данные будут доступны в корневом компоненте<br>
-                Можно указывать статическое содержимое для SEO (индексирования). Оно скрыто от пользователей и автоматически удалится после инициализации скриптов<br>
-                В проекте используется библиотека UI-компонентов <a href="https://primevue.org/setup/" target="_blank">PrimeVue</a>. Можно брать любой компонент, но необходимо дополнительно изменить CSS под стиль проекта`,
   tags: ["vue-app", "primevue", "react"]
 })
-  +tabs({
-    tabs: [
-      {
-        key: "preview",
-        name: "Просмотр"
-      },
-      {
-        key: "html",
-        name: "HTML"
-      },
-      {
-        key: "pug",
-        name: "Pug"
-      }
-    ]
-  })
-    +slot("preview")
-      include preview
-    +slot("html")
-      +code-snippet({lang: 'html'})
+  +slot("description")
+    p Для приложения собирается собственный JS (вес в среднем от 300 до 500 Кб)
+    p В примере ниже установлен таймер в 5 секунд, чтобы можно было увидеть лоадер
+    p Чтобы создать новое приложение читай <b>readme.md</b>
+    p Можно указывать начальное состояние (initial props), данные будут доступны в корневом компоненте
+    p Можно указывать статическое содержимое для SEO (индексирования). Оно скрыто от пользователей и автоматически удалится после инициализации скриптов
+    p В проекте используется библиотека UI-компонентов <a href="https://primevue.org/setup/" target="_blank">PrimeVue</a>
+  +slot("content")
+    +tabs({
+      tabs: [
+        {
+          key: "preview",
+          name: "Просмотр"
+        },
+        {
+          key: "html",
+          name: "HTML"
+        },
+        {
+          key: "pug",
+          name: "Pug"
+        },
+        {
+          key: "js",
+          name: "JS"
+        }
+      ]
+    })
+      +slot("preview")
         include preview
-    +slot("pug")
-      +code-snippet({lang: 'pug'})
-        include:raw preview
+      +slot("html")
+        +code-snippet({lang: 'html'})
+          include preview
+      +slot("pug")
+        +code-snippet({lang: 'pug'})
+          include:raw preview
+      +slot("js")
+        +code-snippet({lang: 'js'})
+          include:raw /src/vue/apps/ui-kit/ui-example/index.js

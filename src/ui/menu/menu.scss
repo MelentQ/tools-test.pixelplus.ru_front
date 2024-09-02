@@ -25,7 +25,7 @@
     padding: 0 0 1rem;
 
     background-color: #53575a;
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
 
     visibility: hidden;
     opacity: 0;
@@ -41,7 +41,7 @@
 
     padding: 1rem 0 0;
 
-    border-radius: $border-radius $border-radius 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
 
   // 3-й уровень +
@@ -53,7 +53,7 @@
     padding: 1rem 0;
     overflow-x: hidden;
 
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
   }
 
   &--position-top #{$block-name}__items #{$block-name}__items #{$block-name}__items {
