@@ -42,25 +42,11 @@
   }
 
   &__panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-
     width: 100%;
     margin-top: 1rem;
 
-    visibility: hidden;
-    opacity: 0;
-
-    pointer-events: none;
-
-    &.--active {
-      position: static;
-
-      visibility: visible;
-      opacity: 1;
-
-      pointer-events: all;
+    &:not(.--active) {
+      display: none;
     }
   }
 }

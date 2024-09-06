@@ -1,4 +1,4 @@
-import isSelectorValid from '@/layout/scripts/isSelectorValid';
+import isSelectorValid from '@/scripts/utils/isSelectorValid';
 import { gsap } from 'gsap';
 
 export default function scrollToAnchor() {

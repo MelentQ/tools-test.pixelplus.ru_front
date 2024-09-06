@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-src/layout/data/data.json
+src/data/data.json
 src/data/ui-kit.json
 src/ui/icon/sprite.svg
 

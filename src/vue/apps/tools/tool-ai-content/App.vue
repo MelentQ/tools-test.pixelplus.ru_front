@@ -5,6 +5,7 @@ import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import ToolRating from '@/vue/ui/ToolRating.vue';
+import BaseIcon from '@/vue/ui/BaseIcon.vue';
 import ChatBot from './components/ChatBot.vue';
 
 const props = defineProps({
@@ -41,6 +42,7 @@ const props = defineProps({
 
 <template>
   <div class="form-wrapper">
+    <BaseIcon name="search" />
     <div class="form-wrapper__content">
       <Tabs
         :value="props.defaultTab"

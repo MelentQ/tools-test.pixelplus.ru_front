@@ -22,13 +22,14 @@ const devConfig = require('./dev-config');
 const { generateUiKit } = require('./utils');
 
 function coreStyles() {
-  return src(['src/layout/core.scss'], { encoding: false })
+  return src(['src/styles/index.scss'], { encoding: false })
     .pipe(sassGlob())
     .pipe(scss({
       outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['node_modules/'],
     }))
     .pipe(rename({
+      basename: 'core',
       extname: '.min.css',
     }))
     .pipe(dest('build/css'))
@@ -38,8 +39,8 @@ function coreStyles() {
 function additionalStyles() {
   return src(['src/blocks/**/index.scss'], { encoding: false })
     .pipe(header(`
-      @import "layout/styles/scss-variables";
-      @import "layout/styles/mixins";
+      @import "styles/scss-variables";
+      @import "styles/mixins";
     `))
     .pipe(scss({
       outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
@@ -55,7 +56,7 @@ function additionalStyles() {
 }
 
 function coreScripts() {
-  return src(['src/layout/core.js'], { encoding: false })
+  return src(['src/scripts/index.js'], { encoding: false })
     .pipe(named((file) => path.basename('core', path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
@@ -103,11 +104,11 @@ function sprite() {
 }
 
 function json() {
-  return src(['src/**/*.json', '!src/layout/data/data.json'], { encoding: false })
+  return src(['src/**/*.json', '!src/data/data.json', '!src/pages/**/*.json'], { encoding: false })
     .pipe(merge({
       fileName: 'data.json',
     }))
-    .pipe(dest('src/layout/data'));
+    .pipe(dest('src/data'));
 }
 
 function html() {
@@ -130,7 +131,7 @@ function html() {
         system: {
           env: process.env.NODE_ENV || 'development',
         },
-        ...JSON.parse(readFileSync('src/layout/data/data.json')),
+        ...JSON.parse(readFileSync('src/data/data.json')),
       },
     }))
     .pipe(gulpif(process.env.NODE_ENV === 'production', prettyHtml({
@@ -162,8 +163,8 @@ function watching() {
   watch(['src/**/*.js', '!src/blocks/**/*.js'], coreScripts);
   watch(['src/blocks/**/*.js', 'src/vue/**/*.js', 'src/vue/**/*.vue'], additionalScripts);
   watch(['src/ui/icon/sprite/*.svg'], sprite);
-  watch(['src/**/*.json', '!src/layout/data/data.json'], json);
-  watch(['src/**/*.pug', 'src/layout/data/data.json', 'src/ui/icon/sprite.svg'], html);
+  watch(['src/**/*.json', '!src/data/data.json'], json);
+  watch(['src/**/*.pug', 'src/data/data.json', 'src/pages/**/*.json', 'src/ui/icon/sprite.svg'], html);
   watch(['public/**/*'], assets);
   watch(['build/*.html']).on('change', browserSync.reload);
 }

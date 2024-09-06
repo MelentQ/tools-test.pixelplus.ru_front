@@ -9,10 +9,10 @@ import $validation from '@/ui/form/validation';
 import select from '@/ui/select/select';
 import modal from '@/ui/modal/modal';
 import phoneInput from '@/ui/input/phoneInput';
-import scrollToAnchor from '@/layout/scripts/scrollToAnchor';
 import handleForms from '@/ui/form/handleForms';
 import codeSnippet from '@/ui/code-snippet/codeSnippet';
 import tabs from '@/ui/tabs/tabs';
+import scrollToAnchor from './utils/scrollToAnchor';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.pts.accordion = accordion;
