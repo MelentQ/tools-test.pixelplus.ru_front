@@ -1,0 +1,11 @@
+mixin notification-card(props)
+  - props = props || {}
+  .notification-card
+    .notification-card__date 2024-09-26 17:07:17
+    .notification-card__title Инструмент завершил проверку
+    .notification-card__description
+      | Инструмент «AI-генератор контента» завершил проверку.
+      br
+      a(href="#") Перейти к результатам
+    button.notification-card__close(type="button" aria-label="Очистить" data-tip="Очистить")
+      +icon("close")

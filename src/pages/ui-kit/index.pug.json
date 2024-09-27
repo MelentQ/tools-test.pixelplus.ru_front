@@ -3,7 +3,6 @@
     "title": "UI Kit",
     "description": "UI Kit"
   },
-  "hideMenu": false,
   "smoothScrolling": true,
   "colors": {
     "columns": [

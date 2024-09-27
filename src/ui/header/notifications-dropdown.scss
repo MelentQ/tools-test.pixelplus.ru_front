@@ -1,0 +1,194 @@
+.notifications-dropdown {
+  position: relative;
+
+  $block-name: &;
+
+  &__button {
+    position: relative;
+
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0;
+
+    color: white;
+    font-size: var(--fs-t2);
+
+    background: none;
+    border: none;
+
+    &[data-counter]::after {
+      position: absolute;
+      top: -0.4rem;
+      right: -0.4rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.4rem;
+      height: 1.4rem;
+      padding: 0 0.4rem;
+
+      color: white;
+      font-size: 0.8rem;
+      line-height: 1;
+
+      background-color: var(--color-primary);
+      border-radius: 0.7rem;
+
+      content: attr(data-counter);
+      pointer-events: none;
+
+      @include transition(color, background-color);
+    }
+
+    svg {
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+
+      @include transition(fill);
+
+      @include breakpoint(s) {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    @include hover {
+      svg {
+        fill: var(--color-primary);
+      }
+
+      &::after {
+        color: var(--color-primary);
+
+        background-color: white;
+      }
+    }
+  }
+
+  &.--active #{$block-name}__button {
+    svg {
+      fill: var(--color-primary);
+    }
+
+    &::after {
+      color: var(--color-primary);
+
+      background-color: white;
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: -2rem;
+    z-index: 2;
+
+    width: 52rem;
+
+    color: var(--color-gray-darker);
+
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-1rem);
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    @include transition(opacity, visibility, transform);
+
+    @include breakpoint(m) {
+      right: -12.2rem;
+      left: unset;
+    }
+
+    @include breakpoint(s) {
+      max-width: 28rem;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 100%;
+      left: 2.3rem;
+
+      border: solid transparent 0.6rem;
+      border-bottom-color: white;
+
+      content: '';
+      pointer-events: none;
+
+      @include breakpoint(m) {
+        right: 12.5rem;
+        left: unset;
+      }
+    }
+  }
+
+  &.--active #{$block-name}__panel {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: all;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.6rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-gray-light);
+    }
+  }
+
+  &__control {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    font-size: var(--fs-t2);
+
+    @include transition(color);
+
+    @include hover {
+      color: var(--color-primary-dark);
+    }
+
+    svg {
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    &--settings {
+      text-decoration: none;
+
+      svg {
+        fill: var(--color-gray);
+      }
+    }
+
+    &--clear {
+      padding: 0;
+
+      color: var(--color-primary);
+
+      background: none;
+      border: none;
+    }
+  }
+
+  &__list {
+    max-height: 50rem;
+    overflow: auto;
+
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+}

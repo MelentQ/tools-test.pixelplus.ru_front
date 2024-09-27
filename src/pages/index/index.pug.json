@@ -3,7 +3,6 @@
     "title": "«Пиксель Тулс»",
     "description": "«Пиксель Тулс»"
   },
-  "hideMenu": false,
   "smoothScrolling": true,
   "pages": [
     {
@@ -102,6 +101,14 @@
     {
       "items": [
         {
+          "title": "Под авторизацией",
+          "button": {
+            "tag": "a",
+            "link": "./authorized.html",
+            "text": "Открыть"
+          }
+        },
+        {
           "image": "./assets/images/dev/pages/login.jpg",
           "title": "Вход",
           "button": {
@@ -131,6 +138,21 @@
       ],
       "section": {
         "title": "Личный кабинет"
+      }
+    },
+    {
+      "items": [
+        {
+          "title": "Разводящая",
+          "button": {
+            "tag": "a",
+            "link": "./experts.html",
+            "text": "Открыть"
+          }
+        }
+      ],
+      "section": {
+        "title": "Эксперты"
       }
     },
     {

@@ -1,0 +1,16 @@
+mixin notifications-dropdown(props)
+  - props = props || {}
+  .notifications-dropdown.js-notifications-dropdown&attributes(attributes)
+    button.notifications-dropdown__button.js-notifications-dropdown-button(type="button" aria-label="Уведомления" data-tip="Уведомления" data-counter="3")
+      +icon("bell")
+    .notifications-dropdown__panel
+      .notifications-dropdown__controls
+        a.notifications-dropdown__control.notifications-dropdown__control--settings(href="#")
+          +icon("settings")
+          | Настройки
+        button.notifications-dropdown__control.notifications-dropdown__control--clear(type="button")
+          +icon("trash")
+          | Очистить все
+      .notifications-dropdown__list(data-lenis-prevent="")
+        for _ in Array(10)
+          +notification-card

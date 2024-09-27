@@ -82,6 +82,7 @@
     position: relative;
 
     display: flex;
+    flex-shrink: 0;
     gap: 0.8rem;
     align-items: center;
     padding: 2.8rem 2rem;

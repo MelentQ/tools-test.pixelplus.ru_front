@@ -1,0 +1,18 @@
+mixin user-dropdown(props)
+  - props = props || {}
+  .user-dropdown.js-user-dropdown&attributes(attributes)
+    button.user-dropdown__button.js-user-dropdown-button(type="button" aria-label="Пользователь" data-tip="Пользователь")
+      span.user-dropdown__button-text Константин Константинопольский
+      +icon("user")
+    .user-dropdown__panel
+      .user-dropdown__items
+        for link in userDropdownLinks
+          .user-dropdown__item
+            a(href="#").user-dropdown__link
+              if link.icon
+                +icon(link.icon)
+              =link.text
+            if link.tip
+              +tip({
+                text: link.tip
+              })

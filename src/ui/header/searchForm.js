@@ -21,7 +21,7 @@ export default function searchForm() {
     }
   });
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener('mousedown', (e) => {
     if (
       !e.target.closest('.js-search-form')
       && !e.target.classList.contains('js-search-form')

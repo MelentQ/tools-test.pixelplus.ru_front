@@ -3,7 +3,6 @@
     "title": "Онлайн-генерация текста с помощью нейросети (ИИ)",
     "description": "Онлайн-генерация текста с помощью нейросети (ИИ)"
   },
-  "hideMenu": false,
   "smoothScrolling": true,
   "initialProps": {
     "rating": {

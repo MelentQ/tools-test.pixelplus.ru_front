@@ -1,0 +1,146 @@
+.user-dropdown {
+  position: relative;
+
+  $block-name: &;
+
+  &__button {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0;
+
+    color: white;
+    font-size: var(--fs-t2);
+
+    background: none;
+    border: none;
+
+    svg {
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+
+      @include transition(fill);
+
+      @include breakpoint(s) {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    @include hover {
+      svg {
+        fill: var(--color-primary);
+      }
+    }
+  }
+
+  &.--active #{$block-name}__button svg {
+    fill: var(--color-primary);
+  }
+
+  &__button-text {
+    max-width: 12rem;
+    overflow: hidden;
+
+    color: var(--color-gray-light);
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @include breakpoint(m) {
+      display: none;
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    z-index: 2;
+
+    min-width: 24rem;
+    max-width: 30rem;
+
+    color: var(--color-gray-darker);
+
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-1rem);
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    @include transition(opacity, visibility, transform);
+
+    @include breakpoint(s) {
+      max-width: 28rem;
+    }
+
+    &::after {
+      position: absolute;
+      right: 2rem;
+      bottom: 100%;
+
+      border: solid transparent 0.6rem;
+      border-bottom-color: white;
+
+      content: '';
+      pointer-events: none;
+    }
+  }
+
+  &.--active #{$block-name}__panel {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: all;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+
+    font-size: var(--fs-t2);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-gray-light);
+    }
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+      width: 1.8rem;
+      height: 1.8rem;
+
+      fill: var(--color-gray);
+    }
+
+    @include transition(color);
+  }
+
+  &__link {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  a#{$block-name}__link,
+  &__link a {
+    text-decoration: none;
+
+    @include hover {
+      @include color(var(--color-primary));
+    }
+  }
+}

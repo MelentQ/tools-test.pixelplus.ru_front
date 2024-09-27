@@ -7,18 +7,28 @@ mixin header(props)
           img(src="./assets/images/logo.svg" alt="Пиксель Тулс" loading="lazy")
         if !hideMenu
           +menu({items: menuItems})&attributes({class: "header__menu"})
-        .header__controls
-          button.header__control.header__control--show-on-tablet.js-burger-menu-button(type="button" aria-label="Меню")
-            +icon("burger")
-            +icon("chevron")
-          button.header__control.js-search-form-button(type="button" aria-label="Поиск" data-tip="Поиск")
-            +icon("search")
-            +icon("close")
-          a.header__control(
-            href="./login.html"
-            aria-label="Войти"
-            data-tip="Войти"
-          )
-            +icon("login")
+        .header__controls-wrapper
+          if isAuth
+            +notifications-dropdown&attributes({
+              class: "header__notifications-dropdown"
+            })
+          .header__controls
+            button.header__control.header__control--show-on-tablet.js-burger-menu-button(type="button" aria-label="Меню")
+              +icon("burger")
+              +icon("chevron")
+            button.header__control.js-search-form-button(type="button" aria-label="Поиск" data-tip="Поиск")
+              +icon("search")
+              +icon("close")
+            if isAuth
+              +user-dropdown&attributes({
+                class: "header__user-dropdown"
+              })
+            else
+              a.header__control(
+                href="./login.html"
+                aria-label="Войти"
+                data-tip="Войти"
+              )
+                +icon("login")
     +search-form&attributes({class: "header__search js-search-form"})
     +burger-menu({items: menuItems})&attributes({class: "header__burger-menu js-burger-menu"})

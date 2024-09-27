@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "title": "Авторизован",
+    "description": "Авторизован"
+  },
+  "smoothScrolling": true,
+  "isAuth": true
+}

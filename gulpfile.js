@@ -164,7 +164,7 @@ function watching() {
   watch(['src/blocks/**/*.js', 'src/vue/**/*.js', 'src/vue/**/*.vue'], additionalScripts);
   watch(['src/ui/icon/sprite/*.svg'], sprite);
   watch(['src/**/*.json', '!src/data/data.json'], json);
-  watch(['src/**/*.pug', 'src/data/data.json', 'src/pages/**/*.json', 'src/ui/icon/sprite.svg'], html);
+  watch(['src/**/*.pug', 'src/pages/**/*.pug', 'src/data/data.json', 'src/pages/**/*.json', 'src/ui/icon/sprite.svg'], html);
   watch(['public/**/*'], assets);
   watch(['build/*.html']).on('change', browserSync.reload);
 }

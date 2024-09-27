@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.classList.toggle('--active');
     });
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener('mousedown', (e) => {
       if (e.target && !e.target.closest('.js-multi-button-trigger')) {
         container.classList.remove('--active');
       }

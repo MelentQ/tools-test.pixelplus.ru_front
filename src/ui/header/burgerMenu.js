@@ -20,7 +20,7 @@ export default function burgerMenu() {
     }
   });
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener('mousedown', (e) => {
     if (
       !e.target.closest('.js-burger-menu-button')
       && !e.target.classList.contains('js-burger-menu-button')

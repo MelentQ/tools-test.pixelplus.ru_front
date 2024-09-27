@@ -8,17 +8,24 @@
 
   &__inner {
     display: flex;
-    gap: 1.2rem;
+    gap: 3rem;
     align-items: center;
     justify-content: space-between;
     min-height: 7rem;
 
     @include breakpoint(m) {
+      gap: 1.2rem;
       min-height: 5rem;
     }
   }
 
   &__logo {
+    flex-shrink: 0;
+
+    @include breakpointMF(l) {
+      order: 1;
+    }
+
     img {
       display: block;
       width: 17.2rem;
@@ -48,13 +55,45 @@
 
   &__menu {
     margin-right: auto;
+
+    @include breakpointMF(l) {
+      order: 3;
+    }
+  }
+
+  &__controls-wrapper {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+
+    @include breakpointMF(l) {
+      display: contents;
+    }
+  }
+
+  &__notifications-dropdown {
+    @include breakpointMF(l) {
+      order: 2;
+    }
   }
 
   &__controls {
     display: flex;
     flex-shrink: 0;
-    gap: 2.4rem;
+    gap: 3rem;
     align-items: center;
+
+    @include breakpointMF(l) {
+      order: 4;
+    }
+
+    @include breakpoint(m) {
+      gap: 2.4rem;
+    }
+  }
+
+  &__user-dropdown {
+
   }
 
   &__search {

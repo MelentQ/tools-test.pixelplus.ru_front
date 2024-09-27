@@ -12,6 +12,8 @@ import phoneInput from '@/ui/input/phoneInput';
 import handleForms from '@/ui/form/handleForms';
 import codeSnippet from '@/ui/code-snippet/codeSnippet';
 import tabs from '@/ui/tabs/tabs';
+import userDropdown from '@/ui/header/userDropdown';
+import notificationsDropdown from '@/ui/header/notificationsDropdown';
 import scrollToAnchor from './utils/scrollToAnchor';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,4 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollToAnchor();
   codeSnippet();
   tabs();
+  userDropdown();
+  notificationsDropdown();
 });
