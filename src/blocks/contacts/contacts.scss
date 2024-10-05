@@ -1,5 +1,5 @@
 .contacts {
-  color: var(--color-white);
+  color: var(--white);
 
   background-image: url("../assets/images/intro/contacts.webp");
   background-repeat: no-repeat;
@@ -35,12 +35,12 @@
     a {
       text-decoration: none;
 
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
 
       @include transition(color);
 
       @include hover {
-        @include color(var(--color-primary-dark));
+        @include color(var(--primary-900));
       }
     }
   }

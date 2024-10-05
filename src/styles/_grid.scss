@@ -1,0 +1,23 @@
+// Упрощенные гриды
+// На 991px сетка сбрасывается
+.row {
+  display: grid;
+
+  @for $i from 1 through 12 {
+    &-#{$i} {
+      @include breakpointMF(l) {
+        grid-template-columns: repeat($i, minmax(0, 1fr));
+      }
+    }
+  }
+
+  .col {
+    @for $i from 1 through 12 {
+      &-#{$i} {
+        @include breakpointMF(l) {
+          grid-column: auto / span $i;
+        }
+      }
+    }
+  }
+}

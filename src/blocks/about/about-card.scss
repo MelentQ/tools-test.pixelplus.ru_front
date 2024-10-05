@@ -6,9 +6,9 @@
   border-radius: var(--border-radius);
 
   &__value {
-    color: var(--color-primary);
+    color: var(--primary-600);
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
   }
 
   &__title {
@@ -16,6 +16,6 @@
     margin-bottom: 0;
 
     font-weight: 400;
-    font-size: var(--fs-t3);
+    font-size: var(--fs-t4);
   }
 }

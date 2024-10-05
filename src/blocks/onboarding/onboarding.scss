@@ -1,9 +1,9 @@
 .onboarding {
   padding: 6rem 0;
 
-  color: var(--color-white);
+  color: var(--white);
 
-  background-color: var(--color-gray-dark);
+  background-color: var(--neutral-600);
   background-image: url("../assets/images/intro/onboarding.webp");
   background-repeat: no-repeat;
   background-position: center center;
@@ -40,12 +40,12 @@
     }
 
     b {
-      color: var(--color-primary);
+      color: var(--primary-600);
     }
   }
 
   &__subtitle {
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
     line-height: 1.4;
     text-align: center;
 

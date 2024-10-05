@@ -17,11 +17,11 @@
   }
 
   &--border {
-    border-bottom: 2px solid var(--color-gray-lighter);
+    border-bottom: 2px solid var(--neutral-100);
   }
 
   &--dark {
-    background-color: var(--color-gray-lighter);
+    background-color: var(--neutral-100);
 
     & + .section--dark {
       padding-top: 0;
@@ -63,19 +63,14 @@
     }
 
     a {
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
 
       @include transition(color);
 
       @include hover {
-        @include color(var(--color-primary-dark));
+        @include color(var(--primary-900));
       }
     }
-  }
-
-  &--size-s #{$block-name}__content {
-    max-width: 80rem;
-    margin: 0 auto;
   }
 
   &__footer {

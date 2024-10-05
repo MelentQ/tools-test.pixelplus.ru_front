@@ -3,78 +3,80 @@
   gap: 1.2rem;
   align-items: center;
   justify-content: center;
-  min-height: 4.5rem;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
 
-  font-weight: 600;
-  font-size: var(--fs-t1);
+  font-weight: 700;
+  font-size: 1.6rem;
   font-family: inherit;
-  line-height: 1.2;
+  line-height: 2.2rem;
   text-align: center;
   text-decoration: none;
 
-  background: none;
-  background-color: var(--color-success);
-  border: 2px solid var(--color-success);
+  background-color: var(--green-800);
+  border: 1px solid var(--green-800);
   border-radius: var(--border-radius);
 
-  @include transition(color, border-color, background-color);
-  @include color(var(--color-white));
+  @include transition(color, border-color, background-color, opacity);
+  @include color(var(--white));
 
   @include hover {
-    background-color: var(--color-success-dark);
-    border-color: var(--color-success-dark);
+    background-color: var(--green-900);
+    border-color: var(--green-900);
+  }
+
+  &[disabled] {
+    opacity: 0.3;
   }
 
   &--gray {
-    background-color: var(--color-gray-light);
-    border-color: var(--color-gray-light);
+    background-color: var(--neutral-200);
+    border-color: var(--neutral-200);
 
-    @include color(var(--color-gray-darker));
+    @include color(var(--neutral-800));
 
     @include hover {
-      background-color: var(--color-success-dark);
-      border-color: var(--color-success-dark);
+      background-color: var(--green-900);
+      border-color: var(--green-900);
 
-      @include color(var(--color-white));
+      @include color(var(--white));
     }
   }
 
   &--light {
     background-color: transparent;
-    border-color: var(--color-white);
+    border-color: var(--white);
 
     @include hover {
-      background-color: var(--color-white);
-      border-color: var(--color-white);
+      background-color: var(--white);
+      border-color: var(--white);
 
-      @include color(var(--color-gray-darker));
+      @include color(var(--neutral-800));
     }
   }
 
   &--white {
-    background-color: var(--color-white);
-    border-color: var(--color-gray-light);
+    background-color: var(--white);
+    border-color: var(--neutral-200);
 
-    @include color(var(--color-gray-darken));
+    @include color(var(--neutral-800));
 
     @include hover {
-      background-color: var(--color-gray-lighter);
-      border-color: var(--color-gray-light);
+      background-color: var(--neutral-100);
+      border-color: var(--neutral-200);
     }
   }
 
   &--dark {
     background-color: transparent;
-    border-color: var(--color-gray-darker);
+    border-color: var(--neutral-800);
 
-    @include color(var(--color-gray-darker));
+    @include color(var(--neutral-800));
 
     @include hover {
-      background-color: var(--color-white);
-      border-color: var(--color-white);
+      background-color: var(--white);
+      border-color: var(--white);
 
-      @include color(var(--color-gray-darker));
+      @include color(var(--neutral-800));
     }
   }
 }

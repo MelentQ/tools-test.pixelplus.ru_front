@@ -17,7 +17,7 @@
 
     padding: 4rem 2.4rem;
 
-    background-color: var(--color-white);
+    background-color: var(--white);
     border-radius: var(--border-radius);
 
     @include breakpoint(m) {
@@ -45,14 +45,14 @@
       width: 1.6rem;
       height: 1.6rem;
 
-      fill: var(--color-gray-light);
+      fill: var(--neutral-200);
 
       @include transition(fill);
     }
 
     @include hover {
       svg {
-        fill: var(--color-primary-dark);
+        fill: var(--primary-900);
       }
     }
   }
@@ -86,17 +86,17 @@
   }
 
   &--success #{$block-name}__text::before {
-    background-color: var(--color-success);
+    background-color: var(--green-800);
     background-image: url("../assets/images/decoration/check.svg");
   }
 
   &--error #{$block-name}__text::before {
-    background-color: var(--color-primary);
+    background-color: var(--red-700);
     background-image: url("../assets/images/decoration/cross.svg");
   }
 
   &--warning #{$block-name}__text::before {
-    background-color: var(--color-gray);
+    background-color: var(--neutral-400);
     background-image: url("../assets/images/decoration/warning.svg");
   }
 
@@ -108,23 +108,23 @@
   }
 
   &--success #{$block-name}__title {
-    color: var(--color-success);
+    color: var(--green-800);
   }
 
   &--error #{$block-name}__title {
-    color: var(--color-primary);
+    color: var(--red-700);
   }
 
   &--warning #{$block-name}__title {
-    color: var(--color-gray);
+    color: var(--neutral-400);
   }
 
   &__description {
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
   }
 
   &__caption {
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
     font-style: italic;
   }
 

@@ -9,8 +9,8 @@
     align-items: center;
     padding: 0;
 
-    color: white;
-    font-size: var(--fs-t2);
+    color: var(--white);
+    font-size: var(--fs-t3);
 
     background: none;
     border: none;
@@ -30,20 +30,20 @@
 
     @include hover {
       svg {
-        fill: var(--color-primary);
+        fill: var(--primary-600);
       }
     }
   }
 
   &.--active #{$block-name}__button svg {
-    fill: var(--color-primary);
+    fill: var(--primary-600);
   }
 
   &__button-text {
     max-width: 12rem;
     overflow: hidden;
 
-    color: var(--color-gray-light);
+    color: var(--neutral-200);
 
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -62,9 +62,9 @@
     min-width: 24rem;
     max-width: 30rem;
 
-    color: var(--color-gray-darker);
+    color: var(--neutral-800);
 
-    background-color: white;
+    background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(-1rem);
@@ -85,7 +85,7 @@
       bottom: 100%;
 
       border: solid transparent 0.6rem;
-      border-bottom-color: white;
+      border-bottom-color: var(--white);
 
       content: '';
       pointer-events: none;
@@ -111,10 +111,10 @@
     align-items: center;
     padding: 1rem;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--color-gray-light);
+      border-bottom: 1px solid var(--neutral-200);
     }
 
     svg {
@@ -123,7 +123,7 @@
       width: 1.8rem;
       height: 1.8rem;
 
-      fill: var(--color-gray);
+      fill: var(--neutral-400);
     }
 
     @include transition(color);
@@ -140,7 +140,7 @@
     text-decoration: none;
 
     @include hover {
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
     }
   }
 }

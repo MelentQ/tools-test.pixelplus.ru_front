@@ -10,6 +10,10 @@ import header from '@fomantic/gulp-header';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
+import postcss from 'gulp-postcss';
+import sortMediaQueries from 'postcss-sort-media-queries';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import webpack from 'webpack-stream';
 import named from 'vinyl-named';
 import browserSync from 'browser-sync';
@@ -28,9 +32,17 @@ function coreStyles() {
   return src(['src/styles/index.scss'], { encoding: false })
     .pipe(sassGlob())
     .pipe(sass({
-      outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['node_modules/'],
     }, null))
+    .pipe(gulpif(process.env.NODE_ENV === 'production', postcss([
+      sortMediaQueries({
+        sort: 'desktop-first',
+      }),
+      autoprefixer(),
+      cssnano({
+        preset: 'default',
+      }),
+    ])))
     .pipe(rename({
       basename: 'core',
       extname: '.min.css',
@@ -42,13 +54,21 @@ function coreStyles() {
 function additionalStyles() {
   return src(['src/blocks/**/index.scss'], { encoding: false })
     .pipe(header(`
-      @import "styles/scss-variables";
+      @import "styles/breakpoints";
       @import "styles/mixins";
     `))
     .pipe(sass({
-      outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['src/'],
     }, null))
+    .pipe(gulpif(process.env.NODE_ENV === 'production', postcss([
+      sortMediaQueries({
+        sort: 'desktop-first',
+      }),
+      autoprefixer(),
+      cssnano({
+        preset: 'default',
+      }),
+    ])))
     .pipe(rename((file) => ({
       dirname: '.',
       basename: file.dirname,

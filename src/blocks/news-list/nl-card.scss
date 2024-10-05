@@ -8,18 +8,18 @@
   gap: 2rem;
   padding: 2rem;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
 
   border-radius: var(--border-radius);
 
   @at-root .section--dark &,
   &--light {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   &__date {
-    color: var(--color-gray);
-    font-size: var(--fs-t3);
+    color: var(--neutral-400);
+    font-size: var(--fs-t4);
   }
 
   &__title {
@@ -27,7 +27,7 @@
     margin: 0;
 
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
   }
 
   a#{$block-name}__title,
@@ -36,10 +36,10 @@
 
     @include transition(color);
 
-    @include color(var(--color-primary));
+    @include color(var(--primary-600));
 
     @include hover {
-      @include color(var(--color-primary-dark));
+      @include color(var(--primary-900));
     }
 
     &::before {

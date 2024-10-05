@@ -7,9 +7,9 @@
     margin: 0 auto;
     padding: 0;
 
-    color: var(--color-primary);
+    color: var(--primary-600);
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
     line-height: 1;
 
     background: none;
@@ -18,7 +18,7 @@
     @include transition(color);
 
     @include hover {
-      color: var(--color-primary-dark);
+      color: var(--primary-900);
     }
   }
 

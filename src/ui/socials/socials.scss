@@ -14,16 +14,16 @@
 
     text-decoration: none;
 
-    border: 2px solid var(--color-gray-dark);
+    border: 2px solid var(--neutral-600);
     border-radius: 50%;
 
     @include transition(background-color, color, border-color);
 
     @include hover {
-      background-color: var(--color-white);
-      border-color: var(--color-white);
+      background-color: var(--white);
+      border-color: var(--white);
 
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
     }
 
     &--vk {

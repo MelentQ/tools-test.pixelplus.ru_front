@@ -10,7 +10,7 @@
   justify-content: center;
   padding: 2rem 1.6rem;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
 
   &__icon {
@@ -19,7 +19,7 @@
       width: 4rem;
       height: 4rem;
 
-      fill: var(--color-primary);
+      fill: var(--primary-600);
     }
   }
 
@@ -28,7 +28,7 @@
     margin: 0;
 
     font-weight: 700;
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
     text-align: center;
   }
 
@@ -39,7 +39,7 @@
     @include transition(color);
 
     @include hover {
-      @include color(var(--color-primary-dark));
+      @include color(var(--primary-900));
     }
 
     &::before {

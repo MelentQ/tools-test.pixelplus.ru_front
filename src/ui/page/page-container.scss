@@ -1,21 +1,18 @@
-.page-container {
-  max-width: calc(1300px + 4.8rem);
-  margin: 0 auto;
-  padding: 0 2.4rem;
+:root {
+  --container-padding: 2.4rem;
 
   @include breakpoint(m) {
-    max-width: 100%;
-  }
-
-  @include breakpoint(m) {
-    padding: 0 2rem;
+    --container-padding: 2rem;
   }
 
   @include breakpoint(s) {
-    padding: 0 1.6rem;
+    --container-padding: 1.6rem;
   }
+}
 
-  &--size-s {
-    max-width: calc(1160px + 4.8rem);
-  }
+.page-container {
+  width: 100%;
+  max-width: calc(1380px + var(--container-padding) * 2);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }

@@ -6,12 +6,12 @@
   width: 100%;
   padding: 2.4rem 2rem;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
 
   @at-root .section--dark &,
   &--light {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   &--single {
@@ -31,7 +31,7 @@
     height: 10rem;
     overflow: hidden;
 
-    background-color: var(--color-white);
+    background-color: var(--white);
 
     border-radius: var(--border-radius);
 
@@ -50,13 +50,13 @@
     margin: 0;
 
     font-weight: 600;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
     text-align: center;
   }
 
   &__label {
-    color: var(--color-gray);
-    font-size: var(--fs-t2);
+    color: var(--neutral-400);
+    font-size: var(--fs-t3);
     text-align: center;
   }
 }

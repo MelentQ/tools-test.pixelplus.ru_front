@@ -1,3 +1,7 @@
+:root {
+  --border-radius: 1rem;
+}
+
 *,
 *::before,
 *::after {
@@ -11,16 +15,19 @@
 html {
   font-size: 10px;
 
-  @media screen and (max-width: 1299px) and (min-width: 992px) {
+  // Пропорциональный скейл страницы (все значения должны быть в rem!)
+  @media screen and (max-width: calc($breakpoint-xxl - 1px)) and (min-width: $breakpoint-l) {
     font-size: 0.7143vw;
   }
 }
 
 body {
-  color: var(--color-gray-darker);
+  color: var(--neutral-800);
   font-size: 1.6rem;
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.3;
+  line-height: 1.4;
+
+  background-color: var(--white);
 }
 
 svg {

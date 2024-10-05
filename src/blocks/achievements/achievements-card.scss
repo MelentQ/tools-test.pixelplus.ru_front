@@ -6,7 +6,7 @@
   gap: 2rem;
   padding: 4rem 2.4rem;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
 
   @include breakpoint(s) {
@@ -15,7 +15,7 @@
 
   @at-root .section--dark &,
   &--light {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   &__place {
@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
 
-    color: var(--color-primary-dark);
+    color: var(--primary-900);
 
     user-select: none;
 
@@ -68,19 +68,19 @@
     margin: 0;
 
     font-weight: 400;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
     text-align: center;
   }
 
   a#{$block-name}__title,
   &__title a {
-    @include color(var(--color-primary));
+    @include color(var(--primary-600));
     @include transition(color);
 
     @include hover {
       text-decoration: none;
 
-      @include color(var(--color-primary-dark));
+      @include color(var(--primary-900));
     }
   }
 

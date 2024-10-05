@@ -7,7 +7,7 @@
   width: 100%;
 
   font-weight: 400;
-  font-size: var(--fs-t1);
+  font-size: var(--fs-t2);
   line-height: 1.4;
 
   &__element {
@@ -20,9 +20,9 @@
 
     font: inherit;
 
-    background-color: var(--color-white);
+    background-color: var(--white);
 
-    border: 2px solid var(--color-gray-light);
+    border: 2px solid var(--neutral-200);
     border-radius: var(--border-radius);
 
     resize: vertical;
@@ -34,12 +34,12 @@
     }
 
     &::placeholder {
-      color: var(--color-gray);
+      color: var(--neutral-400);
       font: inherit;
     }
   }
 
   &.--error #{$block-name}__element {
-    border-color: var(--color-primary);
+    border-color: var(--red-700);
   }
 }

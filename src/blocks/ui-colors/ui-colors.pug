@@ -7,10 +7,13 @@ mixin ui-colors(props)
         for column in props.columns
           th=column
       tbody
-        for row in props.rows
+        for color in props.colors
           tr
-            th=row.name
-            for item in row.items
+            th=color
+            for column in props.columns
               td
-                +ui-c-card(item)
+                +ui-c-card({
+                  name: color,
+                  weight: column
+                })
   link(href="./css/ui-colors.min.css" rel="stylesheet")

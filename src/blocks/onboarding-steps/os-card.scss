@@ -13,9 +13,9 @@
     width: 10rem;
     height: 10rem;
 
-    color: var(--color-white);
+    color: var(--white);
 
-    background-color: var(--color-primary);
+    background-color: var(--primary-600);
     border-radius: 50%;
 
     counter-increment: ordered-list;
@@ -29,7 +29,7 @@
       width: 50%;
       height: 100%;
 
-      background-color: var(--color-primary-dark);
+      background-color: var(--primary-900);
       border-radius: 5rem 0 0 5rem;
 
       content: '';
@@ -48,9 +48,9 @@
       width: 2.8rem;
       height: 2.8rem;
 
-      font-size: var(--fs-t2);
+      font-size: var(--fs-t3);
 
-      background-color: var(--color-primary-dark);
+      background-color: var(--primary-900);
       border-radius: 50%;
 
       content: counter(ordered-list);
@@ -73,12 +73,12 @@
     margin: 0;
 
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
     text-align: center;
   }
 
   &__text {
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
     text-align: center;
   }
 }

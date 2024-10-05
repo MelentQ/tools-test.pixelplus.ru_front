@@ -1,11 +1,12 @@
 mixin video(props)
   - props = props || {}
-  .video(
-    role="button"
-    aria-label="Смотреть видео"
-    data-fancybox=""
-    data-src=`https://www.youtube.com/embed/${props.code}`
-    style=`background-image: url("https://i3.ytimg.com/vi/${props.code}/maxresdefault.jpg")`
-  )
-    +icon("youtube-play")
+  .video
+    .video__element(
+      role="button"
+      aria-label="Смотреть видео"
+      data-fancybox=""
+      data-src=`https://www.youtube.com/embed/${props.code}`
+      style=`background-image: url("https://i3.ytimg.com/vi/${props.code}/maxresdefault.jpg")`
+    )
+      +icon("youtube-play")
   link(href="./css/video.min.css" rel="stylesheet")

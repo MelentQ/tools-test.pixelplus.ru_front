@@ -7,7 +7,7 @@
 
   text-align: center;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
 
   @include breakpoint(m) {
@@ -16,11 +16,11 @@
 
   @at-root .section--dark &,
   &--light {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   &--accent {
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--primary-600);
   }
 
   &__icon {
@@ -30,7 +30,7 @@
     width: 10rem;
     height: 10rem;
 
-    background-color: var(--color-primary);
+    background-color: var(--primary-600);
     border-radius: 50%;
 
     @include breakpoint(m) {
@@ -58,8 +58,8 @@
   }
 
   &__image-label {
-    color: var(--color-gray);
-    font-size: var(--fs-t3);
+    color: var(--neutral-400);
+    font-size: var(--fs-t4);
     text-align: center;
   }
 
@@ -76,7 +76,7 @@
   }
 
   &__text {
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
   }
 
   &__list {
@@ -88,7 +88,7 @@
 
   &__item {
     font-weight: 600;
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
 
     &:not(:last-child) {
       margin-bottom: 1rem;
@@ -105,14 +105,14 @@
   }
 
   &__old-price {
-    color: var(--color-gray);
+    color: var(--neutral-400);
     font-weight: 600;
     text-decoration: line-through;
   }
 
   &__price {
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
   }
 
   &__button {

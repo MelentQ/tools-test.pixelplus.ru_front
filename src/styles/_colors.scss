@@ -1,0 +1,69 @@
+@use "sass:meta";
+
+$colors: (
+  "white": white,
+  "black": black,
+  "primary": (
+    600: #e32d36,
+    900: #b5061d
+  ),
+  "neutral": (
+    50: #f7f7f7,
+    100: #eeeeee,
+    200: #e3e3e3,
+    300: #d1d1d1,
+    400: #acacac,
+    500: #8b8b8b,
+    600: #646464,
+    700: #515151,
+    800: #333333,
+    900: #131313,
+  ),
+  "green": (
+    500: #77c336,
+    800: #3e8b1a,
+    900: #0d6904
+  ),
+  "yellow": (
+    500: #FFBB00
+  ),
+  "red": (
+    700: #FF0000
+  )
+);
+
+:root {
+  @each $color, $variants in $colors {
+    @if meta.type-of($variants) == 'map' {
+      @each $variant, $value in $variants {
+        --#{$color}-#{$variant}: #{$value};
+      }
+    } @else {
+      --#{$color}: #{$variants};
+    }
+  }
+}
+
+@each $color, $variants in $colors {
+  @if meta.type-of($variants) == 'map' {
+    @each $variant, $value in $variants {
+      .bg-#{$color}-#{$variant} {
+        background-color: #{$value};
+      }
+
+      .text-#{$color}-#{$variant} {
+        color: #{$value};
+      }
+    }
+  }
+
+  @else {
+    .bg-#{$color} {
+      background-color: #{$variants};
+    }
+
+    .text-#{$color} {
+      color: #{$variants};
+    }
+  }
+}

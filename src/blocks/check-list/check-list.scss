@@ -17,7 +17,7 @@
 
     padding-left: 3rem;
 
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
 
     &::before {
       position: absolute;
@@ -27,7 +27,7 @@
       width: 2rem;
       height: 2rem;
 
-      background-color: var(--color-primary);
+      background-color: var(--primary-600);
       background-image: url("../assets/images/decoration/check.svg");
       background-repeat: no-repeat;
       background-position: center center;

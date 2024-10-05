@@ -4,7 +4,6 @@ block content
   +section({
     mods: ["border"],
     title: "UI Kit",
-    subtitle: "Для дизайнеров и разработчиков",
     tag: "h1"
   })
     p По умолчанию некоторые теги уже имеют браузерные стили (normalize.css)
@@ -12,10 +11,9 @@ block content
       li Шрифт – <a target="_blank" href="https://fonts.google.com/specimen/Open+Sans"><b>Open Sans</b></a>
       li Стандартный размер шрифта – <b>16px</b>
       li Толщина шрифта – <b>400 (normal)</b>
-      li Интерлиньяж (line-height) – <b>130% (1.3)</b>
-      li Цвет текста – <b>#333333</b>
-      li Цвет бренда - <b style="color: #e32d35;">#e32d35</b>
-      li Скругление углов – <b>8px</b>
+      li Интерлиньяж (line-height) – <b>140% (1.4)</b>
+      li Цвет текста – <b>#333333 (neutral-800)</b>
+      li Цвет бренда - <b style="color: #e32d35;">#e32d35 (primary-600)</b>
   +section({
     mods: ["border"],
     title: "Навигация",
@@ -57,6 +55,10 @@ block content
             {
               key: "css",
               name: "CSS"
+            },
+            {
+              key: "html",
+              name: "HTML"
             }
           ]
         })
@@ -67,22 +69,41 @@ block content
               lang: "css"
             })
               | button {
-              |   background-color: var(--gray-semi-light);
+              |   color: var(--primary-600);
               | }
+          +slot("html")
+            +code-snippet({
+              lang: "html"
+            })
+              | <div class="text-primary-600 bg-neutral-200">Серый фон, красный текст</div>
   +section({
     mods: ["border"],
     title: "Типографика"
   })&attributes({
     id: "typography"
   })
-    | todo
+    .row.row-2.gap-xl
+      .col
+        h1 Headline H1 40px 120%
+        h2 Headline H2 32px 120%
+        h3 Headline H3 24px 120%
+        h4 Headline H4 20px 120%
+      .col
+        .t1 Body text 18px 140%
+        .t2 Body text 16px 140%
+        .t3 Body text 14px 140%
+        .t4 Body text 12px 140%
+      .col
   +section({
     mods: ["border"],
-    title: "Лейаут"
+    title: "Лейаут",
+    subtitle: "1380px"
   })&attributes({
     id: "layout"
   })
-    | todo
+    .row.row-12.gap-l(style='min-height: 20rem;')
+      for _ in Array(12)
+        .col.bg-neutral-200
   +section({
     mods: ["border"],
     title: "Компоненты",
@@ -90,7 +111,7 @@ block content
   })&attributes({
     id: "components"
   })
-    .d-flex.flex-column.gap-5
+    .d-flex.flex-column.gap-xl
       include /src/ui/button/preview/index
       include /src/ui/select/preview/index
   +section({
@@ -99,7 +120,7 @@ block content
   })&attributes({
     id: "vue-components"
   })
-    .d-flex.flex-column.gap-5
+    .d-flex.flex-column.gap-xl
       include /src/ui/vue-app/preview/index
       +ui-component({
         title: "Стилизация PrimeVue"
@@ -114,10 +135,9 @@ block content
             ]
           })
             +slot("compare")
-              .row.mb-3
+              .row.row-2.mb-3
                 .col HTML + JS
                 .col PrimeVue
-              .row
                 .col
                   form.form.js-validation
                     include /src/ui/select/preview/preview

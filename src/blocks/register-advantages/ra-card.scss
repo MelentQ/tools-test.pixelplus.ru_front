@@ -13,7 +13,7 @@
       width: 4rem;
       height: 4rem;
 
-      fill: var(--color-primary);
+      fill: var(--primary-600);
 
       @include breakpoint(s) {
         width: 2.8rem;
@@ -30,12 +30,12 @@
     margin: 0;
 
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
   }
 
   &__text {
     margin-top: 1rem;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
   }
 }

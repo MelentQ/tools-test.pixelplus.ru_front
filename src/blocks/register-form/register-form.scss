@@ -7,10 +7,10 @@
     a {
       @include transition(color);
 
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
 
       @include hover {
-        @include color(var(--color-primary-dark));
+        @include color(var(--primary-900));
       }
     }
   }

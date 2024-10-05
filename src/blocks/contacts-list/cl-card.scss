@@ -6,7 +6,7 @@
 
   text-align: center;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
 
   border-radius: var(--border-radius);
 
@@ -15,36 +15,36 @@
     margin-bottom: 1rem;
 
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
   }
 
   &__address {
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
   }
 
   &__link {
     align-self: center;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
   }
 
   &__caption {
     margin-top: 1rem;
     padding-top: 2rem;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
 
-    border-top: 1px solid var(--color-gray-light);
+    border-top: 1px solid var(--neutral-200);
   }
 
   a {
     text-decoration: none;
 
-    @include color(var(--color-primary));
+    @include color(var(--primary-600));
     @include transition(color);
 
     @include hover {
-      @include color(var(--color-primary-dark));
+      @include color(var(--primary-900));
     }
   }
 }

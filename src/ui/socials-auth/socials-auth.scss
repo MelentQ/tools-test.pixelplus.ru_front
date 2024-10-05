@@ -4,7 +4,7 @@
     margin-bottom: 1rem;
 
     font-weight: 600;
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
 
     text-align: center;
   }
@@ -23,10 +23,10 @@
     width: 3rem;
     height: 3rem;
 
-    background-color: var(--color-primary);
+    background-color: var(--primary-600);
     border-radius: 50%;
 
-    @include color(var(--color-white));
+    @include color(var(--white));
 
     @include transition(opacity);
 

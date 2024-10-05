@@ -11,7 +11,7 @@
     display: block;
     padding: 0;
 
-    color: var(--color-primary);
+    color: var(--primary-600);
 
     background: none;
     border: none;
@@ -21,7 +21,7 @@
     @include transition(color);
 
     @include hover {
-      color: var(--color-primary-dark);
+      color: var(--primary-900);
     }
 
     svg {

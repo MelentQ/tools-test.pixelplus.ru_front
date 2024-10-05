@@ -2,34 +2,34 @@
 
 .p-tablist-tab-list {
   background: none !important;
-  border-color: var(--color-gray-light) !important;
+  border-color: var(--neutral-200) !important;
 }
 
 .p-tab {
   padding: 1rem 1.6rem 1rem !important;
 
-  color: var(--color-gray-dark) !important;
+  color: var(--neutral-600) !important;
 
-  font-size: var(--fs-t2);
+  font-size: var(--fs-t3);
   text-decoration: underline;
 
   border-width: 0.4rem 1px 1px 1px !important;
   border-top-color: transparent !important;
   border-right-color: transparent !important;
-  border-bottom-color: var(--color-gray-light) !important;
+  border-bottom-color: var(--neutral-200) !important;
   border-left-color: transparent !important;
   text-decoration-style: dotted;
 }
 
 .p-tab-active {
-  color: var(--color-primary) !important;
+  color: var(--primary-600) !important;
   text-decoration: none;
 
   background: white !important;
-  border-top-color: var(--color-primary) !important;
-  border-right-color: var(--color-gray-light) !important;
-  border-bottom-color: white !important;
-  border-left-color: var(--color-gray-light) !important;
+  border-top-color: var(--primary-600) !important;
+  border-right-color: var(--neutral-200) !important;
+  border-bottom-color: var(--white) !important;
+  border-left-color: var(--neutral-200) !important;
   cursor: default;
 
   pointer-events: none;

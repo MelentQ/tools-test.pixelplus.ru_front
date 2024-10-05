@@ -1,0 +1,176 @@
+@use "sass:map";
+@use "sass:meta";
+@use 'sass:list';
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  xs: $spacer * 0.4,
+  s: $spacer * 0.8,
+  m: $spacer,
+  l: $spacer * 2,
+  xl: $spacer * 3
+);
+
+$utilities: (
+  "display": (
+    property: display,
+    class: d,
+    values: inline inline-block block grid flex none
+  ),
+  "flex-direction": (
+    property: flex-direction,
+    class: flex,
+    values: row column
+  ),
+  "flex-wrap": (
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap
+  ),
+  "justify-content": (
+    property: justify-content,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+    )
+  ),
+  "align-items": (
+    property: align-items,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      stretch: stretch,
+    )
+  ),
+  "gap": (
+    property: gap,
+    class: gap,
+    values: $spacers
+  ),
+  "row-gap": (
+    property: row-gap,
+    class: row-gap,
+    values: $spacers
+  ),
+  "column-gap": (
+    property: column-gap,
+    class: column-gap,
+    values: $spacers
+  ),
+  "margin": (
+    property: margin,
+    class: m,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "margin-x": (
+    property: margin-right margin-left,
+    class: mx,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "margin-y": (
+    property: margin-top margin-bottom,
+    class: my,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "margin-top": (
+    property: margin-top,
+    class: mt,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "margin-end": (
+    property: margin-right,
+    class: me,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "margin-bottom": (
+    property: margin-bottom,
+    class: mb,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "margin-start": (
+    property: margin-left,
+    class: ms,
+    values: map.merge($spacers, (auto: auto))
+  ),
+  "padding": (
+    property: padding,
+    class: p,
+    values: $spacers
+  ),
+  "padding-x": (
+    property: padding-right padding-left,
+    class: px,
+    values: $spacers
+  ),
+  "padding-y": (
+    property: padding-top padding-bottom,
+    class: py,
+    values: $spacers
+  ),
+  "padding-top": (
+    property: padding-top,
+    class: pt,
+    values: $spacers
+  ),
+  "padding-end": (
+    property: padding-right,
+    class: pe,
+    values: $spacers
+  ),
+  "padding-bottom": (
+    property: padding-bottom,
+    class: pb,
+    values: $spacers
+  ),
+  "padding-start": (
+    property: padding-left,
+    class: ps,
+    values: $spacers
+  ),
+  "font-weight": (
+    property: font-weight,
+    class: fw,
+    values: (
+      light: 300,
+      normal: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+      bolder: 800
+    )
+  ),
+  "text-align": (
+    property: text-align,
+    class: text,
+    values: (
+      start: left,
+      end: right,
+      center: center,
+    )
+  ),
+);
+
+@each $key, $utility in $utilities {
+  $values: map.get($utility, values);
+
+  @if meta.type-of($values) == "list" {
+    $values: list.zip($values, $values);
+  }
+
+  $properties: map.get($utility, property);
+  $property-class: if(map.has-key($utility, class), map.get($utility, class), list.nth($properties, 1));
+  @if meta.type-of($properties) == "string" {
+    $properties: list.append((), $properties);
+  }
+  @each $key, $value in $values {
+    .#{$property-class}-#{$key} {
+      @each $property in $properties {
+        #{$property}: $value;
+      }
+    }
+  }
+}

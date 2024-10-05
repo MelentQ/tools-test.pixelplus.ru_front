@@ -19,7 +19,7 @@
     grid-column: 3 / 6;
     padding: 3rem 2rem;
 
-    background-color: var(--color-gray-lighter);
+    background-color: var(--neutral-100);
     border-radius: var(--border-radius);
 
     @include breakpoint(s) {
@@ -29,7 +29,7 @@
 
   @at-root .section--dark &__content,
   &--light #{$block-name}__content {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   &__board {
@@ -50,9 +50,9 @@
     margin-top: 4rem;
     padding-top: 4rem;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
     text-align: center;
 
-    border-top: 2px solid var(--color-gray-lighter);
+    border-top: 2px solid var(--neutral-100);
   }
 }

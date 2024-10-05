@@ -1,53 +1,87 @@
-@font-face {
-  font-weight: 300;
-  font-family: 'Open Sans';
-  font-style: normal;
-  src: url('../assets/fonts/OpenSans-Light.woff2') format('woff2'),
-  url('../assets/fonts/OpenSans-Light.woff') format('woff');
-  font-display: swap;
+$fonts: (
+  'Open Sans': (
+    300: 'OpenSans-Light',
+    400: 'OpenSans-Regular',
+    500: 'OpenSans-Medium',
+    600: 'OpenSans-SemiBold',
+    700: 'OpenSans-Bold',
+    800: 'OpenSans-ExtraBold'
+  )
+);
+
+// todo: сделать универсальным
+@each $name, $weights in $fonts {
+  @each $weight, $fileName in $weights {
+    @font-face {
+      font-weight: $weight;
+      font-family: $name;
+      font-style: normal;
+      src: url('../assets/fonts/#{$fileName}.woff2') format('woff2'),
+      url('../assets/fonts/#{$fileName}.woff') format('woff');
+      font-display: swap;
+    }
+  }
 }
 
-@font-face {
-  font-weight: 400;
-  font-family: 'Open Sans';
-  font-style: normal;
-  src: url('../assets/fonts/OpenSans-Regular.woff2') format('woff2'),
-  url('../assets/fonts/OpenSans-Regular.woff') format('woff');
-  font-display: swap;
+$headlines: (
+  1: 4rem,
+  2: 3.2rem,
+  3: 2.4rem,
+  4: 2rem
+);
+
+$body-text: (
+  1: 1.8rem,
+  2: 1.6rem,
+  3: 1.4rem,
+  4: 1.2rem
+);
+
+:root {
+  @each $name, $size in $headlines {
+    --fs-h#{$name}: #{$size};
+  }
+
+  @each $name, $size in $body-text {
+    --fs-t#{$name}: #{$size};
+  }
+
+  // todo: сделать нормально, когда будет мобилка в макете
+  @include breakpoint(m) {
+    --fs-h1: 3rem;
+    --fs-h2: 2.4rem;
+  }
+
+  @include breakpoint(s) {
+    --fs-h1: 2.4rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.6rem;
+    --fs-t1: 1.6rem;
+    --fs-t2: 1.4rem;
+  }
 }
 
-@font-face {
-  font-weight: 500;
-  font-family: 'Open Sans';
-  font-style: normal;
-  src: url('../assets/fonts/OpenSans-Medium.woff2') format('woff2'),
-  url('../assets/fonts/OpenSans-Medium.woff') format('woff');
-  font-display: swap;
+@each $name, $size in $headlines {
+  .fs-h#{$name} {
+    font-size: $size;
+  }
+
+  h#{$name},
+  .h#{$name} {
+    font-weight: 700;
+    font-size: $size;
+    line-height: 1.2;
+  }
 }
 
-@font-face {
-  font-weight: 600;
-  font-family: 'Open Sans';
-  font-style: normal;
-  src: url('../assets/fonts/OpenSans-SemiBold.woff2') format('woff2'),
-  url('../assets/fonts/OpenSans-SemiBold.woff') format('woff');
-  font-display: swap;
-}
+@each $name, $size in $body-text {
+  .fs-t#{$name} {
+    font-size: $size;
+  }
 
-@font-face {
-  font-weight: 700;
-  font-family: 'Open Sans';
-  font-style: normal;
-  src: url('../assets/fonts/OpenSans-Bold.woff2') format('woff2'),
-  url('../assets/fonts/OpenSans-Bold.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-weight: 800;
-  font-family: 'Open Sans';
-  font-style: normal;
-  src: url('../assets/fonts/OpenSans-ExtraBold.woff2') format('woff2'),
-  url('../assets/fonts/OpenSans-ExtraBold.woff') format('woff');
-  font-display: swap;
+  .t#{$name} {
+    font-weight: 400;
+    font-size: $size;
+    line-height: 1.4;
+  }
 }

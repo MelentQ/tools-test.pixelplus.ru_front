@@ -22,7 +22,7 @@
     width: 2rem;
     height: 2rem;
 
-    border: 2px solid var(--color-gray-light);
+    border: 2px solid var(--neutral-200);
 
     border-radius: var(--border-radius);
     transform: translateY(-50%);
@@ -51,7 +51,7 @@
   }
 
   &.--error #{$block-name}__fake {
-    border-color: var(--color-primary);
+    border-color: var(--red-700);
   }
 
   &__element:checked ~ #{$block-name}__fake::before {
@@ -59,7 +59,7 @@
   }
 
   &__label {
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
     line-height: 1.3;
   }
 

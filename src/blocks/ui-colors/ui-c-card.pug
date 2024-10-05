@@ -1,5 +1,6 @@
 mixin ui-c-card(props)
   - props = props || {}
   .ui-c-card
-    .ui-c-card__box(style=`background-color: ${props.hex}`)
-    .ui-c-card__name=props.hex
+    .ui-c-card__box(
+      class=`bg-${props.name}-${props.weight}`
+    )

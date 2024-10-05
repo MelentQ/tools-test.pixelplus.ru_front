@@ -1,5 +1,5 @@
 .document {
-  font-size: var(--fs-t2);
+  font-size: var(--fs-t3);
   line-height: 1.4;
 
   ol {
@@ -50,10 +50,10 @@
   a {
     text-decoration: underline;
 
-    @include color(var(--color-primary));
+    @include color(var(--primary-600));
 
     @include hover {
-      @include color(var(--color-primary-dark));
+      @include color(var(--primary-900));
     }
   }
 }

@@ -50,8 +50,8 @@
     }
 
     &--active {
-      background-color: var(--color-primary);
-      @include color(var(--color-white));
+      background-color: var(--primary-600);
+      @include color(var(--white));
     }
 
     &--next svg {
@@ -65,9 +65,9 @@
     @include transition(color, background-color);
 
     @include hover {
-      background-color: var(--color-gray-darker);
+      background-color: var(--neutral-800);
 
-      @include color(var(--color-white));
+      @include color(var(--white));
     }
   }
 }

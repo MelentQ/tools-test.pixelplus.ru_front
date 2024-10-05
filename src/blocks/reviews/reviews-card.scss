@@ -7,12 +7,12 @@
 
   text-align: center;
 
-  background-color: var(--color-gray-lighter);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
 
   @at-root .section--dark &,
   &--light {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   &__image {
@@ -56,7 +56,7 @@
       width: 12rem;
       height: 2px;
 
-      background-color: var(--color-gray);
+      background-color: var(--neutral-400);
 
       transform: translateX(-50%);
 
@@ -69,42 +69,42 @@
     margin: 0;
 
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
   }
 
   &__position {
-    color: var(--color-gray);
-    font-size: var(--fs-t3);
+    color: var(--neutral-400);
+    font-size: var(--fs-t4);
     font-style: italic;
   }
 
   &__additional {
-    font-size: var(--fs-t3);
+    font-size: var(--fs-t4);
   }
 
   a#{$block-name}__additional,
   &__additional a {
-    @include color(var(--color-primary));
+    @include color(var(--primary-600));
     @include transition(color);
 
     @include hover {
       text-decoration: none;
 
-      @include color(var(--color-primary-dark));
+      @include color(var(--primary-900));
     }
   }
 
   &__text {
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
 
     a {
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
       @include transition(color);
 
       @include hover {
         text-decoration: none;
 
-        @include color(var(--color-primary-dark));
+        @include color(var(--primary-900));
       }
     }
   }

@@ -50,12 +50,12 @@
         width: 4.8rem;
         height: 4.8rem;
 
-        color: var(--color-white);
+        color: var(--white);
         font-weight: 700;
         font-size: var(--fs-h3);
         line-height: 1;
 
-        background-color: var(--color-primary);
+        background-color: var(--primary-600);
         border-radius: 50%;
 
         content: counter(ordered-list);

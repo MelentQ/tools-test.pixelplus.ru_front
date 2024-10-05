@@ -35,13 +35,13 @@
       width: 2.4rem;
       height: 2.4rem;
 
-      fill: var(--color-primary);
+      fill: var(--primary-600);
     }
   }
 
   &__body {
     font-weight: 700;
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
   }
 
   &__button {
@@ -59,7 +59,7 @@
     justify-content: center;
     padding: 0;
 
-    color: var(--color-gray);
+    color: var(--neutral-400);
 
     background: none;
     border: none;
@@ -67,7 +67,7 @@
     @include transition(color);
 
     @include hover {
-      color: var(--color-primary);
+      color: var(--primary-600);
     }
 
     svg {

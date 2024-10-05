@@ -24,7 +24,7 @@
     max-width: 30rem;
     padding: 0 0 1rem;
 
-    background-color: #53575a;
+    background-color: var(--neutral-700);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
 
     visibility: hidden;
@@ -71,7 +71,7 @@
     padding: 0;
     overflow-x: visible;
 
-    border-top: 1px solid var(--color-gray-dark);
+    border-top: 1px solid var(--neutral-600);
 
     border-radius: 0;
     visibility: visible;
@@ -87,7 +87,7 @@
     align-items: center;
     padding: 2.8rem 2rem;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
     line-height: 1;
 
     @include transition(background-color);
@@ -102,12 +102,12 @@
     }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: var(--neutral-600);
 
       & > svg {
         transform: rotate(180deg);
 
-        fill: var(--color-primary);
+        fill: var(--primary-600);
       }
 
       & > #{$block-name}__items {
@@ -128,7 +128,7 @@
     @include transition(color);
 
     @include hover {
-      @include color(var(--color-primary));
+      @include color(var(--primary-600));
     }
   }
 
@@ -139,7 +139,7 @@
     line-height: 1.2;
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--color-gray-dark);
+      border-bottom: 1px solid var(--neutral-500);
     }
 
     & > svg {

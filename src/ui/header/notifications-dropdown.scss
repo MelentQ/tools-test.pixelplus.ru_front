@@ -11,8 +11,8 @@
     align-items: center;
     padding: 0;
 
-    color: white;
-    font-size: var(--fs-t2);
+    color: var(--white);
+    font-size: var(--fs-t3);
 
     background: none;
     border: none;
@@ -29,11 +29,11 @@
       height: 1.4rem;
       padding: 0 0.4rem;
 
-      color: white;
+      color: var(--white);
       font-size: 0.8rem;
       line-height: 1;
 
-      background-color: var(--color-primary);
+      background-color: var(--primary-600);
       border-radius: 0.7rem;
 
       content: attr(data-counter);
@@ -57,26 +57,26 @@
 
     @include hover {
       svg {
-        fill: var(--color-primary);
+        fill: var(--primary-600);
       }
 
       &::after {
-        color: var(--color-primary);
+        color: var(--primary-600);
 
-        background-color: white;
+        background-color: var(--white);
       }
     }
   }
 
   &.--active #{$block-name}__button {
     svg {
-      fill: var(--color-primary);
+      fill: var(--primary-600);
     }
 
     &::after {
-      color: var(--color-primary);
+      color: var(--primary-600);
 
-      background-color: white;
+      background-color: var(--white);
     }
   }
 
@@ -88,9 +88,9 @@
 
     width: 52rem;
 
-    color: var(--color-gray-darker);
+    color: var(--neutral-800);
 
-    background-color: white;
+    background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(-1rem);
@@ -116,7 +116,7 @@
       left: 2.3rem;
 
       border: solid transparent 0.6rem;
-      border-bottom-color: white;
+      border-bottom-color: var(--white);
 
       content: '';
       pointer-events: none;
@@ -144,7 +144,7 @@
     padding: 1.4rem 1.6rem;
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--color-gray-light);
+      border-bottom: 1px solid var(--neutral-200);
     }
   }
 
@@ -153,12 +153,12 @@
     gap: 1rem;
     align-items: center;
 
-    font-size: var(--fs-t2);
+    font-size: var(--fs-t3);
 
     @include transition(color);
 
     @include hover {
-      color: var(--color-primary-dark);
+      color: var(--primary-900);
     }
 
     svg {
@@ -171,14 +171,14 @@
       text-decoration: none;
 
       svg {
-        fill: var(--color-gray);
+        fill: var(--neutral-400);
       }
     }
 
     &--clear {
       padding: 0;
 
-      color: var(--color-primary);
+      color: var(--primary-600);
 
       background: none;
       border: none;

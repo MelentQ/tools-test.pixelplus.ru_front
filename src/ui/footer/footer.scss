@@ -3,9 +3,9 @@
 
   padding-bottom: 2.4rem;
 
-  color: var(--color-white);
+  color: var(--white);
 
-  background-color: var(--color-gray-darker);
+  background-color: var(--neutral-800);
 
   @include breakpoint(m) {
     padding-top: 2.4rem;
@@ -68,13 +68,13 @@
   }
 
   &__bottom {
-    color: var(--color-gray);
-    font-size: var(--fs-t3);
+    color: var(--neutral-400);
+    font-size: var(--fs-t4);
 
     @include breakpoint(m) {
       padding-top: 1.6rem;
 
-      border-top: 1px solid var(--color-gray-dark);
+      border-top: 1px solid var(--neutral-600);
     }
 
     @include breakpoint(s) {
@@ -85,7 +85,7 @@
       @include transition(color);
 
       @include hover {
-        @include color(var(--color-white));
+        @include color(var(--white));
       }
     }
   }

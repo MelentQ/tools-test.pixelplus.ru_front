@@ -14,7 +14,7 @@
     padding: 0;
 
     font-weight: 700;
-    font-size: var(--fs-t1);
+    font-size: var(--fs-t2);
 
     background: none;
     border: none;
@@ -36,7 +36,7 @@
     }
 
     &.--active {
-      color: var(--color-primary);
+      color: var(--primary-600);
 
       pointer-events: none;
     }

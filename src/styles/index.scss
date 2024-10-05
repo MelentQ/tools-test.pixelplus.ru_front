@@ -1,9 +1,10 @@
 @import "normalize.css/normalize";
-@import "scss-variables";
-@import "bootstrap";
+@import "breakpoints";
 @import "mixins";
-@import "variables";
+@import "colors";
 @import "fonts";
+@import "utilities";
+@import "grid";
 @import "global";
 
 // stylelint-disable-next-line
