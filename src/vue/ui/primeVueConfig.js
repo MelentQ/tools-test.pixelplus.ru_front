@@ -1,6 +1,6 @@
 import { definePreset } from '@primevue/themes';
 import Aura from '@primevue/themes/aura';
-import { ru } from 'primelocale/ru.json';
+import ru from 'primelocale/ru.json';
 
 export default {
   theme: {

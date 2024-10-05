@@ -1,0 +1,21 @@
+mixin warning-message(props)
+  - props = props || {}
+  .warning-message(
+    class={
+      'js-closable': props.closable
+    }
+  )
+    .page-container
+      .warning-message__content
+        .warning-message__body-wrapper
+          if props.icon
+            +icon(props.icon)
+          .warning-message__body !{props.text}
+        if props.button
+          +button(props.button)&attributes({
+            class: "warning-message__button",
+            ...props.button.attributes
+          })=props.button.text
+        if props.closable
+          button.warning-message__close.js-closable-button(type="button" aria-label="Закрыть" data-tip="Закрыть")
+            +icon("close")

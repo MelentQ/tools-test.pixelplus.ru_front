@@ -1,33 +1,36 @@
-const path = require('path');
-const { readFileSync } = require('fs');
-const {
+import path from 'path';
+import { readFileSync } from 'fs';
+import {
   src, dest, watch, parallel, series,
-} = require('gulp');
-const gulpif = require('gulp-if');
-const rename = require('gulp-rename');
-const del = require('del');
-const header = require('@fomantic/gulp-header');
-const scss = require('gulp-sass')(require('sass'));
-const sassGlob = require('gulp-sass-glob');
-const webpack = require('webpack-stream');
-const named = require('vinyl-named');
-const browserSync = require('browser-sync').create();
-const pug = require('gulp-pug');
-const data = require('gulp-data');
-const prettyHtml = require('gulp-pretty-html');
-const svgSprite = require('gulp-svg-sprite');
-const merge = require('gulp-merge-json');
-const webpackConfig = require('./webpack.config');
-const devConfig = require('./dev-config');
-const { generateUiKit } = require('./utils');
+} from 'gulp';
+import gulpif from 'gulp-if';
+import rename from 'gulp-rename';
+import { deleteAsync as del } from 'del';
+import header from '@fomantic/gulp-header';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import sassGlob from 'gulp-sass-glob';
+import webpack from 'webpack-stream';
+import named from 'vinyl-named';
+import browserSync from 'browser-sync';
+import pug from 'gulp-pug';
+import data from 'gulp-data';
+import prettyHtml from 'gulp-pretty-html';
+import svgSprite from 'gulp-svg-sprite';
+import merge from 'gulp-merge-json';
+import webpackConfig from './webpack.config.js';
+import config from './gulp/config.js';
+import { generateUiKit } from './gulp/utils.js';
+
+const sass = gulpSass(dartSass);
 
 function coreStyles() {
   return src(['src/styles/index.scss'], { encoding: false })
     .pipe(sassGlob())
-    .pipe(scss({
+    .pipe(sass({
       outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['node_modules/'],
-    }))
+    }, null))
     .pipe(rename({
       basename: 'core',
       extname: '.min.css',
@@ -42,10 +45,10 @@ function additionalStyles() {
       @import "styles/scss-variables";
       @import "styles/mixins";
     `))
-    .pipe(scss({
+    .pipe(sass({
       outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       includePaths: ['src/'],
-    }))
+    }, null))
     .pipe(rename((file) => ({
       dirname: '.',
       basename: file.dirname,
@@ -66,7 +69,7 @@ function coreScripts() {
 function additionalScripts() {
   const scripts = process.env.NODE_ENV === 'production'
     ? ['src/blocks/*/index.js', 'src/vue/apps/**/index.js']
-    : ['src/blocks/*/index.js', ...devConfig.scripts];
+    : ['src/blocks/*/index.js', ...config.scripts];
 
   return src(scripts, { base: process.cwd(), encoding: false })
     .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
@@ -114,7 +117,7 @@ function json() {
 function html() {
   const pages = process.env.NODE_ENV === 'production'
     ? ['src/pages/**/index.pug']
-    : devConfig.pages;
+    : config.pages;
 
   return src(pages, { base: process.cwd(), encoding: false })
     .pipe(data((file) => {
@@ -182,7 +185,22 @@ function clean() {
   return del('build/**/*', { force: true });
 }
 
-exports.default = series(
+export const build = series(
+  clean,
+  sprite,
+  generateUiKit,
+  json,
+  parallel(
+    assets,
+    coreStyles,
+    additionalStyles,
+    coreScripts,
+    additionalScripts,
+    html,
+  ),
+);
+
+export default series(
   clean,
   sprite,
   generateUiKit,
@@ -198,20 +216,5 @@ exports.default = series(
   parallel(
     watching,
     server,
-  ),
-);
-
-exports.build = series(
-  clean,
-  sprite,
-  generateUiKit,
-  json,
-  parallel(
-    assets,
-    coreStyles,
-    additionalStyles,
-    coreScripts,
-    additionalScripts,
-    html,
   ),
 );

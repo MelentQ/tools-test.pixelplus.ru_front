@@ -14,6 +14,7 @@ import codeSnippet from '@/ui/code-snippet/codeSnippet';
 import tabs from '@/ui/tabs/tabs';
 import userDropdown from '@/ui/header/userDropdown';
 import notificationsDropdown from '@/ui/header/notificationsDropdown';
+import closable from './utils/closable';
 import scrollToAnchor from './utils/scrollToAnchor';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,4 +38,5 @@ document.addEventListener('DOMContentLoaded', () => {
   tabs();
   userDropdown();
   notificationsDropdown();
+  closable();
 });

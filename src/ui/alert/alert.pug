@@ -1,0 +1,25 @@
+mixin alert(props)
+  - props = props || {}
+  - mods = props.mods ? props.mods.map(mod => `alert--${mod}`).join(" ") : null;
+  .alert.js-closable(
+    class=mods
+  )
+    if props.icon
+      .alert__icon-wrapper
+        .alert__icon
+          +icon(props.icon)
+        +triangle
+    .alert__body-wrapper
+      .alert__body !{props.body}
+      +triangle
+    if props.button
+      +button(props.button)&attributes({
+        class: "alert__button",
+        ...props.button.attributes
+      })=props.button.text
+    button.alert__close.js-closable-button(type="button" aria-label="Закрыть" data-tip="Закрыть")
+      +icon("close")
+
+mixin triangle()
+  -
+  | <svg class="alert__triangle" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 2 2"><path d="m0 0 2 1-2 1z"/></svg>

@@ -1,7 +1,7 @@
-const fs = require('fs');
-const { src, dest } = require('gulp');
-const rename = require('gulp-rename');
-const path = require('path');
+import fs from 'fs';
+import { src, dest } from 'gulp';
+import rename from 'gulp-rename';
+import path from 'path';
 
 function fileExist(filePath) {
   try {
@@ -49,7 +49,7 @@ function generateUiKitJSON() {
   });
 }
 
-function generateUiKit() {
+export function generateUiKit() {
   generateUiKitJSON();
 
   return src(['src/blocks/**/preview.jpg'], { encoding: false })
@@ -60,5 +60,3 @@ function generateUiKit() {
     })))
     .pipe(dest('build/assets/images/dev/blocks'));
 }
-
-exports.generateUiKit = generateUiKit;

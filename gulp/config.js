@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   pages: [
     'src/pages/index/index.pug',
     'src/pages/authorized/index.pug',

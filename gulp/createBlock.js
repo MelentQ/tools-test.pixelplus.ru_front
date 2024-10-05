@@ -1,8 +1,8 @@
 // Генератор заготовок для блоков
 // Использование: node createBlock.js [название блока]
 
-const fs = require('fs');
-const { mkdirp } = require('mkdirp');
+import fs from 'fs';
+import { mkdirp } from 'mkdirp';
 
 function fileExist(path) {
   try {

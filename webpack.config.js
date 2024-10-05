@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
-const TerserPlugin = require('terser-webpack-plugin');
-const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
-const { VueLoaderPlugin } = require('vue-loader');
+import { resolve } from 'path';
+import webpack from 'webpack';
+import TerserPlugin from 'terser-webpack-plugin';
+import StatoscopeWebpackPlugin from '@statoscope/webpack-plugin';
+import { VueLoaderPlugin } from 'vue-loader';
 
-module.exports = {
+export default {
   output: {
     filename: '[name].min.js',
   },
@@ -33,7 +33,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader', 'css-loader',
+          'style-loader',
+          'css-loader',
         ],
       },
       {
@@ -54,7 +55,7 @@ module.exports = {
   },
   stats: { warnings: false },
   plugins: [
-    process.env.NODE_ENV === 'production' && new StatoscopeWebpackPlugin({
+    process.env.NODE_ENV === 'production' && new StatoscopeWebpackPlugin.default({
       compressor: false,
     }),
     new webpack.DefinePlugin({
@@ -66,7 +67,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': resolve(import.meta.dirname, 'src'),
     },
   },
   mode: process.env.NODE_ENV || 'development',

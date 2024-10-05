@@ -1,3 +1,27 @@
 extends /src/layouts/main
 
 block content
+  +warning-message({
+    icon: "lock",
+    text: "Вы находитесь в ограниченном демо-режиме. Получите полный доступ!",
+    button: {
+      tag: "a",
+      link: "#",
+      text: "Доступ за 99 рублей на 30 дней"
+    }
+  })
+  +warning-message({
+    icon: "warning",
+    text: "Ваша сессия закончилась. Пожалуйста, сохраните данные и перезагрузите страницу.",
+    button: {
+      tag: "a",
+      link: "#",
+      text: "Перезагрузить"
+    },
+    closable: true
+  })
+  +section({
+    title: "Уведомления"
+  })
+    for alert in alerts
+      +alert(alert)
