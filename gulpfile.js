@@ -27,6 +27,7 @@ import config from './gulp/config.js';
 import { generateUiKit } from './gulp/utils.js';
 
 const sass = gulpSass(dartSass);
+const bs = browserSync.create();
 
 function coreStyles() {
   return src(['src/styles/index.scss'], { encoding: false })
@@ -48,7 +49,7 @@ function coreStyles() {
       extname: '.min.css',
     }))
     .pipe(dest('build/css'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 }
 
 function additionalStyles() {
@@ -75,7 +76,7 @@ function additionalStyles() {
       extname: '.min.css',
     })))
     .pipe(dest('build/css'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 }
 
 function coreScripts() {
@@ -83,7 +84,7 @@ function coreScripts() {
     .pipe(named((file) => path.basename('core', path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 }
 
 function additionalScripts() {
@@ -95,7 +96,7 @@ function additionalScripts() {
     .pipe(named((file) => path.basename(file.dirname.split('\\').slice(-1)[0], path.extname(file.path))))
     .pipe(webpack(webpackConfig))
     .pipe(dest('build/js'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 }
 
 function sprite() {
@@ -189,15 +190,16 @@ function watching() {
   watch(['src/**/*.json', '!src/data/data.json'], json);
   watch(['src/**/*.pug', 'src/pages/**/*.pug', 'src/data/data.json', 'src/pages/**/*.json', 'src/ui/icon/sprite.svg'], html);
   watch(['public/**/*'], assets);
-  watch(['build/*.html']).on('change', browserSync.reload);
+  watch(['build/*.html']).on('change', bs.reload);
 }
 
 function server() {
-  browserSync.init({
+  bs.init({
+    ui: false,
     server: {
       baseDir: 'build',
     },
-    ui: false,
+    timestamps: false,
   });
 }
 

@@ -24,7 +24,9 @@
       ]
     })
       +slot("preview")
-        include preview
+        .row.row-4
+          .col
+            include preview
       +slot("state")
         p state
       +slot("html")

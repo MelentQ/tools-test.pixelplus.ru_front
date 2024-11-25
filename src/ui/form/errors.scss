@@ -1,26 +1,16 @@
 .errors {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin: 0;
-  padding: 0 1.2rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+  padding: 0;
 
   list-style: none;
-  transform: translateY(-50%);
 
   &__item {
-    padding: 2px 1rem;
-
-    color: var(--white);
-    font-size: 1rem;
-    line-height: 1;
-
-    background-color: var(--red-700);
-    border-radius: var(--border-radius);
+    color: var(--red-700);
+    font-size: 1.4rem;
+    line-height: 1.4;
   }
 }

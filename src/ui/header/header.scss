@@ -1,8 +1,8 @@
 :root {
-  --header-height: 7.1rem;
+  --header-height: 7rem;
 
   @include breakpoint(m) {
-    --header-height: 5.1rem;
+    --header-height: 5rem;
   }
 }
 

@@ -1,8 +1,8 @@
 import 'parsleyjs/dist/parsley.min';
-import 'parsleyjs/dist/i18n/ru';
+import './ru';
 
 export default function $validation() {
-  const forms = [...document.querySelectorAll('.js-validation:not(.--validation-initialized)')];
+  const forms = [...document.querySelectorAll('form.js-validation:not(.--validation-initialized)')];
   forms.map((form) => {
     const selects = form.querySelectorAll('select');
 

@@ -30,9 +30,11 @@
       +slot("preview")
         include preview
       +slot("mods")
-        p mods
+        .d-flex.flex-wrap.align-items-center.gap-m
+          +button Default
+          +button({mods: ['secondary']}) Secondary
       +slot("state")
-        p state
+        p disabled loading
       +slot("html")
         +code-snippet({lang: 'html'})
           include preview

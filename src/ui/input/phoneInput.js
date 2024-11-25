@@ -25,6 +25,7 @@ export default function phoneInput() {
     const instance = intlTelInput(input, {
       ...options,
       dropdownContainer: input.closest('.modal') || document.body,
+      loadUtilsOnInit: () => import('intl-tel-input/utils'),
     });
 
     input.addEventListener('open:countrydropdown', () => {
@@ -55,7 +56,7 @@ window.Parsley.addValidator('iti', {
     return target && target.instance.isValidNumber();
   },
   messages: {
-    en: 'Enter a valid phone number.',
-    ru: 'Введите правильный номер мобильного телефона.',
+    en: 'Enter a valid phone number',
+    ru: 'Введите правильный номер мобильного телефона',
   },
 });
