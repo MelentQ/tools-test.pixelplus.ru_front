@@ -1,15 +1,26 @@
 <script setup>
-const props = defineProps({
+defineProps({
   name: {
     type: String,
     required: true,
+  },
+  bs: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
 
 <template>
-  <svg class="icon">
-    <use :xlink:href="`#${props.name}`" />
+  <i
+    v-if="bs"
+    :class="`bi-${name}`"
+  />
+  <svg
+    v-else
+    class="icon"
+  >
+    <use :xlink:href="`#${name}`" />
   </svg>
 </template>
 

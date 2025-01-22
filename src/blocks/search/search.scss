@@ -12,6 +12,7 @@
     padding: 0;
 
     color: var(--primary-600);
+    font-size: 1.6rem;
 
     background: none;
     border: none;
@@ -24,12 +25,9 @@
       color: var(--primary-900);
     }
 
-    svg {
+    i,
+    i::before {
       display: block;
-      width: 1.8rem;
-      height: 1.8rem;
-
-      fill: currentColor;
     }
   }
 

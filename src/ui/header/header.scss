@@ -18,16 +18,52 @@
     gap: 3rem;
     align-items: center;
     justify-content: space-between;
-    min-height: 7rem;
+    min-height: var(--header-height);
 
     @include breakpoint(m) {
       gap: 1.2rem;
-      min-height: 5rem;
+    }
+  }
+
+  &__menu-button {
+    padding: 0;
+
+    color: inherit;
+    font-size: 2.4rem;
+
+    background: none;
+    border: none;
+
+    @include breakpointMF(l) {
+      display: none;
+    }
+
+    i,
+    i::before {
+      display: block;
+    }
+
+    i:nth-child(2) {
+      display: none;
+    }
+
+    &.--active {
+      i:nth-child(1) {
+        display: none;
+      }
+
+      i:nth-child(2) {
+        display: block;
+      }
     }
   }
 
   &__logo {
     flex-shrink: 0;
+
+    @include breakpoint(m) {
+      margin-right: auto;
+    }
 
     @include breakpointMF(l) {
       order: 1;
@@ -99,66 +135,44 @@
     }
   }
 
-  &__user-dropdown {
-
-  }
-
-  &__search {
-    flex-shrink: 0;
-  }
-
-  &__control {
-    display: block;
-    flex-shrink: 0;
+  &__search-button {
     padding: 0;
 
-    text-decoration: none;
+    color: inherit;
+
+    font-size: 2rem;
 
     background: none;
     border: none;
 
-    @include color(inherit);
-
     @include transition(color);
 
     @include hover {
-      @include color(var(--primary-600));
+      color: #A3A3A3;
     }
 
-    svg {
+    i,
+    i::before {
       display: block;
-      width: 1.8rem;
-      height: 1.8rem;
+    }
 
-      @include breakpoint(m) {
-        width: 1.6rem;
-        height: 1.6rem;
-      }
-
-      &:nth-child(2) {
-        display: none;
-      }
+    i:nth-child(2) {
+      display: none;
     }
 
     &.--active {
-      color: var(--primary-600);
-
-      svg {
-        &:nth-child(1) {
-          display: none;
-        }
-
-        &:nth-child(2) {
-          display: block;
-        }
-      }
-    }
-
-    &--show-on-tablet {
-      @include breakpointMF(l) {
+      i:nth-child(1) {
         display: none;
       }
+
+      i:nth-child(2) {
+        display: block;
+      }
     }
+  }
+
+  &__user-dropdown {
+
   }
 
   &__search {
@@ -187,12 +201,12 @@
 
   &__burger-menu {
     position: absolute;
-    top: calc(100% + 1px);
+    top: calc(100%);
     left: 0;
 
     width: 100%;
-    max-height: calc(100vh - 5rem - 1px);
-    max-height: calc(100svh - 5rem - 1px);
+    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100svh - var(--header-height));
     overflow: auto;
 
     transform: translateY(-1rem);
@@ -214,5 +228,46 @@
 
       pointer-events: all;
     }
+  }
+
+  &__login {
+    padding: 1.1rem 3.6rem;
+
+    color: inherit;
+
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1;
+
+    background: none;
+    border: 1px solid currentColor;
+
+    border-radius: var(--border-radius);
+
+    @include transition(color, border-color, background-color);
+
+    @include hover {
+      background-color: #515151;
+      border-color: #C4C4C4;
+
+      @include color(#C4C4C4);
+    }
+
+    @include breakpoint(m) {
+      padding: 0.7rem 2.6rem;
+
+      font-size: 1.4rem;
+    }
+
+    // Дополнительный текст на десктопе
+    @include breakpointMF(s) {
+      &::after {
+        content: attr(data-additional-text);
+      }
+    }
+  }
+
+  a#{$block-name}__login {
+    text-decoration: none;
   }
 }

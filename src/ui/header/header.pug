@@ -3,32 +3,26 @@ mixin header(props)
   header.header&attributes(attributes)
     .page-container
       .header__inner
+        button.header__menu-button.js-burger-menu-button(type="button" aria-label="Меню")
+          i.bi-list
+          i.bi-x-lg
         a.header__logo(href="./home.html" aria-label="Главная")
           img(src="./assets/images/logo.svg" alt="Пиксель Тулс" loading="lazy")
         if !hideMenu
           +menu({items: menuItems})&attributes({class: "header__menu"})
         .header__controls-wrapper
           if isAuth
-            +notifications-dropdown&attributes({
-              class: "header__notifications-dropdown"
-            })
+            +notifications-dropdown&attributes({class: "header__notifications-dropdown"})
           .header__controls
-            button.header__control.header__control--show-on-tablet.js-burger-menu-button(type="button" aria-label="Меню")
-              +icon("burger")
-              +icon("chevron")
-            button.header__control.js-search-form-button(type="button" aria-label="Поиск" data-tip="Поиск")
-              +icon("search")
-              +icon("close")
+            button.header__search-button.js-search-form-button(type="button" aria-label="Поиск" data-tip="Поиск")
+              i.bi-search
+              i.bi-x-lg
             if isAuth
-              +user-dropdown&attributes({
-                class: "header__user-dropdown"
-              })
+              +user-dropdown&attributes({class: "header__user-dropdown"})
             else
-              a.header__control(
-                href="./login.html"
-                aria-label="Войти"
-                data-tip="Войти"
-              )
-                +icon("login")
+              a.header__login(href="./login.html" data-additional-text=" в профиль") Войти
     +search-form&attributes({class: "header__search js-search-form"})
-    +burger-menu({items: menuItems})&attributes({class: "header__burger-menu js-burger-menu"})
+    +burger-menu({items: menuItems})&attributes({
+      class: "header__burger-menu js-burger-menu",
+      'data-lenis-prevent': ''
+    })

@@ -7,7 +7,7 @@ mixin search(props)
         value: props.value
       })
       button.search__form-button(type="submit" aria-label="Найти")
-        +icon("search")
+        i.bi-search
     .search__result
       for item in props.items
         +search-card(item)&attributes({class: "search__card"})

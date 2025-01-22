@@ -1,18 +1,17 @@
 .search-form {
-  padding: 2rem 0;
+  padding: 1.6rem 0;
 
-  background-color: var(--neutral-700);
-
-  @include breakpoint(m) {
-    padding: 1.6rem 0;
-  }
+  background-color: var(--white);
+  box-shadow: 0 0 1rem rgba(#9D9D9D, 0.4);
 
   @include breakpoint(s) {
     padding: 1rem 0;
   }
 
   &__form {
-    max-width: 64rem;
+    position: relative;
+    
+    max-width: 80rem;
     margin: 0 auto;
 
     @include breakpoint(m) {
@@ -23,43 +22,46 @@
   &__input {
     display: block;
     width: 100%;
-    padding: 0 0 1rem;
+    padding: 0.9rem 1.2rem 0.9rem 4rem;
 
-    color: var(--white);
-    font-size: var(--fs-t3);
-    text-align: center;
+    font-size: 1.6rem;
+
+    background: none;
+    border: 1px solid #DCDCDC;
+    border-radius: var(--border-radius);
+
+    &::placeholder {
+      color: #909090;
+      font: inherit;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 1.2rem;
+
+    display: block;
+    padding: 0;
+
+    color: var(--primary-600);
+
+    font-size: 2rem;
 
     background: none;
     border: none;
-    border-bottom: 1px solid var(--neutral-600);
 
-    @include transition(border-color);
+    transform: translateY(-50%);
 
-    @include breakpoint(m) {
-      padding-bottom: 0.6rem;
-    }
-
-    &::placeholder {
-      color: var(--neutral-400);
-      font: inherit;
-
-      @include transition(color);
-    }
+    @include transition(color);
 
     @include hover {
-      border-color: var(--neutral-400);
-
-      &::placeholder {
-        color: var(--neutral-600);
-      }
+      color: var(--primary-900);
     }
 
-    &:focus {
-      border-color: var(--neutral-400);
-
-      &::placeholder {
-        color: var(--neutral-600);
-      }
+    i,
+    i::before {
+      display: block;
     }
   }
 }

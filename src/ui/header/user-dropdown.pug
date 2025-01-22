@@ -1,16 +1,16 @@
 mixin user-dropdown(props)
   - props = props || {}
   .user-dropdown.js-user-dropdown&attributes(attributes)
-    button.user-dropdown__button.js-user-dropdown-button(type="button" aria-label="Пользователь" data-tip="Пользователь")
-      span.user-dropdown__button-text Константин Константинопольский
-      +icon("user")
+    button.user-dropdown__button.js-user-dropdown-button(type="button" aria-label="Пользователь")
+      i.bi-person-fill
+      i.bi-chevron-compact-down
     .user-dropdown__panel
       .user-dropdown__items
         for link in userDropdownLinks
           .user-dropdown__item
             a(href="#").user-dropdown__link
               if link.icon
-                +icon(link.icon)
+                i(class=`bi-${link.icon}`)
               =link.text
             if link.tip
               +tip({

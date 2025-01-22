@@ -12,25 +12,32 @@
     padding: 0;
 
     color: var(--white);
-    font-size: var(--fs-t3);
+    font-size: 1.8rem;
 
     background: none;
     border: none;
 
+    @include transition(color);
+
+    @include breakpoint(s) {
+      font-size: 1.6rem;
+    }
+
     &[data-counter]::after {
       position: absolute;
-      top: -0.4rem;
-      right: -0.4rem;
+      top: -0.6rem;
+      right: -1rem;
 
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 1.4rem;
-      height: 1.4rem;
-      padding: 0 0.4rem;
+      min-width: 1.6rem;
+      height: 1.6rem;
+      padding: 0 0.1rem;
 
       color: var(--white);
-      font-size: 0.8rem;
+      font-weight: 700;
+      font-size: 1rem;
       line-height: 1;
 
       background-color: var(--primary-600);
@@ -42,23 +49,13 @@
       @include transition(color, background-color);
     }
 
-    svg {
+    i,
+    i::before {
       display: block;
-      width: 1.8rem;
-      height: 1.8rem;
-
-      @include transition(fill);
-
-      @include breakpoint(s) {
-        width: 1.6rem;
-        height: 1.6rem;
-      }
     }
 
     @include hover {
-      svg {
-        fill: var(--primary-600);
-      }
+      color: var(--primary-600);
 
       &::after {
         color: var(--primary-600);
@@ -69,9 +66,7 @@
   }
 
   &.--active #{$block-name}__button {
-    svg {
-      fill: var(--primary-600);
-    }
+    color: var(--primary-600);
 
     &::after {
       color: var(--primary-600);

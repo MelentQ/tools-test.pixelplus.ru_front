@@ -12,7 +12,7 @@ mixin burger-menu-list(items)
           a(href="#")=item.name
           if item.items
             button.burger-menu__arrow.js-accordion-button(type="button" aria-label="Раскрыть меню")
-              +icon("chevron")
+              i.bi-chevron-compact-down
         if item.items
           +burger-menu-list(item.items)&attributes({
             class: "js-accordion-panel",

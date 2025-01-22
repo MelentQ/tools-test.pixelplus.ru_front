@@ -4,6 +4,7 @@
     "description": "UI Kit"
   },
   "smoothScrolling": true,
+  "isAuth": true,
   "colors": {
     "columns": [
       "50",

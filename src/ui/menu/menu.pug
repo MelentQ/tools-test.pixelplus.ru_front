@@ -13,7 +13,7 @@ mixin menu-items(items, level)
             class=(level >= 2 ? "menu__items-head" : null)
             href=(item.link || "#")
           )=item.name
-          +icon("triangle")
+          i.bi-chevron-compact-down
           +menu-items(item.items, level + 1)
       else
         a.menu__item(

@@ -42,7 +42,6 @@ const props = defineProps({
 
 <template>
   <div class="form-wrapper">
-    <BaseIcon name="search" />
     <div class="form-wrapper__content">
       <Tabs
         :value="props.defaultTab"

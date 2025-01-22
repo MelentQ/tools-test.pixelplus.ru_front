@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       });
     });
+
+    container.classList.add('--initialized');
   });
 
   function toggle() {
