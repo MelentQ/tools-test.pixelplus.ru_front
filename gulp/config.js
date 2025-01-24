@@ -1,8 +1,6 @@
 export default {
   pages: [
-    'src/pages/index/index.pug',
-    'src/pages/ui-kit/index.pug',
-    'src/pages/search/index.pug',
+    'src/pages/register-new/index.pug',
   ],
   scripts: [
 

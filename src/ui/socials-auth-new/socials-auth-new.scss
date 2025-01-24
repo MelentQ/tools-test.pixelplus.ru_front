@@ -1,0 +1,75 @@
+.socials-auth-new {
+  $block-name: &;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include breakpoint(s) {
+      flex-direction: row;
+      gap: 1.8rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    padding: 1.2rem;
+
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.4;
+
+    border: 1px solid #C4C4C4;
+
+    border-radius: 1rem;
+
+    @include transition(opacity);
+
+    @include hover {
+      opacity: 0.75;
+    }
+
+    @include breakpoint(s) {
+      flex-grow: 1;
+      min-height: 4rem;
+      padding: 0.9rem;
+    }
+
+    svg {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &--vk {
+      svg {
+        fill: #0077ff;
+      }
+    }
+
+    &--google {
+
+    }
+
+    &--yandex {
+      svg {
+        fill: #ff0000;
+      }
+    }
+  }
+
+  a#{$block-name}__item {
+    text-decoration: none;
+  }
+
+  &__item-text {
+    @include breakpoint(s) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+mixin register(props)
+  - props = props || {}
+  section.register
+    .page-container
+      .register__inner
+        h1.register__title Раскройте возможности SEO и ИИ — зарегистрируйтесь!
+        .register__container
+          .register__window
+            .register__tabs
+              .register__tab.register__tab--active Регистрация
+              a.register__tab(href="./login.html") Вход
+            +socials-auth-new({
+              items: [
+                {
+                  "icon": "vk",
+                  "name": "Зарегистрироваться через VK"
+                },
+                {
+                  "icon": "yandex",
+                  "name": "Зарегистрироваться через Яндекс"
+                },
+                {
+                  "icon": "google",
+                  "name": "Зарегистрироваться через Google"
+                }
+              ]
+            })&attributes({class: "register__socials"})
+            .register__separator Или
+            +form&attributes({class: 'register__form'})
+              .register__form-inputs
+                +form-field({
+                  label: 'Электронная почта*',
+                  tip: 'Укажите ваш почтовый ящик вида support@pixeltools.ru. Почта (e-mail) будет использоваться для входа в сервис и для восстановления пароля. Убедитесь, что вы ввели адрес правильно, чтобы была возможность подтвердить его.'
+                })
+                  +input({
+                    placeholder: 'Ввести электронную почту',
+                    type: 'email',
+                    required: true,
+                  })
+                +form-field({
+                  label: 'Пароль*',
+                  tip: 'Укажите пароль. Далее этот пароль будет использоваться при авторизации в сервисе. Мы рекомендуем использовать надежный пароль, который будет сложно угадать.'
+                })
+                  +input({
+                    placeholder: 'Ввести пароль',
+                    type: 'password',
+                    required: true,
+                  })
+                +form-field({
+                  label: 'Телефон',
+                  tip: 'Используется для экстренных оповещений о недоступности сайта или критических ошибках, требующих немедленной реакции. Типы оповещений и номер телефона — управляются в настройках.'
+                })
+                  +input({
+                    type: 'tel',
+                  })
+              .register__form-policy
+                +checkbox({
+                  checked: true,
+                  mods: ['large']
+                })
+                  | Прочитал и принимаю <a href="#">условия Оферты сервиса</a>.
+              .register__form-controls
+                button.button.button--large(type="submit") Зарегистрироваться
+                a.button.button--white.button--large(href="#") Уже зарегистрированы? Войти
+  link(href="./css/register.min.css" rel="stylesheet")
+  script(src="./js/register.min.js" defer="")

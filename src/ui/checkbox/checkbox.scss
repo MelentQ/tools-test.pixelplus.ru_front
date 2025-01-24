@@ -4,8 +4,8 @@
   position: relative;
 
   display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+  gap: 1.2rem;
+  align-items: center;
 
   &__element {
     @include visually-hidden;
@@ -22,44 +22,54 @@
     width: 2rem;
     height: 2rem;
 
-    border: 2px solid var(--neutral-200);
+    border: 1px solid var(--neutral-200);
 
-    border-radius: var(--border-radius);
+    border-radius: 2px;
     transform: translateY(-50%);
 
     cursor: pointer;
 
-    @include transition(border-color);
+    @include transition(border-color, background-color);
 
-    &::before {
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+
       display: block;
-      width: 1.4rem;
-      height: 1.4rem;
-
-      background-image: url("../assets/images/decoration/checkbox.svg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
+      width: 100%;
+      height: 100%;
 
       opacity: 0;
 
-      content: '';
-      pointer-events: none;
+      stroke: white;
+      stroke-width: 2px;
+      stroke-linecap: round;
 
       @include transition(opacity);
     }
+  }
+
+  &--large #{$block-name}__fake {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   &.--error #{$block-name}__fake {
     border-color: var(--red-700);
   }
 
-  &__element:checked ~ #{$block-name}__fake::before {
-    opacity: 1;
+  &__element:checked ~ #{$block-name}__fake {
+    background-color: #E32D35;
+    border-color: #E32D35;
+
+    svg {
+      opacity: 1;
+    }
   }
 
   &__label {
-    font-size: var(--fs-t2);
+    font-size: 1.6rem;
     line-height: 1.3;
   }
 

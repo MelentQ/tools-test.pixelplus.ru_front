@@ -1,0 +1,11 @@
+mixin socials-auth-new(props)
+  - props = props || {}
+  .socials-auth-new&attributes(attributes)
+    .socials-auth-new__list
+      for item in props.items
+        a.socials-auth-new__item(
+          class=`socials-auth-new__item--${item.icon}`
+          href="#"
+        )
+          +icon(item.icon)
+          span.socials-auth-new__item-text=item.name

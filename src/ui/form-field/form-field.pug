@@ -1,0 +1,12 @@
+mixin form-field(props)
+  - props = props || {}
+  .form-field
+    if props.label
+      .form-field__head
+        .form-field__head-text=props.label
+        if props.tip
+          +tip({
+            text: props.tip
+          })&attributes({class: 'form-field__tip'})
+    .form-field__content
+      block

@@ -3,6 +3,7 @@
   gap: 1.2rem;
   align-items: center;
   justify-content: center;
+  min-height: 4rem;
   padding: 0.8rem 2rem;
 
   font-weight: 700;
@@ -77,6 +78,14 @@
       border-color: var(--white);
 
       @include color(var(--neutral-800));
+    }
+  }
+
+  &--large {
+    min-height: 5rem;
+
+    @include breakpoint(s) {
+      min-height: 4rem;
     }
   }
 }

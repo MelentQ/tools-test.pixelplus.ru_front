@@ -25,7 +25,6 @@ export default function phoneInput() {
     const instance = intlTelInput(input, {
       ...options,
       dropdownContainer: input.closest('.modal') || document.body,
-      loadUtilsOnInit: () => import('intl-tel-input/utils'),
     });
 
     input.addEventListener('open:countrydropdown', () => {

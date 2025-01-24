@@ -23,6 +23,8 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     padding-top: var(--header-height);
   }
@@ -54,7 +56,7 @@
     position: fixed;
     right: calc(2.4rem + var(--fancybox-scrollbar-compensate, 0rem));
     bottom: 2.4rem;
-    z-index: 1;
+    z-index: 100;
 
     @include breakpoint(m) {
       right: calc(2rem + var(--fancybox-scrollbar-compensate, 0rem));

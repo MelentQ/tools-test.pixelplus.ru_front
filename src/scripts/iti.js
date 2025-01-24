@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // onlyCountries: ['ru', 'by', 'ua', 'kz'],
       countryOrder: ['ru', 'by', 'ua', 'kz'],
       excludeCountries: [],
+      loadUtilsOnInit: '/assets/iti/utils.js',
     };
   }
 });

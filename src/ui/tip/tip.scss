@@ -1,5 +1,5 @@
 .tip {
-  display: flex;
+  display: inline-flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -9,10 +9,10 @@
   border: 1px solid var(--neutral-200);
   border-radius: 50%;
 
-  @include transition(opacity);
+  @include transition(background-color);
 
   @include hover {
-    opacity: 0.75;
+    background-color: #F4F4F4;
   }
 
   svg {

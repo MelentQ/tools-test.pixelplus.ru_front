@@ -1,6 +1,9 @@
 mixin checkbox(props)
   - props = props || {}
-  label.checkbox.js-validation-wrapper
+  - mods = props.mods ? props.mods.map(mod => `checkbox--${mod}`).join(" ") : null;
+  label.checkbox.js-validation-wrapper(
+    class=mods
+  )
     input.checkbox__element(
       type="checkbox"
       name=props.name
@@ -8,6 +11,8 @@ mixin checkbox(props)
       required=props.required
     )&attributes(attributes)
     span.checkbox__fake
+      svg
+        use(xlink:href='#checkbox')
     if block
       span.checkbox__label
         block

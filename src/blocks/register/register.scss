@@ -1,0 +1,199 @@
+.register {
+  $block-name: &;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 3.2rem 0;
+
+  background-color: #F4F4F4;
+
+  @include breakpoint(m) {
+    padding: 1.8rem 0;
+  }
+
+  @include breakpoint(s) {
+    padding: 1.2rem 0;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+
+    background-image: url("../assets/images/decoration/pixelplus-logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    content: '';
+    pointer-events: none;
+
+    @include breakpoint(m) {
+      content: none;
+    }
+  }
+
+  &::before {
+    bottom: 0;
+    left: 0;
+
+    width: 50rem;
+    height: 46.2rem;
+
+    background-position: left bottom;
+  }
+
+  &::after {
+    top: 0;
+    right: 0;
+
+    width: 45.8rem;
+    height: 42.4rem;
+
+    background-position: right 3.2rem;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+
+    flex-grow: 1;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 3.2rem;
+
+    font-weight: 700;
+    font-size: 3.2rem;
+    text-align: center;
+
+    @include breakpoint(m) {
+      margin-bottom: 1.8rem;
+
+      font-size: 2.4rem;
+    }
+
+    @include breakpoint(s) {
+      margin-bottom: 1.2rem;
+
+      font-size: 2rem;
+    }
+  }
+
+  &__container {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  &__window {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 4.8rem;
+
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(#9D9D9D, 0.25);
+
+    @include breakpoint(s) {
+      gap: 1.8rem;
+      padding: 2.4rem 1.2rem;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 2.4rem;
+    justify-content: center;
+
+    border-bottom: 1px solid #D4D4D4;
+  }
+
+  &__tab {
+    margin-bottom: -1px;
+    padding-bottom: 0.6rem;
+
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.2;
+
+    border-bottom: 0.3rem solid transparent;
+
+    @include transition(color, border-color);
+    @include color(#737373);
+
+    @include breakpoint(s) {
+      font-size: 1.6rem;
+    }
+
+    &--active {
+      color: #E32D35;
+
+      border-bottom-color: #E32D35;
+
+      pointer-events: none;
+    }
+
+    @include hover {
+      @include color(#BC1818);
+
+      border-bottom-color: #BC1818;
+    }
+  }
+
+  a#{$block-name}__tab {
+    text-decoration: none;
+  }
+
+  &__separator {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+
+    color: #737373;
+    font-size: 1.6rem;
+    line-height: 1;
+
+    &::before,
+    &::after {
+      display: block;
+      flex-grow: 1;
+      height: 1px;
+
+      background-color: #D4D4D4;
+
+      content: '';
+      pointer-events: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__form-policy {
+    a {
+      text-decoration: none;
+
+      @include transition(color);
+      @include color(#E32D35);
+      @include hover {
+        @include color(#BC1818);
+      }
+    }
+  }
+
+  &__form-controls,
+  &__form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
